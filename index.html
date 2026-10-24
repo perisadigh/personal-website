@@ -5,59 +5,103 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Parinaz</title>
   <meta name="description" content="Personal website of Parinaz.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@1&family=La+Belle+Aurore&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
   <header class="site-header">
-    <a class="name" href="#top">Parinaz</a>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
+    <a class="mono" href="#top">[ Parinaz ]</a>
+    <span class="mono muted hide-sm">[ placeholder: what you do ]</span>
+    <nav class="mono">
+      <a href="#about">about</a>
+      <a href="#work">work</a>
+      <a href="#contact">contact</a>
     </nav>
   </header>
 
   <main id="top">
-    <section class="intro">
-      <h1>Hi, I'm Parinaz.</h1>
-      <p class="lede">A one-line description of what you do and what you care about.</p>
+    <section class="hero">
+      <p class="mono label">( hello )</p>
+      <h1>
+        <span>A one-line</span>
+        <span class="indent">statement about</span>
+        <span>who you are <em>&amp;</em></span>
+        <span class="indent-more">what you love.</span>
+      </h1>
+      <p class="scribble" aria-hidden="true">it's me, Parinaz</p>
+
+      <figure class="fragment hero-fragment">
+        <div class="photo" role="img" aria-label="Photo placeholder"></div>
+        <figcaption class="mono">fig. 01 &mdash; a photo of you</figcaption>
+      </figure>
+
+      <svg class="thread" viewBox="0 0 1200 400" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M-20 330 C 180 300, 260 140, 420 210 S 700 380, 860 250 S 1100 60, 1240 120" />
+      </svg>
     </section>
 
-    <section id="about">
-      <h2>About</h2>
-      <p>A short paragraph about you: your background, what you're working on now, and what you're interested in.</p>
+    <section id="about" class="split">
+      <p class="mono label">( about )</p>
+      <div class="prose">
+        <p>A short paragraph about you. Where you're from, what you're curious about, and what you're working on right now. Keep it loose; it can change as the site grows.</p>
+        <p class="muted">A second, quieter paragraph for anything else you'd like people to know.</p>
+      </div>
     </section>
 
-    <section id="projects">
-      <h2>Projects</h2>
-      <ul class="projects">
+    <section id="work">
+      <p class="mono label">( selected work )</p>
+      <ol class="work">
         <li>
-          <h3><a href="#">Project one</a></h3>
-          <p>One or two sentences on what it is and why it matters.</p>
+          <a href="#">
+            <span class="num">01.</span>
+            <span class="title">Project name</span>
+            <span class="meta mono">2026 &middot; category</span>
+          </a>
         </li>
         <li>
-          <h3><a href="#">Project two</a></h3>
-          <p>One or two sentences on what it is and why it matters.</p>
+          <a href="#">
+            <span class="num">02.</span>
+            <span class="title">Project name</span>
+            <span class="meta mono">2025 &middot; category</span>
+          </a>
         </li>
         <li>
-          <h3><a href="#">Project three</a></h3>
-          <p>One or two sentences on what it is and why it matters.</p>
+          <a href="#">
+            <span class="num">03.</span>
+            <span class="title">Project name</span>
+            <span class="meta mono">2025 &middot; category</span>
+          </a>
         </li>
-      </ul>
+      </ol>
     </section>
 
-    <section id="contact">
-      <h2>Contact</h2>
-      <ul class="links">
-        <li><a href="mailto:you@example.com">Email</a></li>
-        <li><a href="https://github.com/perisadigh">GitHub</a></li>
-        <li><a href="https://www.linkedin.com/">LinkedIn</a></li>
+    <section class="fragments" aria-label="Fragments">
+      <figure class="fragment f1">
+        <div class="photo" role="img" aria-label="Image placeholder"></div>
+        <figcaption class="mono">fig. 02</figcaption>
+      </figure>
+      <p class="quote">&ldquo;A line you love, or a thought you keep coming back to.&rdquo;</p>
+      <figure class="fragment f2">
+        <div class="photo" role="img" aria-label="Image placeholder"></div>
+        <figcaption class="mono">fig. 03</figcaption>
+      </figure>
+    </section>
+
+    <section id="contact" class="contact">
+      <p class="scribble big">say hello</p>
+      <ul class="links mono">
+        <li><a href="mailto:you@example.com">[ email ]</a></li>
+        <li><a href="https://github.com/perisadigh">[ github ]</a></li>
+        <li><a href="https://www.linkedin.com/">[ linkedin ]</a></li>
       </ul>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <p>&copy; <span id="year"></span> Parinaz</p>
+  <footer class="site-footer mono">
+    <span>&copy; <span id="year"></span> Parinaz</span>
+    <a href="#top">[ back to top ]</a>
   </footer>
 
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>

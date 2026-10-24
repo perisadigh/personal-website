@@ -1,6 +1,6 @@
 # personal-website
 
-Parinaz's personal website: plain HTML and CSS, no build step.
+Parinaz's personal website: plain HTML and CSS, no build step. Fonts load from Google Fonts.
 
 ## Edit
 
