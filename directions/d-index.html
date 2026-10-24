@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Direction D: Index of Mind</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Mono:wght@400;500&family=Reenie+Beanie&display=swap" rel="stylesheet">
+<style>
+  :root { --bg: #fbfaf7; --blue: #1238e8; --red: #d93a2b; --ink: #161616; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 400 1rem/1.55 "IBM Plex Mono", monospace; overflow-x: hidden; }
+  a { color: inherit; text-decoration: none; }
+  .mono { font-size: .72rem; letter-spacing: .05em; text-transform: uppercase; }
+  .hand { font-family: "Reenie Beanie", cursive; }
+
+  .hero { position: relative; height: 100vh; min-height: 640px; overflow: hidden; }
+  .top { position: absolute; z-index: 3; inset: 1.5rem clamp(1rem, 4vw, 3rem) auto; display: flex; justify-content: space-between; }
+  .top nav { display: flex; gap: 1.25rem; color: var(--blue); }
+  svg.threads { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 1; }
+  svg.threads path { fill: none; stroke: var(--red); stroke-width: 1; vector-effect: non-scaling-stroke; }
+  .note { position: absolute; z-index: 2; width: clamp(5.5rem, 11vw, 9rem); aspect-ratio: 4/3; display: grid; place-items: center; text-align: center; padding: .5rem; font-family: "Reenie Beanie", cursive; font-size: clamp(1rem, 1.8vw, 1.5rem); line-height: 1; box-shadow: 0 1px 0 rgba(0,0,0,.05); transition: transform .2s; }
+  .note:hover { transform: rotate(-3deg) scale(1.05); }
+  .n1 { left: 6%; top: 14%; background: #e8dfc9; }
+  .n2 { left: 22%; top: 9%; background: #f6b8a8; color: #7a1f12; }
+  .n3 { left: 42%; top: 12%; background: #ffd23f; }
+  .n4 { left: 62%; top: 8%; background: #e8651f; color: #fff; }
+  .n5 { left: 80%; top: 20%; background: #bcae8a; color: #4a1d12; }
+  .n6 { left: 8%; top: 40%; background: linear-gradient(#f0c7a0, #8fa7b8); }
+  .n7 { left: 30%; top: 34%; background: #1f4f8a; color: #ffd23f; }
+  .n8 { left: 74%; top: 42%; background: #cfe0f0; color: #213a5c; }
+  .figure { position: absolute; z-index: 2; right: 30%; bottom: 0; width: clamp(8rem, 16vw, 13rem); height: 52%;
+    background: radial-gradient(ellipse at 50% 30%, #e6e6e6, transparent 55%), linear-gradient(#bdbdbd, #4a4a4a); filter: grayscale(1); }
+  .hero h1 { position: absolute; z-index: 3; left: clamp(1rem, 4vw, 3rem); right: clamp(1rem, 4vw, 3rem); bottom: 1.5rem; margin: 0;
+    font: 800 clamp(2.6rem, 9vw, 8.5rem)/.88 "Archivo", sans-serif; font-stretch: 112%; text-transform: uppercase; color: var(--blue); letter-spacing: -.02em; }
+
+  .strip { background: var(--ink); padding: 1.5rem 0; overflow: hidden; }
+  .frames { display: flex; gap: .75rem; padding: 0 clamp(1rem, 4vw, 3rem); }
+  .frame { flex: 0 0 clamp(9rem, 20vw, 16rem); aspect-ratio: 3/2; position: relative; border-top: .6rem dashed #f3efe6; border-bottom: .6rem dashed #f3efe6; }
+  .frame:nth-child(1) { background: linear-gradient(110deg, #e2a35a, #4f6fb0); }
+  .frame:nth-child(2) { background: linear-gradient(110deg, #e2452c, #f0a08b); }
+  .frame:nth-child(3) { background: linear-gradient(110deg, #2b4fa8, #f2e6d8); }
+  .frame:nth-child(4) { background: linear-gradient(110deg, #e9d36c, #c4553a); }
+  .frame:nth-child(5) { background: linear-gradient(110deg, #4c7da8, #e3c2a0); }
+  .frame span { position: absolute; bottom: .3rem; left: .5rem; color: #ffd23f; font-size: .65rem; }
+
+  section { padding: clamp(3rem, 7vw, 6rem) clamp(1rem, 4vw, 3rem); }
+  .about { display: grid; grid-template-columns: 1fr 2fr; gap: 2rem; }
+  .about h2 { align-self: start; justify-self: start; margin: 0; color: var(--blue); font: 800 clamp(2rem, 4.5vw, 3.5rem)/.9 "Archivo", sans-serif; text-transform: lowercase; position: relative; }
+  .about h2::after { content: ""; position: absolute; left: -.25em; right: -.25em; top: -.2em; bottom: -.25em; border: 2px solid var(--blue); border-radius: 50%; transform: rotate(-3deg); }
+  .about p { margin: 0 0 1rem; max-width: 36rem; }
+
+  .index { border-top: 1px solid var(--ink); }
+  .index li { list-style: none; display: grid; grid-template-columns: 4rem 1fr 6rem; gap: 1rem; padding: .9rem 0; border-bottom: 1px solid #ddd; align-items: baseline; }
+  .index ol { margin: 0; padding: 0; }
+  .index li b { font: 800 clamp(1.3rem, 2.6vw, 2rem)/1 "Archivo", sans-serif; color: var(--blue); }
+  .index li:hover b { color: var(--red); }
+
+  footer { padding: 2rem clamp(1rem, 4vw, 3rem) 3rem; display: flex; justify-content: space-between; align-items: end; flex-wrap: wrap; gap: 1rem; }
+  footer .hand { color: var(--red); font-size: clamp(2.5rem, 6vw, 4rem); line-height: 1; }
+
+  @media (max-width: 700px) {
+    .about { grid-template-columns: 1fr; }
+    .index li { grid-template-columns: 2.5rem 1fr; }
+    .index li span:last-child { grid-column: 2; }
+    .n5, .n8 { left: 68%; }
+    .n4 { left: 66%; top: 14%; }
+    .n3 { left: 40%; top: 22%; }
+    .figure { right: 8%; }
+  }
+</style>
+</head>
+<body>
+  <header class="hero">
+    <div class="top mono"><span>Parinaz / an index</span><nav><a href="#about">about</a><a href="#work">work</a><a href="#contact">contact</a></nav></div>
+    <svg class="threads" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M11 22 C 20 50, 50 50, 63 60" /><path d="M27 17 C 30 45, 55 45, 63 60" /><path d="M47 20 C 50 40, 58 50, 63 60" />
+      <path d="M67 16 C 70 35, 62 45, 63 60" /><path d="M85 28 C 82 45, 70 50, 63 60" /><path d="M13 48 C 25 65, 50 55, 63 60" />
+      <path d="M35 42 C 42 55, 55 55, 63 60" /><path d="M79 50 C 75 55, 68 56, 63 60" />
+    </svg>
+    <a class="note n1" href="#">slow down</a><a class="note n2" href="#">let them be</a><a class="note n3" href="#">the sun will rise</a>
+    <a class="note n4" href="#">nothing changes if nothing changes</a><a class="note n5" href="#">my figs cannot rot</a>
+    <a class="note n6" href="#">enjoy the now</a><a class="note n7" href="#">one day I am gonna grow wings</a><a class="note n8" href="#">you can be good</a>
+    <div class="figure" aria-hidden="true"></div>
+    <h1>Parinaz:<br>an index of mind</h1>
+  </header>
+
+  <div class="strip" aria-hidden="true"><div class="frames"><div class="frame"><span>20</span></div><div class="frame"><span>20A</span></div><div class="frame"><span>21</span></div><div class="frame"><span>21A</span></div><div class="frame"><span>22</span></div></div></div>
+
+  <section id="about" class="about">
+    <h2>about me</h2>
+    <div><p>A short paragraph about you. This direction is the most playful: every note in the header is a thing you love or a thought you keep, threaded back to you. It can grow as you add more.</p><p>Cobalt blue for type, red for threads, film strips for photos.</p></div>
+  </section>
+
+  <section id="work" class="index">
+    <p class="mono" style="margin:0 0 1rem">( index of work )</p>
+    <ol>
+      <li><span class="mono">001</span><b>Project one</b><span class="mono">2026</span></li>
+      <li><span class="mono">002</span><b>Project two</b><span class="mono">2025</span></li>
+      <li><span class="mono">003</span><b>Project three</b><span class="mono">2025</span></li>
+    </ol>
+  </section>
+
+  <footer id="contact"><span class="hand">find me here &rarr;</span><span class="mono">email &middot; github &middot; linkedin</span></footer>
+</body>
+</html>
