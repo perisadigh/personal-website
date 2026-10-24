@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Parinaz</title>
+  <meta name="description" content="Personal website of Parinaz.">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="name" href="#top">Parinaz</a>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="intro">
+      <h1>Hi, I'm Parinaz.</h1>
+      <p class="lede">A one-line description of what you do and what you care about.</p>
+    </section>
+
+    <section id="about">
+      <h2>About</h2>
+      <p>A short paragraph about you: your background, what you're working on now, and what you're interested in.</p>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <ul class="projects">
+        <li>
+          <h3><a href="#">Project one</a></h3>
+          <p>One or two sentences on what it is and why it matters.</p>
+        </li>
+        <li>
+          <h3><a href="#">Project two</a></h3>
+          <p>One or two sentences on what it is and why it matters.</p>
+        </li>
+        <li>
+          <h3><a href="#">Project three</a></h3>
+          <p>One or two sentences on what it is and why it matters.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <ul class="links">
+        <li><a href="mailto:you@example.com">Email</a></li>
+        <li><a href="https://github.com/perisadigh">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/">LinkedIn</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> Parinaz</p>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
