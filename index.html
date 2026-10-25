@@ -5,105 +5,118 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Parinaz</title>
   <meta name="description" content="Personal website of Parinaz.">
+  <meta name="color-scheme" content="light">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@1&family=La+Belle+Aurore&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,500..800&family=Instrument+Sans:wght@400;500&family=Instrument+Serif:ital@0;1&family=Reenie+Beanie&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-  <header class="site-header">
-    <a class="mono" href="#top">[ Parinaz ]</a>
-    <span class="mono muted hide-sm">[ placeholder: what you do ]</span>
-    <nav class="mono">
-      <a href="#about">about</a>
-      <a href="#work">work</a>
-      <a href="#contact">contact</a>
+  <header class="site-header caps">
+    <a href="#top">Parinaz</a>
+    <nav>
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
     </nav>
   </header>
 
   <main id="top">
     <section class="hero">
-      <p class="mono label">( hello )</p>
-      <h1>
-        <span>A one-line</span>
-        <span class="indent">statement about</span>
-        <span>who you are <em>&amp;</em></span>
-        <span class="indent-more">what you love.</span>
+      <h1 class="display">
+        <span>Hello,</span>
+        <span class="drop">I am</span>
+        <span>Parinaz</span>
       </h1>
-      <p class="scribble" aria-hidden="true">it's me, Parinaz</p>
 
-      <figure class="fragment hero-fragment">
-        <div class="photo" role="img" aria-label="Photo placeholder"></div>
-        <figcaption class="mono">fig. 01 &mdash; a photo of you</figcaption>
-      </figure>
+      <div class="composition">
+        <figure class="duo tall"><img src="assets/img/light.jpg" alt=""></figure>
+        <figure class="mono inset"><img src="assets/img/bloom.jpg" alt=""></figure>
 
-      <svg class="thread" viewBox="0 0 1200 400" preserveAspectRatio="none" aria-hidden="true">
-        <path d="M-20 330 C 180 300, 260 140, 420 210 S 700 380, 860 250 S 1100 60, 1240 120" />
-      </svg>
-    </section>
+        <div class="aside">
+          <p class="caps red">A placeholder line about<br>what you notice</p>
+          <p class="caps red indent">and another about<br>what you make</p>
+          <p class="stamp red" aria-label="Last updated"><span id="day">25</span><br><span id="month">10</span></p>
+        </div>
 
-    <section id="about" class="split">
-      <p class="mono label">( about )</p>
-      <div class="prose">
-        <p>A short paragraph about you. Where you're from, what you're curious about, and what you're working on right now. Keep it loose; it can change as the site grows.</p>
-        <p class="muted">A second, quieter paragraph for anything else you'd like people to know.</p>
+        <p class="intro red">A short introduction in your own words. Two or three sentences about who you are and what you care about; it sets the tone for everything below.</p>
       </div>
     </section>
 
+    <p class="spaced" aria-label="Selected work"><span>s</span><span>e</span><span>l</span><span>e</span><span>c</span><span>t</span><span>e</span><span>d</span><span class="gap"></span><span>w</span><span>o</span><span>r</span><span>k</span></p>
+
     <section id="work">
-      <p class="mono label">( selected work )</p>
       <ol class="work">
-        <li>
-          <a href="#">
-            <span class="num">01.</span>
-            <span class="title">Project name</span>
-            <span class="meta mono">2026 &middot; category</span>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <span class="num">02.</span>
-            <span class="title">Project name</span>
-            <span class="meta mono">2025 &middot; category</span>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <span class="num">03.</span>
-            <span class="title">Project name</span>
-            <span class="meta mono">2025 &middot; category</span>
-          </a>
-        </li>
+        <li><a href="#">
+          <span class="caps muted">01</span>
+          <figure class="thumb"><img src="assets/img/fabric.jpg" alt=""></figure>
+          <span class="caps title">Project name</span>
+          <span class="caps muted">Category</span>
+          <span class="caps muted year">2026</span>
+        </a></li>
+        <li><a href="#">
+          <span class="caps muted">02</span>
+          <figure class="thumb"><img src="assets/img/horizon.jpg" alt=""></figure>
+          <span class="caps title">Project name</span>
+          <span class="caps muted">Category</span>
+          <span class="caps muted year">2025</span>
+        </a></li>
+        <li><a href="#">
+          <span class="caps muted">03</span>
+          <figure class="thumb"><img src="assets/img/light.jpg" alt=""></figure>
+          <span class="caps title">Project name</span>
+          <span class="caps muted">Category</span>
+          <span class="caps muted year">2025</span>
+        </a></li>
       </ol>
     </section>
 
-    <section class="fragments" aria-label="Fragments">
-      <figure class="fragment f1">
-        <div class="photo" role="img" aria-label="Image placeholder"></div>
-        <figcaption class="mono">fig. 02</figcaption>
-      </figure>
-      <p class="quote">&ldquo;A line you love, or a thought you keep coming back to.&rdquo;</p>
-      <figure class="fragment f2">
-        <div class="photo" role="img" aria-label="Image placeholder"></div>
-        <figcaption class="mono">fig. 03</figcaption>
-      </figure>
+    <section id="about" class="about">
+      <div class="framed">
+        <div class="photo-wrap">
+        <figure class="mono"><img src="assets/img/horizon.jpg" alt=""></figure>
+        <svg class="frame-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M-6 3 L106 1.5" /><path d="M-4 97.5 L104 98.5" /><path d="M3 -6 L2 106" /><path d="M97 -5 L98.5 105" />
+        </svg>
+        </div>
+        <p class="note">a note to<br>myself goes here</p>
+      </div>
+      <div class="about-text">
+        <p class="caps red">About</p>
+        <p>A paragraph about you. Where you come from, what you're drawn to, what you're working on now. Leave room for it to change; the site can grow with you.</p>
+        <p class="muted">A second, quieter paragraph for anything else.</p>
+      </div>
     </section>
 
     <section id="contact" class="contact">
-      <p class="scribble big">say hello</p>
-      <ul class="links mono">
-        <li><a href="mailto:you@example.com">[ email ]</a></li>
-        <li><a href="https://github.com/perisadigh">[ github ]</a></li>
-        <li><a href="https://www.linkedin.com/">[ linkedin ]</a></li>
-      </ul>
+      <svg class="flower" viewBox="0 0 220 260" aria-hidden="true">
+        <path d="M110 250 C 112 210, 104 180, 110 140" />
+        <path d="M108 200 C 90 190, 70 196, 60 214 C 82 220, 100 212, 108 200" />
+        <path d="M110 140 C 86 132, 70 104, 84 84 C 98 96, 108 116, 110 140 C 112 114, 122 92, 140 82 C 152 104, 136 130, 110 140" />
+        <path d="M110 140 C 94 112, 92 76, 110 52 C 128 76, 126 112, 110 140" />
+        <path d="M110 140 C 80 146, 52 132, 46 108 C 72 102, 98 118, 110 140 C 122 116, 150 102, 176 110 C 168 134, 140 146, 110 140" />
+      </svg>
+      <div>
+        <p class="display small red">Say hello</p>
+        <ul class="links caps">
+          <li><a href="mailto:you@example.com">Email</a></li>
+          <li><a href="https://github.com/perisadigh">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/">LinkedIn</a></li>
+        </ul>
+      </div>
     </section>
   </main>
 
-  <footer class="site-footer mono">
+  <footer class="site-footer caps muted">
     <span>&copy; <span id="year"></span> Parinaz</span>
-    <a href="#top">[ back to top ]</a>
+    <a href="#top">Back to top</a>
   </footer>
 
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script>
+    var d = new Date(), pad = function (n) { return String(n).padStart(2, '0'); };
+    document.getElementById('year').textContent = d.getFullYear();
+    document.getElementById('day').textContent = pad(d.getDate());
+    document.getElementById('month').textContent = pad(d.getMonth() + 1);
+  </script>
 </body>
 </html>
