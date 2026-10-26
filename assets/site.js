@@ -7,6 +7,7 @@
   document.querySelectorAll('[data-year]').forEach(function (el) { el.textContent = now.getFullYear(); });
   document.querySelectorAll('[data-day]').forEach(function (el) { el.textContent = pad(now.getDate()); });
   document.querySelectorAll('[data-month]').forEach(function (el) { el.textContent = pad(now.getMonth() + 1); });
+  document.querySelectorAll('[data-month-name]').forEach(function (el) { el.textContent = now.toLocaleString('en', { month: 'short' }).toLowerCase(); });
 
   // Letter-spaced dividers: <p class="spaced" data-spaced="selected work">
   document.querySelectorAll('[data-spaced]').forEach(function (el) {
@@ -16,6 +17,24 @@
       return c === ' ' ? '<span class="gap"></span>' : '<span aria-hidden="true">' + c + '</span>';
     }).join('');
   });
+
+  // Scattered text: words spread across the full width, a few per line
+  function scatter() {
+    document.querySelectorAll('[data-scatter]').forEach(function (el) {
+      if (!el.dataset.text) el.dataset.text = el.textContent.trim();
+      var words = el.dataset.text.split(/\s+/), html = '';
+      var pattern = window.innerWidth < 760 ? [3, 4, 2, 5, 3, 4] : [5, 7, 3, 6, 8, 4, 6];
+      for (var i = 0, k = 0; i < words.length; k++) {
+        var n = pattern[k % pattern.length];
+        html += '<span class="line">' + words.slice(i, i + n).map(function (w) { return '<span>' + w + '</span>'; }).join('') + '</span>';
+        i += n;
+      }
+      el.setAttribute('aria-label', el.dataset.text);
+      el.innerHTML = html;
+    });
+  }
+  scatter();
+  window.addEventListener('resize', scatter);
 
   // Reveal on scroll
   var items = document.querySelectorAll('[data-reveal]');

@@ -8,13 +8,14 @@
   <meta name="color-scheme" content="light">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,300..800&family=Courier+Prime&family=Instrument+Sans:wght@400;500&family=Instrument+Serif:ital@0;1&family=Reenie+Beanie&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&family=Instrument+Sans:wght@400;500&family=Instrument+Serif:ital@0;1&family=Kristi&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-  <header class="site-header wrap caps">
-    <a class="logo" href="#top">peri</a>
-    <nav>
+  <header class="site-header wrap">
+    <a class="type upper" href="#top">Parinaz</a>
+    <nav class="type upper">
+      <a href="#about">About</a>
       <a href="#now">Now</a>
       <a href="#experience">Experience</a>
       <a href="#contact">Contact</a>
@@ -22,95 +23,66 @@
   </header>
 
   <main id="top">
+    <section class="hero wrap">
+      <figure class="hero-photo" data-reveal>
+        <img src="assets/img/figure.jpg" alt="">
+      </figure>
+      <h1 class="script hero-name" aria-label="peri">peri</h1>
+      <p class="type caption hero-caption"><span data-month-name>oct</span>.<span data-day>26</span><br>your city<br>sunny</p>
+    </section>
 
-    <svg class="thread-layer scroll" preserveAspectRatio="none" aria-hidden="true"><path d="" /></svg>
-
-    <section class="home-hero wrap">
-      <h1 class="spread display"><span>Hello,</span><span>I am</span><span>Peri</span></h1>
-
-      <div class="composition">
-        <figure class="fig duo tall" data-reveal>
-          <div class="frame"><img src="assets/img/figure.jpg" alt="" loading="lazy"></div>
-          <figcaption class="type"><span>fig. 01</span><span>me, probably</span></figcaption>
-        </figure>
-        <figure class="fig inset warm" data-reveal>
-          <div class="frame"><img src="assets/img/horizon.jpg" alt="" loading="lazy"></div>
-          <p class="hand" data-reveal>a place I love</p>
-        </figure>
-
-        <div class="aside" data-reveal>
-          <p class="caps red">Based in<br>your city</p>
-          <p class="caps red indent">Currently<br>your role or study</p>
-          <p class="stamp red" aria-label="Updated"><span data-day>26</span><br><span data-month>10</span></p>
-        </div>
-
-        <p class="intro red" data-reveal>Hi, I&rsquo;m Parinaz (Peri to most people). A few sentences in your own voice: what you do, what you care about, and what you're looking for next. Warm enough for a friend, clear enough for a hiring manager.</p>
-      </div>
+    <section id="about" class="about wrap">
+      <figure class="about-a" data-reveal><img src="assets/img/horizon.jpg" alt=""></figure>
+      <p class="type caption about-cap">based in<br>your city<br>your role</p>
+      <figure class="about-b" data-reveal><img src="assets/img/stems.jpg" alt=""></figure>
+      <p class="scatter type" data-scatter data-reveal>Hi, I&rsquo;m Parinaz, Peri to most people. A few sentences in your own voice about what you do, what you care about, and what you&rsquo;re looking for next. Warm enough for a friend, clear enough for a hiring manager.</p>
     </section>
 
     <section id="now" class="now wrap">
-      <p class="spaced" data-spaced="currently"></p>
-      <dl class="now-grid">
-        <div data-reveal><dt class="caps red">Working on</dt><dd class="type">A project or job you're focused on</dd></div>
-        <div data-reveal><dt class="caps red">Reading</dt><dd class="type">A book title, by an author</dd></div>
-        <div data-reveal><dt class="caps red">Listening to</dt><dd class="type">An album or song on repeat</dd></div>
-        <div data-reveal><dt class="caps red">Learning</dt><dd class="type">A skill you're picking up</dd></div>
-      </dl>
-      <p class="hand now-note" data-reveal>updated whenever life changes</p>
+      <h2 class="heading">Currently</h2>
+      <ol class="now-list type upper">
+        <li data-reveal><span class="n">1</span> Working on &mdash;<br>a project or job<br>you&rsquo;re focused on</li>
+        <li data-reveal><span class="n">2</span> Reading &mdash;<br>a book title<br>by an author</li>
+        <li data-reveal><span class="n">3</span> Listening &mdash;<br>an album<br>on repeat</li>
+        <li data-reveal><span class="n">4</span> Learning &mdash;<br>a skill you&rsquo;re<br>picking up</li>
+      </ol>
+      <div class="now-photos" aria-hidden="true">
+        <figure><img src="assets/img/light.jpg" alt=""></figure>
+        <figure><img src="assets/img/window.jpg" alt=""></figure>
+        <figure><img src="assets/img/shadow.jpg" alt=""></figure>
+      </div>
     </section>
 
     <section id="experience" class="cv wrap">
-      <p class="spaced" data-spaced="experience"></p>
-      <ol class="cv-rows">
-        <li data-reveal><span class="caps muted">2025 &mdash; now</span><span class="caps title">Role title</span><span class="type">Company or school</span><span class="muted">One line on what you do there.</span></li>
-        <li data-reveal><span class="caps muted">2023 &mdash; 2025</span><span class="caps title">Role title</span><span class="type">Company</span><span class="muted">One line on what you did and achieved.</span></li>
-        <li data-reveal><span class="caps muted">2022</span><span class="caps title">Role or internship</span><span class="type">Company</span><span class="muted">One line on what you learned.</span></li>
-        <li data-reveal><span class="caps muted">2018 &mdash; 2022</span><span class="caps title">Degree</span><span class="type">University</span><span class="muted">Subject, and anything worth noting.</span></li>
-      </ol>
-      <p class="cv-links caps"><a href="#">Download CV &darr;</a><a href="https://www.linkedin.com/">LinkedIn &rarr;</a></p>
+      <h2 class="heading">Experience</h2>
+      <div class="cv-grid type upper">
+        <div data-reveal><span class="yr">2025 &mdash; now</span>Role title,<br>company or school</div>
+        <div data-reveal><span class="yr">2023 &mdash; 2025</span>Role title,<br>company</div>
+        <div data-reveal><span class="yr">2022</span>Role or internship,<br>company</div>
+        <div data-reveal><span class="yr">2018 &mdash; 2022</span>Degree,<br>university</div>
+      </div>
+      <p class="links type upper"><a href="#">Download CV</a><a href="https://www.linkedin.com/">LinkedIn</a></p>
     </section>
 
     <section class="loves wrap">
-      <p class="caps red">Things I love</p>
+      <h2 class="playful" aria-label="Things I love">
+        <svg class="blob" viewBox="0 0 200 120" preserveAspectRatio="none" aria-hidden="true"><path d="M6 58 C 0 18, 60 2, 108 8 C 160 14, 200 30, 196 70 C 192 112, 120 122, 64 114 C 20 108, 10 90, 6 58 Z" /></svg>
+        <span aria-hidden="true"><b class="f1">t</b><b class="f2">h</b><b class="f3">i</b><b class="f4">n</b><b class="f2">g</b><b class="f1">s</b> <b class="f3">i</b> <b class="f4">l</b><b class="f1">o</b><b class="f2">v</b><b class="f3">e</b></span>
+      </h2>
       <p class="loves-list" data-reveal><span>Piano <i>/</i></span> <span>running <i>/</i></span> <span>strength training <i>/</i></span> <span>yoga <i>/</i></span> <span>crafts <i>/</i></span> <span>photography <i>/</i></span> <span>building random things with AI <i>/</i></span> <span>creating AI portraits of my friends <i>/</i></span> <span>practicing mindfulness <i>/</i></span> <span>quality time with loved ones <i>/</i></span> <span>learning new things <i>/</i></span> <span>spending time outdoors <i>/</i></span> <span>hiking <i>/</i></span> <span>floating in calm bodies of water <i>/</i></span> <span>architecture &amp; interior design <i>/</i></span> <span>fashion <i>/</i></span> <span>rock climbing <i>/</i></span> <span>pranks <i>/</i></span> <span>crossword puzzles <i>/</i></span> <span>board games (especially trivia ones)</span></p>
-      <div class="strip three">
-        <figure class="fig warm" data-reveal>
-          <div class="frame"><img src="assets/img/light.jpg" alt="" loading="lazy"></div>
-          <figcaption class="type"><span>fig. 02</span><span></span></figcaption>
-        </figure>
-        <figure class="fig warm" data-reveal>
-          <div class="frame"><img src="assets/img/window.jpg" alt="" loading="lazy"></div>
-          <figcaption class="type"><span>fig. 03</span><span></span></figcaption>
-        </figure>
-        <figure class="fig warm" data-reveal>
-          <div class="frame"><img src="assets/img/stems.jpg" alt="" loading="lazy"></div>
-          <figcaption class="type"><span>fig. 04</span><span></span></figcaption>
-        </figure>
-      </div>
     </section>
   </main>
 
   <footer id="contact" class="site-footer wrap">
-    <div class="contact">
-      <svg class="flower" viewBox="0 0 220 260" aria-hidden="true">
-        <path d="M110 250 C 112 210, 104 180, 110 140" />
-        <path d="M108 200 C 90 190, 70 196, 60 214 C 82 220, 100 212, 108 200" />
-        <path d="M110 140 C 86 132, 70 104, 84 84 C 98 96, 108 116, 110 140 C 112 114, 122 92, 140 82 C 152 104, 136 130, 110 140" />
-        <path d="M110 140 C 94 112, 92 76, 110 52 C 128 76, 126 112, 110 140" />
-        <path d="M110 140 C 80 146, 52 132, 46 108 C 72 102, 98 118, 110 140 C 122 116, 150 102, 176 110 C 168 134, 140 146, 110 140" />
-      </svg>
-      <div>
-        <p class="display red">Say hello</p>
-        <ul class="links caps">
-          <li><a href="mailto:you@example.com">Email</a></li>
-          <li><a href="https://github.com/perisadigh">GitHub</a></li>
-          <li><a href="https://www.linkedin.com/">LinkedIn</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="colophon caps muted">
+    <p class="script say">say hello</p>
+    <p class="links type upper">
+      <a href="mailto:you@example.com">Email</a>
+      <a href="https://github.com/perisadigh">GitHub</a>
+      <a href="https://www.linkedin.com/">LinkedIn</a>
+    </p>
+    <div class="colophon caption type">
       <span>&copy; <span data-year>2026</span> Parinaz</span>
-      <a href="#top">Back to top</a>
+      <a href="#top">back to top</a>
     </div>
   </footer>
 

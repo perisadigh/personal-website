@@ -6,7 +6,7 @@ Parinaz's personal website: plain HTML, CSS and a little JavaScript, no build st
 
 One page, `index.html`: an intro with a photo, a "currently" list, experience, things I love, and contact. It's meant to be both a home on the internet and something to link in a job application.
 
-Shared styles live in `assets/style.css` (colors and fonts are the variables at the top). The scroll-drawn red thread and fade-ins live in `assets/site.js`.
+Shared styles live in `assets/style.css` (colors and fonts are the variables at the top). Fade-ins and the scattered intro text live in `assets/site.js`. To change the intro, just edit the sentence in `index.html`; it is spread across lines automatically.
 
 ## Images
 
