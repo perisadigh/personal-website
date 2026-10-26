@@ -2,22 +2,15 @@
 
 Parinaz's personal website: plain HTML, CSS and a little JavaScript, no build step. Fonts load from Google Fonts.
 
-## Concept: field notes
+## What's on the page
 
-The site works like a personal archive. Two inks: oxblood red for anything "printed" (headings, numbers, threads) and pen-blue for handwritten notes. Every image is a "fig." with a typewriter caption.
+One page, `index.html`: an intro with a photo, a "currently" list, experience, things I love, and contact. It's meant to be both a home on the internet and something to link in a job application.
 
-## Pages
-
-- `index.html`: home. Intro spread, selected work, a strip from the archive.
-- `work.html`: one poster-like plate per project.
-- `archive.html`: images, words and sounds pinned and threaded to a central photo, with filters.
-- `about.html`: annotated portrait and a few typewriter columns of details.
-
-Shared styles live in `assets/style.css` (colors and fonts are the variables at the top). Behaviour (scroll-drawn threads, reveals, archive threads and filters) lives in `assets/site.js`.
+Shared styles live in `assets/style.css` (colors and fonts are the variables at the top). The scroll-drawn red thread and fade-ins live in `assets/site.js`.
 
 ## Images
 
-The images in `assets/img/` are generated placeholders. Swap in your own photos with the same file names, or change the `src` paths. Photos are shown in black and white, or in a red duotone (`duo`), and `warm` ones turn red on hover.
+The images in `assets/img/` are generated placeholders. Swap in your own photos with the same file names, or change the `src` paths. Any photo is shown in black and white or in a red duotone (`duo`), and `warm` ones turn red on hover, so whatever you pick will look consistent.
 
 ## Preview and publish
 

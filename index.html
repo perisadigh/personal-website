@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Parinaz</title>
-  <meta name="description" content="Field notes from Parinaz: work, an archive of things I love, and a little about me.">
+  <meta name="description" content="Parinaz: a little about me, what I am up to, and how to reach me.">
   <meta name="color-scheme" content="light">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,91 +13,78 @@
 </head>
 <body>
   <header class="site-header wrap caps">
-    <a href="index.html">Parinaz <span class="muted">&mdash; field notes</span></a>
+    <a href="#top">Parinaz</a>
     <nav>
-      <a href="work.html">Work</a>
-      <a href="archive.html">Archive</a>
-      <a href="about.html">About</a>
+      <a href="#now">Now</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
     </nav>
   </header>
 
   <main id="top">
 
-    <svg class="thread-layer scroll" preserveAspectRatio="none" aria-hidden="true">
-      <path d="" />
-    </svg>
+    <svg class="thread-layer scroll" preserveAspectRatio="none" aria-hidden="true"><path d="" /></svg>
 
     <section class="home-hero wrap">
       <h1 class="spread display"><span>Hello,</span><span>I am</span><span>Parinaz</span></h1>
 
       <div class="composition">
         <figure class="fig duo tall" data-reveal>
-          <div class="frame"><img src="assets/img/light.jpg" alt="" loading="lazy"></div>
-          <figcaption class="type"><span>fig. 01</span><span>light, somewhere</span></figcaption>
+          <div class="frame"><img src="assets/img/figure.jpg" alt="" loading="lazy"></div>
+          <figcaption class="type"><span>fig. 01</span><span>me, probably</span></figcaption>
         </figure>
         <figure class="fig inset warm" data-reveal>
-          <div class="frame"><img src="assets/img/bloom.jpg" alt="" loading="lazy"></div>
-          <p class="hand" data-reveal>start here &darr;</p>
+          <div class="frame"><img src="assets/img/horizon.jpg" alt="" loading="lazy"></div>
+          <p class="hand" data-reveal>a place I love</p>
         </figure>
 
         <div class="aside" data-reveal>
-          <p class="caps red">A placeholder line about<br>what you notice</p>
-          <p class="caps red indent">and another about<br>what you make</p>
+          <p class="caps red">Based in<br>your city</p>
+          <p class="caps red indent">Currently<br>your role or study</p>
           <p class="stamp red" aria-label="Updated"><span data-day>26</span><br><span data-month>10</span></p>
         </div>
 
-        <p class="intro red" data-reveal>A short introduction in your own words. Two or three sentences about who you are and what you care about; it sets the tone for everything below.</p>
+        <p class="intro red" data-reveal>A few sentences in your own voice: what you do, what you care about, and what you're looking for next. Warm enough for a friend, clear enough for a hiring manager.</p>
       </div>
     </section>
 
-    <section class="home-work wrap">
-      <p class="spaced" data-spaced="selected work"></p>
-      <ol class="rows">
-        <li data-reveal><a href="work.html#plate-1">
-          <span class="caps muted">01</span>
-          <figure class="fig"><div class="frame"><img src="assets/img/fabric.jpg" alt="" loading="lazy"></div></figure>
-          <span class="caps title">Project name</span>
-          <span class="caps muted">Category</span>
-          <span class="caps muted">2026</span>
-        </a></li>
-        <li data-reveal><a href="work.html#plate-2">
-          <span class="caps muted">02</span>
-          <figure class="fig"><div class="frame"><img src="assets/img/window.jpg" alt="" loading="lazy"></div></figure>
-          <span class="caps title">Project name</span>
-          <span class="caps muted">Category</span>
-          <span class="caps muted">2025</span>
-        </a></li>
-        <li data-reveal><a href="work.html#plate-3">
-          <span class="caps muted">03</span>
-          <figure class="fig"><div class="frame"><img src="assets/img/stems.jpg" alt="" loading="lazy"></div></figure>
-          <span class="caps title">Project name</span>
-          <span class="caps muted">Category</span>
-          <span class="caps muted">2025</span>
-        </a></li>
-      </ol>
+    <section id="now" class="now wrap">
+      <p class="spaced" data-spaced="currently"></p>
+      <dl class="now-grid">
+        <div data-reveal><dt class="caps red">Working on</dt><dd class="type">A project or job you're focused on</dd></div>
+        <div data-reveal><dt class="caps red">Reading</dt><dd class="type">A book title, by an author</dd></div>
+        <div data-reveal><dt class="caps red">Listening to</dt><dd class="type">An album or song on repeat</dd></div>
+        <div data-reveal><dt class="caps red">Learning</dt><dd class="type">A skill you're picking up</dd></div>
+      </dl>
+      <p class="hand now-note" data-reveal>updated whenever life changes</p>
     </section>
 
-    <section class="home-archive wrap">
-      <header>
-        <p class="caps red">From the archive</p>
-        <a class="caps red" href="archive.html">See everything &rarr;</a>
-      </header>
-      <div class="strip">
+    <section id="experience" class="cv wrap">
+      <p class="spaced" data-spaced="experience"></p>
+      <ol class="cv-rows">
+        <li data-reveal><span class="caps muted">2025 &mdash; now</span><span class="caps title">Role title</span><span class="type">Company or school</span><span class="muted">One line on what you do there.</span></li>
+        <li data-reveal><span class="caps muted">2023 &mdash; 2025</span><span class="caps title">Role title</span><span class="type">Company</span><span class="muted">One line on what you did and achieved.</span></li>
+        <li data-reveal><span class="caps muted">2022</span><span class="caps title">Role or internship</span><span class="type">Company</span><span class="muted">One line on what you learned.</span></li>
+        <li data-reveal><span class="caps muted">2018 &mdash; 2022</span><span class="caps title">Degree</span><span class="type">University</span><span class="muted">Subject, and anything worth noting.</span></li>
+      </ol>
+      <p class="cv-links caps"><a href="#">Download CV &darr;</a><a href="https://www.linkedin.com/">LinkedIn &rarr;</a></p>
+    </section>
+
+    <section class="loves wrap">
+      <p class="caps red">Things I love</p>
+      <p class="loves-list" data-reveal>Long walks <i>/</i> a good bookshop <i>/</i> film photography <i>/</i> the sea in winter <i>/</i> cooking for friends <i>/</i> handwritten letters</p>
+      <div class="strip three">
         <figure class="fig warm" data-reveal>
-          <div class="frame"><img src="assets/img/horizon.jpg" alt="" loading="lazy"></div>
-          <figcaption class="type"><span>fig. 14</span><span>the sea, again</span></figcaption>
-        </figure>
-        <figure class="fig warm" data-reveal>
-          <div class="frame"><img src="assets/img/shadow.jpg" alt="" loading="lazy"></div>
-          <figcaption class="type"><span>fig. 15</span><span>4pm</span></figcaption>
-        </figure>
-        <figure class="fig warm" data-reveal>
-          <div class="frame"><img src="assets/img/figure.jpg" alt="" loading="lazy"></div>
-          <figcaption class="type"><span>fig. 16</span><span>a friend</span></figcaption>
+          <div class="frame"><img src="assets/img/light.jpg" alt="" loading="lazy"></div>
+          <figcaption class="type"><span>fig. 02</span><span></span></figcaption>
         </figure>
         <figure class="fig warm" data-reveal>
           <div class="frame"><img src="assets/img/window.jpg" alt="" loading="lazy"></div>
-          <figcaption class="type"><span>fig. 17</span><span>my desk</span></figcaption>
+          <figcaption class="type"><span>fig. 03</span><span></span></figcaption>
+        </figure>
+        <figure class="fig warm" data-reveal>
+          <div class="frame"><img src="assets/img/stems.jpg" alt="" loading="lazy"></div>
+          <figcaption class="type"><span>fig. 04</span><span></span></figcaption>
         </figure>
       </div>
     </section>

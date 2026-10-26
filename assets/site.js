@@ -79,50 +79,8 @@
     onScroll();
   }
 
-  // Archive: connect each fragment to the core with a thread
-  var board = document.querySelector('.board');
-  function connect() {
-    if (!board) return;
-    var svg = board.querySelector('.thread-layer');
-    if (!svg || getComputedStyle(svg).display === 'none') return;
-    var b = board.getBoundingClientRect();
-    var core = board.querySelector('.core .frame').getBoundingClientRect();
-    var cx = core.left + core.width / 2 - b.left, cy = core.top + core.height * 0.35 - b.top;
-    svg.setAttribute('viewBox', '0 0 ' + b.width + ' ' + b.height);
-    svg.innerHTML = '';
-    board.querySelectorAll('.frag').forEach(function (f, i) {
-      var r = f.getBoundingClientRect();
-      var x = r.left + r.width / 2 - b.left, y = (r.top < core.top ? r.bottom : r.top) - b.top;
-      var mx = (x + cx) / 2 + (i % 2 ? 40 : -40), my = (y + cy) / 2 + (i % 3 ? -30 : 30);
-      var p = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-      p.setAttribute('d', 'M' + x + ' ' + y + ' Q ' + mx + ' ' + my + ' ' + cx + ' ' + cy);
-      p.dataset.frag = i;
-      if (f.classList.contains('dim')) p.style.opacity = 0.1;
-      svg.appendChild(p);
-      var len = p.getTotalLength();
-      p.style.strokeDasharray = len;
-      p.style.strokeDashoffset = reduce ? 0 : len;
-      p.style.transition = 'stroke-dashoffset 1.6s cubic-bezier(.2,.7,.2,1) ' + (0.15 + i * 0.08) + 's, opacity .4s';
-      requestAnimationFrame(function () { requestAnimationFrame(function () { p.style.strokeDashoffset = 0; }); });
-    });
-  }
-
-  // Archive filters
-  document.querySelectorAll('.filters button').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      var kind = btn.dataset.filter;
-      document.querySelectorAll('.filters button').forEach(function (b) { b.setAttribute('aria-pressed', b === btn); });
-      board.querySelectorAll('.frag').forEach(function (f, i) {
-        var on = kind === 'all' || f.dataset.kind === kind;
-        f.classList.toggle('dim', !on);
-        var p = board.querySelector('path[data-frag="' + i + '"]');
-        if (p) p.style.opacity = on ? 1 : 0.1;
-      });
-    });
-  });
-
   window.addEventListener('scroll', onScroll, { passive: true });
-  window.addEventListener('resize', function () { buildThreads(); connect(); });
-  window.addEventListener('load', function () { buildThreads(); connect(); });
-  if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { buildThreads(); connect(); });
+  window.addEventListener('resize', function () { buildThreads(); });
+  window.addEventListener('load', function () { buildThreads(); });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { buildThreads(); });
 })();
