@@ -95,6 +95,7 @@ p { margin: 0; }
   align-items: baseline;
   padding-top: 1.5rem;
 }
+.logo { font: italic 400 1.6rem/1 var(--serif); letter-spacing: 0; text-transform: none; color: var(--red); }
 .site-header nav { display: flex; gap: 1.5rem; color: var(--red); }
 .site-header nav a { position: relative; }
 .site-header nav a[aria-current="page"]::after,
