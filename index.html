@@ -3,87 +3,66 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>peri &mdash; Parinaz</title>
-  <meta name="description" content="peri: the personal site of Parinaz. A little about me, what I am up to, and how to reach me.">
-  <meta name="color-scheme" content="light">
+  <title>Peri</title>
+  <meta name="description" content="Peri (Parinaz): part analyst, part creative, fully obsessed with whatever I'm into this month.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&family=Instrument+Sans:wght@400;500&family=Instrument+Serif:ital@0;1&family=Kristi&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300;1,6..72,400&family=Inter+Tight:wght@300;400&family=IBM+Plex+Mono&family=Reenie+Beanie&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/style.css">
 </head>
-<body>
-  <header class="site-header wrap">
-    <a class="type upper" href="#top">Parinaz</a>
-    <nav class="type upper">
-      <a href="#about">About</a>
-      <a href="#now">Now</a>
-      <a href="#experience">Experience</a>
-      <a href="#contact">Contact</a>
-    </nav>
+<body id="top">
+  <header class="top g m">
+    <a class="logo" href="index.html">Peri</a>
+    <nav aria-label="Main"><a href="about.html">About</a><a href="work.html">Work &amp; Play</a><a href="ai.html">AI Studio</a><a href="archive.html">Archive</a><a href="favourite-things.html">Favourite things</a></nav>
+    <span class="r" data-clock>Local time</span>
   </header>
 
-  <main id="top">
-    <section class="hero wrap">
-      <figure class="hero-photo" data-reveal>
-        <img src="assets/img/figure.jpg" alt="">
-      </figure>
-      <h1 class="script hero-name" aria-label="peri">peri</h1>
-      <p class="type caption hero-caption"><span data-month-name>oct</span>.<span data-day>26</span><br>your city<br>sunny</p>
-    </section>
-
-    <section id="about" class="about wrap">
-      <figure class="about-a" data-reveal><img src="assets/img/horizon.jpg" alt=""></figure>
-      <p class="type caption about-cap">based in<br>your city<br>your role</p>
-      <figure class="about-b" data-reveal><img src="assets/img/stems.jpg" alt=""></figure>
-      <p class="scatter type" data-scatter data-reveal>Hi, I&rsquo;m Parinaz, Peri to most people. A few sentences in your own voice about what you do, what you care about, and what you&rsquo;re looking for next. Warm enough for a friend, clear enough for a hiring manager.</p>
-    </section>
-
-    <section id="now" class="now wrap">
-      <h2 class="heading">Currently</h2>
-      <ol class="now-list type upper">
-        <li data-reveal><span class="n">1</span> Working on &mdash;<br>a project or job<br>you&rsquo;re focused on</li>
-        <li data-reveal><span class="n">2</span> Reading &mdash;<br>a book title<br>by an author</li>
-        <li data-reveal><span class="n">3</span> Listening &mdash;<br>an album<br>on repeat</li>
-        <li data-reveal><span class="n">4</span> Learning &mdash;<br>a skill you&rsquo;re<br>picking up</li>
+  <main>
+    <section class="intro g">
+      <p class="lab m">Hello &mdash;</p>
+      <h1 class="stmt">I&rsquo;m Peri<sup><a href="#n1">1</a></sup>. Part analyst<sup><a href="#n2">2</a></sup>, part creative<sup><a href="#n3">3</a></sup>, and <em>fully obsessed</em> with whatever I&rsquo;m into this month<sup><a href="#n4">4</a></sup>.</h1>
+      <ol class="notes">
+        <li id="n1"><b>1</b><span>Short for Parinaz.</span></li>
+        <li id="n2"><b>2</b><span>Biomedical science, then recruitment, marketing and product. I like knowing why people do what they do. <a class="u" href="about.html">The long version &rarr;</a></span></li>
+        <li id="n3"><b>3</b><span>Piano, photography, crafts, AI portraits of my friends and music made at 1am. <a class="u" href="ai.html">See the AI Studio &rarr;</a></span></li>
+        <li id="n4"><b>4</b><span>This month: crossword puzzles, against the clock.<figure><img src="assets/img/placeholder.svg" alt="Peri on the rocks below a mountain at golden hour"><span class="stamp">'26 10 14</span></figure></span></li>
       </ol>
-      <div class="now-photos" aria-hidden="true">
-        <figure><img src="assets/img/light.jpg" alt=""></figure>
-        <figure><img src="assets/img/window.jpg" alt=""></figure>
-        <figure><img src="assets/img/shadow.jpg" alt=""></figure>
+    </section>
+
+    <section class="facts g m">
+      <div class="row">
+        <div><p>Currently</p><p><span class="ph">What you&rsquo;re working on</span></p></div>
+        <div><p>Listening to</p><p><span class="ph">Album, artist</span></p></div>
+        <div><p>Based in</p><p><span class="ph">Your city</span></p></div>
+        <div><p>Open to</p><p class="red"><span class="ph">The roles you want</span></p></div>
       </div>
     </section>
 
-    <section id="experience" class="cv wrap">
-      <h2 class="heading">Experience</h2>
-      <div class="cv-grid type upper">
-        <div data-reveal><span class="yr">2025 &mdash; now</span>Role title,<br>company or school</div>
-        <div data-reveal><span class="yr">2023 &mdash; 2025</span>Role title,<br>company</div>
-        <div data-reveal><span class="yr">2022</span>Role or internship,<br>company</div>
-        <div data-reveal><span class="yr">2018 &mdash; 2022</span>Degree,<br>university</div>
-      </div>
-      <p class="links type upper"><a href="#">Download CV</a><a href="https://www.linkedin.com/">LinkedIn</a></p>
+    <section class="g contact-sheet">
+      <p class="lab m">Lately</p>
+      <div class="body cs-row"><figure class="cs" data-reveal><img src="assets/img/placeholder.svg" alt="" loading="lazy"><span class="stamp">'26 09 21</span></figure><figure class="cs" data-reveal><img src="assets/img/placeholder.svg" alt="" loading="lazy"><span class="stamp">'26 10 12</span></figure><figure class="cs" data-reveal><img src="assets/img/placeholder.svg" alt="" loading="lazy"><span class="stamp">'26 08 28</span></figure><figure class="cs" data-reveal><img src="assets/img/placeholder.svg" alt="" loading="lazy"><span class="stamp">'26 10 14</span></figure><figure class="cs" data-reveal><img src="assets/img/placeholder.svg" alt="" loading="lazy"><span class="stamp">'26 10 09</span></figure></div>
     </section>
 
-    <section class="loves wrap">
-      <h2 class="playful" aria-label="Things I love">
-        <svg class="blob" viewBox="0 0 200 120" preserveAspectRatio="none" aria-hidden="true"><path d="M6 58 C 0 18, 60 2, 108 8 C 160 14, 200 30, 196 70 C 192 112, 120 122, 64 114 C 20 108, 10 90, 6 58 Z" /></svg>
-        <span aria-hidden="true"><b class="f1">t</b><b class="f2">h</b><b class="f3">i</b><b class="f4">n</b><b class="f2">g</b><b class="f1">s</b> <b class="f3">i</b> <b class="f4">l</b><b class="f1">o</b><b class="f2">v</b><b class="f3">e</b></span>
-      </h2>
-      <p class="loves-list" data-reveal><span>Piano <i>/</i></span> <span>running <i>/</i></span> <span>strength training <i>/</i></span> <span>yoga <i>/</i></span> <span>crafts <i>/</i></span> <span>photography <i>/</i></span> <span>building random things with AI <i>/</i></span> <span>creating AI portraits of my friends <i>/</i></span> <span>practicing mindfulness <i>/</i></span> <span>quality time with loved ones <i>/</i></span> <span>learning new things <i>/</i></span> <span>spending time outdoors <i>/</i></span> <span>hiking <i>/</i></span> <span>floating in calm bodies of water <i>/</i></span> <span>architecture &amp; interior design <i>/</i></span> <span>fashion <i>/</i></span> <span>rock climbing <i>/</i></span> <span>pranks <i>/</i></span> <span>crossword puzzles <i>/</i></span> <span>board games (especially trivia ones)</span></p>
+    <section class="index g">
+      <p class="lab m">Index</p>
+      <ol class="body">
+        <li><a href="about.html"><span class="m mute">01</span><span class="t">About</span><span class="d">The longer version</span><span class="ar">&rarr;</span></a></li>
+        <li><a href="work.html"><span class="m mute">02</span><span class="t">Work &amp; Play</span><span class="d">Things I&rsquo;ve made, serious and silly</span><span class="ar">&rarr;</span></a></li>
+        <li><a href="ai.html"><span class="m mute">03</span><span class="t">AI Studio</span><span class="d">Funny AI portraits and AI music</span><span class="ar">&rarr;</span></a></li>
+        <li><a href="archive.html"><span class="m mute">04</span><span class="t">Archive</span><span class="d">Music, people, films, rabbit holes</span><span class="ar">&rarr;</span></a></li>
+        <li><a href="favourite-things.html"><span class="m mute">05</span><span class="t">Favourite things</span><span class="d">A notebook of things I love</span><span class="ar">&rarr;</span></a></li>
+      </ol>
     </section>
   </main>
 
-  <footer id="contact" class="site-footer wrap">
-    <p class="script say">say hello</p>
-    <p class="links type upper">
-      <a href="mailto:you@example.com">Email</a>
-      <a href="https://github.com/perisadigh">GitHub</a>
-      <a href="https://www.linkedin.com/">LinkedIn</a>
-    </p>
-    <div class="colophon caption type">
-      <span>&copy; <span data-year>2026</span> Parinaz</span>
-      <a href="#top">back to top</a>
+  <footer id="contact" class="foot g">
+    <p class="big">Say <em>hello,</em><br>I&rsquo;d like that.</p>
+    <div class="links m">
+      <a href="mailto:you@example.com">Email &nearr;</a>
+      <a href="https://www.linkedin.com/">LinkedIn &nearr;</a>
+      <a href="https://github.com/perisadigh">GitHub &nearr;</a>
     </div>
+    <div class="base m"><span>&copy; <span data-year>2026</span> Parinaz</span><a href="#top">Back to top &uarr;</a></div>
   </footer>
 
   <script src="assets/site.js"></script>
