@@ -339,3 +339,21 @@ em { font-style: italic; }
   .img-reveal img { transform: none !important; }
   .scrub .w { opacity: 1 !important; }
 }
+
+/* Ranking */
+.rank-title { font-size: clamp(56px, 9vw, 150px) !important; }
+.rank { list-style: none; margin: 0; padding: 0; }
+.rank li {
+  display: grid; grid-template-columns: clamp(56px, 9vw, 140px) 1fr; align-items: baseline;
+  padding: clamp(14px, 1.8vw, 24px) 0; border-bottom: 1px solid var(--line);
+  transition: padding 0.5s var(--ease), color 0.3s, opacity 1s var(--ease), transform 1s var(--ease);
+}
+.rank li:first-child { border-top: 1px solid var(--line); }
+.rank .n { font: 500 13px/1 var(--sans); letter-spacing: 0.08em; color: var(--soft); font-variant-numeric: tabular-nums; }
+.rank .a { font: 400 clamp(32px, 4.6vw, 72px)/1 var(--serif); letter-spacing: -0.02em; }
+.rank .a small { font-size: 0.42em; color: var(--soft); letter-spacing: 0; font-style: italic; }
+.rank li:hover { padding-left: 18px; }
+.rank li:hover .a { color: var(--accent); }
+.rank li:nth-child(1) .a { font-size: clamp(56px, 9vw, 150px); }
+.rank li:nth-child(1) .a, .rank li:nth-child(1) .n { color: var(--accent); }
+.rank li:last-child .a { opacity: 0.55; }
