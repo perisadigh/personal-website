@@ -1,70 +1,88 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Peri</title>
-  <meta name="description" content="Peri (Parinaz): part analyst, part creative, fully obsessed with whatever I'm into this month.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300;1,6..72,400&family=Inter+Tight:wght@300;400&family=IBM+Plex+Mono&family=Reenie+Beanie&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Peri</title>
+<meta name="description" content="Peri's little corner of the internet: things she's made, things she's worked on, and things she loves.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
 </head>
-<body id="top">
-  <header class="top g m">
-    <a class="logo" href="index.html">Peri</a>
-    <nav aria-label="Main"><a href="about.html">About</a><a href="work.html">Work &amp; Play</a><a href="ai.html">AI Studio</a><a href="archive.html">Archive</a><a href="favourite-things.html">Favourite things</a></nav>
-    <span class="r" data-clock>Local time</span>
-  </header>
+<body>
+<header class="site-head">
+  <div class="wrap">
+    <a class="logo" href="index.html">Peri<span>.</span></a>
+    <nav class="nav" aria-label="Main"><a href="about.html">About</a><a href="work.html">Work &amp; Play</a><a href="things-i-love.html">Things I love</a></nav>
+    <button class="menu-btn" type="button" data-menu>Menu</button>
+  </div>
+</header>
+<div class="overlay" aria-hidden="true">
+  <button class="close" type="button" data-menu>Close</button>
+  <a href="index.html"><span>Home</span></a><a href="about.html"><span>About</span></a><a href="work.html"><span>Work &amp; Play</span></a><a href="things-i-love.html"><span>Things I love</span></a>
+</div>
 
-  <main>
-    <section class="intro g">
-      <p class="lab m">Hello &mdash;</p>
-      <h1 class="stmt">I&rsquo;m Peri<sup><a href="#n1">1</a></sup>. Part analyst<sup><a href="#n2">2</a></sup>, part creative<sup><a href="#n3">3</a></sup>, and <em>fully obsessed</em> with whatever I&rsquo;m into this month<sup><a href="#n4">4</a></sup>.</h1>
-      <ol class="notes">
-        <li id="n1"><b>1</b><span>Short for Parinaz.</span></li>
-        <li id="n2"><b>2</b><span>Biomedical science, then recruitment, marketing and product. I like knowing why people do what they do. <a class="u" href="about.html">The long version &rarr;</a></span></li>
-        <li id="n3"><b>3</b><span>Piano, photography, crafts, AI portraits of my friends and music made at 1am. <a class="u" href="ai.html">See the AI Studio &rarr;</a></span></li>
-        <li id="n4"><b>4</b><span>This month: crossword puzzles, against the clock.<figure><img src="assets/img/placeholder.svg" alt="Peri on the rocks below a mountain at golden hour"><span class="stamp">'26 10 14</span></figure></span></li>
-      </ol>
-    </section>
-
-    <section class="facts g m">
-      <div class="row">
-        <div><p>Currently</p><p><span class="ph">What you&rsquo;re working on</span></p></div>
-        <div><p>Listening to</p><p><span class="ph">Album, artist</span></p></div>
-        <div><p>Based in</p><p><span class="ph">Your city</span></p></div>
-        <div><p>Open to</p><p class="red"><span class="ph">The roles you want</span></p></div>
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <h1><span class="line"><span>Hi, I'm</span></span><span class="line"><span><em>Peri.</em></span></span></h1>
+        <p class="lede" data-reveal>I like making things. Some are useful. Others exist purely because I thought they'd be <span class="peek-word" data-img="assets/img/ai-pool.jpg"><em>funny</em></span>.</p>
+        <p class="sub" data-reveal="2">Here's a little bit of what I've made, what I've been up to, and things I love.</p>
       </div>
-    </section>
-
-    <section class="g contact-sheet">
-      <p class="lab m">Lately</p>
-      <div class="body cs-row"><figure class="cs" data-reveal><img src="assets/img/placeholder.svg" alt="" loading="lazy"><span class="stamp">'26 09 21</span></figure><figure class="cs" data-reveal><img src="assets/img/placeholder.svg" alt="" loading="lazy"><span class="stamp">'26 10 12</span></figure><figure class="cs" data-reveal><img src="assets/img/placeholder.svg" alt="" loading="lazy"><span class="stamp">'26 08 28</span></figure><figure class="cs" data-reveal><img src="assets/img/placeholder.svg" alt="" loading="lazy"><span class="stamp">'26 10 14</span></figure><figure class="cs" data-reveal><img src="assets/img/placeholder.svg" alt="" loading="lazy"><span class="stamp">'26 10 09</span></figure></div>
-    </section>
-
-    <section class="index g">
-      <p class="lab m">Index</p>
-      <ol class="body">
-        <li><a href="about.html"><span class="m mute">01</span><span class="t">About</span><span class="d">The longer version</span><span class="ar">&rarr;</span></a></li>
-        <li><a href="work.html"><span class="m mute">02</span><span class="t">Work &amp; Play</span><span class="d">Things I&rsquo;ve made, serious and silly</span><span class="ar">&rarr;</span></a></li>
-        <li><a href="ai.html"><span class="m mute">03</span><span class="t">AI Studio</span><span class="d">Funny AI portraits and AI music</span><span class="ar">&rarr;</span></a></li>
-        <li><a href="archive.html"><span class="m mute">04</span><span class="t">Archive</span><span class="d">Music, people, films, rabbit holes</span><span class="ar">&rarr;</span></a></li>
-        <li><a href="favourite-things.html"><span class="m mute">05</span><span class="t">Favourite things</span><span class="d">A notebook of things I love</span><span class="ar">&rarr;</span></a></li>
-      </ol>
-    </section>
-  </main>
-
-  <footer id="contact" class="foot g">
-    <p class="big">Say <em>hello,</em><br>I&rsquo;d like that.</p>
-    <div class="links m">
-      <a href="mailto:you@example.com">Email &nearr;</a>
-      <a href="https://www.linkedin.com/">LinkedIn &nearr;</a>
-      <a href="https://github.com/perisadigh">GitHub &nearr;</a>
+      <div class="hero-photo img-reveal"><img src="assets/img/peri-rocks.jpg" alt="Peri on the rocks below the mountains at golden hour"></div>
     </div>
-    <div class="base m"><span>&copy; <span data-year>2026</span> Parinaz</span><a href="#top">Back to top &uarr;</a></div>
-  </footer>
+  </section>
 
-  <script src="assets/site.js"></script>
+  <section class="pair">
+    <div class="wrap">
+      <a class="card" href="work.html#worked-on" data-reveal>
+        <div class="tilt">
+          <div class="media"><div class="shot"><div class="bar"><i></i><i></i><i></i></div><div class="body"><div><strong>Recruitcha GTM</strong><span>Screenshot to come</span></div></div></div></div>
+          <div class="cap"><h2>Things I've built</h2><span class="arrow">&rarr;</span></div>
+        </div>
+      </a>
+      <a class="card" href="work.html#portraits" data-reveal="2">
+        <div class="tilt">
+          <div class="media"><img src="assets/img/ai-generals.jpg" alt="AI oil-painting style portrait of two friends as generals on horseback"></div>
+          <div class="cap"><h2>Things I've made for fun</h2><span class="arrow">&rarr;</span></div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <section class="loves">
+    <div class="wrap">
+      <span class="label">A few things I love</span>
+      <p class="scrub">Piano, water parks, crossword puzzles, handwritten notes, blind karaoke, and Tuvan throat singing.</p>
+      <a class="more ulink" href="things-i-love.html">The full list <span class="arrow">&rarr;</span></a>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <span class="label" data-reveal>Work</span>
+      <p class="big" data-reveal>I studied biomedical science, then got a job in digital marketing and somehow ended up building software at a startup.</p>
+      <div class="pills" data-reveal="2">
+        <a class="pill" href="work.html#worked-on">Projects</a>
+        <a class="pill" href="about.html#experience">Experience</a>
+        <a class="pill" href="#">CV</a>
+        <a class="pill" href="https://www.linkedin.com/">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="foot" style="border-top:1px solid rgba(244,242,237,.12)" id="contact">
+  <div class="wrap">
+    <span class="label" data-reveal>Contact</span>
+    <div class="links" data-reveal="2">
+      <a class="ulink" href="mailto:you@example.com">Email</a><span>&amp;</span><a class="ulink" href="https://www.linkedin.com/">LinkedIn</a>
+    </div>
+    <div class="base"><span>&copy; <span data-year></span> Peri</span><a class="ulink" href="https://github.com/perisadigh">GitHub</a></div>
+  </div>
+</footer>
+<div class="peek" aria-hidden="true"><img alt=""></div>
+<script src="assets/site.js"></script>
 </body>
 </html>

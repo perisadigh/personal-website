@@ -1,62 +1,103 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Work & Play — Peri</title>
-  <meta name="description" content="Peri (Parinaz): part analyst, part creative, fully obsessed with whatever I'm into this month.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300;1,6..72,400&family=Inter+Tight:wght@300;400&family=IBM+Plex+Mono&family=Reenie+Beanie&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Work & Play · Peri</title>
+<meta name="description" content="Things Peri has worked on and things she's made for fun.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
 </head>
-<body id="top">
-  <header class="top g m">
-    <a class="logo" href="index.html">Peri</a>
-    <nav aria-label="Main"><a href="about.html">About</a><a href="work.html" aria-current="page">Work &amp; Play</a><a href="ai.html">AI Studio</a><a href="archive.html">Archive</a><a href="favourite-things.html">Favourite things</a></nav>
-    <span class="r" data-clock>Local time</span>
-  </header>
+<body>
+<header class="site-head">
+  <div class="wrap">
+    <a class="logo" href="index.html">Peri<span>.</span></a>
+    <nav class="nav" aria-label="Main"><a href="about.html">About</a><a href="work.html" aria-current="page">Work &amp; Play</a><a href="things-i-love.html">Things I love</a></nav>
+    <button class="menu-btn" type="button" data-menu>Menu</button>
+  </div>
+</header>
+<div class="overlay" aria-hidden="true">
+  <button class="close" type="button" data-menu>Close</button>
+  <a href="index.html"><span>Home</span></a><a href="about.html"><span>About</span></a><a href="work.html"><span>Work &amp; Play</span></a><a href="things-i-love.html"><span>Things I love</span></a>
+</div>
 
-  <main>
-    <section class="title g">
-      <h1>Work <em>&amp;</em> Play</h1>
-      <p class="lede">Some of it pays the bills. Some of it is completely ridiculous. All of it is stuff I found interesting.</p>
-    </section>
-    <section class="g" style="padding-top:clamp(60px,8vw,110px)">
-      <p class="lab m">Catalogue</p>
-      <div class="body">
-        <div class="filters m" role="group" aria-label="Filter">
-          <button type="button" data-filter="all" aria-pressed="true">Everything</button>
-          <button type="button" data-filter="work" aria-pressed="false">Work</button>
-          <button type="button" data-filter="play" aria-pressed="false">Play</button>
-          <button type="button" data-filter="ai" aria-pressed="false">Made with AI</button>
-        </div>
-        <ol class="cat">
-        <li data-kind="work" data-reveal><span class="m red">01</span><span class="t">Recruitcha go-to-market</span><span class="d">Positioning, launch and first customers for a recruitment product.</span><span class="m mute">Launch strategy</span><span class="m y">2025</span></li>
-        <li data-kind="play ai" data-reveal><span class="m red">02</span><span class="t">AI portraits of my friends</span><span class="d">My favourite people, reimagined. Mostly flattering.</span><span class="m mute">Image series</span><span class="m y">2025</span></li>
-        <li data-kind="play ai" data-reveal><span class="m red">03</span><span class="t">AI music</span><span class="d">Tracks made with AI, some of them ridiculous on purpose.</span><span class="m mute">Songs</span><span class="m y">2025</span></li>
-        <li data-kind="work" data-reveal><span class="m red">04</span><span class="t">Product development</span><span class="d">Turning fuzzy ideas into things people actually use.</span><span class="m mute">Product</span><span class="m y">2025&ndash;</span></li>
-        <li data-kind="play ai" data-reveal><span class="m red">05</span><span class="t">Random things built with AI</span><span class="d">Tiny tools that exist because I wanted them to.</span><span class="m mute">Little apps</span><span class="m y">2024&ndash;</span></li>
-        <li data-kind="work" data-reveal><span class="m red">06</span><span class="t">Marketing experiments</span><span class="d">What I learned about why people click.</span><span class="m mute">Campaigns &amp; tests</span><span class="m y">2023&ndash;25</span></li>
-        <li data-kind="play" data-reveal><span class="m red">07</span><span class="t">Photography</span><span class="d">Mostly golden hour, mostly outside.</span><span class="m mute">Photos</span><span class="m y">ongoing</span></li>
-        <li data-kind="work" data-reveal><span class="m red">08</span><span class="t">Recruitment</span><span class="d">Hundreds of conversations about what people want from work.</span><span class="m mute">People</span><span class="m y">2021&ndash;23</span></li>
-        <li data-kind="play" data-reveal><span class="m red">09</span><span class="t">Crafts &amp; baking</span><span class="d">Things made away from a screen.</span><span class="m mute">Made by hand</span><span class="m y">ongoing</span></li>
-        <li data-kind="play" data-reveal><span class="m red">10</span><span class="t">This website</span><span class="d">Built with a lot of opinions about fonts.</span><span class="m mute">Code &amp; opinions</span><span class="m y">2026</span></li>
-        </ol>
+<main class="page-light">
+  <section class="page-top">
+    <div class="wrap">
+      <h1><span class="line"><span>Work &amp;</span></span><span class="line"><span><em>Play</em></span></span></h1>
+      <p class="intro" data-reveal>Some things I've worked on, some things I've made for fun.</p>
+      <div class="tabs" role="group" aria-label="Filter" data-reveal="2"><span class="ind"></span>
+        <button type="button" data-filter="all" aria-pressed="true">Everything</button>
+        <button type="button" data-filter="work" aria-pressed="false">Worked on</button>
+        <button type="button" data-filter="play" aria-pressed="false">Made for fun</button>
       </div>
-    </section>
-  </main>
-
-  <footer id="contact" class="foot g">
-    <p class="big">Say <em>hello,</em><br>I&rsquo;d like that.</p>
-    <div class="links m">
-      <a href="mailto:you@example.com">Email &nearr;</a>
-      <a href="https://www.linkedin.com/">LinkedIn &nearr;</a>
-      <a href="https://github.com/perisadigh">GitHub &nearr;</a>
     </div>
-    <div class="base m"><span>&copy; <span data-year>2026</span> Parinaz</span><a href="#top">Back to top &uarr;</a></div>
-  </footer>
+  </section>
 
-  <script src="assets/site.js"></script>
+  <section class="section" id="worked-on" data-kind="work">
+    <div class="wrap">
+      <div class="proj">
+        <div data-reveal><div class="shot"><div class="bar"><i></i><i></i><i></i></div><div class="body"><div><strong>Recruitcha GTM</strong><span>Screenshot to come</span></div></div></div></div>
+        <div class="meta" data-reveal="2">
+          <span class="label">Software product</span>
+          <h3>Recruitcha GTM</h3>
+          <ul>
+            <li>Features, integrations and UX <small>Details to come</small></li>
+            <li>Marketing website <small>Details to come</small></li>
+            <li>Growth work <small>Details to come</small></li>
+          </ul>
+        </div>
+      </div>
+      <div class="proj">
+        <div data-reveal><div class="shot"><div class="bar"><i></i><i></i><i></i></div><div class="body"><div><strong>Internal tools</strong><span>Screenshot to come</span></div></div></div></div>
+        <div class="meta" data-reveal="2">
+          <span class="label">Recruitment agency</span>
+          <h3>Recruitcha</h3>
+          <ul>
+            <li>Sourcing pipeline that replaced Clay <small>Details to come</small></li>
+            <li>Client Brief Generator <small>Details to come</small></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="portraits" data-kind="play">
+    <div class="wrap section-head"><h2 data-reveal>AI portraits of my friends</h2><div class="reel-ctl"><button type="button" data-reel="reel" data-dir="prev" aria-label="Previous">&larr;</button><button type="button" data-reel="reel" data-dir="next" aria-label="Next">&rarr;</button></div></div>
+    <div class="reel" id="reel"><figure><div class="frame" data-lightbox="assets/img/ai-generals.jpg" data-alt="Generals on horseback"><img src="assets/img/ai-generals.jpg" alt="AI portrait: Generals on horseback" loading="lazy"></div></figure><figure><div class="frame" data-lightbox="assets/img/ai-pool.jpg" data-alt="Certified weapon"><img src="assets/img/ai-pool.jpg" alt="AI portrait: Certified weapon" loading="lazy"></div></figure><figure><div class="frame" data-lightbox="assets/img/ai-generals-2.jpg" data-alt="The cavalry"><img src="assets/img/ai-generals-2.jpg" alt="AI portrait: The cavalry" loading="lazy"></div></figure><figure><div class="frame" data-lightbox="assets/img/ai-rugby.jpg" data-alt="Game day"><img src="assets/img/ai-rugby.jpg" alt="AI portrait: Game day" loading="lazy"></div></figure><figure><div class="frame" data-lightbox="assets/img/ai-surf.jpg" data-alt="Surf school"><img src="assets/img/ai-surf.jpg" alt="AI portrait: Surf school" loading="lazy"></div></figure><figure><div class="frame" data-lightbox="assets/img/ai-beach.jpg" data-alt="Beach stretches"><img src="assets/img/ai-beach.jpg" alt="AI portrait: Beach stretches" loading="lazy"></div></figure></div>
+  </section>
+
+  <section class="section" id="music" data-kind="play">
+    <div class="wrap">
+      <div class="section-head"><h2 data-reveal>AI music</h2></div>
+      <ul class="tracks" data-reveal><li><button class="play" type="button" aria-label="Play">&#9654;</button><span class="t">Track title to come</span><span class="eq"><i></i><i></i><i></i><i></i></span></li><li><button class="play" type="button" aria-label="Play">&#9654;</button><span class="t">Track title to come</span><span class="eq"><i></i><i></i><i></i><i></i></span></li><li><button class="play" type="button" aria-label="Play">&#9654;</button><span class="t">Track title to come</span><span class="eq"><i></i><i></i><i></i><i></i></span></li></ul>
+    </div>
+  </section>
+
+  <section class="section" id="photography" data-kind="play">
+    <div class="wrap">
+      <div class="section-head"><h2 data-reveal>Photography</h2></div>
+      <div class="photos"><figure class="img-reveal" data-lightbox="assets/img/sunset.jpg"><img src="assets/img/sunset.jpg" alt="" loading="lazy"></figure><figure class="img-reveal" data-lightbox="assets/img/forest.jpg"><img src="assets/img/forest.jpg" alt="" loading="lazy"></figure><figure class="img-reveal" data-lightbox="assets/img/boats.jpg"><img src="assets/img/boats.jpg" alt="" loading="lazy"></figure><figure class="img-reveal" data-lightbox="assets/img/path.jpg"><img src="assets/img/path.jpg" alt="" loading="lazy"></figure><figure class="img-reveal" data-lightbox="assets/img/shells.jpg"><img src="assets/img/shells.jpg" alt="" loading="lazy"></figure><figure class="img-reveal" data-lightbox="assets/img/hike.jpg"><img src="assets/img/hike.jpg" alt="" loading="lazy"></figure><figure class="img-reveal" data-lightbox="assets/img/lake.jpg"><img src="assets/img/lake.jpg" alt="" loading="lazy"></figure><figure class="img-reveal" data-lightbox="assets/img/beach-friends.jpg"><img src="assets/img/beach-friends.jpg" alt="" loading="lazy"></figure><figure class="img-reveal" data-lightbox="assets/img/window.jpg"><img src="assets/img/window.jpg" alt="" loading="lazy"></figure></div>
+    </div>
+  </section>
+
+  <section class="section" data-kind="play">
+    <div class="wrap section-head" style="margin:0"><h2 data-reveal>This website</h2><a class="ulink" href="https://github.com/perisadigh/personal-website">See the code</a></div>
+  </section>
+</main>
+<div class="lb" role="dialog" aria-label="Image"><button type="button">Close</button><img alt=""></div>
+<footer class="foot round" id="contact">
+  <div class="wrap">
+    <span class="label" data-reveal>Contact</span>
+    <div class="links" data-reveal="2">
+      <a class="ulink" href="mailto:you@example.com">Email</a><span>&amp;</span><a class="ulink" href="https://www.linkedin.com/">LinkedIn</a>
+    </div>
+    <div class="base"><span>&copy; <span data-year></span> Peri</span><a class="ulink" href="https://github.com/perisadigh">GitHub</a></div>
+  </div>
+</footer>
+<div class="peek" aria-hidden="true"><img alt=""></div>
+<script src="assets/site.js"></script>
 </body>
 </html>
