@@ -89,7 +89,7 @@ p, h1, h2, ol { margin: 0; }
 .pages .col { grid-column: 5 / 13; min-width: 0; display: flex; flex-direction: column; gap: clamp(3.5rem, 9vh, 5.5rem); }
 
 .typed { margin: 0; font: 400 clamp(1.15rem, 1.85vw, 1.6rem)/1.55 var(--type); color: var(--blue); display: flex; flex-direction: column; }
-.typed > span { white-space: nowrap; }
+.typed > span { text-wrap: balance; }
 .typed .w { white-space: nowrap; }
 .typed .ch { opacity: 1; }
 .m .typed.ready .ch { opacity: 0; }
