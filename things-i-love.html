@@ -8,23 +8,22 @@
 <meta name="theme-color" content="#F0ECE4">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Courier+Prime&family=Instrument+Sans:wght@400;500&family=Instrument+Serif:ital@1&family=Kristi&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime&family=Instrument+Sans:wght@400;500&family=Kristi&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/peri.css">
 <script>try{if(!matchMedia("(prefers-reduced-motion: reduce)").matches)document.documentElement.classList.add("m")}catch(e){}</script>
 </head>
 <body>
 <header class="top">
-  <a class="sig script" href="index.html" aria-label="Peri, home">peri</a>
+  <a class="home-link type" href="index.html">Peri</a>
   <nav class="pnav type" aria-label="Pages"><a href="about.html">About</a><a href="work.html">Things I&rsquo;ve made</a><a href="things-i-love.html" aria-current="page">Things I love</a><a href="ranking.html">Rankings</a></nav>
 </header>
-<main id="top" class="page">
-  <section class="cover grid tall left">
-    <figure class="cover-photo ph" data-in><img src="assets/img/g/love-cover.jpg" alt="A small dog squinting in the sun"></figure>
-    <p class="cover-no type">03</p>
-    <h1 class="cover-title" data-in><span class="lab"><span>Things</span></span> <span class="lab"><span>I love</span></span></h1>
+<main id="top" class="page love">
+  <section class="phead grid">
+    <p class="pno type">03</p>
+    <h1 class="ptitle" data-in><span class="lab"><span>Things I love</span></span></h1>
   </section>
-
   <section class="loves grid">
+    <div class="rail"><div class="stack" aria-hidden="true"><figure class="ph" data-in><img src="assets/img/n/out-1.jpg" alt="" loading="lazy"></figure><figure class="ph" data-in><img src="assets/img/n/out-2.jpg" alt="" loading="lazy"></figure><figure class="ph" data-in><img src="assets/img/n/out-3.jpg" alt="" loading="lazy"></figure></div></div>
     <ol class="loves-list" data-in data-rows>
       <li style="--i:0"><span class="n type">01</span><span>Piano</span></li>
       <li style="--i:1"><span class="n type">02</span><span>Running</span></li>
@@ -60,24 +59,34 @@
     </ol>
   </section>
 
-  <section class="fun grid" aria-labelledby="people-h">
-    <h2 class="script ink over" id="people-h" data-in data-write>people i love</h2>
-    <div class="scatter">
-      <figure class="ph " data-in data-lightbox="assets/img/c/people-field.jpg"><img src="assets/img/c/people-field.jpg" alt="" loading="lazy"></figure>
-      <figure class="ph " data-in data-lightbox="assets/img/c/people-car.jpg"><img src="assets/img/c/people-car.jpg" alt="" loading="lazy"></figure>
-      <figure class="ph " data-in data-lightbox="assets/img/c/people-three.jpg"><img src="assets/img/c/people-three.jpg" alt="" loading="lazy"></figure>
-      <figure class="ph " data-in data-lightbox="assets/img/c/people-hug.jpg"><img src="assets/img/c/people-hug.jpg" alt="" loading="lazy"></figure>
-      <figure class="ph " data-in data-lightbox="assets/img/c/people-sea.jpg"><img src="assets/img/c/people-sea.jpg" alt="" loading="lazy"></figure>
-      <figure class="ph " data-in data-lightbox="assets/img/c/people-selfie.jpg"><img src="assets/img/c/people-selfie.jpg" alt="" loading="lazy"></figure>
-      <figure class="ph " data-in data-lightbox="assets/img/c/people-stairs.jpg"><img src="assets/img/c/people-stairs.jpg" alt="" loading="lazy"></figure>
-      <figure class="ph " data-in data-lightbox="assets/img/c/people-lake.jpg"><img src="assets/img/c/people-lake.jpg" alt="" loading="lazy"></figure>
-      <figure class="ph " data-in data-lightbox="assets/img/c/people-boardwalk.jpg"><img src="assets/img/c/people-boardwalk.jpg" alt="" loading="lazy"></figure>
-      <figure class="ph " data-in data-lightbox="assets/img/c/people-bw-selfie.jpg"><img src="assets/img/c/people-bw-selfie.jpg" alt="" loading="lazy"></figure>
-      <figure class="ph " data-in data-lightbox="assets/img/c/people-cat.jpg"><img src="assets/img/c/people-cat.jpg" alt="" loading="lazy"></figure>
-      <figure class="ph " data-in data-lightbox="assets/img/c/people-beach.jpg"><img src="assets/img/c/people-beach.jpg" alt="" loading="lazy"></figure>
-      <figure class="ph " data-in data-lightbox="assets/img/c/people-boat.jpg"><img src="assets/img/c/people-boat.jpg" alt="" loading="lazy"></figure>
-      <figure class="ph " data-in data-lightbox="assets/img/c/people-polaroid.jpg"><img src="assets/img/c/people-polaroid.jpg" alt="" loading="lazy"></figure>
-      <figure class="ph " data-in data-lightbox="assets/img/c/people-hike.jpg"><img src="assets/img/c/people-hike.jpg" alt="" loading="lazy"></figure>
+  <section class="proj grid" id="people">
+    <div class="p-side">
+      <h2 class="h2">People I love</h2>
+    </div>
+    <div class="p-main">
+      <div class="viewer" data-in aria-label="People I love" role="group">
+        <figure class="v-main" data-lightbox="assets/img/n/p01.jpg"><img src="assets/img/n/p01.jpg" alt="Peri and a friend in a garden by the water"></figure>
+        <div class="v-bar type"><span class="v-count">01 / 17</span><span class="v-nav"><button type="button" class="v-prev">Prev</button><button type="button" class="v-next">Next</button></span></div>
+        <ol class="v-thumbs">
+          <li><button type="button" data-src="assets/img/n/p01.jpg" data-alt="Peri and a friend in a garden by the water" aria-label="Photo 1 of 17" aria-pressed="true"><img src="assets/img/n/t/p01.jpg" alt="" loading="lazy"></button></li>
+          <li><button type="button" data-src="assets/img/n/p02.jpg" data-alt="Peri with her brother, mom and dad by the sea at sunset" aria-label="Photo 2 of 17"><img src="assets/img/n/t/p02.jpg" alt="" loading="lazy"></button></li>
+          <li><button type="button" data-src="assets/img/n/p03.jpg" data-alt="Peri and a friend in the back of a car" aria-label="Photo 3 of 17"><img src="assets/img/n/t/p03.jpg" alt="" loading="lazy"></button></li>
+          <li><button type="button" data-src="assets/img/n/p04.jpg" data-alt="Peri with two friends" aria-label="Photo 4 of 17"><img src="assets/img/n/t/p04.jpg" alt="" loading="lazy"></button></li>
+          <li><button type="button" data-src="assets/img/n/p05.jpg" data-alt="Peri&rsquo;s mom and dad by a lake" aria-label="Photo 5 of 17"><img src="assets/img/n/t/p05.jpg" alt="" loading="lazy"></button></li>
+          <li><button type="button" data-src="assets/img/n/p06.jpg" data-alt="Peri and a friend on tiled steps" aria-label="Photo 6 of 17"><img src="assets/img/n/t/p06.jpg" alt="" loading="lazy"></button></li>
+          <li><button type="button" data-src="assets/img/n/p07.jpg" data-alt="Peri and her brother at sunset" aria-label="Photo 7 of 17"><img src="assets/img/n/t/p07.jpg" alt="" loading="lazy"></button></li>
+          <li><button type="button" data-src="assets/img/n/p08.jpg" data-alt="Peri and a friend, close up" aria-label="Photo 8 of 17"><img src="assets/img/n/t/p08.jpg" alt="" loading="lazy"></button></li>
+          <li><button type="button" data-src="assets/img/n/p09.jpg" data-alt="Peri with friends on a boat" aria-label="Photo 9 of 17"><img src="assets/img/n/t/p09.jpg" alt="" loading="lazy"></button></li>
+          <li><button type="button" data-src="assets/img/n/p10.jpg" data-alt="A friend holding a kitten" aria-label="Photo 10 of 17"><img src="assets/img/n/t/p10.jpg" alt="" loading="lazy"></button></li>
+          <li><button type="button" data-src="assets/img/n/p11.jpg" data-alt="Peri and a friend hugging in a garden" aria-label="Photo 11 of 17"><img src="assets/img/n/t/p11.jpg" alt="" loading="lazy"></button></li>
+          <li><button type="button" data-src="assets/img/n/p12.jpg" data-alt="Peri and a friend by the sea" aria-label="Photo 12 of 17"><img src="assets/img/n/t/p12.jpg" alt="" loading="lazy"></button></li>
+          <li><button type="button" data-src="assets/img/n/p13.jpg" data-alt="A polaroid held up in front of flowers" aria-label="Photo 13 of 17"><img src="assets/img/n/t/p13.jpg" alt="" loading="lazy"></button></li>
+          <li><button type="button" data-src="assets/img/n/p14.jpg" data-alt="Peri with her dog" aria-label="Photo 14 of 17"><img src="assets/img/n/t/p14.jpg" alt="" loading="lazy"></button></li>
+          <li><button type="button" data-src="assets/img/n/p15.jpg" data-alt="A small dog squinting in the sun" aria-label="Photo 15 of 17"><img src="assets/img/n/t/p15.jpg" alt="" loading="lazy"></button></li>
+          <li><button type="button" data-src="assets/img/n/p16.jpg" data-alt="Two dogs on a blanket" aria-label="Photo 16 of 17"><img src="assets/img/n/t/p16.jpg" alt="" loading="lazy"></button></li>
+          <li><button type="button" data-src="assets/img/n/p17.jpg" data-alt="A schnauzer asleep on a rug" aria-label="Photo 17 of 17"><img src="assets/img/n/t/p17.jpg" alt="" loading="lazy"></button></li>
+        </ol>
+      </div>
     </div>
   </section>
 

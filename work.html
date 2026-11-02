@@ -8,65 +8,87 @@
 <meta name="theme-color" content="#F0ECE4">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Courier+Prime&family=Instrument+Sans:wght@400;500&family=Instrument+Serif:ital@1&family=Kristi&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime&family=Instrument+Sans:wght@400;500&family=Kristi&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/peri.css">
 <script>try{if(!matchMedia("(prefers-reduced-motion: reduce)").matches)document.documentElement.classList.add("m")}catch(e){}</script>
 </head>
 <body>
 <header class="top">
-  <a class="sig script" href="index.html" aria-label="Peri, home">peri</a>
+  <a class="home-link type" href="index.html">Peri</a>
   <nav class="pnav type" aria-label="Pages"><a href="about.html">About</a><a href="work.html" aria-current="page">Things I&rsquo;ve made</a><a href="things-i-love.html">Things I love</a><a href="ranking.html">Rankings</a></nav>
 </header>
-<main id="top" class="page">
-  <section class="cover grid wide">
-    <figure class="cover-photo ph" data-in><img src="assets/img/photo/ai-pool.jpg" alt="An AI portrait of friends playing pool"></figure>
-    <p class="cover-no type">02</p>
-    <h1 class="cover-title" data-in><span class="lab"><span>Things I&rsquo;ve</span></span> <span class="lab"><span>made</span></span></h1>
-    <p class="cover-side typed" data-in><span>Some things I&rsquo;ve worked on, some things I&rsquo;ve made for fun.</span></p>
+<main id="top" class="page made">
+  <section class="phead grid">
+    <p class="pno type">02</p>
+    <h1 class="ptitle" data-in><span class="lab"><span>Things I&rsquo;ve made</span></span></h1>
+    <p class="typed sub" data-in><span>Some things I&rsquo;ve worked on, some things I&rsquo;ve made for fun.</span></p>
   </section>
-
-  <section class="projects grid">
-    <article class="proj p1" id="recruitcha" data-in>
-      <p class="pmeta type"><span class="pn">1</span><span>Recruitment agency</span></p>
-      <h2 class="pname">Recruitcha</h2>
-      <p class="pdesc">Internal tools I built for the agency.</p>
+  <section class="grid index-sec">
+    <ol class="index type">
+      <li><a href="#recruitcha"><span class="n">1</span><span class="nm">Recruitcha</span><span class="k">Recruitment agency</span></a></li>
+      <li><a href="#gtm"><span class="n">2</span><span class="nm">Recruitcha GTM</span><span class="k">Software product</span></a></li>
+      <li><a href="#portraits"><span class="n">3</span><span class="nm">AI portraits of my friends</span><span class="k">Made for fun</span></a></li>
+      <li><a href="#music"><span class="n">4</span><span class="nm">AI music</span><span class="k">Made for fun</span></a></li>
+    </ol>
+  </section>
+  <section class="proj grid" id="recruitcha">
+    <div class="p-side">
+      <p class="pmeta type"><span>1</span><span>Recruitment agency</span></p>
+      <h2 class="h2">Recruitcha</h2>
+      <p class="body">Internal tools I built for the agency.</p>
+    </div>
+    <div class="p-main">
       <ol class="tools">
-        <li><span class="type">A</span><span><span class="tn">Sourcing pipeline that replaced Clay</span><span class="soon type">Details and screenshots to come</span></span></li>
-        <li><span class="type">B</span><span><span class="tn">Client Brief Generator</span><span class="soon type">Details and screenshots to come</span></span></li>
+        <li><span class="type">A</span><span class="tn">Sourcing pipeline that replaced Clay</span><span class="soon type">Details and screenshots to come</span></li>
+        <li><span class="type">B</span><span class="tn">Client Brief Generator</span><span class="soon type">Details and screenshots to come</span></li>
       </ol>
-    </article>
-    <article class="proj p2" id="gtm" data-in>
-      <p class="pmeta type"><span class="pn">2</span><span>Software product</span></p>
-      <h2 class="pname">Recruitcha GTM</h2>
-      <p class="pdesc">Product development and technical work.</p>
-      <div class="shot" aria-hidden="true"><span class="type">Screenshots and a demo to come</span></div>
-    </article>
-  </section>
-
-  <section class="fun grid" id="portraits">
-    <p class="pmeta type"><span class="pn">3</span><span>Made for fun</span></p>
-    <h2 class="script ink over" data-in data-write>ai portraits of my friends</h2>
-    <div class="scatter">
-      <figure class="ph " data-in data-lightbox="assets/img/photo/ai-generals.jpg"><img src="assets/img/photo/ai-generals.jpg" alt="AI portrait" loading="lazy"></figure>
-      <figure class="ph " data-in data-lightbox="assets/img/photo/ai-pool.jpg"><img src="assets/img/photo/ai-pool.jpg" alt="AI portrait" loading="lazy"></figure>
-      <figure class="ph " data-in data-lightbox="assets/img/photo/ai-splits.jpg"><img src="assets/img/photo/ai-splits.jpg" alt="AI portrait" loading="lazy"></figure>
-      <figure class="ph " data-in data-lightbox="assets/img/photo/ai-family.jpg"><img src="assets/img/photo/ai-family.jpg" alt="AI portrait" loading="lazy"></figure>
-      <figure class="ph " data-in data-lightbox="assets/img/photo/ai-rugby.jpg"><img src="assets/img/photo/ai-rugby.jpg" alt="AI portrait" loading="lazy"></figure>
-      <figure class="ph " data-in data-lightbox="assets/img/photo/ai-toast.jpg"><img src="assets/img/photo/ai-toast.jpg" alt="AI portrait" loading="lazy"></figure>
-      <figure class="ph " data-in data-lightbox="assets/img/photo/ai-generals-2.jpg"><img src="assets/img/photo/ai-generals-2.jpg" alt="AI portrait" loading="lazy"></figure>
-      <figure class="ph " data-in data-lightbox="assets/img/photo/ai-splits-2.jpg"><img src="assets/img/photo/ai-splits-2.jpg" alt="AI portrait" loading="lazy"></figure>
-      <figure class="ph " data-in data-lightbox="assets/img/photo/ai-family-2.jpg"><img src="assets/img/photo/ai-family-2.jpg" alt="AI portrait" loading="lazy"></figure>
     </div>
   </section>
-
-  <section class="fun music grid" id="music">
-    <p class="pmeta type"><span class="pn">4</span><span>Made for fun</span></p>
-    <h2 class="script ink over" data-in data-write>ai music</h2>
-    <ol class="tracks">
-      <li><button class="play" type="button" aria-label="Play"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 1l9 5-9 5z" fill="currentColor"/></svg></button><span class="tt">Track title to come</span><span class="len type">0:00</span></li>
-      <li><button class="play" type="button" aria-label="Play"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 1l9 5-9 5z" fill="currentColor"/></svg></button><span class="tt">Track title to come</span><span class="len type">0:00</span></li>
-      <li><button class="play" type="button" aria-label="Play"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 1l9 5-9 5z" fill="currentColor"/></svg></button><span class="tt">Track title to come</span><span class="len type">0:00</span></li>
-    </ol>
+  <section class="proj grid" id="gtm">
+    <div class="p-side">
+      <p class="pmeta type"><span>2</span><span>Software product</span></p>
+      <h2 class="h2">Recruitcha GTM</h2>
+      <p class="body">Product development and technical work.</p>
+    </div>
+    <div class="p-main">
+      <div class="shot" aria-hidden="true"><span class="type">Screenshots and a demo to come</span></div>
+    </div>
+  </section>
+  <section class="proj grid" id="portraits">
+    <div class="p-side">
+      <p class="pmeta type"><span>3</span><span>Made for fun</span></p>
+      <h2 class="h2">AI portraits of my friends</h2>
+    </div>
+    <div class="p-main">
+      <div class="viewer" data-in aria-label="AI portraits of my friends" role="group">
+        <figure class="v-main" data-lightbox="assets/img/photo/ai-generals.jpg"><img src="assets/img/photo/ai-generals.jpg" alt="AI portrait"></figure>
+        <div class="v-bar type"><span class="v-count">01 / 09</span><span class="v-nav"><button type="button" class="v-prev">Prev</button><button type="button" class="v-next">Next</button></span></div>
+        <ol class="v-thumbs">
+          <li><button type="button" data-src="assets/img/photo/ai-generals.jpg" data-alt="AI portrait" aria-label="Photo 1 of 9" aria-pressed="true"><img src="assets/img/n/t/ai-generals.jpg" alt="" loading="lazy"></button></li>
+          <li><button type="button" data-src="assets/img/photo/ai-pool.jpg" data-alt="AI portrait" aria-label="Photo 2 of 9"><img src="assets/img/n/t/ai-pool.jpg" alt="" loading="lazy"></button></li>
+          <li><button type="button" data-src="assets/img/photo/ai-splits.jpg" data-alt="AI portrait" aria-label="Photo 3 of 9"><img src="assets/img/n/t/ai-splits.jpg" alt="" loading="lazy"></button></li>
+          <li><button type="button" data-src="assets/img/photo/ai-family.jpg" data-alt="AI portrait" aria-label="Photo 4 of 9"><img src="assets/img/n/t/ai-family.jpg" alt="" loading="lazy"></button></li>
+          <li><button type="button" data-src="assets/img/photo/ai-rugby.jpg" data-alt="AI portrait" aria-label="Photo 5 of 9"><img src="assets/img/n/t/ai-rugby.jpg" alt="" loading="lazy"></button></li>
+          <li><button type="button" data-src="assets/img/photo/ai-toast.jpg" data-alt="AI portrait" aria-label="Photo 6 of 9"><img src="assets/img/n/t/ai-toast.jpg" alt="" loading="lazy"></button></li>
+          <li><button type="button" data-src="assets/img/photo/ai-generals-2.jpg" data-alt="AI portrait" aria-label="Photo 7 of 9"><img src="assets/img/n/t/ai-generals-2.jpg" alt="" loading="lazy"></button></li>
+          <li><button type="button" data-src="assets/img/photo/ai-splits-2.jpg" data-alt="AI portrait" aria-label="Photo 8 of 9"><img src="assets/img/n/t/ai-splits-2.jpg" alt="" loading="lazy"></button></li>
+          <li><button type="button" data-src="assets/img/photo/ai-family-2.jpg" data-alt="AI portrait" aria-label="Photo 9 of 9"><img src="assets/img/n/t/ai-family-2.jpg" alt="" loading="lazy"></button></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+  <section class="proj grid" id="music">
+    <div class="p-side">
+      <p class="pmeta type"><span>4</span><span>Made for fun</span></p>
+      <h2 class="h2">AI music</h2>
+    </div>
+    <div class="p-main">
+      <ol class="tracks type">
+          <li><button class="play" type="button" aria-label="Play"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 1l9 5-9 5z" fill="currentColor"/></svg></button><span class="tt">Track title to come</span><span class="len">0:00</span></li>
+          <li><button class="play" type="button" aria-label="Play"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 1l9 5-9 5z" fill="currentColor"/></svg></button><span class="tt">Track title to come</span><span class="len">0:00</span></li>
+          <li><button class="play" type="button" aria-label="Play"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 1l9 5-9 5z" fill="currentColor"/></svg></button><span class="tt">Track title to come</span><span class="len">0:00</span></li>
+      </ol>
+    </div>
   </section>
 
   <section class="hello">

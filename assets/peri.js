@@ -105,6 +105,29 @@
     el.addEventListener('animationend', function () { el.classList.add('written'); });
   });
 
+  // Photo viewer: the small squares (or prev / next) change the large photo.
+  document.querySelectorAll('.viewer').forEach(function (v) {
+    var main = v.querySelector('.v-main'), img = main.querySelector('img'), count = v.querySelector('.v-count');
+    var thumbs = v.querySelectorAll('.v-thumbs button'), n = thumbs.length, cur = 0;
+    var pad = function (k) { return (k < 10 ? '0' : '') + k; };
+    var show = function (k) {
+      cur = (k + n) % n;
+      var b = thumbs[cur];
+      thumbs.forEach(function (t) { t.setAttribute('aria-pressed', t === b ? 'true' : 'false'); });
+      count.textContent = pad(cur + 1) + ' / ' + pad(n);
+      main.setAttribute('data-lightbox', b.getAttribute('data-src'));
+      main.classList.add('swap');
+      setTimeout(function () {
+        img.onload = function () { main.classList.remove('swap'); };
+        img.src = b.getAttribute('data-src'); img.alt = b.getAttribute('data-alt') || '';
+        if (img.complete) main.classList.remove('swap');
+      }, 160);
+    };
+    thumbs.forEach(function (b, k) { b.addEventListener('click', function () { show(k); }); });
+    v.querySelector('.v-prev').addEventListener('click', function () { show(cur - 1); });
+    v.querySelector('.v-next').addEventListener('click', function () { show(cur + 1); });
+  });
+
   // Photos open larger on click.
   var lb = document.querySelector('.lb');
   if (lb) {

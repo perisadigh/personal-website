@@ -8,55 +8,51 @@
 <meta name="theme-color" content="#F0ECE4">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Courier+Prime&family=Instrument+Sans:wght@400;500&family=Instrument+Serif:ital@1&family=Kristi&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime&family=Instrument+Sans:wght@400;500&family=Kristi&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/peri.css">
 <script>try{if(!matchMedia("(prefers-reduced-motion: reduce)").matches)document.documentElement.classList.add("m")}catch(e){}</script>
 </head>
 <body>
 <header class="top">
-  <a class="sig script" href="index.html" aria-label="Peri, home">peri</a>
+  <a class="home-link type" href="index.html">Peri</a>
   <nav class="pnav type" aria-label="Pages"><a href="about.html" aria-current="page">About</a><a href="work.html">Things I&rsquo;ve made</a><a href="things-i-love.html">Things I love</a><a href="ranking.html">Rankings</a></nav>
 </header>
 <main id="top" class="page about">
-  <h1 class="sr">About</h1>
-  <section class="hero about-hero" aria-hidden="true">
-    <figure class="hero-photo"><img src="assets/img/c/about-window.jpg" alt=""></figure>
-    <p class="script ink hero-name" data-write>about</p>
+  <section class="statement grid">
+    <p class="pno type">01</p>
+    <h1 class="sr">About</h1>
+    <figure class="st-photo ph" data-in><img src="assets/img/c/about-window.jpg" alt="Peri at a window, looking down at a camera"></figure>
+    <p class="st-text" data-in>I studied biomedical science, then got a job in digital marketing and somehow ended up building software at a startup.</p>
   </section>
 
-  <section class="game" aria-label="Two truths and a lie">
-    <div class="game-head">
-      <figure class="snap snap-l" aria-hidden="true"><img src="assets/img/c/kid-pigtails.jpg" alt="" loading="lazy"></figure>
-      <div class="game-title">
-        <h2 class="script ink gt" data-in data-write>two truths and a lie</h2>
-        <p class="ask type">Which one is the lie?</p>
-      </div>
-      <figure class="snap snap-r" aria-hidden="true"><img src="assets/img/c/kid-pillow.jpg" alt="" loading="lazy"></figure>
+  <section class="game grid" aria-labelledby="game-h">
+    <div class="g-side">
+      <h2 class="h2" id="game-h">Two truths and a lie</h2>
+      <p class="ask type">Which one is the lie?</p>
+      <div class="stack" aria-hidden="true"><figure class="ph" data-in><img src="assets/img/n/kid-1.jpg" alt="" loading="lazy"></figure><figure class="ph" data-in><img src="assets/img/n/kid-2.jpg" alt="" loading="lazy"></figure></div>
     </div>
-    <div class="cards" data-in>
-      <button class="card" type="button" style="--i:1"><span class="no type">01</span><span class="said">The very first thing I did when I came out of the womb was grab the scissors out of the doctor&rsquo;s hand and refuse to let go.</span><span class="pick type">your pick</span><span class="stamp type">true</span></button>
-      <button class="card" type="button" style="--i:2"><span class="no type">02</span><span class="said">When I was four, my mom had to tell me Santa wasn&rsquo;t real because I wouldn&rsquo;t accept any explanation for why he could get into our house through the chimney but burglars couldn&rsquo;t.</span><span class="extra">I then went to school and accidentally ruined Santa for the other kids.</span><span class="pick type">your pick</span><span class="stamp type">true</span></button>
-      <!-- DRAFT: the false clause below is not confirmed by Peri yet -->
-      <button class="card" type="button" style="--i:3" data-lie><span class="no type">03</span><span class="said">My brother and I were the only kids in an adult kung fu class, and by twelve I was helping teach it.</span><span class="pick type">your pick</span><span class="stamp type">the lie</span></button>
-    </div>
-    <div class="game-foot"><p class="status type" aria-live="polite"></p><button class="again type upper" type="button">Play again</button></div>
-  </section>
-
-  <section class="spread note-beside flip career" data-in>
-    <figure class="sit"><img src="assets/img/c/about-sit.jpg" alt="Peri sitting on the rocks with mountains behind her" loading="lazy"></figure>
-    <p class="typed note" data-in><span>I studied biomedical science, then got a job in digital marketing and somehow ended up building software at a startup.</span></p>
-  </section>
-
-  <section class="exp-sec" aria-labelledby="exp-h">
-    <h2 class="label type" id="exp-h">Experience</h2>
-    <ol class="steps" data-in>
-      <li style="--k:0"><span class="n type">01</span><span class="what">Biomedical Science &amp; Physiology</span><span class="dots" aria-hidden="true"></span><span class="where type"><span>University to come</span><span>Dates to come</span></span></li>
-      <li style="--k:1"><span class="n type">02</span><span class="what">Digital marketing</span><span class="dots" aria-hidden="true"></span><span class="where type"><span>Employer to come</span><span>Dates to come</span></span></li>
-      <li style="--k:2"><span class="n type">03</span><span class="what">Recruitment and internal recruiting tools</span><span class="dots" aria-hidden="true"></span><span class="where type"><span>Recruitcha, recruitment agency</span><span>Dates to come</span></span></li>
-      <li style="--k:3"><span class="n type">04</span><span class="what">Product development and technical work</span><span class="dots" aria-hidden="true"></span><span class="where type"><span>Recruitcha GTM, software product</span><span>Dates to come</span></span></li>
+    <ol class="cards" data-in>
+        <li><button class="card" type="button"><span class="no type">01</span><span class="said"><span class="s">The very first thing I did when I came out of the womb was grab the scissors out of the doctor&rsquo;s hand and refuse to let go.</span></span><span class="verdict type"><span class="pick">Your pick</span><span class="stamp">True</span></span></button></li>
+        <li><button class="card" type="button"><span class="no type">02</span><span class="said"><span class="s">When I was four, my mom had to tell me Santa wasn&rsquo;t real because I wouldn&rsquo;t accept any explanation for why he could get into our house through the chimney but burglars couldn&rsquo;t.</span><span class="extra type">I then went to school and accidentally ruined Santa for the other kids.</span></span><span class="verdict type"><span class="pick">Your pick</span><span class="stamp">True</span></span></button></li>
+        <!-- DRAFT: the false clause below is not confirmed by Peri yet -->
+        <li><button class="card" type="button" data-lie><span class="no type">03</span><span class="said"><span class="s">My brother and I were the only kids in an adult kung fu class, and by twelve I was helping teach it.</span></span><span class="verdict type"><span class="pick">Your pick</span><span class="stamp">Lie</span></span></button></li>
     </ol>
-    <!-- DRAFT: working copy, not approved final wording -->
-    <p class="exp-note">After digital marketing I moved into recruitment at Recruitcha, the recruitment agency, and taught myself to build software with AI tools. I started building our internal recruiting tools, and later took on product development and technical work on Recruitcha GTM, the software product.</p>
+    <div class="game-foot type"><p class="status" aria-live="polite"></p><button class="again" type="button">Play again</button></div>
+  </section>
+
+  <section class="exp-sec grid" aria-labelledby="exp-h">
+    <figure class="exp-photo ph" data-in><img src="assets/img/n/about-hike.jpg" alt="Peri on the rocks below the mountains, smiling" loading="lazy"></figure>
+    <div class="exp-main">
+      <h2 class="h2" id="exp-h">Experience</h2>
+      <!-- DRAFT: working copy, not approved final wording -->
+      <p class="body">After digital marketing I moved into recruitment at Recruitcha, the recruitment agency, and taught myself to build software with AI tools. I started building our internal recruiting tools, and later took on product development and technical work on Recruitcha GTM, the software product.</p>
+      <ol class="exp type">
+          <li><span class="when">Dates to come</span><span class="what">Biomedical Science &amp; Physiology</span><span class="where">University to come</span></li>
+          <li><span class="when">Dates to come</span><span class="what">Digital marketing</span><span class="where">Employer to come</span></li>
+          <li><span class="when">Dates to come</span><span class="what">Recruitment and internal recruiting tools</span><span class="where">Recruitcha, recruitment agency</span></li>
+          <li><span class="when">Dates to come</span><span class="what">Product development and technical work</span><span class="where">Recruitcha GTM, software product</span></li>
+      </ol>
+    </div>
   </section>
 
   <section class="hello">
@@ -67,6 +63,7 @@
   </section>
   <p class="colophon caption type"><span>&copy; <span data-year>2026</span> Peri</span><a href="#top">back to top</a></p>
 </main>
+<div class="lb" role="dialog" aria-label="Photo" aria-modal="true"><button type="button" class="type upper">Close</button><img alt=""></div>
 <script src="assets/peri.js"></script>
 </body>
 </html>
