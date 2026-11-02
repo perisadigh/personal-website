@@ -23,13 +23,38 @@
     <h1 class="ptitle" data-in><span class="lab"><span>About</span></span></h1>
   </section>
 
-  <section class="about grid">
-    <div class="rail"><figure class="ph tall" data-in><img src="assets/img/c/about-rocks.jpg" alt="Peri standing on the rocks in the sun"></figure></div>
+  <section class="intro grid">
+    <p class="lead">I studied biomedical science, then got a job in digital marketing and somehow ended up building software at a startup.</p>
+    <figure class="ph wide" data-in><img src="assets/img/c/about-sit.jpg" alt="Peri sitting on the rocks with mountains behind her"></figure>
+  </section>
+
+  <section class="game" aria-label="Two truths and a lie">
+    <div class="grid">
+      <div class="game-head">
+        <div>
+          <h2 class="script ink hscript gt" data-in data-write>two truths and a lie</h2>
+          <p class="ask type">Which one is the lie?</p>
+        </div>
+        <div class="snaps" aria-hidden="true">
+          <figure class="ph " data-in><img src="assets/img/c/kid-pigtails.jpg" alt="" loading="lazy"></figure>
+          <figure class="ph " data-in><img src="assets/img/c/kid-pillow.jpg" alt="" loading="lazy"></figure>
+        </div>
+      </div>
+      <div class="cards" data-in>
+        <button class="card" type="button" style="--i:1"><span class="no type">01</span><span class="said">The very first thing I did when I came out of the womb was grab the scissors out of the doctor&rsquo;s hand and refuse to let go.</span><span class="pick type">your pick</span><span class="stamp type">true</span></button>
+        <button class="card" type="button" style="--i:2"><span class="no type">02</span><span class="said">When I was four, my mom had to tell me Santa wasn&rsquo;t real because I wouldn&rsquo;t accept any explanation for why he could get into our house through the chimney but burglars couldn&rsquo;t.</span><span class="extra">I then went to school and accidentally ruined Santa for the other kids.</span><span class="pick type">your pick</span><span class="stamp type">true</span></button>
+        <!-- DRAFT: the false clause below is not confirmed by Peri yet -->
+        <button class="card" type="button" style="--i:3" data-lie><span class="no type">03</span><span class="said">My brother and I were the only kids in an adult kung fu class, and by twelve I was helping teach it.</span><span class="pick type">your pick</span><span class="stamp type">the lie</span></button>
+      </div>
+      <div class="game-foot"><p class="status sr" aria-live="polite"></p><button class="again type upper" type="button">Play again</button></div>
+    </div>
+  </section>
+
+  <section class="exp-sec grid">
+    <h2 class="rail label type">Experience</h2>
     <div class="main">
-      <p class="lead">I studied biomedical science, then got a job in digital marketing and somehow ended up building software at a startup.</p>
       <!-- DRAFT: working copy, not approved final wording -->
       <p class="body">After digital marketing I moved into recruitment at Recruitcha, the recruitment agency, and taught myself to build software with AI tools. I started building our internal recruiting tools, and later took on product development and technical work on Recruitcha GTM, the software product.</p>
-      <h2 class="label type">Experience</h2>
       <ul class="exp">
         <li><span class="when type">Dates to come</span><span class="what">Biomedical Science &amp; Physiology</span><span class="where">University to come</span></li>
         <li><span class="when type">Dates to come</span><span class="what">Digital marketing</span><span class="where">Employer to come</span></li>
@@ -40,27 +65,9 @@
     </div>
   </section>
 
-  <section class="game grid" aria-label="Two truths and a lie">
-    <div class="rail kids">
-      <figure class="ph " data-in><img src="assets/img/c/kid-pigtails.jpg" alt="Peri as a small child with pigtails" loading="lazy"></figure>
-      <figure class="ph " data-in><img src="assets/img/c/kid-pillow.jpg" alt="Peri as a child, hugging a pillow" loading="lazy"></figure>
-    </div>
-    <div class="main">
-      <h2 class="script gt" data-in>two truths and a lie</h2>
-      <p class="ask type">Which one is the lie?</p>
-      <div class="claims">
-        <button class="claim" type="button"><span class="no type">01</span><span class="said">The very first thing I did when I came out of the womb was grab the scissors out of the doctor&rsquo;s hand and refuse to let go.</span><span class="verdict type">true</span><svg class="loop" aria-hidden="true"><path/></svg></button>
-        <button class="claim" type="button"><span class="no type">02</span><span class="said">When I was four, my mom had to tell me Santa wasn&rsquo;t real because I wouldn&rsquo;t accept any explanation for why he could get into our house through the chimney but burglars couldn&rsquo;t.<span class="extra">I then went to school and accidentally ruined Santa for the other kids.</span></span><span class="verdict type">true</span><svg class="loop" aria-hidden="true"><path/></svg></button>
-        <!-- DRAFT: the false clause below is not confirmed by Peri yet -->
-        <button class="claim" type="button" data-lie><span class="no type">03</span><span class="said">My brother and I were the only kids in an adult kung fu class, and by twelve I was helping teach it.</span><span class="verdict type">the lie</span><svg class="loop" aria-hidden="true"><path/></svg></button>
-      </div>
-      <div class="game-foot"><p class="status type" aria-live="polite"></p><button class="again type upper" type="button">Play again</button></div>
-    </div>
-  </section>
-
   <section class="hello">
     <div class="col">
-      <p class="script say" data-in>say hello</p>
+      <p class="script ink say" data-in data-write>say hello</p>
       <p class="links type upper"><a href="mailto:you@example.com">Email</a><a href="https://www.linkedin.com/">LinkedIn</a><a href="#">CV</a></p>
     </div>
   </section>
