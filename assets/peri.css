@@ -239,16 +239,6 @@ p, h1, h2, ol { margin: 0; }
 .ph[data-lightbox] { cursor: zoom-in; }
 .label { font-size: .9rem; color: var(--blue); text-transform: uppercase; letter-spacing: .04em; font-weight: 400; }
 .body { font-size: clamp(1.05rem, 1.25vw, 1.2rem); line-height: 1.6; max-width: 36em; }
-.lead { font: 400 clamp(1.7rem, 3.2vw, 3rem)/1.18 var(--sans); letter-spacing: -.02em; max-width: 20em; text-wrap: pretty; }
-.tag { color: var(--blue); font-size: .9rem; text-transform: uppercase; letter-spacing: .04em; display: flex; gap: 1.2rem; }
-.hscript { font-size: clamp(3.6rem, 8vw, 6.8rem); transform: rotate(-4deg); transform-origin: 0 50%; width: fit-content; }
-
-/* Photo grids: every photo the same shape, so the page reads as one set. Click opens the whole photo. */
-.tiles { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .8rem; }
-.tiles.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-.tiles .ph { aspect-ratio: 4 / 5; max-width: 100%; }
-.tiles .ph img { width: 100%; height: 100%; object-fit: cover; transition: transform .8s var(--ease), clip-path 1.2s cubic-bezier(.7, 0, .2, 1); }
-.tiles .ph:hover img { transform: scale(1.04); }
 
 /* About
    The home page's centre line carried on: "about" written over a small photo,
@@ -357,19 +347,63 @@ p, h1, h2, ol { margin: 0; }
   .steps .where { flex-basis: 100%; padding-left: 2.2rem; align-items: flex-start; text-align: left; }
 }
 
+/* COVER: the opening of Things I've made, Things I love and Rankings.
+   A big title starts on the paper and runs onto the photo; a typed note runs down the photo's edge. */
+.cover { padding-top: clamp(3rem, 9vh, 6rem); grid-template-rows: minmax(2rem, 1fr) auto auto minmax(2rem, 1fr); row-gap: 1.2rem; min-height: min(86svh, 50rem); }
+.cover-photo { grid-column: 8 / 12; grid-row: 1 / 5; align-self: center; margin: 0; aspect-ratio: 4 / 5; }
+.cover.wide .cover-photo { grid-column: 7 / 12; aspect-ratio: 3 / 2; }
+.cover-photo img { width: 100%; height: 100%; object-fit: cover; }
+.cover-no { grid-column: 2 / 6; grid-row: 2; margin: 0; color: var(--blue); font-size: .9rem; }
+.cover-title {
+  grid-column: 2 / 13; grid-row: 3; position: relative; z-index: 2; margin: 0;
+  font: 500 clamp(3.2rem, 8vw, 8rem)/.9 var(--sans); text-transform: uppercase; letter-spacing: -.04em;
+}
+.cover-title .lab { display: block; width: fit-content; }
+.cover.wide .cover-photo { grid-row: 1 / 4; align-self: end; }
+.cover.wide .cover-side { grid-column: 7 / 12; grid-row: 4; align-self: start; writing-mode: horizontal-tb; max-height: none; max-width: 30rem; }
+.cover.left .cover-photo { grid-column: 6 / 10; }
+.cover-side { grid-column: 12 / 13; grid-row: 1 / 5; align-self: center; justify-self: start; writing-mode: vertical-rl; font-size: .95rem; line-height: 1.5; max-height: 28rem; }
+.cover-side > span { text-wrap: wrap; }
+.m .cover-title .lab > span { transform: translateY(105%); transition: transform 1s var(--ease); }
+.m .cover-title.in .lab > span { transform: none; }
+.m .cover-title.in .lab + .lab > span { transition-delay: .12s; }
+
+/* small typewriter labels, a number and a word or two, like an index card */
+.pmeta { display: flex; gap: 1.6rem; margin: 0; font-size: .85rem; text-transform: uppercase; letter-spacing: .04em; }
+.pmeta .pn { color: var(--blue); }
+
 /* Things I've made */
-.made { padding-top: clamp(4rem, 12vh, 7rem); row-gap: 2rem; align-items: baseline; }
-.h2 { font: 500 clamp(2rem, 3.6vw, 3.4rem)/1 var(--sans); text-transform: uppercase; letter-spacing: -.025em; margin-bottom: 1rem; }
-.h2.xl { font-size: clamp(2.8rem, 7vw, 6.6rem); letter-spacing: -.04em; }
-.tools { list-style: none; padding: 0; margin: 2rem 0 0; }
-.tools li { display: grid; grid-template-columns: 3rem minmax(0, 1fr); column-gap: 1rem; padding: 1.2rem 0; border-top: 1px solid var(--line); align-items: baseline; }
-.tools li:last-child { border-bottom: 1px solid var(--line); }
-.tools li > span { color: var(--blue); }
-.tools h3 { font: 400 clamp(1.25rem, 2vw, 1.7rem)/1.2 var(--sans); margin: 0; }
-.tools .soon { grid-column: 2; color: var(--muted); margin-top: .35rem; }
-.shot { margin-top: 2rem; aspect-ratio: 16 / 9; max-width: 100%; border: 1px dashed var(--muted); display: grid; place-items: center; color: var(--muted); padding: 1rem; text-align: center; }
-.made .tiles { grid-column: 1 / 13; margin-top: 1rem; }
-.tracks { list-style: none; padding: 0; margin: 2.4rem 0 0; }
+.projects { padding-top: clamp(5rem, 14vh, 9rem); align-items: start; }
+.proj { min-width: 0; display: flex; flex-direction: column; }
+.p1 { grid-column: 2 / 7; }
+.p2 { grid-column: 8 / 13; margin-top: clamp(6rem, 18vh, 12rem); }
+.pname { margin: 1.4rem 0 .8rem; font: 500 clamp(2rem, 3.6vw, 3.4rem)/.95 var(--sans); text-transform: uppercase; letter-spacing: -.03em; }
+.pdesc { margin: 0; font-size: 1.1rem; }
+.tools { list-style: none; padding: 0; margin: 2.2rem 0 0; display: flex; flex-direction: column; gap: 1.4rem; }
+.tools li { display: grid; grid-template-columns: 2rem minmax(0, 1fr); align-items: baseline; }
+.tools li > .type { color: var(--blue); font-size: .85rem; }
+.tools .tn { display: block; font-size: 1.25rem; line-height: 1.25; }
+.tools .soon { display: block; margin-top: .3rem; color: var(--muted); font-size: .85rem; }
+.shot { margin-top: 2.2rem; aspect-ratio: 16 / 10; max-width: 100%; background: color-mix(in srgb, var(--line) 55%, transparent); display: grid; place-items: center; color: var(--muted); padding: 1rem; text-align: center; font-size: .85rem; }
+
+/* fun sections: a label, a handwritten heading that runs onto the first photo, then photos scattered across the page */
+.fun { padding-top: clamp(7rem, 18vh, 11rem); align-items: start; }
+.fun > .pmeta { grid-column: 2 / 7; grid-row: 1; margin-bottom: 1.2rem; }
+.fun .over { grid-column: 3 / 13; grid-row: 2; position: relative; z-index: 3; margin: 0 0 -.42em; font-size: clamp(3.8rem, 8.4vw, 7.6rem); transform: rotate(-4deg); transform-origin: 0 60%; width: fit-content; }
+.scatter { grid-column: 1 / 13; grid-row: 3; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 1.25rem; row-gap: clamp(1.5rem, 3vw, 2.5rem); align-items: start; }
+.scatter .ph { margin: 0; }
+.scatter .ph img { width: 100%; height: auto; transition: transform .8s var(--ease), clip-path 1.2s cubic-bezier(.7, 0, .2, 1); }
+.scatter .ph:nth-child(9n+1) { grid-column: 1 / 6; }
+.scatter .ph:nth-child(9n+2) { grid-column: 7 / 10; margin-top: clamp(4rem, 9vw, 8rem); }
+.scatter .ph:nth-child(9n+3) { grid-column: 10 / 13; margin-top: clamp(1rem, 2.5vw, 2rem); }
+.scatter .ph:nth-child(9n+4) { grid-column: 2 / 5; margin-top: clamp(2rem, 5vw, 4rem); }
+.scatter .ph:nth-child(9n+5) { grid-column: 6 / 10; }
+.scatter .ph:nth-child(9n+6) { grid-column: 10 / 13; margin-top: clamp(4rem, 8vw, 7rem); }
+.scatter .ph:nth-child(9n+7) { grid-column: 1 / 5; margin-top: clamp(1rem, 2.5vw, 2rem); }
+.scatter .ph:nth-child(9n+8) { grid-column: 6 / 9; margin-top: clamp(3rem, 7vw, 6rem); }
+.scatter .ph:nth-child(9n+9) { grid-column: 9 / 13; }
+.music .tracks { grid-column: 3 / 10; grid-row: 3; margin-top: 2.6rem; }
+.tracks { list-style: none; padding: 0; margin: 0; }
 .tracks li { display: grid; grid-template-columns: 2.6rem minmax(0, 1fr) auto; align-items: center; column-gap: 1rem; padding: .9rem 0; border-top: 1px solid var(--line); }
 .tracks li:last-child { border-bottom: 1px solid var(--line); }
 .play { width: 2.2rem; height: 2.2rem; border-radius: 50%; border: 1px solid var(--ink); background: none; color: var(--ink); display: grid; place-items: center; cursor: pointer; padding: 0; }
@@ -378,32 +412,53 @@ p, h1, h2, ol { margin: 0; }
 .tracks .tt { font-size: 1.15rem; }
 .tracks .len { color: var(--muted); }
 
-/* Things I love: a plain numbered list, read down each column. */
+/* Things I love: two loose columns, the second set a little lower */
+.loves { padding-top: clamp(5rem, 14vh, 9rem); }
 .loves-list {
-  grid-column: 1 / 13; list-style: none; margin: 0; padding: 0;
-  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-template-rows: repeat(10, auto); grid-auto-flow: column; column-gap: 2.5rem;
+  grid-column: 2 / 13; list-style: none; margin: 0; padding: 0;
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: repeat(15, auto); grid-auto-flow: column; column-gap: clamp(2rem, 5vw, 5rem);
 }
-.loves-list li { display: grid; grid-template-columns: 2.4rem minmax(0, 1fr); align-items: baseline; padding: .85rem 0 .9rem; border-top: 1px solid var(--line); font-size: clamp(1.1rem, 1.45vw, 1.35rem); line-height: 1.3; }
+.loves-list li { display: grid; grid-template-columns: 2.6rem minmax(0, 1fr); align-items: baseline; padding: .5rem 0; font-size: clamp(1.15rem, 1.6vw, 1.45rem); line-height: 1.3; }
+.loves-list li:nth-child(n+16) { transform: translateY(clamp(2rem, 6vw, 5rem)); }
 .loves-list .n { color: var(--blue); font-size: .8rem; }
 .loves-list a { text-decoration: underline; text-decoration-color: color-mix(in srgb, var(--red) 45%, transparent); text-decoration-thickness: 1px; text-underline-offset: .2em; }
 .loves-list a:hover, .loves-list a:focus-visible { color: var(--red); text-decoration-color: var(--red); }
-.people { padding-top: clamp(6rem, 16vh, 10rem); row-gap: 2.5rem; }
-.people .hscript { grid-column: 5 / 13; }
-.people .tiles { grid-column: 1 / 13; }
 
-/* Rankings: one list, best to worst, and the type shrinks as it goes. */
-.rank-list { grid-column: 5 / 13; list-style: none; padding: 0; margin: 0; }
-.rank-list li { display: grid; grid-template-columns: 3rem minmax(0, 1fr); align-items: baseline; border-top: 1px solid var(--line); padding: calc(.25rem + var(--s) * .12rem) 0; }
-.rank-list li:last-child { border-bottom: 1px solid var(--line); }
-.rank-list .pos { color: var(--blue); font-size: .85rem; }
-.rank-list .age { font: 500 calc(var(--s) * 1rem)/1.05 var(--sans); text-transform: uppercase; letter-spacing: calc(-.01em - var(--s) * .006em); }
-.plot { padding-top: clamp(5rem, 12vh, 8rem); row-gap: 1.5rem; }
+/* Rankings: best to worst falls down the page, each age a little smaller and further along */
+.ranks { position: relative; padding-top: clamp(5rem, 14vh, 9rem); }
+.rank-list { grid-column: 1 / 13; list-style: none; padding: 0; margin: 0; }
+.rank-list li { display: flex; align-items: baseline; gap: .9rem; padding: calc(.12rem + var(--s) * .08rem) 0 0 calc((var(--i) - 1) * 1.9%); }
+.rank-list .pos { color: var(--blue); font-size: .8rem; width: 1.6rem; flex: none; }
+.rank-list .age { font: 500 calc(var(--s) * 1rem)/1.02 var(--sans); text-transform: uppercase; letter-spacing: calc(-.01em - var(--s) * .006em); white-space: nowrap; }
+.plot { position: absolute; left: max(var(--gutter), env(safe-area-inset-left, 0px)); bottom: 0; width: min(25rem, 30%); }
 .chart { width: 100%; height: auto; overflow: visible; }
 .chart .axis { fill: none; stroke: var(--muted); stroke-width: 1; }
 .chart .ln { fill: none; stroke: var(--blue); stroke-width: 1.6; stroke-linejoin: round; }
 .chart circle { fill: var(--blue); }
 .chart text { font: 400 11px var(--type); fill: var(--muted); text-anchor: middle; }
 .chart .yt { text-anchor: end; }
+
+@media (max-width: 760px) {
+  .cover { grid-template-rows: auto auto auto auto; min-height: 0; padding-top: 2.5rem; row-gap: .8rem; }
+  .cover .cover-photo, .cover.wide .cover-photo, .cover.left .cover-photo { grid-column: 2 / 7; grid-row: 1; align-self: start; }
+  .cover-no { grid-column: 1 / 7; grid-row: 2; margin-top: -2.2rem; position: relative; z-index: 2; }
+  .cover-title { grid-column: 1 / 7; grid-row: 3; margin-top: -.15em; font-size: clamp(2.9rem, 14vw, 4.4rem); }
+  .cover .cover-side, .cover.wide .cover-side { grid-column: 1 / 7; grid-row: 4; writing-mode: horizontal-tb; max-height: none; margin-top: .6rem; }
+  .p1, .p2 { grid-column: 1 / 7; }
+  .p2 { margin-top: 5rem; }
+  .fun > .pmeta { grid-column: 1 / 7; }
+  .fun .over { grid-column: 1 / 7; font-size: clamp(3rem, 13vw, 4.4rem); }
+  .scatter { grid-column: 1 / 7; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: .8rem; row-gap: .8rem; }
+  .scatter .ph:nth-child(n) { grid-column: auto; margin-top: 0; }
+  .scatter .ph:nth-child(even) { margin-top: 2.4rem; }
+  .scatter .ph:nth-child(5n) { grid-column: 1 / 3; width: 78%; justify-self: center; margin-top: .8rem; }
+  .music .tracks { grid-column: 1 / 7; }
+  .loves-list { grid-column: 1 / 7; grid-template-columns: minmax(0, 1fr); grid-template-rows: none; grid-auto-flow: row; }
+  .loves-list li:nth-child(n+16) { transform: none; }
+  .rank-list li { padding-left: calc((var(--i) - 1) * 1.2%); }
+  .rank-list .age { font-size: calc(var(--s) * .5rem + .42rem); }
+  .plot { position: static; width: 100%; margin-top: 4rem; grid-column: 1 / 7; }
+}
 
 /* lightbox */
 .lb { position: fixed; inset: 0; z-index: 70; background: color-mix(in srgb, var(--ink) 94%, transparent); display: none; place-items: center; padding: 4vh 4vw; cursor: zoom-out; }
@@ -420,33 +475,22 @@ p, h1, h2, ol { margin: 0; }
 .m .ptitle.in .lab > span { transform: none; }
 .m .ph img { clip-path: inset(0 0 100% 0); transform: scale(1.08); transition: clip-path 1.2s cubic-bezier(.7, 0, .2, 1), transform 1.8s var(--ease); }
 .m .ph.in img { clip-path: inset(0); transform: none; }
-.m .tiles .ph.in:hover img { transform: scale(1.04); }
-.m .snaps .ph img { clip-path: none; transform: none; }
+.m .scatter .ph.in:hover img { transform: scale(1.03); }
 .m [data-rows] > li { opacity: 0; transform: translateY(.6rem); transition: opacity .6s calc(var(--i) * 35ms) var(--ease), transform .6s calc(var(--i) * 35ms) var(--ease); }
 .m [data-rows].in > li { opacity: 1; transform: none; }
 .m .card { opacity: 0; }
 .m .cards.in .card { opacity: 1; transition: opacity .5s calc(var(--i) * 120ms), transform .35s var(--ease), box-shadow .35s var(--ease); }
 .m .plot .ln { stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 2.4s .2s cubic-bezier(.5, 0, .2, 1); }
-.m .plot .in .ln { stroke-dashoffset: 0; }
+.m .plot.in .ln { stroke-dashoffset: 0; }
 .m .plot circle { opacity: 0; transition: opacity .6s 1.8s; }
-.m .plot .in circle { opacity: 1; }
+.m .plot.in circle { opacity: 1; }
 
-@media (max-width: 1000px) {
-  .loves-list { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: repeat(15, auto); }
-  .tiles { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-}
 @media (max-width: 760px) {
   .top { align-items: flex-start; }
   .sig { font-size: 2.6rem; }
   .pnav { font-size: .8rem; flex-direction: column; align-items: flex-end; gap: .1rem; }
   .grid { grid-template-columns: repeat(6, minmax(0, 1fr)); }
-  .rail, .main, .full, .pno, .ptitle, .phead .typed, .people .hscript, .rank-list,
-  .loves-list, .people .tiles, .made .tiles { grid-column: 1 / 7; }
+  .rail, .main, .full, .pno, .ptitle, .phead .typed { grid-column: 1 / 7; }
   .phead { padding-top: 3.5rem; row-gap: 1rem; }
-  .loves-list { grid-template-columns: minmax(0, 1fr); grid-template-rows: none; grid-auto-flow: row; }
-  .tiles, .tiles.three { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .5rem; }
-  .rank-list .age { font-size: calc(var(--s) * .62rem + .45rem); }
-  .rank-list li { grid-template-columns: 2.4rem minmax(0, 1fr); }
-  .tag { margin-bottom: -.5rem; }
 }
 .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
