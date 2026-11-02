@@ -5,36 +5,40 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Peri</title>
 <meta name="description" content="Things Peri has made, what she&rsquo;s been up to, and things she loves.">
-<meta name="theme-color" content="#F1E9DF">
+<meta name="theme-color" content="#F2F0EA">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..600;1,6..96,400..600&family=DM+Mono:wght@400&family=Mrs+Saint+Delafield&family=Schibsted+Grotesk:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Homemade+Apple&family=IBM+Plex+Mono:wght@400;700&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
 <script>document.documentElement.classList.add('js')</script>
 </head>
-<body>
+<body class="is-home">
 <main>
-  <section class="home">
-    <div class="home-text">
-      <a class="mark" href="index.html" aria-label="Peri, home">Peri</a>
-      <div class="home-copy">
-        <h1 class="d" data-reveal>I like making things. Some are useful. Others exist purely because I thought they&rsquo;d be <em>funny</em>.</h1>
-        <p class="onward" data-reveal>Here&rsquo;s a little bit of <a href="work.html" data-swap="made" data-label="Work &amp; Play">what I&rsquo;ve made</a>, <a href="about.html" data-swap="upto" data-label="About">what I&rsquo;ve been up to</a>, and <a href="things-i-love.html" data-swap="love" data-label="Things I love">things I love</a>.</p>
-      </div>
-      <div class="home-foot">
-        <div class="links"><a href="mailto:you@example.com">Email</a><a href="https://www.linkedin.com/">LinkedIn</a><a href="#">CV</a></div>
-        <a href="ranking.html" class="soft">Ranking every version of myself &rarr;</a>
-      </div>
-    </div>
-    <div class="home-photo">
-      <img src="assets/img/v/m-portrait.jpg" alt="Peri sitting on the rocks, looking into the wind">
-      <img class="alt" data-for="made" src="assets/img/v/f-sunset-path.jpg" alt="" loading="lazy">
-      <img class="alt" data-for="upto" src="assets/img/v/m-peri-hike.jpg" alt="" loading="lazy">
-      <img class="alt" data-for="love" src="assets/img/v/f-dogs-blanket.jpg" alt="" loading="lazy">
-      <span class="cap"></span>
+  <section class="index">
+    <a class="sig" href="index.html" aria-label="Peri, home">Peri</a>
+    <h1 class="h intro">I like making things. Some are useful. Others exist purely because I thought they&rsquo;d be funny.</h1>
+    <nav class="stagger" aria-label="Main">
+      <a class="s1" href="work.html"><span class="n">1</span><span class="j">Here&rsquo;s a little bit of what I&rsquo;ve made,</span><span class="to">Work &amp; Play</span></a>
+      <a class="s2" href="about.html"><span class="n">2</span><span class="j">what I&rsquo;ve been up to,</span><span class="to">About</span></a>
+      <a class="s3" href="things-i-love.html"><span class="n">3</span><span class="j">and things I love.</span><span class="to">Things I love</span></a>
+    </nav>
+    <div class="strip">
+      <div class="row"><img src="assets/img/g/face.jpg" alt="Peri sitting on the rocks"><a class="l" href="mailto:you@example.com">Email</a></div>
+      <div class="row"><img src="assets/img/g/window.jpg" alt="Peri by a window, holding a camera"><a class="l" href="https://www.linkedin.com/">LinkedIn</a></div>
+      <div class="row"><img src="assets/img/g/eyes.jpg" alt="Peri, close up"><a class="l" href="#">CV</a></div>
     </div>
   </section>
+
+  <section class="someday">
+    <figure class="sea"><img src="assets/img/g/boardwalk.jpg" alt="Peri walking down a boardwalk towards the sea" loading="lazy"></figure>
+    <div class="written" aria-hidden="true"><span>Peri</span><span>Peri</span><span>Peri</span></div>
+    <p class="pipes"><a href="work.html">Work &amp; Play</a><i>|</i><a href="about.html">About</a><i>|</i><a href="things-i-love.html">Things I love</a></p>
+  </section>
 </main>
+<footer class="foot">
+  <div class="contact"><a href="mailto:you@example.com">Email</a><a href="https://www.linkedin.com/">LinkedIn</a><a href="#">CV</a></div>
+  <div class="small"><span>&copy; <span data-year></span> Peri</span><a href="ranking.html">Ranking every version of myself</a></div>
+</footer>
 <script src="assets/site.js"></script>
 </body>
 </html>
