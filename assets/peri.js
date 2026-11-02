@@ -143,3 +143,20 @@
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && lb.classList.contains('open')) close(); });
   }
 })();
+
+/* AI music: one track plays at a time; the button turns into a pause */
+(function(){
+  var PLAY='<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 1l9 5-9 5z" fill="currentColor"/></svg>',
+      PAUSE='<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 1h3v10H2zM7 1h3v10H7z" fill="currentColor"/></svg>',
+      cur=null,au=null;
+  function reset(li){if(!li)return;var b=li.querySelector('.play');b.innerHTML=PLAY;b.setAttribute('aria-label','Play '+li.querySelector('.tt').textContent);li.classList.remove('on')}
+  document.querySelectorAll('.tracks li[data-src]').forEach(function(li){
+    var b=li.querySelector('.play');b.setAttribute('aria-label','Play '+li.querySelector('.tt').textContent);
+    b.addEventListener('click',function(){
+      if(cur===li&&au){if(au.paused){au.play();b.innerHTML=PAUSE;b.setAttribute('aria-label','Pause');li.classList.add('on')}else{au.pause();reset(li)}return}
+      if(au){au.pause();reset(cur)}
+      au=new Audio(li.dataset.src);cur=li;au.play();b.innerHTML=PAUSE;b.setAttribute('aria-label','Pause');li.classList.add('on');
+      au.addEventListener('ended',function(){reset(li);cur=null;au=null});
+    });
+  });
+})();

@@ -442,3 +442,5 @@ p, h1, h2, ol { margin: 0; }
 .colophon { color: var(--muted); max-width: none; padding: 0 4vw 2rem; }
 .colophon a { color: var(--muted); }
 @media (max-width: 760px) { .top { padding: 1.2rem 16px 0; } .colophon { padding: 0 16px 2rem; } }
+.tracks li[hidden] { display: none; }
+.tracks li.on .play { background: var(--ink); color: var(--paper); }
