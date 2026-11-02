@@ -15,12 +15,11 @@
   var game = document.querySelector('.game');
   if (game) {
     var status = game.querySelector('.game-status');
-    game.querySelectorAll('.truth').forEach(function (b) {
+    game.querySelectorAll('.truth button').forEach(function (b) {
       b.addEventListener('click', function () {
-        if (game.classList.contains('done')) return;
-        b.classList.add('picked');
+        var t = b.closest('.truth');
         game.classList.add('done');
-        status.textContent = b.hasAttribute('data-lie') ? 'You got it.' : 'Nope. That one actually happened.';
+        status.textContent = t.hasAttribute('data-lie') ? 'You got it.' : 'Nope. That one actually happened.';
       });
     });
   }
