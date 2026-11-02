@@ -250,34 +250,38 @@ p, h1, h2, ol { margin: 0; }
 .tiles .ph img { width: 100%; height: 100%; object-fit: cover; transition: transform .8s var(--ease), clip-path 1.2s cubic-bezier(.7, 0, .2, 1); }
 .tiles .ph:hover img { transform: scale(1.04); }
 
-/* About */
-.intro { row-gap: 3rem; }
-.intro .lead { grid-column: 5 / 13; }
-.wide { grid-column: 1 / 13; aspect-ratio: 16 / 9; max-width: 100%; }
-.wide img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 45%; }
+/* About
+   The home page's centre line carried on: "about" written over a small photo,
+   the game laid out on the paper, then the work, typed in blue beside a photo. */
+.about { overflow-x: clip; }
+.about-hero { min-height: min(70svh, 40rem); }
+.about-hero .hero-name { font-size: clamp(7.5rem, 21vw, 18rem); top: 62%; }
 
-.game { margin-top: clamp(6rem, 16vh, 10rem); background: var(--blue); color: var(--paper); padding-block: clamp(4rem, 10vh, 6.5rem); }
-.game-head { grid-column: 1 / 13; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 2rem 3rem; margin-bottom: clamp(2.5rem, 6vh, 4rem); }
-.game .gt { color: var(--paper); }
-.game .ask { font-size: 1.2rem; margin-top: 1.4rem; }
-.snaps { display: flex; gap: 1rem; }
-.snaps .ph { width: clamp(5.5rem, 10vw, 8.5rem); padding: .35rem .35rem 1.4rem; background: var(--paper); box-shadow: 0 6px 18px rgb(0 0 0 / .18); }
-.snaps .ph:nth-child(1) { transform: rotate(-5deg); }
-.snaps .ph:nth-child(2) { transform: rotate(4deg) translateY(.8rem); }
-.cards { grid-column: 1 / 13; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.4rem; }
+.game { max-width: 72rem; margin: 0 auto; padding: clamp(4rem, 10vh, 6.5rem) max(var(--gutter), env(safe-area-inset-right, 0px)) 0 max(var(--gutter), env(safe-area-inset-left, 0px)); }
+.game-head { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: center; column-gap: clamp(1.5rem, 4vw, 4rem); margin-bottom: clamp(2.8rem, 7vh, 4.5rem); }
+.game-title { display: flex; flex-direction: column; align-items: center; text-align: center; }
+.gt { margin: 0; font-size: clamp(3.6rem, 7.4vw, 6.6rem); transform: rotate(-4deg); white-space: nowrap; }
+.game .ask { margin: 2.4rem 0 0; font-size: clamp(1.05rem, 1.45vw, 1.3rem); color: var(--blue); }
+.snap { margin: 0; width: clamp(5.5rem, 9.5vw, 8.5rem); padding: .4rem .4rem 1.5rem; background: #f8f6f1; box-shadow: 0 1px 2px rgb(29 27 25 / .12), 0 10px 24px rgb(29 27 25 / .12); }
+.snap img { aspect-ratio: 4 / 5; object-fit: cover; width: 100%; }
+.snap-l { justify-self: end; transform: rotate(-7deg) translateY(.6rem); }
+.snap-r { justify-self: start; transform: rotate(6deg) translateY(-.4rem); }
+
+.cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1rem, 2vw, 1.8rem); }
 .card {
-  position: relative; display: flex; flex-direction: column; gap: 1rem; text-align: left; min-height: 17rem;
-  padding: 1.4rem 1.4rem 4rem; border: 0; border-radius: 3px; background: var(--paper); color: var(--ink);
-  font: inherit; cursor: pointer; box-shadow: 0 10px 28px rgb(0 0 0 / .18);
+  position: relative; display: flex; flex-direction: column; gap: 1rem; text-align: left; min-height: 16rem;
+  padding: 1.4rem 1.4rem 4rem; border: 0; border-radius: 2px; background: #f8f6f1; color: var(--ink);
+  font: inherit; cursor: pointer; box-shadow: 0 1px 2px rgb(29 27 25 / .1), 0 10px 26px rgb(29 27 25 / .1);
   transition: transform .35s var(--ease), box-shadow .35s var(--ease), opacity .4s;
 }
 .card:nth-child(1) { transform: rotate(-1.6deg); }
-.card:nth-child(2) { transform: rotate(1.1deg) translateY(.6rem); }
-.card:nth-child(3) { transform: rotate(-.6deg); }
-.game:not(.picked) .card:hover, .game:not(.picked) .card:focus-visible { transform: rotate(0) translateY(-.5rem); box-shadow: 0 18px 36px rgb(0 0 0 / .24); }
+.card:nth-child(2) { transform: rotate(1.1deg) translateY(.7rem); }
+.card:nth-child(3) { transform: rotate(-.7deg); }
+.game:not(.picked) .card:hover, .game:not(.picked) .card:focus-visible { transform: rotate(0) translateY(-.5rem); box-shadow: 0 1px 2px rgb(29 27 25 / .1), 0 20px 40px rgb(29 27 25 / .16); }
+.card:focus-visible { outline: 2px solid var(--blue); outline-offset: 4px; }
 .card .no { color: var(--blue); }
-.card .said { font-size: clamp(1.1rem, 1.45vw, 1.35rem); line-height: 1.35; letter-spacing: -.01em; text-wrap: pretty; }
-.card .extra { font: 400 1rem/1.4 var(--type); color: var(--blue); max-height: 0; overflow: hidden; opacity: 0; transition: opacity .5s .9s, max-height .5s .9s; }
+.card .said { font-size: clamp(1.1rem, 1.45vw, 1.3rem); line-height: 1.38; letter-spacing: -.01em; text-wrap: pretty; transition: opacity .6s .5s; }
+.card .extra { font: 400 1rem/1.45 var(--type); color: var(--blue); max-height: 0; overflow: hidden; opacity: 0; transition: opacity .5s .9s, max-height .5s .9s; }
 .card .pick { position: absolute; top: 1.2rem; right: 1.2rem; color: var(--paper); background: var(--ink); padding: .2rem .5rem; font-size: .78rem; text-transform: uppercase; letter-spacing: .04em; opacity: 0; transform: translateY(-.3rem); transition: opacity .25s, transform .25s; }
 .card .stamp {
   position: absolute; right: 1.2rem; bottom: 1.1rem; padding: .25rem .7rem .2rem; border: 2.5px solid currentColor; border-radius: 4px;
@@ -286,7 +290,7 @@ p, h1, h2, ol { margin: 0; }
 }
 .card[data-lie] .stamp { color: var(--red); font-size: 1.5rem; }
 .game.picked .card { cursor: default; }
-.game.picked .card.chosen { transform: rotate(0) translateY(-.6rem); box-shadow: 0 0 0 3px var(--ink), 0 18px 36px rgb(0 0 0 / .24); }
+.game.picked .card.chosen { transform: rotate(0) translateY(-.6rem); box-shadow: 0 0 0 2px var(--ink), 0 20px 40px rgb(29 27 25 / .16); }
 .game.picked .card.chosen .pick { opacity: 1; transform: none; }
 .game.revealed .card .stamp { animation: stamp .45s cubic-bezier(.3, 1.6, .5, 1) both; }
 .game.revealed .card:nth-child(2) .stamp { animation-delay: .25s; }
@@ -294,22 +298,64 @@ p, h1, h2, ol { margin: 0; }
 .game.revealed .card[data-lie] .stamp { animation-delay: .85s; }
 .game.revealed .card .extra { max-height: 8rem; opacity: 1; }
 @keyframes stamp { from { opacity: 0; transform: rotate(-12deg) scale(2.4); } 70% { opacity: 1; } to { opacity: 1; transform: rotate(-12deg) scale(1); } }
-.game.revealed .card:not([data-lie]) .said { opacity: .55; transition: opacity .6s .5s; }
+.game.revealed .card:not([data-lie]) .said { opacity: .5; }
 .game.revealed.right .card[data-lie] { animation: wiggle .6s 1.3s; }
 @keyframes wiggle { 25% { transform: rotate(-2.5deg) translateY(-.6rem); } 50% { transform: rotate(2deg) translateY(-.6rem); } 75% { transform: rotate(-1deg) translateY(-.6rem); } }
-.game-foot { grid-column: 1 / 13; display: flex; justify-content: flex-end; min-height: 2.6rem; padding-top: 2.2rem; }
-.again { color: var(--paper); background: none; border: 1px solid var(--paper); border-radius: 99px; padding: .55rem 1.1rem; font-size: .85rem; cursor: pointer; visibility: hidden; opacity: 0; transition: opacity .4s 1.4s, background .2s, color .2s; }
+.game-foot { display: flex; align-items: center; justify-content: center; gap: 1.4rem; min-height: 2.6rem; padding-top: 2.6rem; }
+.status { margin: 0; color: var(--blue); font-size: 1.15rem; opacity: 0; transition: opacity .4s 1.2s; }
+.game.revealed .status { opacity: 1; }
+.again { color: var(--ink); background: none; border: 1px solid var(--ink); border-radius: 99px; padding: .5rem 1.05rem; font-size: .8rem; cursor: pointer; visibility: hidden; opacity: 0; transition: opacity .4s 1.4s, background .2s, color .2s; }
 .game.revealed .again { visibility: visible; opacity: 1; }
-.again:hover, .again:focus-visible { background: var(--paper); color: var(--blue); }
+.again:hover, .again:focus-visible { background: var(--ink); color: var(--paper); }
 
-.exp-sec { padding-top: clamp(5rem, 12vh, 8rem); row-gap: 1.6rem; align-items: start; }
-.exp-sec .main { display: flex; flex-direction: column; gap: 1.8rem; }
-.exp { list-style: none; padding: 0; margin: 0; }
-.exp li { display: grid; grid-template-columns: 9rem minmax(0, 1fr); column-gap: 1.25rem; row-gap: .15rem; padding: 1rem 0; border-top: 1px solid var(--line); }
-.exp li:last-child { border-bottom: 1px solid var(--line); }
-.exp .when { color: var(--muted); grid-row: 1 / 3; padding-top: .2rem; }
-.exp .what { font-size: 1.15rem; }
-.exp .where { color: var(--muted); }
+/* the career sentence: the same blue note as home, on the other side of its photo */
+.career { padding-top: clamp(7rem, 18vh, 11rem); grid-template-columns: minmax(0, 1fr) min(30rem, 84vw) minmax(0, 1fr); }
+.career .sit { grid-column: 2; grid-row: 1; width: 100%; max-width: 100%; aspect-ratio: 4 / 3; overflow: hidden; }
+.career .sit img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 40%; }
+.note-beside.flip .note { grid-column: 3; grid-row: 1; justify-self: start; text-align: left; max-width: 22rem; }
+.m .career .sit img { clip-path: inset(0 0 100% 0); transition: clip-path 1.2s cubic-bezier(.7, 0, .2, 1); }
+.m .career.in .sit img { clip-path: inset(0); }
+
+/* experience: the home page's staircase, smaller, with where and when at the end of each dotted line */
+.exp-sec { max-width: 74rem; margin: 0 auto; padding: clamp(5.5rem, 14vh, 8.5rem) max(var(--gutter), env(safe-area-inset-right, 0px)) 0 max(var(--gutter), env(safe-area-inset-left, 0px)); }
+.exp-sec .label { margin: 0 0 2rem; text-align: center; }
+.steps { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: clamp(1.4rem, 3.4vh, 2.2rem); }
+.steps li { display: flex; align-items: baseline; min-width: 0; padding-left: calc(var(--k) * 6%); }
+.steps li:nth-child(3) { padding-left: 0; }
+.steps li:nth-child(4) { padding-left: 3%; }
+.steps .n { flex: none; width: 2.2rem; font-size: .85rem; color: var(--blue); }
+.steps .what { min-width: 0; font: 500 clamp(1.25rem, 1.95vw, 1.8rem)/1.05 var(--sans); text-transform: uppercase; letter-spacing: -.02em; text-wrap: balance; }
+.steps .dots { flex: 1; min-width: 1.5rem; height: 0; border-bottom: 1.5px dotted var(--muted); margin: 0 1rem 0 1.2rem; opacity: .55; }
+.steps .where { flex: none; display: flex; flex-direction: column; align-items: flex-end; text-align: right; font-size: .85rem; line-height: 1.45; color: var(--muted); }
+.steps .where > span:first-child { color: var(--ink); }
+@media (min-width: 1001px) { .steps .what { white-space: nowrap; } }
+.m .steps li { opacity: 0; transform: translateY(.8rem); transition: opacity .8s var(--ease), transform .8s var(--ease); }
+.m .steps.in li { opacity: 1; transform: none; transition-delay: calc(var(--k) * 120ms); }
+.exp-note { max-width: 34rem; margin: clamp(3rem, 7vh, 4.5rem) auto 0; font-size: 1.05rem; line-height: 1.6; text-wrap: pretty; }
+
+.about .hello { text-align: center; }
+.about .hello > .col { display: flex; flex-direction: column; align-items: center; }
+.about .hello .links { justify-content: center; }
+.about .say { transform-origin: 50% 50%; }
+
+@media (max-width: 760px) {
+  .about-hero { min-height: min(60svh, 26rem); }
+  .about-hero .hero-name { font-size: clamp(6.5rem, 30vw, 10rem); }
+  .game-head { grid-template-columns: 1fr 1fr; row-gap: 2.2rem; }
+  .game-title { grid-column: 1 / 3; grid-row: 2; }
+  .snap-l { grid-row: 1; justify-self: end; }
+  .snap-r { grid-row: 1; justify-self: start; }
+  .gt { font-size: clamp(2.9rem, 13.5vw, 4rem); }
+  .cards { grid-template-columns: minmax(0, 1fr); gap: 1.4rem; }
+  .card { min-height: 0; padding-bottom: 4.2rem; }
+  .card:nth-child(2) { transform: rotate(1.1deg); }
+  .career { padding-top: 6rem; }
+  .note-beside.flip .note { text-align: center; max-width: 22rem; }
+  .steps li, .steps li:nth-child(3), .steps li:nth-child(4) { padding-left: 0; flex-wrap: wrap; row-gap: .45rem; }
+  .steps .what { flex: 1 1 calc(100% - 2.2rem); }
+  .steps .dots { display: none; }
+  .steps .where { flex-basis: 100%; padding-left: 2.2rem; align-items: flex-start; text-align: left; }
+}
 
 /* Things I've made */
 .made { padding-top: clamp(4rem, 12vh, 7rem); row-gap: 2rem; align-items: baseline; }
@@ -394,15 +440,9 @@ p, h1, h2, ol { margin: 0; }
   .sig { font-size: 2.6rem; }
   .pnav { font-size: .8rem; flex-direction: column; align-items: flex-end; gap: .1rem; }
   .grid { grid-template-columns: repeat(6, minmax(0, 1fr)); }
-  .rail, .main, .full, .pno, .ptitle, .phead .typed, .intro .lead, .wide, .people .hscript, .rank-list,
-  .game-head, .cards, .game-foot, .loves-list, .people .tiles, .made .tiles { grid-column: 1 / 7; }
+  .rail, .main, .full, .pno, .ptitle, .phead .typed, .people .hscript, .rank-list,
+  .loves-list, .people .tiles, .made .tiles { grid-column: 1 / 7; }
   .phead { padding-top: 3.5rem; row-gap: 1rem; }
-  .wide { aspect-ratio: 4 / 3; }
-  .exp li { grid-template-columns: minmax(0, 1fr); }
-  .exp .when { grid-row: auto; }
-  .cards { grid-template-columns: minmax(0, 1fr); gap: 1.2rem; }
-  .card { min-height: 0; padding-bottom: 4.2rem; }
-  .card:nth-child(2) { transform: rotate(1.1deg); }
   .loves-list { grid-template-columns: minmax(0, 1fr); grid-template-rows: none; grid-auto-flow: row; }
   .tiles, .tiles.three { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .5rem; }
   .rank-list .age { font-size: calc(var(--s) * .62rem + .45rem); }
