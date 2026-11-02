@@ -3,101 +3,76 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Work & Play · Peri</title>
-<meta name="description" content="Things Peri has worked on and things she's made for fun.">
+<title>Work &amp; Play · Peri</title>
+<meta name="description" content="Things Peri has worked on and things she&rsquo;s made for fun.">
+<meta name="theme-color" content="#E8E1D5">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@125,600..700&family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..500,0..100,0..1;1,9..144,300..500,0..100,0..1&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-<header class="site-head">
-  <div class="wrap">
-    <a class="logo" href="index.html">Peri<span>.</span></a>
-    <nav class="nav" aria-label="Main"><a href="about.html">About</a><a href="work.html" aria-current="page">Work &amp; Play</a><a href="things-i-love.html">Things I love</a><a href="ranking.html">Ranking</a></nav>
-    <button class="menu-btn" type="button" data-menu>Menu</button>
-  </div>
+<header class="head">
+  <a class="mark" href="index.html">Peri</a>
+  <nav class="nav" aria-label="Main"><a href="about.html">About</a><a href="work.html" aria-current="page">Work &amp; Play</a><a href="things-i-love.html">Things I love</a></nav>
 </header>
-<div class="overlay" aria-hidden="true">
-  <button class="close" type="button" data-menu>Close</button>
-  <a href="index.html"><span>Home</span></a><a href="about.html"><span>About</span></a><a href="work.html"><span>Work &amp; Play</span></a><a href="things-i-love.html"><span>Things I love</span></a><a href="ranking.html"><span>Ranking</span></a>
-</div>
+<main>
+  <section class="top">
+    <h1 data-reveal>Work &amp; Play</h1>
+    <p class="lede" data-reveal="2">Some things I&rsquo;ve worked on, some things I&rsquo;ve made for fun.</p>
+  </section>
 
-<main class="page-light">
-  <section class="page-top">
-    <div class="wrap">
-      <h1><span class="line"><span>Work &amp;</span></span><span class="line"><span><em>Play</em></span></span></h1>
-      <p class="intro" data-reveal>Some things I've worked on, some things I've made for fun.</p>
-      <div class="tabs" role="group" aria-label="Filter" data-reveal="2"><span class="ind"></span>
-        <button type="button" data-filter="all" aria-pressed="true">Everything</button>
-        <button type="button" data-filter="work" aria-pressed="false">Worked on</button>
-        <button type="button" data-filter="play" aria-pressed="false">Made for fun</button>
+  <section class="section" id="worked-on">
+    <div class="proj">
+      <div class="meta" data-reveal>
+        <span class="label">Recruitment agency</span>
+        <h3>Recruitcha</h3>
+        <ul>
+          <li>Sourcing pipeline that replaced Clay <small>Details to come</small></li>
+          <li>Client Brief Generator <small>Details to come</small></li>
+        </ul>
       </div>
+      <div class="plate" data-reveal="2"><span class="label ink">Screenshot to come</span></div>
     </div>
-  </section>
-
-  <section class="section" id="worked-on" data-kind="work">
-    <div class="wrap">
-      <div class="proj">
-        <div data-reveal><div class="shot"><div class="bar"><i></i><i></i><i></i></div><div class="body"><div><strong>Recruitcha GTM</strong><span>Screenshot to come</span></div></div></div></div>
-        <div class="meta" data-reveal="2">
-          <span class="label">Software product</span>
-          <h3>Recruitcha GTM</h3>
-          <ul>
-            <li>Features, integrations and UX <small>Details to come</small></li>
-            <li>Marketing website <small>Details to come</small></li>
-            <li>Growth work <small>Details to come</small></li>
-          </ul>
-        </div>
+    <div class="proj">
+      <div class="meta" data-reveal>
+        <span class="label">Software product</span>
+        <h3>Recruitcha GTM</h3>
+        <ul>
+          <li>Features, integrations and UX <small>Details to come</small></li>
+          <li>Marketing website <small>Details to come</small></li>
+          <li>Growth work <small>Details to come</small></li>
+        </ul>
       </div>
-      <div class="proj">
-        <div data-reveal><div class="shot"><div class="bar"><i></i><i></i><i></i></div><div class="body"><div><strong>Internal tools</strong><span>Screenshot to come</span></div></div></div></div>
-        <div class="meta" data-reveal="2">
-          <span class="label">Recruitment agency</span>
-          <h3>Recruitcha</h3>
-          <ul>
-            <li>Sourcing pipeline that replaced Clay <small>Details to come</small></li>
-            <li>Client Brief Generator <small>Details to come</small></li>
-          </ul>
-        </div>
-      </div>
+      <div class="plate" data-reveal="2"><span class="label ink">Screenshots and demo to come</span></div>
     </div>
   </section>
 
-  <section class="section" id="portraits" data-kind="play">
-    <div class="wrap section-head"><h2 data-reveal>AI portraits of my friends</h2><div class="reel-ctl"><button type="button" data-reel="reel" data-dir="prev" aria-label="Previous">&larr;</button><button type="button" data-reel="reel" data-dir="next" aria-label="Next">&rarr;</button></div></div>
-    <div class="reel" id="reel"><figure><div class="frame" data-lightbox="assets/img/ai-generals.jpg" data-alt="Generals on horseback"><img src="assets/img/ai-generals.jpg" alt="AI portrait: Generals on horseback" loading="lazy"></div></figure><figure><div class="frame" data-lightbox="assets/img/ai-pool.jpg" data-alt="Certified weapon"><img src="assets/img/ai-pool.jpg" alt="AI portrait: Certified weapon" loading="lazy"></div></figure><figure><div class="frame" data-lightbox="assets/img/ai-generals-2.jpg" data-alt="The cavalry"><img src="assets/img/ai-generals-2.jpg" alt="AI portrait: The cavalry" loading="lazy"></div></figure><figure><div class="frame" data-lightbox="assets/img/ai-rugby.jpg" data-alt="Game day"><img src="assets/img/ai-rugby.jpg" alt="AI portrait: Game day" loading="lazy"></div></figure><figure><div class="frame" data-lightbox="assets/img/ai-surf.jpg" data-alt="Surf school"><img src="assets/img/ai-surf.jpg" alt="AI portrait: Surf school" loading="lazy"></div></figure><figure><div class="frame" data-lightbox="assets/img/ai-beach.jpg" data-alt="Beach stretches"><img src="assets/img/ai-beach.jpg" alt="AI portrait: Beach stretches" loading="lazy"></div></figure></div>
+  <section class="section" id="portraits">
+    <div class="sec-head"><span class="label">Made for fun</span><h2 data-reveal>AI portraits of my friends</h2></div>
+    <div class="portraits"><figure data-reveal data-lightbox="assets/img/photo/ai-generals.jpg"><div class="fr"><img src="assets/img/photo/ai-generals.jpg" alt="AI portrait: Generals on horseback" loading="lazy"></div></figure><figure data-reveal data-lightbox="assets/img/photo/ai-family.jpg"><div class="fr"><img src="assets/img/photo/ai-family.jpg" alt="AI portrait: Family portrait" loading="lazy"></div></figure><figure data-reveal data-lightbox="assets/img/photo/ai-pool.jpg"><div class="fr"><img src="assets/img/photo/ai-pool.jpg" alt="AI portrait: Certified weapon" loading="lazy"></div></figure><figure data-reveal data-lightbox="assets/img/photo/ai-family-2.jpg"><div class="fr"><img src="assets/img/photo/ai-family-2.jpg" alt="AI portrait: Family portrait" loading="lazy"></div></figure><figure data-reveal data-lightbox="assets/img/photo/ai-generals-2.jpg"><div class="fr"><img src="assets/img/photo/ai-generals-2.jpg" alt="AI portrait: The cavalry" loading="lazy"></div></figure><figure data-reveal data-lightbox="assets/img/photo/ai-rugby.jpg"><div class="fr"><img src="assets/img/photo/ai-rugby.jpg" alt="AI portrait: Game day" loading="lazy"></div></figure></div>
   </section>
 
-  <section class="section" id="music" data-kind="play">
-    <div class="wrap">
-      <div class="section-head"><h2 data-reveal>AI music</h2></div>
-      <ul class="tracks" data-reveal><li><button class="play" type="button" aria-label="Play">&#9654;</button><span class="t">Track title to come</span><span class="eq"><i></i><i></i><i></i><i></i></span></li><li><button class="play" type="button" aria-label="Play">&#9654;</button><span class="t">Track title to come</span><span class="eq"><i></i><i></i><i></i><i></i></span></li><li><button class="play" type="button" aria-label="Play">&#9654;</button><span class="t">Track title to come</span><span class="eq"><i></i><i></i><i></i><i></i></span></li></ul>
-    </div>
+  <section class="section" id="music">
+    <div class="sec-head"><span class="label">Made for fun</span><h2 data-reveal>AI music</h2></div>
+    <div class="music"><ul class="tracks"><li><button class="play" type="button" aria-label="Play"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 1l9 5-9 5z" fill="currentColor"/></svg></button><span class="t">Track title to come</span><span class="label">0:00</span></li><li><button class="play" type="button" aria-label="Play"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 1l9 5-9 5z" fill="currentColor"/></svg></button><span class="t">Track title to come</span><span class="label">0:00</span></li><li><button class="play" type="button" aria-label="Play"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 1l9 5-9 5z" fill="currentColor"/></svg></button><span class="t">Track title to come</span><span class="label">0:00</span></li></ul></div>
   </section>
 
-  <section class="section" id="photography" data-kind="play">
-    <div class="wrap">
-      <div class="section-head"><h2 data-reveal>Photography</h2></div>
-      <div class="photos"><figure class="img-reveal" data-lightbox="assets/img/sunset.jpg"><img src="assets/img/sunset.jpg" alt="" loading="lazy"></figure><figure class="img-reveal" data-lightbox="assets/img/forest.jpg"><img src="assets/img/forest.jpg" alt="" loading="lazy"></figure><figure class="img-reveal" data-lightbox="assets/img/boats.jpg"><img src="assets/img/boats.jpg" alt="" loading="lazy"></figure><figure class="img-reveal" data-lightbox="assets/img/path.jpg"><img src="assets/img/path.jpg" alt="" loading="lazy"></figure><figure class="img-reveal" data-lightbox="assets/img/shells.jpg"><img src="assets/img/shells.jpg" alt="" loading="lazy"></figure><figure class="img-reveal" data-lightbox="assets/img/hike.jpg"><img src="assets/img/hike.jpg" alt="" loading="lazy"></figure><figure class="img-reveal" data-lightbox="assets/img/lake.jpg"><img src="assets/img/lake.jpg" alt="" loading="lazy"></figure><figure class="img-reveal" data-lightbox="assets/img/beach-friends.jpg"><img src="assets/img/beach-friends.jpg" alt="" loading="lazy"></figure><figure class="img-reveal" data-lightbox="assets/img/window.jpg"><img src="assets/img/window.jpg" alt="" loading="lazy"></figure></div>
-    </div>
+  <section class="section" id="photography">
+    <div class="sec-head"><span class="label">Made for fun</span><h2 data-reveal>Photography</h2></div>
+    <div class="photos"><figure data-reveal data-lightbox="assets/img/photo/sunset-path.jpg"><img src="assets/img/photo/sunset-path.jpg" alt="" loading="lazy"></figure><figure data-reveal data-lightbox="assets/img/photo/boats.jpg"><img src="assets/img/photo/boats.jpg" alt="" loading="lazy"></figure><figure data-reveal data-lightbox="assets/img/photo/forest.jpg"><img src="assets/img/photo/forest.jpg" alt="" loading="lazy"></figure><figure data-reveal data-lightbox="assets/img/photo/sunset.jpg"><img src="assets/img/photo/sunset.jpg" alt="" loading="lazy"></figure><figure data-reveal data-lightbox="assets/img/photo/shells.jpg"><img src="assets/img/photo/shells.jpg" alt="" loading="lazy"></figure><figure data-reveal data-lightbox="assets/img/photo/hike.jpg"><img src="assets/img/photo/hike.jpg" alt="" loading="lazy"></figure><figure data-reveal data-lightbox="assets/img/photo/lake.jpg"><img src="assets/img/photo/lake.jpg" alt="" loading="lazy"></figure><figure data-reveal data-lightbox="assets/img/photo/tree-hug.jpg"><img src="assets/img/photo/tree-hug.jpg" alt="" loading="lazy"></figure><figure data-reveal data-lightbox="assets/img/photo/beach-walk.jpg"><img src="assets/img/photo/beach-walk.jpg" alt="" loading="lazy"></figure></div>
   </section>
 
-  <section class="section" data-kind="play">
-    <div class="wrap section-head" style="margin:0"><h2 data-reveal>This website</h2><a class="ulink" href="https://github.com/perisadigh/personal-website">See the code</a></div>
+  <section class="section">
+    <div class="sec-head" style="margin:0"><span class="label">Also</span><h2>This website. <a href="https://github.com/perisadigh/personal-website" style="font-size:.5em;text-underline-offset:6px;text-decoration-thickness:1px">See the code</a></h2></div>
   </section>
 </main>
-<div class="lb" role="dialog" aria-label="Image"><button type="button">Close</button><img alt=""></div>
-<footer class="foot round" id="contact">
-  <div class="wrap">
-    <span class="label" data-reveal>Contact</span>
-    <div class="links" data-reveal="2">
-      <a class="ulink" href="mailto:you@example.com">Email</a><span>&amp;</span><a class="ulink" href="https://www.linkedin.com/">LinkedIn</a>
-    </div>
-    <div class="base"><span>&copy; <span data-year></span> Peri</span><a class="ulink" href="https://github.com/perisadigh">GitHub</a></div>
-  </div>
+<footer class="foot" id="contact">
+  <span class="label">Contact</span>
+  <div class="links"><a href="mailto:you@example.com">Email</a><a href="https://www.linkedin.com/">LinkedIn</a><a href="#">CV</a></div>
+  <div class="base label ink"><span>&copy; <span data-year></span> Peri</span><a href="ranking.html">Ranking every version of myself</a></div>
 </footer>
-<div class="peek" aria-hidden="true"><img alt=""></div>
+<div class="lb" role="dialog" aria-label="Image"><button type="button" class="label ink">Close</button><img alt=""></div>
 <script src="assets/site.js"></script>
 </body>
 </html>
