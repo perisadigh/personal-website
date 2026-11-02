@@ -34,7 +34,6 @@
         c.classList.add('chosen');
         drawLoop(c);
         game.classList.add('done');
-        status.textContent = c.hasAttribute('data-lie') ? 'You got it.' : 'Nope. That one actually happened.';
       });
     });
     game.querySelector('.again').addEventListener('click', function () {
