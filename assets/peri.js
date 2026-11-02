@@ -57,17 +57,20 @@
     els.forEach(function (el) { el.classList.add('in'); });
   }
 
-  // The photo under the name previews each page while you hover its name.
-  var mirror = document.querySelector('.hero-photo');
-  if (mirror) {
-    var imgs = mirror.querySelectorAll('img');
-    var show = function (n) { imgs.forEach(function (im, k) { im.classList.toggle('on', k === n); }); };
-    document.querySelectorAll('.stairs a[data-pv]').forEach(function (a) {
-      var n = +a.getAttribute('data-pv');
-      a.addEventListener('mouseenter', function () { show(n); });
-      a.addEventListener('focus', function () { show(n); });
-      a.addEventListener('mouseleave', function () { show(0); });
-      a.addEventListener('blur', function () { show(0); });
+  // Each page name has a photo beside it: hovering either one lights up the pair.
+  var strip = document.querySelector('.page-photos');
+  if (strip) {
+    var pairs = document.querySelectorAll('.home [data-pv]');
+    var light = function (n) {
+      strip.classList.toggle('dim', !!n);
+      pairs.forEach(function (el) { el.classList.toggle('hot', el.getAttribute('data-pv') === n); });
+    };
+    pairs.forEach(function (el) {
+      var n = el.getAttribute('data-pv');
+      el.addEventListener('mouseenter', function () { light(n); });
+      el.addEventListener('mouseleave', function () { light(null); });
+      el.addEventListener('focus', function () { light(n); });
+      el.addEventListener('blur', function () { light(null); });
     });
   }
 
