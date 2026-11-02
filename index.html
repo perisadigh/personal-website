@@ -5,40 +5,63 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Peri</title>
 <meta name="description" content="I like making things. Some are useful. Others exist purely because I thought they&rsquo;d be funny.">
-<meta name="theme-color" content="#F2F0EA">
+<meta name="theme-color" content="#F0ECE4">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Homemade+Apple&family=IBM+Plex+Mono:wght@400;700&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css">
-<script>document.documentElement.classList.add('js')</script>
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime&family=Instrument+Sans:wght@400;500&family=Instrument+Serif:ital@0;1&family=Kristi&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/peri.css">
 </head>
-<body class="is-home">
-<main>
-  <section class="index">
-    <a class="sig" href="index.html" aria-label="Peri, home">Peri</a>
-    <h1 class="h intro">I like making things. Some are useful. Others exist purely because I thought they&rsquo;d be funny.</h1>
-    <nav class="stagger" aria-label="Main">
-      <a class="s1" href="work.html"><span class="n">1</span><span class="j">Here&rsquo;s a little bit of what I&rsquo;ve made,</span><span class="to">Work &amp; Play</span></a>
-      <a class="s2" href="about.html"><span class="n">2</span><span class="j">what I&rsquo;ve been up to,</span><span class="to">About</span></a>
-      <a class="s3" href="things-i-love.html"><span class="n">3</span><span class="j">and things I love.</span><span class="to">Things I love</span></a>
-    </nav>
-    <div class="strip">
-      <div class="row"><img src="assets/img/g/face.jpg" alt="Peri sitting on the rocks"><a class="l" href="mailto:you@example.com">Email</a></div>
-      <div class="row"><img src="assets/img/g/window.jpg" alt="Peri by a window, holding a camera"><a class="l" href="https://www.linkedin.com/">LinkedIn</a></div>
-      <div class="row"><img src="assets/img/g/eyes.jpg" alt="Peri, close up"><a class="l" href="#">CV</a></div>
-    </div>
+<body>
+<header class="site-header wrap">
+  <a class="type upper" href="index.html">Peri</a>
+  <nav class="type upper" aria-label="Main">
+    <a href="about.html">About</a>
+    <a href="work.html">Work &amp; Play</a>
+    <a href="things-i-love.html">Things I love</a>
+    <a href="ranking.html">Ranking</a>
+  </nav>
+</header>
+
+<main id="top">
+  <section class="hero wrap">
+    <figure class="hero-photo" data-reveal><img src="assets/img/g/boardwalk-pale.jpg" alt="Peri walking down a boardwalk towards the sea"></figure>
+    <h1 class="script hero-name">peri</h1>
   </section>
 
-  <section class="someday">
-    <figure class="sea"><img src="assets/img/g/boardwalk.jpg" alt="Peri walking down a boardwalk towards the sea" loading="lazy"></figure>
-    <div class="written" aria-hidden="true"><span>Peri</span><span>Peri</span><span>Peri</span></div>
-    <p class="pipes"><a href="work.html">Work &amp; Play</a><i>|</i><a href="about.html">About</a><i>|</i><a href="things-i-love.html">Things I love</a></p>
+  <section class="intro wrap">
+    <figure class="intro-eyes" data-reveal><img src="assets/img/g/eyes-band.jpg" alt="Peri&rsquo;s eyes, close up"></figure>
+    <figure class="intro-sea" data-reveal><img src="assets/img/g/sunset.jpg" alt="The sun setting over the sea, with a sailing boat"></figure>
+    <p class="scatter type" data-scatter data-reveal>I like making things. Some are useful. Others exist purely because I thought they&rsquo;d be funny.</p>
+  </section>
+
+  <section class="pages wrap" aria-label="Pages">
+    <ol class="page-list type upper">
+      <li data-reveal><span class="n">1</span><a href="about.html">About</a></li>
+      <li data-reveal><span class="n">2</span><a href="work.html">Work &amp; Play</a></li>
+      <li data-reveal><span class="n">3</span><a href="things-i-love.html">Things I love</a></li>
+      <li data-reveal><span class="n">4</span><a href="ranking.html">Ranking every version of myself</a></li>
+    </ol>
+    <div class="page-photos">
+      <figure><img src="assets/img/g/window.jpg" alt="Peri by a window, holding a camera" loading="lazy"></figure>
+      <figure><img src="assets/img/g/tree.jpg" alt="A tree on a hillside at sunset" loading="lazy"></figure>
+      <figure><img src="assets/img/g/forest.jpg" alt="A mossy forest path" loading="lazy"></figure>
+    </div>
   </section>
 </main>
-<footer class="foot">
-  <div class="contact"><a href="mailto:you@example.com">Email</a><a href="https://www.linkedin.com/">LinkedIn</a><a href="#">CV</a></div>
-  <div class="small"><span>&copy; <span data-year></span> Peri</span><a href="ranking.html">Ranking every version of myself</a></div>
+
+<footer id="contact" class="site-footer wrap">
+  <p class="script say">say hello</p>
+  <p class="links type upper">
+    <a href="mailto:you@example.com">Email</a>
+    <a href="https://www.linkedin.com/">LinkedIn</a>
+    <a href="#">CV</a>
+  </p>
+  <div class="colophon caption type">
+    <span>&copy; <span data-year>2026</span> Peri</span>
+    <a href="#top">back to top</a>
+  </div>
 </footer>
-<script src="assets/site.js"></script>
+
+<script src="assets/peri.js"></script>
 </body>
 </html>
