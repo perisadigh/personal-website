@@ -1,83 +1,114 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>About · Peri</title>
-<meta name="description" content="About Peri.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css">
-</head>
-<body>
-<header class="site-head">
-  <div class="wrap">
-    <a class="logo" href="index.html">Peri<span>.</span></a>
-    <nav class="nav" aria-label="Main"><a href="about.html" aria-current="page">About</a><a href="work.html">Work &amp; Play</a><a href="things-i-love.html">Things I love</a><a href="ranking.html">Ranking</a></nav>
-    <button class="menu-btn" type="button" data-menu>Menu</button>
+<meta name="description" content="I studied biomedical science, then got a job in digital marketing and somehow ended up building software at a startup.">
+<meta name="theme-color" content="#f2eee7">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter+Tight:wght@400;500&family=Kristi&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#f2eee7;--ink:#1c1b19;--mu:#8d877e;--red:#8f2a20;--serif:"EB Garamond",Garamond,serif;--cap:"Inter Tight","Helvetica Neue",sans-serif}
+*{box-sizing:border-box}html{background:var(--paper)}body{margin:0;color:var(--ink);font:400 1.2rem/1.5 var(--serif);-webkit-font-smoothing:antialiased}
+p,h1,h2,ol,figure{margin:0;padding:0}img{display:block;width:100%;height:100%;object-fit:cover}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opacity:.1;mix-blend-mode:multiply;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.cap{font:500 .68rem/1.5 var(--cap);letter-spacing:.14em;text-transform:uppercase}
+.mu{color:var(--mu)}
+a{color:inherit;text-decoration:none}
+header{position:absolute;top:0;left:0;right:0;z-index:5;display:flex;justify-content:space-between;padding:1.8rem 4vw}
+header nav{display:flex;gap:2.6rem}header nav a[aria-current]{text-decoration:underline;text-underline-offset:.4em}
+.spread{position:relative;min-height:100svh;overflow:hidden}
+
+/* 1: the sentence set small and wide; a larger photo with "about" written across its edge */
+.s1 .say{position:absolute;left:8vw;top:24vh;width:min(23.5rem,46vw);font:500 .82rem/2.05 var(--cap);letter-spacing:.17em;text-transform:uppercase;text-align:justify;text-align-last:justify;hyphens:none}
+.s1 figure{position:absolute;right:7vw;top:17vh;width:41vw;aspect-ratio:4/3}
+.s1 .hi{position:absolute;left:53.6vw;top:calc(17vh + 30.75vw - 10.5vw);z-index:2;color:var(--paper);font:400 clamp(5.5rem,9.5vw,9.5rem)/.8 "Kristi",cursive;transform:rotate(-6deg);white-space:nowrap}
+.foot{position:absolute;left:8vw;bottom:6vh;display:flex;gap:3rem}
+
+/* 2: the game: a photo bleeds off the left, the questions sit in the paper beside it */
+.s2{display:grid;grid-template-columns:46% 1fr}
+.s2 figure{height:100svh}.s2 .foot{left:calc(46% + 6vw)}
+.s2 .g{align-self:center;padding:8vh 8vw 8vh 6vw;max-width:44rem}
+.s2 h2{margin-bottom:.5rem}
+.s2 .ask{font-style:italic;color:var(--mu);margin-bottom:3rem}
+.s2 ol{list-style:none}
+.s2 li+li{margin-top:1.9rem}
+.card{display:grid;grid-template-columns:2.4rem 1fr;gap:0;width:100%;padding:0;border:0;background:none;color:inherit;font:inherit;text-align:left;cursor:pointer}
+.card .no{padding-top:.42rem}
+.card .s{font:400 1.32rem/1.34 var(--serif);background:linear-gradient(var(--ink),var(--ink)) 0 58%/0 1px no-repeat;-webkit-box-decoration-break:clone;box-decoration-break:clone;transition:color .5s,background-size .9s .7s cubic-bezier(.6,0,.3,1)}
+.g:not(.picked) .card:hover .s{font-style:italic}
+.card .pk{margin-right:1.6rem}.card .v{grid-column:2;display:block;height:1.4rem;margin-top:.5rem;opacity:0;transition:opacity .4s}
+.picked .card.chosen .v,.revealed .card .v{opacity:1}
+.revealed .card:not([data-lie]) .s{color:var(--mu)}
+.revealed .card[data-lie] .s{background-size:100% 1px}
+.card .x{display:none;font-style:italic;color:var(--mu);margin-top:.6rem;font-size:1.15rem}
+.revealed .card .x{display:block}
+.g .again{margin-top:3rem;border:0;background:none;padding:0;color:var(--red);cursor:pointer;visibility:hidden;text-decoration:underline;text-underline-offset:.4em}
+.revealed .again{visibility:visible}
+
+/* 3: experience: mirrors the game, the photo bleeds off the right and the words sit in the paper */
+.s3{display:grid;grid-template-columns:1fr 44%}
+.s3 figure{grid-column:2;grid-row:1;height:100svh}
+.s3 .t{grid-column:1;grid-row:1;align-self:center;padding:8vh 6vw 8vh 8vw;max-width:46rem}
+.s3 .para{font-size:1.5rem;line-height:1.42;margin:1.4rem 0 0;max-width:30rem}
+.s3 .roles{list-style:none;max-width:31rem}
+.s3 .roles li{display:grid;grid-template-columns:1fr auto;column-gap:1.5rem;row-gap:.15rem;padding:.6rem 0}.s3 .roles .w{grid-column:1;color:var(--mu)}.s3 .roles .d{grid-column:2;grid-row:1}
+/* 4: say hello written across the edge of a photo */
+.s4 figure{position:absolute;left:0;top:0;width:60vw;height:82svh;-webkit-mask-image:linear-gradient(90deg,#000 78%,transparent);mask-image:linear-gradient(90deg,#000 78%,transparent)}
+.s4 .hi{position:absolute;left:43vw;top:31svh;font:400 clamp(5rem,9.5vw,9rem)/.8 "Kristi",cursive;transform:rotate(-5deg);white-space:nowrap}
+.s4 .links{position:absolute;left:0;right:0;bottom:8svh;display:flex;justify-content:center;gap:1.4rem}
+.s4 .links a{color:var(--ink)}.s4 .links span{color:var(--mu)}
+.s4 .fine{position:absolute;left:0;right:0;bottom:4svh;text-align:center}
+@media (max-width:760px){
+header{padding:1.2rem 16px;flex-direction:column;gap:.8rem}header nav{gap:1.2rem;flex-wrap:wrap}
+.spread{min-height:auto;padding:0 16px}
+.foot{position:static;margin-top:2.5rem}.s1{padding-top:9rem;padding-bottom:4rem}.s1 .say,.s1 figure,.s4 .hi,.s4 .links,.s4 .fine{position:static;width:auto}
+.s1 .say{font-size:.74rem;line-height:2}.s1 figure{width:calc(100% + 16px);margin:3.5rem -16px 0 0}.s1 .hi{position:relative;left:auto;top:auto;z-index:2;margin:-6rem 0 0 6%;font-size:4.8rem;transform:rotate(-6deg)}.s1 .foot{margin-top:4rem}
+.s2,.s3{display:block;padding:0}.s2 figure,.s3 figure{height:auto;aspect-ratio:4/5;width:100%}.s2 .g,.s3 .t{padding:3rem 16px 1rem}.s2 .foot,.s3 .foot{padding:0 16px 4rem}
+.s3 .para{margin:1.2rem 0 2.5rem;font-size:1.25rem}
+.s4{padding:4rem 0 3rem}.s4 figure{position:relative;width:88%;height:60svh}.s4 .hi{position:relative;left:auto;top:auto;z-index:2;margin:-4.2rem 0 0 34%;font-size:4.6rem}.s4 .links{margin-top:3rem}.s4 .fine{margin-top:1rem}
+}
+</style></head><body>
+<header class="cap"><a href="index.html">Peri</a><nav aria-label="Pages"><a href="about.html" aria-current="page">About</a><a href="work.html">Things I&rsquo;ve made</a><a href="things-i-love.html">Things I love</a><a href="ranking.html">Rankings</a></nav></header>
+
+<section class="spread s1">
+  <h1 class="say">I studied biomedical science, then got a job in digital marketing and somehow ended up building software at a startup.</h1>
+  <figure><img src="assets/img/a/road-blur.jpg" alt="Peri on a road at dusk, looking back over her shoulder, the trees blurred behind her"></figure>
+  <p class="hi" aria-hidden="true">about</p>
+  <p class="foot cap mu"><span>About</span><span>01</span></p>
+</section>
+
+<section class="spread s2">
+  <figure><img src="assets/img/a/kid-tall.jpg" alt="Peri as a little girl in pigtails"></figure>
+  <div class="g">
+    <h2 class="cap">Two truths and a lie</h2>
+    <p class="ask">Which one is the lie?</p>
+    <ol>
+      <li><button class="card" type="button"><span class="no cap mu">01</span><span class="s">The very first thing I did when I came out of the womb was grab the scissors out of the doctor&rsquo;s hand and refuse to let go.</span><span class="v cap mu"><span class="pk">Your pick</span> <span class="vd">True</span></span></button></li>
+      <li><button class="card" type="button"><span class="no cap mu">02</span><span class="s">When I was four, my mom had to tell me Santa wasn&rsquo;t real because I wouldn&rsquo;t accept any explanation for why he could get into our house through the chimney but burglars couldn&rsquo;t.<span class="x">I then went to school and accidentally ruined Santa for the other kids.</span></span><span class="v cap mu"><span class="pk">Your pick</span> <span class="vd">True</span></span></button></li>
+      <li><button class="card" type="button" data-lie><span class="no cap mu">03</span><span class="s">My brother and I were the only kids in an adult kung fu class, and by twelve I was helping teach it.</span><span class="v cap"><span class="pk mu">Your pick</span> <span class="vd" style="color:var(--red)">The lie</span></span></button></li>
+    </ol>
+    <button class="again cap" type="button">Play again</button>
   </div>
-</header>
-<div class="overlay" aria-hidden="true">
-  <button class="close" type="button" data-menu>Close</button>
-  <a href="index.html"><span>Home</span></a><a href="about.html"><span>About</span></a><a href="work.html"><span>Work &amp; Play</span></a><a href="things-i-love.html"><span>Things I love</span></a><a href="ranking.html"><span>Ranking</span></a>
-</div>
+  <p class="foot cap mu"><span>About</span><span>02</span></p>
+</section>
 
-<main class="page-light">
-  <section class="page-top">
-    <div class="wrap"><h1><span class="line"><span>About</span></span></h1></div>
-  </section>
-
-  <section class="section" style="border-top:0;padding-top:0">
-    <div class="wrap about-grid">
-      <div>
-        <p class="big" data-reveal>I studied biomedical science, then got a job in digital marketing and somehow ended up building software at a startup.</p>
-        <p data-reveal="2">At the startup I began in marketing at Recruitcha, the recruitment agency. From there I moved into recruitment and building our internal tools, and then into product development and technical work on Recruitcha GTM, the software product. I taught myself the software side using AI tools.</p>
-      </div>
-      <div class="about-photo img-reveal"><img src="assets/img/peri-sun.jpg" alt="Peri sitting on rocks in the evening sun"></div>
-    </div>
-  </section>
-
-  <section class="section" id="experience">
-    <div class="wrap">
-      <div class="section-head"><h2 data-reveal>Experience</h2><div class="pills light" data-reveal><a class="pill" href="#">CV</a><a class="pill" href="https://www.linkedin.com/">LinkedIn</a></div></div>
-      <ul class="xp">
-        <li data-reveal><span class="role">Product development and technical work</span><span class="where">Recruitcha GTM, software product</span><span class="when">Dates to come</span></li>
-        <li data-reveal><span class="role">Recruitment and internal tooling</span><span class="where">Recruitcha, recruitment agency</span><span class="when">Dates to come</span></li>
-        <li data-reveal><span class="role">Marketing</span><span class="where">Recruitcha</span><span class="when">Dates to come</span></li>
-        <li data-reveal><span class="role">BSc Biomedical Science &amp; Physiology</span><span class="where">University to come</span><span class="when">Dates to come</span></li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="wrap">
-      <div class="section-head"><h2 data-reveal>Two truths and a lie</h2></div>
-      <div class="game">
-        <div>
-          <div class="truths">
-            <button class="truth" type="button">The very first thing I did when I came out of the womb was grab the scissors out of the doctor's hand and refuse to let go.<span class="verdict">True</span></button>
-            <button class="truth" type="button">When I was about four, my mum had to tell me Santa wasn't real because I wouldn't accept any explanation for why he could get into our house through the chimney but burglars couldn't.<span class="verdict">True</span><span class="extra">I then went to school and accidentally ruined Santa for the other kids.</span></button>
-            <!-- DRAFT: the false clause below is not confirmed by Peri yet -->
-            <button class="truth" type="button" data-lie>My brother and I were the only kids in an adult kung fu class, and by twelve I was helping teach it.<span class="verdict">The lie</span></button>
-          </div>
-          <div class="game-status" aria-live="polite"></div>
-        </div>
-        <figure class="game-photo img-reveal" style="margin:0"><img src="assets/img/kid-pigtails.jpg" alt="Peri as a small child, grinning"></figure>
-      </div>
-    </div>
-  </section>
-</main>
-<footer class="foot round" id="contact">
-  <div class="wrap">
-    <span class="label" data-reveal>Contact</span>
-    <div class="links" data-reveal="2">
-      <a class="ulink" href="mailto:you@example.com">Email</a><span>&amp;</span><a class="ulink" href="https://www.linkedin.com/">LinkedIn</a>
-    </div>
-    <div class="base"><span>&copy; <span data-year></span> Peri</span><a class="ulink" href="https://github.com/perisadigh">GitHub</a></div>
+<section class="spread s3">
+  <div class="t">
+    <p class="cap mu">Experience</p>
+    <p class="para">After digital marketing I moved into recruitment at Recruitcha, the recruitment agency, and taught myself to build software with AI tools. I started building our internal recruiting tools, and later took on product development and technical work on Recruitcha GTM, the software product.</p>
   </div>
-</footer>
-<div class="peek" aria-hidden="true"><img alt=""></div>
-<script src="assets/site.js"></script>
-</body>
-</html>
+  <figure><img src="assets/img/a/hike2.jpg" alt="Peri on the rocks below the mountains"></figure>
+  <p class="foot cap mu"><span>About</span><span>03</span></p>
+</section>
+
+<section class="spread s4">
+  <figure><img src="assets/img/a/path.jpg" alt=""></figure>
+  <p class="hi">say hello</p>
+  <p class="links cap"><a href="mailto:you@example.com">Email</a><span>|</span><a href="https://www.linkedin.com/">LinkedIn</a><span>|</span><a href="#">CV</a></p>
+  <p class="fine cap mu">&copy; <span data-year>2026</span> Peri</p>
+</section>
+<script>
+var g=document.querySelector('.g'),cs=g.querySelectorAll('.card');
+cs.forEach(function(c){c.addEventListener('click',function(){if(g.classList.contains('picked'))return;c.classList.add('chosen');g.classList.add('picked');
+cs.forEach(function(x){x.querySelector('.pk').style.display=x===c?'':'none'});setTimeout(function(){g.classList.add('revealed')},400)})});
+g.querySelector('.again').addEventListener('click',function(){g.classList.remove('picked','revealed');cs.forEach(function(x){x.classList.remove('chosen')})});
+document.querySelectorAll('[data-year]').forEach(function(e){e.textContent=new Date().getFullYear()});
+</script>
+</body></html>

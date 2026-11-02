@@ -4,85 +4,55 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Peri</title>
-<meta name="description" content="Peri's little corner of the internet: things she's made, things she's worked on, and things she loves.">
+<meta name="description" content="I like learning new things, figuring out how things work, and making things. Some are useful. Others exist purely because I thought they&rsquo;d be funny.">
+<meta name="theme-color" content="#F0ECE4">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter+Tight:wght@400;500&family=Kristi&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/peri.css">
+<script>try{if(!matchMedia("(prefers-reduced-motion: reduce)").matches)document.documentElement.classList.add("m")}catch(e){}</script>
 </head>
 <body>
-<header class="site-head">
-  <div class="wrap">
-    <a class="logo" href="index.html">Peri<span>.</span></a>
-    <nav class="nav" aria-label="Main"><a href="about.html">About</a><a href="work.html">Work &amp; Play</a><a href="things-i-love.html">Things I love</a><a href="ranking.html">Ranking</a></nav>
-    <button class="menu-btn" type="button" data-menu>Menu</button>
-  </div>
+<header class="top">
+  <a class="home-link type" href="index.html">Peri</a>
+  <nav class="pnav type" aria-label="Pages"><a href="about.html">About</a><a href="work.html">Things I&rsquo;ve made</a><a href="things-i-love.html">Things I love</a><a href="ranking.html">Rankings</a></nav>
 </header>
-<div class="overlay" aria-hidden="true">
-  <button class="close" type="button" data-menu>Close</button>
-  <a href="index.html"><span>Home</span></a><a href="about.html"><span>About</span></a><a href="work.html"><span>Work &amp; Play</span></a><a href="things-i-love.html"><span>Things I love</span></a><a href="ranking.html"><span>Ranking</span></a>
-</div>
-
-<main>
+<main id="top" class="home">
   <section class="hero">
-    <div class="wrap">
-      <div>
-        <h1><span class="line"><span>Hi, I'm</span></span><span class="line"><span><em>Peri.</em></span></span></h1>
-        <p class="lede" data-reveal>I like making things. Some are useful. Others exist purely because I thought they'd be <span class="peek-word" data-img="assets/img/ai-pool.jpg"><em>funny</em></span>.</p>
-        <p class="sub" data-reveal="2">Here's a little bit of what I've made, what I've been up to, and things I love.</p>
-      </div>
-      <div class="hero-photo img-reveal"><img src="assets/img/peri-rocks.jpg" alt="Peri on the rocks below the mountains at golden hour"></div>
+    <figure class="hero-photo"><img src="assets/img/g/boardwalk-pale.jpg" alt="Peri walking down a boardwalk towards the sea"></figure>
+    <p class="script ink hero-name" aria-hidden="true" data-write>peri</p>
+  </section>
+
+  <section class="spread note-across" data-in>
+    <figure class="eyes"><img src="assets/img/g/eyes-band.jpg" alt="Peri&rsquo;s eyes, close up"></figure>
+    <figure class="sea"><img src="assets/img/g/sunset.jpg" alt="The sun setting over the sea, with a sailing boat"></figure>
+    <h1 class="typed note" data-in><span>I like learning new things, figuring out how things work, and making things.</span> <span>Some are useful.</span> <span>Others exist purely because I thought they&rsquo;d be funny.</span></h1>
+  </section>
+
+  <section class="pages" aria-label="Pages">
+    <ol class="stairs" data-in>
+      <li><a href="about.html" data-pv="1" style="--k:0"><span class="n">01</span><span class="lab"><span>About</span></span></a><span class="dots" aria-hidden="true"></span></li>
+      <li><a href="work.html" data-pv="2" style="--k:1"><span class="n">02</span><span class="lab"><span>Things I&rsquo;ve made</span></span></a><span class="dots" aria-hidden="true"></span></li>
+      <li><a href="things-i-love.html" data-pv="3" style="--k:2"><span class="n">03</span><span class="lab"><span>Things I love</span></span></a><span class="dots" aria-hidden="true"></span></li>
+      <li><a href="ranking.html" data-pv="4" style="--k:3"><span class="n">04</span><span class="lab"><span>Rankings</span></span></a><span class="dots" aria-hidden="true"></span></li>
+    </ol>
+    <div class="page-photos" data-in aria-hidden="true">
+      <a href="about.html" data-pv="1" tabindex="-1"><img src="assets/img/g/pv-about.jpg" alt="" loading="lazy"></a>
+      <a href="work.html" data-pv="2" tabindex="-1"><img src="assets/img/g/pv-made.jpg" alt="" loading="lazy"></a>
+      <a href="things-i-love.html" data-pv="3" tabindex="-1"><img src="assets/img/g/pv-love.jpg" alt="" loading="lazy"></a>
+      <a href="ranking.html" data-pv="4" tabindex="-1"><img src="assets/img/n/kid-2.jpg" alt="" loading="lazy"></a>
     </div>
   </section>
 
-  <section class="pair">
-    <div class="wrap">
-      <a class="card" href="work.html#worked-on" data-reveal>
-        <div class="tilt">
-          <div class="media"><div class="shot"><div class="bar"><i></i><i></i><i></i></div><div class="body"><div><strong>Recruitcha GTM</strong><span>Screenshot to come</span></div></div></div></div>
-          <div class="cap"><h2>Things I've built</h2><span class="arrow">&rarr;</span></div>
-        </div>
-      </a>
-      <a class="card" href="work.html#portraits" data-reveal="2">
-        <div class="tilt">
-          <div class="media"><img src="assets/img/ai-generals.jpg" alt="AI oil-painting style portrait of two friends as generals on horseback"></div>
-          <div class="cap"><h2>Things I've made for fun</h2><span class="arrow">&rarr;</span></div>
-        </div>
-      </a>
+  <section class="hello">
+    <div class="col">
+      <p class="script ink say" data-in data-write>say hello</p>
+      <p class="links type upper"><a href="mailto:you@example.com">Email</a><span class="bar">|</span><a href="https://www.linkedin.com/">LinkedIn</a><span class="bar">|</span><a href="#">CV</a></p>
     </div>
   </section>
-
-  <section class="loves">
-    <div class="wrap">
-      <span class="label">A few things I love</span>
-      <p class="scrub">Piano, water parks, crossword puzzles, handwritten notes, blind karaoke, and Tuvan throat singing.</p>
-      <a class="more ulink" href="things-i-love.html">The full list <span class="arrow">&rarr;</span></a>
-    </div>
-  </section>
-
-  <section class="band">
-    <div class="wrap">
-      <span class="label" data-reveal>Work</span>
-      <p class="big" data-reveal>I studied biomedical science, then got a job in digital marketing and somehow ended up building software at a startup.</p>
-      <div class="pills" data-reveal="2">
-        <a class="pill" href="work.html#worked-on">Projects</a>
-        <a class="pill" href="about.html#experience">Experience</a>
-        <a class="pill" href="#">CV</a>
-        <a class="pill" href="https://www.linkedin.com/">LinkedIn</a>
-      </div>
-    </div>
-  </section>
+  <p class="colophon"><span>&copy; <span data-year>2026</span> Peri</span><a href="#top">back to top</a></p>
 </main>
-<footer class="foot" style="border-top:1px solid rgba(244,242,237,.12)" id="contact">
-  <div class="wrap">
-    <span class="label" data-reveal>Contact</span>
-    <div class="links" data-reveal="2">
-      <a class="ulink" href="mailto:you@example.com">Email</a><span>&amp;</span><a class="ulink" href="https://www.linkedin.com/">LinkedIn</a>
-    </div>
-    <div class="base"><span>&copy; <span data-year></span> Peri</span><a class="ulink" href="https://github.com/perisadigh">GitHub</a></div>
-  </div>
-</footer>
-<div class="peek" aria-hidden="true"><img alt=""></div>
-<script src="assets/site.js"></script>
+
+<script src="assets/peri.js"></script>
 </body>
 </html>
