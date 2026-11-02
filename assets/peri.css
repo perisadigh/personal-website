@@ -226,6 +226,9 @@ p, h1, h2, ol { margin: 0; }
 
 .h2 { margin: 0; font: 500 clamp(1.5rem, 2.3vw, 2.1rem)/1 var(--sans); text-transform: uppercase; letter-spacing: -.02em; text-wrap: balance; }
 .body { margin: 0; font-size: 1.05rem; line-height: 1.6; max-width: 34em; text-wrap: pretty; }
+.copy { display: flex; flex-direction: column; gap: 1rem; max-width: 34em; }
+.copy .body { max-width: none; }
+.p-main a { color: var(--red); text-decoration: underline; text-underline-offset: 0.22em; text-decoration-thickness: 1px; }
 .pmeta { display: flex; gap: 1.4rem; margin: 0 0 1.1rem; font-size: .78rem; text-transform: uppercase; letter-spacing: .04em; }
 .pmeta > span:first-child { color: var(--blue); }
 
