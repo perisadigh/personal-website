@@ -1,17 +1,17 @@
 /* peri: built from the Sketchbook concept (26 Oct).
    Light paper, ink, a blue typewriter voice, red for links, a brush-script name. */
 :root {
-  --paper: #f0ece4;
-  --ink: #1d1b19;
-  --muted: #8a8378;
+  --paper: #f2eee7;
+  --ink: #1c1b19;
+  --muted: #8d877e;
   --blue: #3437c9;
   --red: #a3271f;
   --line: #d9d2c5;
   --clay: #d4643c;
 
-  --sans: "Instrument Sans", "Helvetica Neue", sans-serif;
-  --serif: "Instrument Serif", Georgia, serif;
-  --type: "Courier Prime", "Courier New", monospace;
+  --sans: "EB Garamond", Garamond, Georgia, serif;
+  --serif: "EB Garamond", Garamond, Georgia, serif;
+  --type: "Inter Tight", "Helvetica Neue", Arial, sans-serif;
   --script: "Kristi", cursive;
 
   --max: 74rem;
@@ -36,7 +36,7 @@ p, h1, h2, ol { margin: 0; }
 :focus-visible { outline: 1.5px solid var(--red); outline-offset: 3px; }
 
 .wrap { max-width: var(--max); margin: 0 auto; padding-left: max(var(--gutter), env(safe-area-inset-left, 0px)); padding-right: max(var(--gutter), env(safe-area-inset-right, 0px)); }
-.type { font-family: var(--type); font-size: 0.82rem; line-height: 1.4; }
+.type { font-family: var(--type); font-weight: 500; font-size: 0.68rem; line-height: 1.5; letter-spacing: .14em; text-transform: uppercase; }
 .upper { text-transform: uppercase; letter-spacing: 0.02em; }
 .caption { font-size: 0.7rem; color: var(--muted); text-transform: lowercase; }
 .script { font-family: var(--script); font-weight: 400; line-height: 0.8; }
@@ -415,3 +415,27 @@ p, h1, h2, ol { margin: 0; }
   .ranks { row-gap: 3.5rem; }
 }
 .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+
+/* Type pass (2 Nov): one serif (EB Garamond), small spaced capitals (Inter Tight), Kristi only for handwriting.
+   The home sentence stays blue, set across the photos. */
+::selection { background: var(--ink); color: var(--paper); }
+.top { max-width: none; padding: 1.8rem 4vw 0; }
+.top .home-link, .pnav, .colophon, .links { font: 500 .68rem/1.5 var(--type); letter-spacing: .14em; text-transform: uppercase; }
+.pnav { gap: .3rem 2.6rem; }
+.pnav a:hover, .pnav a:focus-visible { color: var(--ink); text-decoration: underline; text-underline-offset: .4em; }
+.pnav a[aria-current] { color: var(--ink); text-decoration: underline; text-underline-offset: .4em; }
+.typed, .note { font: 400 clamp(1.35rem, 2vw, 1.85rem)/1.4 var(--serif); color: var(--blue); }
+.caret { display: none; }
+.stairs { font: 400 clamp(1.7rem, 2.6vw, 2.5rem)/1 var(--serif); text-transform: none; letter-spacing: 0; }
+.stairs .n { font: 500 .68rem/1 var(--type); letter-spacing: .14em; color: var(--muted); margin-right: .6rem; }
+.stairs .dots { border-bottom: 1px solid var(--muted); opacity: .35; }
+.stairs a:hover, .stairs a:focus-visible, .stairs a.hot { color: var(--ink); font-style: italic; }
+.stairs li:has(a.hot) .dots { border-color: var(--ink); opacity: .6; }
+.links { gap: 1.4rem; }
+.links a { color: var(--ink); text-decoration: none; background: none; }
+.links a:hover, .links a:focus-visible { text-decoration: underline; text-underline-offset: .4em; }
+.links .bar { color: var(--muted); }
+.hello .links a:first-child { color: var(--red); }
+.colophon { color: var(--muted); max-width: none; padding: 0 4vw 2rem; }
+.colophon a { color: var(--muted); }
+@media (max-width: 760px) { .top { padding: 1.2rem 16px 0; } .colophon { padding: 0 16px 2rem; } }
