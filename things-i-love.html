@@ -5,27 +5,59 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Things I love · Peri</title>
 <meta name="description" content="Things Peri loves.">
-<meta name="theme-color" content="#EEE5DB">
+<meta name="theme-color" content="#F1E9DF">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,112,800;1,100,500&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=Mrs+Saint+Delafield&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..600;1,6..96,400..600&family=DM+Mono:wght@400&family=Mrs+Saint+Delafield&family=Schibsted+Grotesk:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
+<script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
 <header class="head">
-  <a class="mark" href="index.html">Peri</a>
+  <a class="mark" href="index.html" aria-label="Peri, home">Peri</a>
   <nav class="nav" aria-label="Main"><a href="about.html">About</a><a href="work.html">Work &amp; Play</a><a href="things-i-love.html" aria-current="page">Things I love</a><a href="ranking.html">Ranking</a></nav>
 </header>
 <main>
-  <h1 class="title" data-reveal><span class="ln"><span>Things</span><span>I</span><span>love</span></span></h1>
-  <section class="row" style="padding-top:clamp(40px,5vw,70px);padding-bottom:clamp(40px,5vw,70px)">
-    <figure style="grid-column:10 / span 3" data-reveal><img src="assets/img/v/m-dog-squint.jpg" alt="A small dog squinting in the sun" loading="lazy"></figure>
+  <section class="opener">
+    <span class="label">Things I love</span>
+    <h1 class="d" data-reveal>Things I <em class="accent">love</em></h1>
   </section>
-  <ol class="loves" data-reveal><li><span class="n">01</span><span>Piano</span></li><li><span class="n">02</span><span>Running</span></li><li><span class="n">03</span><span>Strength training</span></li><li><span class="n">04</span><span>Yoga</span></li><li><span class="n">05</span><span>Crafts</span></li><li><span class="n">06</span><span><a href="work.html#photography">Photography</a></span></li><li><span class="n">07</span><span><a href="work.html#recruitcha">Building random things with AI</a></span></li><li><span class="n">08</span><span><a href="work.html#portraits">Creating AI portraits of my friends</a></span></li><li><span class="n">09</span><span>Practicing mindfulness</span></li><li><span class="n">10</span><span><span data-img="assets/img/v/f-dogs-blanket.jpg">My family, friends, and dogs</span></span></li><li><span class="n">11</span><span>Learning new things</span></li><li><span class="n">12</span><span><span data-img="assets/img/v/f-sunset-path.jpg">Spending time outdoors</span></span></li><li><span class="n">13</span><span><span data-img="assets/img/v/f-hike.jpg">Hiking</span></span></li><li><span class="n">14</span><span><span data-img="assets/img/v/f-boats.jpg">Floating in calm bodies of water</span></span></li><li><span class="n">15</span><span>Architecture &amp; interior design</span></li><li><span class="n">16</span><span>Fashion</span></li><li><span class="n">17</span><span>Rock climbing</span></li><li><span class="n">18</span><span>Pranks</span></li><li><span class="n">19</span><span>Crossword puzzles</span></li><li><span class="n">20</span><span>Board games (especially trivia ones)</span></li><li><span class="n">21</span><span>Baking</span></li><li><span class="n">22</span><span>History</span></li><li><span class="n">23</span><span>Water parks</span></li><li><span class="n">24</span><span>Being described</span></li><li><span class="n">25</span><span><span data-img="assets/img/v/f-polaroid.jpg">Handwritten cards/notes</span></span></li><li><span class="n">26</span><span>Interpretive dance (watching, not doing)</span></li><li><span class="n">27</span><span>Tuvan throat singing</span></li><li><span class="n">28</span><span>Karaoke</span></li><li><span class="n">29</span><span>Blind karaoke</span></li><li><span class="n">30</span><span>Anything vintage</span></li></ol>
+  <section class="collection">
+    <div class="thing" style="--c:1;--s:4;--mc:1;--ms:4" data-reveal><span class="meta">01</span><div class="t-a">Piano</div></div>
+    <div class="thing" style="--c:7;--s:3;--mc:3;--ms:4;--j:end" data-reveal><span class="meta">02</span><div class="t-d">Running</div></div>
+    <div class="thing" style="--c:10;--s:3;--mc:1;--ms:6" data-reveal><span class="meta">03</span><div class="t-c">Strength training</div></div>
+    <div class="thing" style="--c:2;--s:3;--mc:4;--ms:3" data-reveal><span class="meta">04</span><div class="t-b">Yoga</div></div>
+    <div class="thing" style="--c:5;--s:2;--mc:1;--ms:3" data-reveal><span class="meta">05</span><div class="t-d">Crafts</div></div>
+    <div class="thing" style="--c:8;--s:4;--mc:1;--ms:6" data-reveal><figure><img src="assets/img/v/f-sunset-path.jpg" alt="" loading="lazy"></figure><span class="meta">06</span><div class="t-a"><a href="work.html#photography">Photography</a></div></div>
+    <div class="thing" style="--c:1;--s:5;--mc:1;--ms:5" data-reveal><span class="meta">07</span><div class="t-d"><a href="work.html#recruitcha">Building random things with AI</a></div></div>
+    <div class="thing" style="--c:7;--s:4;--mc:2;--ms:5" data-reveal><figure><img src="assets/img/photo/ai-pool.jpg" alt="" loading="lazy"></figure><span class="meta">08</span><div class="t-b"><a href="work.html#portraits">Creating AI portraits of my friends</a></div></div>
+    <div class="thing" style="--c:1;--s:3;--mc:1;--ms:4" data-reveal><span class="meta">09</span><div class="t-e">Practicing mindfulness</div></div>
+    <div class="thing" style="--c:4;--s:4;--mc:1;--ms:6" data-reveal><figure><img src="assets/img/v/f-dogs-blanket.jpg" alt="" loading="lazy"></figure><span class="meta">10</span><div class="t-a">My family, friends, and dogs</div></div>
+    <div class="thing" style="--c:10;--s:3;--mc:3;--ms:4" data-reveal><span class="meta">11</span><div class="t-c">Learning new things</div></div>
+    <div class="thing" style="--c:2;--s:4;--mc:1;--ms:5" data-reveal><span class="meta">12</span><div class="t-d"><span data-img="assets/img/v/f-tree-hug.jpg" style="text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.16em;text-decoration-color:rgba(140,42,28,.5)">Spending time outdoors</span></div></div>
+    <div class="thing" style="--c:7;--s:3;--mc:3;--ms:4" data-reveal><figure><img src="assets/img/v/f-hike.jpg" alt="" loading="lazy"></figure><span class="meta">13</span><div class="t-a">Hiking</div></div>
+    <div class="thing" style="--c:10;--s:3;--mc:1;--ms:6" data-reveal><figure><img src="assets/img/v/sea-light.jpg" alt="" loading="lazy"></figure><span class="meta">14</span><div class="t-b">Floating in calm bodies of water</div></div>
+    <div class="thing" style="--c:1;--s:5;--mc:1;--ms:6" data-reveal><span class="meta">15</span><div class="t-d">Architecture &amp; interior design</div></div>
+    <div class="thing" style="--c:7;--s:3;--mc:4;--ms:3" data-reveal><span class="meta">16</span><div class="t-a">Fashion</div></div>
+    <div class="thing" style="--c:10;--s:3;--mc:1;--ms:4" data-reveal><span class="meta">17</span><div class="t-c">Rock climbing</div></div>
+    <div class="thing" style="--c:1;--s:3;--mc:1;--ms:3" data-reveal><span class="meta">18</span><div class="t-b">Pranks</div></div>
+    <div class="thing" style="--c:4;--s:4;--mc:3;--ms:4" data-reveal><span class="meta">19</span><div class="t-d">Crossword puzzles</div></div>
+    <div class="thing" style="--c:9;--s:4;--mc:1;--ms:5" data-reveal><span class="meta">20</span><div class="t-e">Board games (especially trivia ones)</div></div>
+    <div class="thing" style="--c:2;--s:3;--mc:4;--ms:3" data-reveal><span class="meta">21</span><div class="t-a">Baking</div></div>
+    <div class="thing" style="--c:6;--s:3;--mc:1;--ms:3" data-reveal><span class="meta">22</span><div class="t-c">History</div></div>
+    <div class="thing" style="--c:9;--s:4;--mc:2;--ms:5" data-reveal><span class="meta">23</span><div class="t-b">Water parks</div></div>
+    <div class="thing" style="--c:1;--s:4;--mc:1;--ms:5" data-reveal><span class="meta">24</span><div class="t-d">Being described</div></div>
+    <div class="thing" style="--c:6;--s:4;--mc:1;--ms:6" data-reveal><figure><img src="assets/img/v/f-polaroid.jpg" alt="" loading="lazy"></figure><span class="meta">25</span><div class="t-s">Handwritten cards/notes</div></div>
+    <div class="thing" style="--c:10;--s:3;--mc:1;--ms:5" data-reveal><span class="meta">26</span><div class="t-e">Interpretive dance (watching, not doing)</div></div>
+    <div class="thing" style="--c:1;--s:4;--mc:2;--ms:5" data-reveal><span class="meta">27</span><div class="t-c">Tuvan throat singing</div></div>
+    <div class="thing" style="--c:5;--s:3;--mc:1;--ms:3" data-reveal><span class="meta">28</span><div class="t-a">Karaoke</div></div>
+    <div class="thing" style="--c:8;--s:4;--mc:3;--ms:4" data-reveal><span class="meta">29</span><div class="t-b">Blind karaoke</div></div>
+    <div class="thing" style="--c:1;--s:8;--mc:1;--ms:6" data-reveal><span class="meta">30</span><div class="t-a">Anything vintage</div></div>
+  </section>
 </main>
-<footer class="foot caps" id="contact">
+<footer class="foot " id="contact">
   <div class="links"><a href="mailto:you@example.com">Email</a><a href="https://www.linkedin.com/">LinkedIn</a><a href="#">CV</a></div>
-  <span>&copy; <span data-year></span> Peri</span>
+  <div class="base"><span>&copy; <span data-year></span> Peri</span><a href="ranking.html">Ranking every version of myself</a></div>
 </footer>
 <div class="peek" aria-hidden="true"><img alt=""></div>
 <script src="assets/site.js"></script>

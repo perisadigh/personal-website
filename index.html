@@ -5,26 +5,35 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Peri</title>
 <meta name="description" content="Things Peri has made, what she&rsquo;s been up to, and things she loves.">
-<meta name="theme-color" content="#EEE5DB">
+<meta name="theme-color" content="#F1E9DF">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,112,800;1,100,500&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=Mrs+Saint+Delafield&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..600;1,6..96,400..600&family=DM+Mono:wght@400&family=Mrs+Saint+Delafield&family=Schibsted+Grotesk:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
+<script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
-<header class="head">
-  <a class="mark" href="index.html">Peri</a>
-  <nav class="nav" aria-label="Main"><a href="about.html">About</a><a href="work.html">Work &amp; Play</a><a href="things-i-love.html">Things I love</a><a href="ranking.html">Ranking</a></nav>
-</header>
 <main>
-  <div class="home">
-  <div class="band-wrap"><span class="sig" aria-hidden="true">Peri</span><div class="band" data-reveal><img src="assets/img/v/m-eyes.jpg" alt="Two faces close to the camera, eyes looking in"></div></div>
-  <section class="h-low">
-    <p class="h-intro" data-reveal="2">I like making things.<br>Some are useful.<br>Others exist purely<br>because I thought<br>they&rsquo;d <em>be</em> <em class="u">funny</em>.</p>
-    <figure class="h-detail" data-reveal="3"><img src="assets/img/v/sea-light.jpg" alt="The sun setting over the sea, a catamaran passing" loading="lazy"></figure>
-    <div class="h-contact caps"><a href="mailto:you@example.com">Email</a><a href="https://www.linkedin.com/">LinkedIn</a><a href="#">CV</a></div>
+  <section class="home">
+    <div class="home-text">
+      <a class="mark" href="index.html" aria-label="Peri, home">Peri</a>
+      <div class="home-copy">
+        <h1 class="d" data-reveal>I like making things. Some are useful. Others exist purely because I thought they&rsquo;d be <em>funny</em>.</h1>
+        <p class="onward" data-reveal>Here&rsquo;s a little bit of <a href="work.html" data-swap="made" data-label="Work &amp; Play">what I&rsquo;ve made</a>, <a href="about.html" data-swap="upto" data-label="About">what I&rsquo;ve been up to</a>, and <a href="things-i-love.html" data-swap="love" data-label="Things I love">things I love</a>.</p>
+      </div>
+      <div class="home-foot">
+        <div class="links"><a href="mailto:you@example.com">Email</a><a href="https://www.linkedin.com/">LinkedIn</a><a href="#">CV</a></div>
+        <a href="ranking.html" class="soft">Ranking every version of myself &rarr;</a>
+      </div>
+    </div>
+    <div class="home-photo">
+      <img src="assets/img/v/m-portrait.jpg" alt="Peri sitting on the rocks, looking into the wind">
+      <img class="alt" data-for="made" src="assets/img/v/f-sunset-path.jpg" alt="" loading="lazy">
+      <img class="alt" data-for="upto" src="assets/img/v/m-peri-hike.jpg" alt="" loading="lazy">
+      <img class="alt" data-for="love" src="assets/img/v/f-dogs-blanket.jpg" alt="" loading="lazy">
+      <span class="cap"></span>
+    </div>
   </section>
-  </div>
 </main>
 <script src="assets/site.js"></script>
 </body>

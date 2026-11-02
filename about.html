@@ -5,44 +5,52 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>About · Peri</title>
 <meta name="description" content="About Peri.">
-<meta name="theme-color" content="#EEE5DB">
+<meta name="theme-color" content="#F1E9DF">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,112,800;1,100,500&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=Mrs+Saint+Delafield&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..600;1,6..96,400..600&family=DM+Mono:wght@400&family=Mrs+Saint+Delafield&family=Schibsted+Grotesk:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
+<script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
 <header class="head">
-  <a class="mark" href="index.html">Peri</a>
+  <a class="mark" href="index.html" aria-label="Peri, home">Peri</a>
   <nav class="nav" aria-label="Main"><a href="about.html" aria-current="page">About</a><a href="work.html">Work &amp; Play</a><a href="things-i-love.html">Things I love</a><a href="ranking.html">Ranking</a></nav>
 </header>
 <main>
-  <h1 class="title" data-reveal><span class="ln"><span>A</span><span>B</span><span>O</span><span>U</span><span>T</span></span></h1>
-  <section class="row sec" style="padding-top:clamp(50px,6vw,90px)">
-    <div style="grid-column:1 / span 6">
-      <p class="lede" data-reveal>I studied biomedical science, then got a job in digital marketing and somehow ended up building software at a startup.</p>
-      <p data-reveal style="max-width:34em;margin-top:28px">At the startup I began in marketing at Recruitcha, the recruitment agency. From there I moved into recruitment and building our internal tools, and then into product development and technical work on Recruitcha GTM, the software product. I taught myself the software side using AI tools.</p>
-    </div>
-    <figure class="a-photo" style="grid-column:9 / span 3;margin-top:40px" data-reveal="2"><img src="assets/img/v/m-peri-hike.jpg" alt="Peri on the rocks below the mountains" loading="lazy"></figure>
+  <section class="about-top">
+    <span class="label">About</span>
+    <h1 class="d" data-reveal>I studied biomedical science, then got a job in digital marketing and somehow ended up building software at a startup.</h1>
+    <figure data-reveal><img src="assets/img/v/m-peri-hike.jpg" alt="Peri on the rocks below the mountains"></figure>
+    <p class="intro read" data-reveal>At the startup I began in marketing at Recruitcha, the recruitment agency. From there I moved into recruitment and building our internal tools, and then into product development and technical work on Recruitcha GTM, the software product. I taught myself the software side using AI tools.</p>
   </section>
-  <section class="xp sec" id="experience">
-    <div class="caps">Experience<br><a href="#">CV</a> / <a href="https://www.linkedin.com/">LinkedIn</a></div>
-    <ol><li><span>Product development and technical work</span><span>Recruitcha GTM, software product</span><span class="when">Dates to come</span></li><li><span>Recruitment and internal tooling</span><span>Recruitcha, recruitment agency</span><span class="when">Dates to come</span></li><li><span>Marketing</span><span>Recruitcha</span><span class="when">Dates to come</span></li><li><span>BSc Biomedical Science &amp; Physiology</span><span>University to come</span><span class="when">Dates to come</span></li></ol>
-  </section>
-  <section class="sec">
-    <h2 class="spaced" data-reveal><span>Two</span><span>truths</span><span>and</span><span>a</span><span>lie</span></h2>
-    <div class="game">
-    <div class="truth"><p><b>One.</b> The very first thing I did when I came out of the womb was grab the scissors out of the doctor&rsquo;s hand and refuse to let go.</p><button type="button">This is the lie</button><span class="verdict">True</span></div>
-    <div class="truth"><p><b>Two.</b> When I was about four, my mum had to tell me Santa wasn&rsquo;t real because I wouldn&rsquo;t accept any explanation for why he could get into our house through the chimney but burglars couldn&rsquo;t.</p><p class="extra">I then went to school and accidentally ruined Santa for the other kids.</p><button type="button">This is the lie</button><span class="verdict">True</span></div>
-    <!-- DRAFT: the false clause below is not confirmed by Peri yet -->
-    <div class="truth" data-lie><p><b>Three.</b> My brother and I were the only kids in an adult kung fu class, and by twelve I was helping teach it.</p><button type="button">This is the lie</button><span class="verdict">The lie</span></div>
+
+  <section class="career" id="experience">
+    <div class="side">
+      <span class="label">Career</span>
+      <h2 class="d">Experience</h2>
+      <div class="btns"><a class="btn" href="#">CV</a><a class="btn" href="https://www.linkedin.com/">LinkedIn</a></div>
     </div>
-    <p class="game-status caps" aria-live="polite"></p>
+    <ol class="steps"><li data-reveal><span class="role">BSc Biomedical Science &amp; Physiology</span><span class="where">University to come</span><span class="meta">Dates to come</span></li><li data-reveal><span class="role">Marketing</span><span class="where">Recruitcha, recruitment agency</span><span class="meta">Dates to come</span></li><li data-reveal><span class="role">Recruitment and internal tooling</span><span class="where">Recruitcha, recruitment agency</span><span class="meta">Dates to come</span></li><li data-reveal><span class="role">Product development and technical work</span><span class="where">Recruitcha GTM, software product</span><span class="meta">Dates to come</span></li></ol>
+  </section>
+
+  <section class="game" aria-label="Two truths and a lie">
+    <div class="game-head">
+      <h2 class="d">Two truths <em>and a lie</em></h2>
+      <p>Which one is the lie?</p>
+    </div>
+    <div class="cards">
+        <button class="card" type="button"><span class="n">i</span><span class="s">The very first thing I did when I came out of the womb was grab the scissors out of the doctor&rsquo;s hand and refuse to let go.</span><span class="pick">This is the lie</span><span class="verdict">True</span></button>
+        <button class="card" type="button"><span class="n">ii</span><span class="s">When I was about four, my mum had to tell me Santa wasn&rsquo;t real because I wouldn&rsquo;t accept any explanation for why he could get into our house through the chimney but burglars couldn&rsquo;t.</span><span class="extra">I then went to school and accidentally ruined Santa for the other kids.</span><span class="pick">This is the lie</span><span class="verdict">True</span></button>
+        <!-- DRAFT: the false clause below is not confirmed by Peri yet -->
+        <button class="card" type="button" data-lie><span class="n">iii</span><span class="s">My brother and I were the only kids in an adult kung fu class, and by twelve I was helping teach it.</span><span class="pick">This is the lie</span><span class="verdict">The lie</span></button>
+    </div>
+    <div class="game-foot"><p class="status" aria-live="polite"></p><button class="again" type="button">Play again</button></div>
   </section>
 </main>
-<footer class="foot caps" id="contact">
+<footer class="foot no-top" id="contact">
   <div class="links"><a href="mailto:you@example.com">Email</a><a href="https://www.linkedin.com/">LinkedIn</a><a href="#">CV</a></div>
-  <span>&copy; <span data-year></span> Peri</span>
+  <div class="base"><span>&copy; <span data-year></span> Peri</span><a href="ranking.html">Ranking every version of myself</a></div>
 </footer>
 <script src="assets/site.js"></script>
 </body>
