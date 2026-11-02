@@ -44,36 +44,21 @@
       entries.forEach(function (e) {
         if (!e.isIntersecting) return;
         e.target.classList.add('in');
-        if (e.target === typed) setTimeout(typeOut, 600);
+        if (e.target === typed) setTimeout(typeOut, document.querySelector('.home') ? 1500 : 600);
         io.unobserve(e.target);
       });
     }, { threshold: 0.35 });
     // The eyes start clipped to a thin line, so they get a lower bar than everything else.
     var io0 = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io0.unobserve(e.target); } });
-    }, { threshold: 0, rootMargin: '0px 0px -30% 0px' });
+    }, { threshold: 0 });
     els.forEach(function (el) { (el.classList.contains('eyes') ? io0 : io).observe(el); });
   } else {
     els.forEach(function (el) { el.classList.add('in'); });
   }
 
-  // Eyes drift slightly slower than the page.
-  var eyes = document.querySelector('.eyes');
-  if (eyes && motion) {
-    var ticking = false;
-    var update = function () {
-      ticking = false;
-      var r = eyes.getBoundingClientRect(), vh = window.innerHeight;
-      if (r.bottom < 0 || r.top > vh) return;
-      var t = (r.top + r.height / 2 - vh / 2) / (vh / 2 + r.height / 2); // -1..1
-      eyes.style.setProperty('--p', (-8 + t * 7).toFixed(2) + '%');
-    };
-    window.addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
-    update();
-  }
-
-  // The square photo previews each page while you hover its name.
-  var mirror = document.querySelector('.mirror');
+  // The photo under the name previews each page while you hover its name.
+  var mirror = document.querySelector('.hero-photo');
   if (mirror) {
     var imgs = mirror.querySelectorAll('img');
     var show = function (n) { imgs.forEach(function (im, k) { im.classList.toggle('on', k === n); }); };
@@ -84,15 +69,6 @@
       a.addEventListener('mouseleave', function () { show(0); });
       a.addEventListener('blur', function () { show(0); });
     });
-    imgs.forEach(function (im) { im.loading = 'eager'; });
-  }
-
-  // The corner index steps aside once the main list of pages is on screen.
-  var index = document.querySelector('.index'), pages = document.querySelector('.pages');
-  if (index && pages && 'IntersectionObserver' in window) {
-    new IntersectionObserver(function (entries) {
-      index.classList.toggle('away', entries[0].isIntersecting);
-    }, { rootMargin: '0px 0px -30% 0px' }).observe(pages);
   }
 
   // Two truths and a lie: pick a card, it gets tagged as your pick, then every card is stamped.
