@@ -162,8 +162,3 @@ header{position:absolute;color:inherit;mix-blend-mode:normal;padding:1.4rem 16px
 .ranks .plates{position:sticky}
 
 @media (max-width:760px){.ranks .plates{max-width:11rem;grid-template-columns:1fr}}
-.bloom{position:absolute;left:30%;top:-4.2rem;width:clamp(13rem,18.5vw,18.5rem);height:auto;pointer-events:none;mix-blend-mode:multiply}
-.js .bloom{opacity:0;transform:translateY(.6rem) rotate(-2deg)}
-.js .bloom.in{opacity:1;transform:rotate(-2deg);transition:opacity 1.6s var(--e),transform 1.8s var(--e)}
-@media (prefers-reduced-motion:reduce){.js .bloom{opacity:1;transform:rotate(-2deg)}}
-@media (max-width:760px){.bloom{left:34%;top:-4rem;width:12.5rem}}
