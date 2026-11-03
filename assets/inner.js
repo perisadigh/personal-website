@@ -5,7 +5,7 @@ document.querySelectorAll('[data-year]').forEach(function(e){e.textContent=new D
 requestAnimationFrame(function(){requestAnimationFrame(function(){d.classList.add('go')})});
 
 /* things come into view once, a little before they are fully on screen, and an image only starts to appear when it has loaded */
-var seen=[].slice.call(document.querySelectorAll('.fd,.stag,.plot')),rv=[].slice.call(document.querySelectorAll('.rv')),hi=[].slice.call(document.querySelectorAll('.hello .hi'));
+var seen=[].slice.call(document.querySelectorAll('.fd,.stag,.plot,.bloom')),rv=[].slice.call(document.querySelectorAll('.rv')),hi=[].slice.call(document.querySelectorAll('.hello .hi'));
 [].forEach.call(document.querySelectorAll('img[loading=lazy]'),function(i){i.loading='eager'});
 var ready=function(el,cb){var im=el.querySelector('img');if(!im||(im.complete&&im.naturalWidth)){cb();return}var d=0,f=function(){if(!d){d=1;cb()}};im.addEventListener('load',f,{once:true});im.addEventListener('error',f,{once:true});setTimeout(f,1200)};
 if(rm||!('IntersectionObserver' in window)){seen.concat(rv,hi).forEach(function(e){e.classList.add('in')})}

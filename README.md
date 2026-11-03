@@ -19,7 +19,7 @@ Shared styles for the inner pages are in `assets/inner.css`, their behaviour (re
 
 - `a/` the photos on the home page.
 - `n/` the warm black-and-white photos used on the inner pages:
-  - `sheet/row-{a,b,c}.webp` the three film strips of the contact sheet, drawn as one image each (nine frames per strip).
+  - `sheet/row-{a,b,c}.webp` the three film strips of the contact sheet, drawn as one image each (eight or nine frames per strip).
   - `pNN.jpg` the colour originals the strips are made from. Keep them if you ever want to regenerate the sheet.
   - `kid-3.jpg`, `out-*.jpg` the plates on the Rankings and Things I love pages.
 - `grain.png` (in `assets/`) the film grain laid over every page.
