@@ -7,7 +7,7 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opa
 .mu{color:var(--mu)}
 a{color:inherit;text-decoration:none}
 :focus-visible{outline:1px solid var(--red);outline-offset:4px}
-header{position:absolute;top:0;left:0;right:0;z-index:5;display:flex;justify-content:space-between;padding:1.8rem 6vw}
+header{position:fixed;top:0;left:0;right:0;z-index:40;display:flex;justify-content:space-between;padding:1.8rem 6vw;color:#fff;mix-blend-mode:difference;transition:transform .7s var(--e)}header.away{transform:translateY(-130%)}
 header nav{display:flex;gap:2.6rem}header a[aria-current]{text-decoration:underline;text-underline-offset:.4em}
 header nav a,.hello .links a{background:linear-gradient(currentColor,currentColor) 0 100%/0 1px no-repeat;padding-bottom:.35em;transition:background-size .6s var(--e)}header nav a:hover,header nav a:focus-visible,.hello .links a:hover,.hello .links a:focus-visible{background-size:100% 1px}
 header a[aria-current]{background:none}
@@ -24,7 +24,7 @@ header a[aria-current]{background:none}
 .js .rv.in{clip-path:inset(0 0 0 0);transition:clip-path 1.4s var(--e)}.js .rv.in img{transform:scale(1);transition:transform 1.8s var(--e)}
 .js .fd{opacity:0;transform:translateY(1.1rem)}.js .fd.in{opacity:1;transform:none;transition:opacity 1.2s var(--e),transform 1.4s var(--e)}
 .js .stag li{opacity:0;transform:translateY(.9rem)}.js .stag.in li{opacity:1;transform:none;transition:opacity .9s var(--e) calc(var(--i,0)*45ms),transform 1s var(--e) calc(var(--i,0)*45ms)}
-.js .hi{clip-path:inset(-12% 100% -12% -6%)}.js .hi.in{clip-path:inset(-12% -6% -12% -6%);transition:clip-path 1.9s cubic-bezier(.5,0,.2,1) .2s}
+.js .hi{clip-path:inset(-60% 100% -60% -25%)}.js .hi.in{clip-path:inset(-60% -25% -60% -25%);transition:clip-path 1.9s cubic-bezier(.5,0,.2,1) .2s}
 @media (prefers-reduced-motion:reduce){.js .ln>span{transform:none!important;transition:none!important}.js .rv{clip-path:none!important}.js .rv img{transform:none!important}.js .fd,.js .stag li{opacity:1!important;transform:none!important}.js .hi{clip-path:none!important}}
 /* things I've made */
 .toc{list-style:none;margin:0 6vw 14vh 22vw}
@@ -104,6 +104,7 @@ html:not(.js) .chart .ln{stroke-dashoffset:0}html:not(.js) .chart circle{opacity
 .hello{position:relative;padding:18vh 6vw 4vh;text-align:center}
 .hello .hi{display:inline-block;font:400 clamp(5rem,9.5vw,9rem)/.9 "Kristi",cursive;transform:rotate(-5deg);white-space:nowrap}
 .hello .links{display:flex;justify-content:center;gap:2rem;margin-top:3.4rem}
+.hello .pgs{display:flex;justify-content:center;flex-wrap:wrap;gap:.6rem 2rem;margin-top:2.6rem}.hello .pgs a{background:linear-gradient(currentColor,currentColor) 0 100%/0 1px no-repeat;padding-bottom:.35em;transition:background-size .6s var(--e)}.hello .pgs a:hover,.hello .pgs a:focus-visible{background-size:100% 1px}
 .colophon{display:flex;justify-content:space-between;padding:6vh 6vw 4vh;color:var(--mu)}
 /* photo viewer: opens the film frame itself */
 .lb{position:fixed;inset:0;z-index:60;display:grid;place-items:center;background:rgba(242,238,231,.97);opacity:0;visibility:hidden;transition:opacity .5s var(--e),visibility 0s .5s;cursor:zoom-out}
@@ -112,7 +113,7 @@ html:not(.js) .chart .ln{stroke-dashoffset:0}html:not(.js) .chart circle{opacity
 .lb.open img{transform:none}
 .lb button{position:absolute;top:1.8rem;right:6vw;border:0;background:none;color:var(--ink);cursor:pointer;padding:0 0 .35em;background:linear-gradient(currentColor,currentColor) 0 100%/100% 1px no-repeat}
 @media (max-width:760px){
-header{padding:1.4rem 16px;flex-direction:column;gap:.6rem}header nav{gap:1.2rem;flex-wrap:wrap}
+header{position:absolute;color:inherit;mix-blend-mode:normal;padding:1.4rem 16px;flex-direction:column;gap:.6rem}header nav{gap:1.2rem;flex-wrap:wrap}
 .pt{padding:9rem 16px 3rem}.pt .folio{position:static;margin-bottom:1.4rem}.pt h1{font-size:15vw}.pt h1.long{font-size:12.5vw}
 .toc{margin:0 16px 5rem}.toc a{grid-template-columns:2.4rem 1fr}.toc .k{grid-column:2}
 .proj{margin:0 16px;padding:3.2rem 0 4rem;grid-template-columns:1fr}.proj .pm{margin-bottom:1.4rem;grid-column:1;grid-row:auto}.proj h2{grid-column:1;grid-row:auto;max-width:none}.proj .body{grid-column:1;margin-top:1.4rem}.proj .body+.body{margin-top:1.1rem}.proj .tr{grid-column:1}.proj .vid{grid-column:1;margin-top:2rem}
