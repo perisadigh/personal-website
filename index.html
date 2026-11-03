@@ -21,12 +21,11 @@ header nav{display:flex;gap:2.6rem}header a[aria-current]{text-decoration:underl
 .spread{position:relative;min-height:100svh;overflow:hidden}
 
 /* 0: quiet feature page: headline aligned to the top of a photographic plate, the standfirst to its foot */
-.s0{--ph:min(73svh,48vw)}
 .s0 h1{position:absolute;left:6vw;top:15vh;margin:0;z-index:3;color:var(--paper);mix-blend-mode:difference;font:400 clamp(3.2rem,9.6vw,11.5rem)/.94 var(--serif);letter-spacing:-.028em}
 .s0 h1 .ln:nth-child(2){padding-left:19vw}
 .s0 .stand{position:absolute;left:6vw;bottom:15vh;width:min(27rem,31vw);font:italic 400 clamp(1.3rem,1.75vw,1.8rem)/1.34 var(--serif);text-wrap:pretty;z-index:3}
-.s0 figure{position:absolute;left:54vw;top:12vh;width:40vw;height:var(--ph);z-index:1}
-.s0 figure img{object-position:60% 50%}
+.s0 figure{position:absolute;left:52vw;top:12vh;width:42vw;aspect-ratio:4/3;z-index:1}
+.s0 figure img{object-position:50% 50%}
 .s0 .foot{bottom:6vh;left:6vw}
 
 /* 1: the sentence set small and wide; a larger photo with "about" written across its edge */
@@ -67,7 +66,7 @@ header{position:absolute;color:inherit;mix-blend-mode:normal;padding:1.2rem 16px
 .s3 .para{margin:1.2rem 0 2.5rem;font-size:1.25rem}
 .s4{padding:4rem 0 3rem}.s4 .hi{position:relative;left:auto;top:auto;translate:none;width:fit-content;margin:0 auto;font-size:4.6rem}.s4 .links{margin-top:3rem}.s4 .pgs{margin-top:1.6rem}.s4 .fine{margin-top:1.6rem}
 }
-@media (max-width:760px){.s0{min-height:auto;padding:8.5rem 16px 0}.s0 h1,.s0 .stand,.s0 figure{position:static;width:auto;translate:none}.s0 h1{font-size:15vw;mix-blend-mode:normal;color:var(--ink)}.s0 h1 .ln:nth-child(2){padding-left:12vw}.s0 figure{width:100%;height:auto;aspect-ratio:4/3;margin:2.4rem 0 0}.s0 .stand{margin-top:1.6rem;font-size:1.4rem;max-width:20rem}.s0 .foot{margin-top:2.5rem}
+@media (max-width:760px){.s0{min-height:auto;padding:8.5rem 16px 0}.s0 h1,.s0 .stand,.s0 figure{position:static;width:auto;translate:none}.s0 h1{font-size:15vw;mix-blend-mode:normal;color:var(--ink)}.s0 h1 .ln:nth-child(2){padding-left:12vw}.s0 figure{width:100%;margin:2.4rem 0 0}.s0 .stand{margin-top:1.6rem;font-size:1.4rem;max-width:20rem}.s0 .foot{margin-top:2.5rem}
 }
 @media (max-width:760px){
 .s1{padding:8rem 16px 4rem}.s1 figure{height:auto;aspect-ratio:4/3;width:calc(100% + 32px);margin:0 -16px}.s1 .hi{position:relative;left:auto;top:auto;order:2;margin:-6.6rem 0 0 4%;font-size:5rem;z-index:2}.s1 .say{order:3;width:auto;margin:3rem 0 0}.s1 .foot{order:4}
@@ -132,7 +131,7 @@ header nav a{background:linear-gradient(currentColor,currentColor) 0 100%/0 1px 
 .s2 .kf.in img{filter:none;transform:none;transition:filter 1.5s .1s var(--e),transform 1.3s .1s var(--e)}
 @media (prefers-reduced-motion:reduce){.card .note,.s2 .verdict .w{clip-path:none!important}.revealed .card[data-lie]{animation:none}.s2 .kf img{filter:none;transform:none}}
 /* crop marks around the opening plate */
-.s0 .marks{position:absolute;left:calc(54vw - 26px);top:calc(12vh - 26px);width:calc(40vw + 52px);aspect-ratio:auto;height:calc(var(--ph) + 52px);z-index:2;pointer-events:none;opacity:0;transition:opacity .8s .8s;--k:rgba(28,27,25,.5);background:
+.s0 .marks{position:absolute;left:calc(52vw - 26px);top:calc(12vh - 26px);width:calc(42vw + 52px);aspect-ratio:auto;height:calc(42vw*3/4 + 52px);z-index:2;pointer-events:none;opacity:0;transition:opacity .8s .8s;--k:rgba(28,27,25,.5);background:
 linear-gradient(var(--k),var(--k)) 0 26px/16px 1px no-repeat,linear-gradient(var(--k),var(--k)) 26px 0/1px 16px no-repeat,
 linear-gradient(var(--k),var(--k)) 100% 26px/16px 1px no-repeat,linear-gradient(var(--k),var(--k)) calc(100% - 26px) 0/1px 16px no-repeat,
 linear-gradient(var(--k),var(--k)) 0 calc(100% - 26px)/16px 1px no-repeat,linear-gradient(var(--k),var(--k)) 26px 100%/1px 16px no-repeat,
