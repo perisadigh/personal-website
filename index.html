@@ -21,8 +21,8 @@ header nav{display:flex;gap:2.6rem}header a[aria-current]{text-decoration:underl
 .spread{position:relative;min-height:100svh;overflow:hidden}
 
 /* 0: quiet feature page: headline aligned to the top of a photographic plate, the standfirst to its foot */
-.s0 h1{position:absolute;left:6vw;top:15vh;margin:0;z-index:3;color:var(--paper);mix-blend-mode:difference;font:400 clamp(3.2rem,9.2vw,11rem)/.94 var(--serif);letter-spacing:-.028em}
-.s0 h1 .ln:nth-child(2){padding-left:19vw}
+.s0 h1{position:absolute;left:6vw;top:15vh;margin:0;z-index:3;color:var(--paper);mix-blend-mode:difference;font:400 clamp(2.6rem,5.6vw,6.8rem)/.96 var(--serif);letter-spacing:-.026em}
+.s0 h1 .ln:nth-child(2){padding-left:11vw}
 .s0 .stand{position:absolute;left:6vw;bottom:15vh;width:min(27rem,31vw);font:italic 400 clamp(1.3rem,1.75vw,1.8rem)/1.34 var(--serif);text-wrap:pretty;z-index:3}
 .s0 figure{position:absolute;left:52vw;top:12vh;width:42vw;aspect-ratio:4/3;z-index:1}
 .s0 figure img{object-position:50% 50%}
@@ -66,7 +66,7 @@ header{position:absolute;color:inherit;mix-blend-mode:normal;padding:1.2rem 16px
 .s3 .para{margin:1.2rem 0 2.5rem;font-size:1.25rem}
 .s4{padding:4rem 0 3rem}.s4 .hi{position:relative;left:auto;top:auto;translate:none;width:fit-content;margin:0 auto;font-size:4.6rem}.s4 .links{margin-top:3rem}.s4 .pgs{margin-top:1.6rem}.s4 .fine{margin-top:1.6rem}
 }
-@media (max-width:760px){.s0{min-height:auto;padding:8.5rem 16px 0}.s0 h1,.s0 .stand,.s0 figure{position:static;width:auto;translate:none}.s0 h1{font-size:15vw;mix-blend-mode:normal;color:var(--ink)}.s0 h1 .ln:nth-child(2){padding-left:12vw}.s0 figure{width:100%;margin:2.4rem 0 0}.s0 .stand{margin-top:1.6rem;font-size:1.4rem;max-width:20rem}.s0 .foot{margin-top:2.5rem}
+@media (max-width:760px){.s0{min-height:auto;padding:5rem 16px 0}.s0 h1,.s0 .stand,.s0 figure{position:static;width:auto;translate:none}.s0 h1{font-size:10.5vw;mix-blend-mode:normal;color:var(--ink)}.s0 h1 .ln:nth-child(2){padding-left:12vw}.s0 figure{width:100%;margin:2.4rem 0 0}.s0 .stand{margin-top:1.6rem;font-size:1.4rem;max-width:20rem}.s0 .foot{margin-top:2.5rem}
 }
 @media (max-width:760px){
 .s1{padding:8rem 16px 4rem}.s1 figure{height:auto;aspect-ratio:4/3;width:calc(100% + 32px);margin:0 -16px}.s1 .hi{position:relative;left:auto;top:auto;order:2;margin:-6.6rem 0 0 4%;font-size:5rem;z-index:2}.s1 .say{order:3;width:auto;margin:3rem 0 0}.s1 .foot{order:4}
@@ -76,7 +76,7 @@ header{position:absolute;color:inherit;mix-blend-mode:normal;padding:1.2rem 16px
 :root{--e:cubic-bezier(.2,.7,.2,1)}
 header nav a{background:linear-gradient(currentColor,currentColor) 0 100%/0 1px no-repeat;padding-bottom:.35em;transition:background-size .6s var(--e)}header nav a:hover,header nav a:focus-visible{background-size:100% 1px}
 .js .ln{display:block;overflow:hidden;padding:0 .14em .42em 0;margin:0 -.14em -.42em 0}.js .ln>span{display:block;transform:translateY(108%)}
-.js.go .ln>span{transform:none;transition:transform .95s var(--e)}.js.go .ln:nth-child(2)>span{transition-delay:.08s}
+.js .s0.in .ln>span{transform:none;transition:transform .95s var(--e)}.js .s0.in .ln:nth-child(2)>span{transition-delay:.08s}
 .js .rv{overflow:hidden}.js .rv img{will-change:transform,opacity;opacity:0;transform:translate3d(0,1.6rem,0) scale(1.1);transform-origin:50% 100%}
 .js .rv.in img{opacity:1;transform:scale(1.04) translateY(var(--py,0px));transition:opacity .8s var(--e),transform 1.15s var(--e)}
 .js .rv.in.settled img{transition:none}
@@ -136,7 +136,7 @@ linear-gradient(var(--k),var(--k)) 0 26px/16px 1px no-repeat,linear-gradient(var
 linear-gradient(var(--k),var(--k)) 100% 26px/16px 1px no-repeat,linear-gradient(var(--k),var(--k)) calc(100% - 26px) 0/1px 16px no-repeat,
 linear-gradient(var(--k),var(--k)) 0 calc(100% - 26px)/16px 1px no-repeat,linear-gradient(var(--k),var(--k)) 26px 100%/1px 16px no-repeat,
 linear-gradient(var(--k),var(--k)) 100% calc(100% - 26px)/16px 1px no-repeat,linear-gradient(var(--k),var(--k)) calc(100% - 26px) 100%/1px 16px no-repeat}
-.go .s0 .marks{opacity:1}
+.s0.in .marks{opacity:1}
 .s4 .links a{background:linear-gradient(currentColor,currentColor) 0 100%/0 1px no-repeat;padding-bottom:.4em;transition:background-size .6s var(--e)}.s4 .links a:hover,.s4 .links a:focus-visible{background-size:100% 1px}
 /* script words are written across, left to right; the rest of the page fades up */
 .js .hi{clip-path:inset(-60% 100% -60% -25%)}
@@ -154,17 +154,18 @@ linear-gradient(var(--k),var(--k)) 100% calc(100% - 26px)/16px 1px no-repeat,lin
 <script>document.documentElement.classList.add("js")</script>
 <header class="cap"><a href="index.html" aria-current="page">Home</a><nav aria-label="Pages"><a href="work.html">Things I&rsquo;ve made</a><a href="things-i-love.html">Things I love</a><a href="ranking.html">Rankings</a></nav></header>
 
-<section class="spread s0">
-  <h1 aria-label="I like making things."><span class="ln" aria-hidden="true"><span>I like making</span></span><span class="ln" aria-hidden="true"><span>things.</span></span></h1>
-  <p class="stand fd">Some are useful. Others exist purely because I&nbsp;thought they&rsquo;d be funny.</p>
-  <figure class="rv"><img src="assets/img/a/opening.jpg" alt="Peri at the top of a stone path that steps down through the trees towards the sea"></figure>
-  <div class="marks" aria-hidden="true"></div>
-</section>
-
 <section class="spread s1">
   <p class="say fd">I studied biomedical science, then got a job in digital marketing and somehow ended up building software at a startup.</p>
   <figure class="rv"><img src="assets/img/a/road-blur.jpg" alt="Peri on a road at dusk, looking back over her shoulder, the trees blurred behind her"></figure>
   <p class="hi" aria-hidden="true">about</p>
+</section>
+
+<section class="spread s3">
+  <div class="t fd">
+    <p class="cap mu">What I do</p>
+    <p class="para">After digital marketing, I moved into recruitment and taught myself to code with AI tools. I started by building internal recruiting tools, then moved into product development, building features and integrations, and designing and developing the company&rsquo;s website.</p>
+  </div>
+  <figure class="rv"><img src="assets/img/a/hike2.jpg" alt="Peri on the rocks below the mountains"></figure>
 </section>
 
 <section class="spread s2">
@@ -182,12 +183,11 @@ linear-gradient(var(--k),var(--k)) 100% calc(100% - 26px)/16px 1px no-repeat,lin
   </div>
 </section>
 
-<section class="spread s3">
-  <div class="t fd">
-    <p class="cap mu">What I do</p>
-    <p class="para">After digital marketing, I moved into recruitment and taught myself to code with AI tools. I started by building internal recruiting tools, then moved into product development, building features and integrations, and designing and developing the company&rsquo;s website.</p>
-  </div>
-  <figure class="rv"><img src="assets/img/a/hike2.jpg" alt="Peri on the rocks below the mountains"></figure>
+<section class="spread s0">
+  <h1 aria-label="I like making things."><span class="ln" aria-hidden="true"><span>I like making</span></span><span class="ln" aria-hidden="true"><span>things.</span></span></h1>
+  <p class="stand fd">Some are useful. Others exist purely because I&nbsp;thought they&rsquo;d be funny.</p>
+  <figure class="rv"><img src="assets/img/a/opening.jpg" alt="Peri at the top of a stone path that steps down through the trees towards the sea"></figure>
+  <div class="marks" aria-hidden="true"></div>
 </section>
 
 <section class="spread s4">
@@ -217,9 +217,10 @@ document.querySelectorAll('[data-year]').forEach(function(e){e.textContent=new D
 
 (function(){var d=document.documentElement,rm=matchMedia('(prefers-reduced-motion: reduce)').matches;
 requestAnimationFrame(function(){requestAnimationFrame(function(){d.classList.add('go')})});
-var rv=[].slice.call(document.querySelectorAll('.rv:not(.kf)')),fd=[].slice.call(document.querySelectorAll('.fd')),hi=document.querySelector('.s4 .hi');
-if(rm||!('IntersectionObserver' in window)){rv.concat(fd).forEach(function(e){e.classList.add('in')});if(hi)hi.classList.add('in');return}
+var s0=document.querySelector('.s0');var rv=[].slice.call(document.querySelectorAll('.rv:not(.kf)')),fd=[].slice.call(document.querySelectorAll('.fd')),hi=document.querySelector('.s4 .hi');
+if(rm||!('IntersectionObserver' in window)){rv.concat(fd).forEach(function(e){e.classList.add('in')});s0.classList.add('in');if(hi)hi.classList.add('in');return}
 var ready=function(el,cb){var im=el.querySelector('img');if(!im||(im.complete&&im.naturalWidth)){cb();return}var d=0,f=function(){if(!d){d=1;cb()}};im.addEventListener('load',f,{once:true});im.addEventListener('error',f,{once:true});setTimeout(f,1200)};
+var io0=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){s0.classList.add('in');io0.disconnect()}})},{threshold:.25});io0.observe(s0);
 var io2=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io2.unobserve(e.target)}})},{threshold:0,rootMargin:'0px 0px -4% 0px'});fd.forEach(function(e){io2.observe(e)});
 if(hi){var seen=false,chk=function(){if(seen)return;if(hi.getBoundingClientRect().top<innerHeight*.9){seen=true;hi.classList.add('in');removeEventListener('scroll',chk)}};addEventListener('scroll',chk,{passive:true});chk()}
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var f=e.target.querySelector('.rv');ready(f,function(){f.classList.add('in');setTimeout(function(){f.classList.add('settled')},1200)});io.unobserve(e.target)}})},{threshold:0,rootMargin:'0px 0px -4% 0px'});
