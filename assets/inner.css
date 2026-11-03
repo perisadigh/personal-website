@@ -161,4 +161,4 @@ header{position:absolute;color:inherit;mix-blend-mode:normal;padding:1.4rem 16px
 /* a sprig of lily of the valley beside the photo, drawn in as the page opens */
 .ranks .plates{position:sticky}
 
-@media (max-width:760px){.ranks .plates{max-width:11rem;grid-template-columns:1fr}}
+@media (max-width:760px){.ranks .plates{position:static;max-width:11rem;grid-template-columns:1fr}}
