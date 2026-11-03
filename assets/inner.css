@@ -22,7 +22,7 @@ header a[aria-current]{background:none}
 .pt h1.long{font-size:clamp(2.8rem,7vw,8rem)}
 .pt .stand{margin-top:5vh;max-width:30rem;font:italic 400 clamp(1.15rem,1.5vw,1.5rem)/1.38 var(--serif)}
 /* motion: lines rise, plates open, rows settle, script is written */
-.js .ln{display:block;overflow:hidden;padding-bottom:.24em;margin-bottom:-.24em}.js .ln>span{display:block;transform:translateY(108%)}
+.js .ln{display:block;overflow:hidden;padding:0 .14em .42em 0;margin:0 -.14em -.42em 0}.js .ln>span{display:block;transform:translateY(108%)}
 .js.go .ln>span{transform:none;transition:transform .95s var(--e)}.js.go .ln:nth-child(2)>span{transition-delay:.08s}.js.go .ln:nth-child(3)>span{transition-delay:.16s}
 .js .rv{overflow:hidden}.js .rv img{will-change:transform,opacity;opacity:0;transform:translate3d(0,1.6rem,0) scale(1.08);transform-origin:50% 100%}
 .js .rv.in img{opacity:1;transform:none;transition:opacity .75s var(--e),transform 1.1s var(--e)}
