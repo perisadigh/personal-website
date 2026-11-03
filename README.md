@@ -9,7 +9,7 @@ A static site: plain HTML, CSS and a little vanilla JS. No build step. Live at h
 | `index.html` | Home: the intro, the "two truths and a lie" game, what I do, say hello. Its styles and scripts are inline. |
 | `work.html` | Things I've made, with the AI portraits rail, the music player and the video. |
 | `things-i-love.html` | The list of things I love, and the pinned contact sheet of the people (and pets) I love. |
-| `ranking.html` | Me at every age, ranked. |
+| `ranking.html` | Me at every age, ranked. Hidden: not linked from any page and marked noindex. Re-add the `Rankings` link to the header and footer nav to bring it back. |
 | `404.html` | The not-found page (Vercel serves it automatically). |
 | `about.html` | A redirect to the home page, kept so old links still work. |
 
