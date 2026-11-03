@@ -24,12 +24,14 @@ if(lb){var li=lb.querySelector('img'),lbtn=lb.querySelector('button'),opener=nul
   f.addEventListener('click',open);f.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();open()}})});
  lb.addEventListener('click',close);document.addEventListener('keydown',function(e){if(e.key==='Escape'&&lb.classList.contains('open'))close()})}
 
-/* the contact sheet: each strip slides sideways as you scroll past it, in alternating directions */
-var cs=document.querySelector('.csheet');
-if(cs&&!rm){cs.classList.add('live');var rws=[].slice.call(cs.querySelectorAll('.rw')).map(function(w){var r=w.querySelector('.crow');return{w:w,r:r,d:+r.getAttribute('data-dir'),cur:null,tgt:0}}),raf2=0;
- function stepc(){raf2=0;var busy=false;rws.forEach(function(o){o.cur+=(o.tgt-o.cur)*.11;if(Math.abs(o.tgt-o.cur)<.4)o.cur=o.tgt;else busy=true;o.r.style.setProperty('--tx',o.cur.toFixed(1)+'px')});if(busy)raf2=requestAnimationFrame(stepc)}
- function calc(){var vh=innerHeight;rws.forEach(function(o){var b=o.w.getBoundingClientRect(),p=Math.min(1,Math.max(0,(vh-b.top)/(vh+b.height))),mx=Math.max(0,o.r.offsetWidth-o.w.offsetWidth);o.tgt=(o.d>0?-p:-(1-p))*mx;if(o.cur===null)o.cur=o.tgt});if(!raf2)raf2=requestAnimationFrame(stepc)}
- addEventListener('scroll',calc,{passive:true});addEventListener('resize',calc);addEventListener('load',calc);calc()}
+/* the contact sheet is pinned: the page holds while three strips slide through in opposite directions */
+var pin=document.getElementById('people'),cs=document.querySelector('.csheet');
+if(pin&&cs&&!rm){pin.classList.add('live');var rws=[].slice.call(cs.querySelectorAll('.rw')).map(function(w){var r=w.querySelector('.crow');return{w:w,r:r,d:+r.getAttribute('data-dir'),cur:null,tgt:0}}),raf2=0,mxx=0;
+ function sizep(){mxx=0;rws.forEach(function(o){o.mx=Math.max(0,o.r.offsetWidth-o.w.offsetWidth);mxx=Math.max(mxx,o.mx)});pin.style.height=Math.round(innerHeight+mxx*1.15+innerHeight*.25)+'px'}
+ function stepc(){raf2=0;var busy=false;rws.forEach(function(o){o.cur+=(o.tgt-o.cur)*.14;if(Math.abs(o.tgt-o.cur)<.3)o.cur=o.tgt;else busy=true;o.r.style.setProperty('--tx',o.cur.toFixed(2)+'px')});if(busy)raf2=requestAnimationFrame(stepc)}
+ function calc(){var b=pin.getBoundingClientRect(),p=Math.min(1,Math.max(0,-b.top/Math.max(1,b.height-innerHeight)));p=Math.min(1,Math.max(0,(p-.05)/.9));rws.forEach(function(o){o.tgt=(o.d>0?-p:-(1-p))*o.mx;if(o.cur===null)o.cur=o.tgt});if(!raf2)raf2=requestAnimationFrame(stepc)}
+ function all(){sizep();calc()}
+ addEventListener('scroll',calc,{passive:true});addEventListener('resize',all);addEventListener('load',all);all()}
 
 /* the portraits: pinned, sliding sideways */
 var rail=document.querySelector('.prail');
