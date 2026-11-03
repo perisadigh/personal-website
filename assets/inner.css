@@ -50,7 +50,7 @@ header a[aria-current]{background:none}
 /* the portraits: a pinned gallery that slides sideways as you scroll */
 .prail{position:relative;border-top:1px solid var(--line);margin:0 6vw}
 .stage{position:sticky;top:0;height:100vh;overflow:hidden;margin:0 -6vw}
-.track{position:absolute;left:0;top:0;height:100%;display:flex;align-items:flex-start;gap:6vw;padding:0 8vw 0 6vw;will-change:transform}
+.track{position:absolute;left:0;top:0;height:100%;display:flex;align-items:center;gap:6vw;padding:0 8vw 0 6vw;will-change:transform}
 .intro{flex:none;width:min(27rem,34vw);align-self:center;margin-right:2vw}
 .intro .pm{display:flex;gap:1.6rem;margin-bottom:2rem}
 .intro h2{margin:0 0 1.4rem;font:400 clamp(2.2rem,3.8vw,4rem)/1.04 var(--serif);letter-spacing:-.02em}
@@ -81,7 +81,8 @@ header a[aria-current]{background:none}
 /* rankings */
 .ranks{display:grid;grid-template-columns:22vw 1fr;gap:0 5vw;padding:0 6vw 10vh}
 .ranks .plates figure{width:68%}.ranks .plates figure+figure{margin-top:2rem;margin-left:24%}
-.rank-list{list-style:none;columns:2;column-gap:5vw}
+.rank-list{list-style:none;max-width:36rem}
+.ranks .plates{position:sticky;top:12vh;align-self:start}
 .plot{grid-column:2;margin-top:14vh}
 .plot .pm{color:var(--mu);margin-bottom:1.6rem}
 .chart{display:block;width:100%;max-width:46rem;overflow:visible}
@@ -113,6 +114,6 @@ header{padding:1.4rem 16px;flex-direction:column;gap:.6rem}header nav{gap:1.2rem
 .loves{grid-template-columns:1fr;padding:0 16px 5rem}.plates{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:2.4rem}.plates figure,.plates figure+figure,.plates figure:nth-child(n){width:auto;margin:0}
 .loves-list{columns:1}.sh{margin:0 16px}
 .xsheet{height:auto;padding:1.5rem 0 3rem;display:grid;grid-template-columns:1fr 1fr;gap:5vw 4vw;align-items:start}.xf{position:static;width:auto!important;transform:rotate(var(--r))!important}.xf:nth-child(even){margin-top:8vw}
-.ranks{grid-template-columns:1fr;padding:0 16px 4rem}.ranks .plates{grid-template-columns:1fr 1fr;max-width:20rem}.rank-list{columns:1}.plot{grid-column:1;margin-top:5rem}
+.ranks{grid-template-columns:1fr;padding:0 16px 4rem}.ranks .plates{position:static;grid-template-columns:1fr 1fr;max-width:20rem}.plot{grid-column:1;margin-top:5rem}
 .hello{padding-top:10vh}.hello .hi{font-size:4.8rem}.hello .links{gap:1.4rem}.colophon{padding:4rem 16px 2rem}
 }
