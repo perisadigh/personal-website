@@ -78,34 +78,35 @@ header nav a{background:linear-gradient(currentColor,currentColor) 0 100%/0 1px 
 @media (prefers-reduced-motion:reduce){.js .ln>span{transform:none!important;transition:none!important}.js .rv{clip-path:none!important}.js .rv img{transform:none!important}}
 
 /* 2: two truths and a lie, marked up in red pen like a proof */
-.s2{display:block;min-height:auto;padding:10vh 6vw 22vh;position:relative}
+.s2{display:block;min-height:100svh;padding:12vh 6vw 9vh;position:relative}
 .s2 .kid{position:absolute;left:6vw;top:46vh;width:11vw;aspect-ratio:1200/1749}
-.s2 .g{margin-left:22vw}
+.s2 .g{margin-left:17vw;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:3vw;align-items:start}
+.s2 .g>h2,.s2 .g>.ask{grid-column:1/-1}.s2 ol{display:contents}.s2 li{grid-row:3}.s2 li:nth-child(1){grid-column:1}.s2 li:nth-child(2){grid-column:2;margin-top:7vh}.s2 li:nth-child(3){grid-column:3;margin-top:14vh}
 .s2 h2{font:400 clamp(2.9rem,5.4vw,5.6rem)/1 var(--serif);letter-spacing:-.02em;text-transform:none;margin-bottom:.9rem}
-.s2 .ask{font-style:italic;color:var(--red);font-size:clamp(1.3rem,1.7vw,1.7rem);margin-bottom:9vh}
+.s2 .ask{font-style:italic;color:var(--red);font-size:clamp(1.3rem,1.7vw,1.7rem);margin-bottom:7vh}
 .s2 ol{list-style:none}
-.s2 li{position:relative}.s2 li+li{margin-top:9vh}.s2 li:nth-child(2){margin-left:5vw}.s2 li:nth-child(3){margin-left:1.5vw}
-.card{position:relative;display:grid;grid-template-columns:6.5rem 1fr;width:100%;padding:0;border:0;background:none;color:inherit;font:inherit;text-align:left;cursor:pointer}
-.card .no{padding-top:.9rem;transition:opacity .5s}
-.card .s{display:block;max-width:min(36rem,40vw);text-wrap:balance;font:400 clamp(1.5rem,2.3vw,2.7rem)/1.2 var(--serif);letter-spacing:-.012em}
+.s2 li{position:relative}
+.card{position:relative;display:grid;grid-template-columns:1fr;width:100%;padding:0;border:0;background:none;color:inherit;font:inherit;text-align:left;cursor:pointer}
+.card .no{padding:0 0 .7rem;min-height:2.7rem;transition:opacity .5s}
+.card .s{display:block;max-width:none;text-wrap:balance;font:400 clamp(1.3rem,min(1.85vw,3.4vh),2.1rem)/1.22 var(--serif);letter-spacing:-.012em}
 .card .tx{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.2em;text-decoration-color:transparent;transition:text-decoration-color .5s,color .6s;background:linear-gradient(var(--red),var(--red)) 0 57%/0 1.5px no-repeat;-webkit-box-decoration-break:clone;box-decoration-break:clone}
 .g:not(.picked) .card:hover .tx,.g:not(.picked) .card:focus-visible .tx{text-decoration-color:rgba(28,27,25,.45)}
 .card .ring{position:absolute;left:0;top:0;overflow:visible;pointer-events:none}
 .card .ring path{fill:none;stroke:var(--red);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 1.05s cubic-bezier(.55,0,.25,1)}
 .card .ring.on path{stroke-dashoffset:0}
-.card .note{position:absolute;left:0;top:.2rem;font:400 2.9rem/1 "Kristi",cursive;color:var(--mu);opacity:0;transform:rotate(-7deg) translateY(.5rem);transform-origin:0 100%;transition:opacity .6s .15s,transform .9s .15s var(--e)}
+.card .note{position:absolute;left:0;top:-.5rem;font:400 2.9rem/1 "Kristi",cursive;color:var(--mu);opacity:0;transform:rotate(-7deg) translateY(.5rem);transform-origin:0 100%;transition:opacity .6s .15s,transform .9s .15s var(--e)}
 .card[data-lie] .note{color:var(--red)}
 .revealed .card .note{opacity:1;transform:rotate(-7deg)}
 .revealed .card .no{opacity:0}
 .revealed .card[data-lie] .tx{color:var(--mu);background-size:100% 1.5px;transition:background-size .9s .3s cubic-bezier(.6,0,.3,1),color .6s .3s}
 .card .x{display:none;font-style:italic;font-weight:500;color:var(--red);margin-top:.9rem;font-size:clamp(1.15rem,1.4vw,1.5rem);line-height:1.3}
 .revealed .card .x{display:block}
-.s2 .verdict{margin:9vh 0 0 6.5rem;min-height:5rem;display:flex;align-items:baseline;gap:2.4rem}
+.s2 .verdict{grid-column:1;grid-row:3;align-self:end;margin:0;min-height:4.5rem;display:flex;align-items:baseline;gap:1.8rem}
 .s2 .verdict .w{font:400 clamp(3rem,4.4vw,4.6rem)/1 "Kristi",cursive;color:var(--red);opacity:0;transform:rotate(-4deg);transition:opacity .7s .5s}
 .revealed .verdict .w{opacity:1}
 .s2 .again{border:0;background:none;padding:0;color:var(--red);cursor:pointer;visibility:hidden;text-decoration:underline;text-underline-offset:.4em}
 .revealed .again{visibility:visible}
-.s2 .kf{position:absolute;right:0;top:50%;translate:0 -50%;width:15vw;aspect-ratio:900/1293}
+.s2 .kf{position:absolute;right:6vw;top:11vh;width:clamp(7.5rem,9.5vw,11.5rem);aspect-ratio:900/1293}
 .s2 .kf[hidden]{display:none}
 .s2 .foot{left:6vw}
 /* crop marks around the opening plate */
@@ -122,9 +123,9 @@ linear-gradient(var(--k),var(--k)) 100% calc(100% - 26px)/16px 1px no-repeat,lin
 .js .fd{opacity:0;transform:translateY(1.1rem)}.js .fd.in{opacity:1;transform:none;transition:opacity 1.2s var(--e),transform 1.4s var(--e)}
 @media (prefers-reduced-motion:reduce){.js .hi{clip-path:none!important}.js .fd{opacity:1!important;transform:none!important}.card .ring path{transition:none}.s0 .marks{transition:none}}
 @media (max-width:760px){
-.s2{padding:4rem 16px 6rem}.s2 .kid{position:static;width:38%;margin:0}.s2 .g{margin:3rem 0 0}.s2 .ask{margin-bottom:3rem}
-.s2 li:nth-child(n){margin-left:0}.s2 li+li{margin-top:3.2rem}.card{grid-template-columns:1fr}
-.card .s{max-width:none;font-size:1.65rem}.card .no{padding:0 0 .5rem}.card .note{position:static;display:none;font-size:2.6rem;margin-bottom:.3rem}
+.s2{padding:4rem 16px 6rem;min-height:auto}.s2 .kid{position:static;width:38%;margin:0}.s2 .g{display:block;margin:3rem 0 0}.s2 ol{display:block}.s2 .ask{margin-bottom:3rem}
+.s2 li:nth-child(n){margin:0}.s2 li:nth-child(n+2){margin-top:3.2rem}.card{grid-template-columns:1fr}
+.card .s{max-width:none;font-size:1.65rem}.card .no{padding:0 0 .5rem;min-height:0}.card .note{position:static;display:none;font-size:2.6rem;margin-bottom:.3rem}
 .revealed .card .note{display:block}.revealed .card .no{display:none}
 .s2 .verdict{margin:3rem 0 0}.s2 .kf{position:static;translate:none;width:62%;margin:1.6rem 0 0}.s0 .marks{display:none}
 }
@@ -155,9 +156,9 @@ linear-gradient(var(--k),var(--k)) 100% calc(100% - 26px)/16px 1px no-repeat,lin
     <ol>
       <li><button class="card" type="button" aria-pressed="false"><span class="no cap mu">01</span><span class="note" aria-hidden="true">true</span><span class="s"><span class="tx">The very first thing I did when I came out of the womb was grab the scissors out of the doctor&rsquo;s hand and refuse to let go.</span></span><svg class="ring" aria-hidden="true"><path/></svg></button></li>
       <li><button class="card" type="button" aria-pressed="false"><span class="no cap mu">02</span><span class="note" aria-hidden="true">true</span><span class="s"><span class="tx">When I was four, my mom had to tell me Santa wasn&rsquo;t real because I wouldn&rsquo;t accept any explanation for why he could get into our house through the chimney but burglars couldn&rsquo;t.</span><span class="x">I then went to school and accidentally ruined Santa for the other kids.</span></span><svg class="ring" aria-hidden="true"><path/></svg></button></li>
-      <li><button class="card" type="button" aria-pressed="false" data-lie><span class="no cap mu">03</span><span class="note" aria-hidden="true">the lie</span><span class="s"><span class="tx">My brother and I were the only kids in an adult kung fu class, so I convinced the instructor to start a kids&rsquo; class, and by twelve I was helping teach it.</span><span class="x">(I was basically a kung fu master before the age of 12 though)</span></span><svg class="ring" aria-hidden="true"><path/></svg></button>
-        <figure class="kf rv" hidden><img src="assets/img/a/kungfu.jpg" alt="A boy and a girl in black kung fu uniforms with yellow belts, standing arm in arm"></figure></li>
+      <li><button class="card" type="button" aria-pressed="false" data-lie><span class="no cap mu">03</span><span class="note" aria-hidden="true">the lie</span><span class="s"><span class="tx">My brother and I were the only kids in an adult kung fu class, so I convinced the instructor to start a kids&rsquo; class, and by twelve I was helping teach it.</span><span class="x">(I was basically a kung fu master before the age of 12 though)</span></span><svg class="ring" aria-hidden="true"><path/></svg></button></li>
     </ol>
+    <figure class="kf rv" hidden><img src="assets/img/a/kungfu.jpg" alt="A boy and a girl in black kung fu uniforms with yellow belts, standing arm in arm"></figure>
     <div class="verdict" aria-live="polite"><span class="w"></span><button class="again cap" type="button">Play again</button></div>
   </div>
   <p class="foot cap mu"><span>Peri</span><span>02</span></p>
