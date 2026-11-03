@@ -8,7 +8,7 @@
 *{box-sizing:border-box}html{background:var(--paper)}body{margin:0;color:var(--ink);font:400 1.2rem/1.5 var(--serif);-webkit-font-smoothing:antialiased}
 p,h1,h2,ol,figure{margin:0;padding:0}img{display:block;width:100%;height:100%;object-fit:cover}
 body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opacity:.1;mix-blend-mode:multiply;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
-.cap{font:500 .68rem/1.5 var(--cap);letter-spacing:.14em;text-transform:uppercase}
+.cap{font:500 .68rem/1.5 var(--cap);letter-spacing:.14em;text-transform:uppercase}header.cap{font-size:.8rem}
 .mu{color:var(--mu)}
 a{color:inherit;text-decoration:none}
 header{position:fixed;top:0;left:0;right:0;z-index:40;display:flex;justify-content:space-between;padding:1.8rem 6vw;color:#fff;mix-blend-mode:difference;transition:transform .7s var(--e)}header.away{transform:translateY(-130%)}
@@ -101,14 +101,30 @@ header nav a{background:linear-gradient(currentColor,currentColor) 0 100%/0 1px 
 .revealed .card[data-lie] .tx{color:var(--mu);background-size:100% 1.5px;transition:background-size .9s .3s cubic-bezier(.6,0,.3,1),color .6s .3s}
 .card .x{display:none;font-style:italic;font-weight:500;color:var(--red);margin-top:.9rem;font-size:clamp(1.15rem,1.4vw,1.5rem);line-height:1.3}
 .revealed .card .x{display:block}
-.s2 .verdict{grid-column:1;grid-row:3;align-self:end;margin:0;min-height:4.5rem;display:flex;align-items:baseline;gap:1.8rem}
-.s2 .verdict .w{font:400 clamp(3rem,4.4vw,4.6rem)/1 "Kristi",cursive;color:var(--red);opacity:0;transform:rotate(-4deg);transition:opacity .7s .5s}
+.s2 .verdict{grid-column:1 / span 2;grid-row:3;align-self:end;margin:1.2rem 0 0;min-height:4.5rem;display:flex;align-items:baseline;gap:1.8rem}
+.s2 .verdict .w{font:400 clamp(2.6rem,3.7vw,4rem)/1 "Kristi",cursive;white-space:nowrap;color:var(--red);opacity:0;transform:rotate(-4deg);transition:opacity .7s .5s}
 .revealed .verdict .w{opacity:1}
 .s2 .again{border:0;background:none;padding:0;color:var(--red);cursor:pointer;visibility:hidden;text-decoration:underline;text-underline-offset:.4em}
 .revealed .again{visibility:visible}
 .s2 .kf{position:absolute;right:6vw;top:11vh;width:clamp(7.5rem,9.5vw,11.5rem);aspect-ratio:900/1293}
 .s2 .kf[hidden]{display:none}
 .s2 .foot{left:6vw}
+
+/* two truths: motion */
+.js .s2 li.fd.in{transition-delay:var(--d,0s)}
+.card{transition:transform .6s var(--e),opacity .6s}
+.g:not(.picked) .card:hover,.g:not(.picked) .card:focus-visible{transform:translateX(.45rem)}
+.g:not(.picked):has(.card:hover) .card:not(:hover){opacity:.5}
+.picked:not(.revealed) .card:not(.chosen){opacity:.35}
+.card .note{clip-path:inset(-30% 100% -30% -15%)}
+.revealed .card .note{clip-path:inset(-30% -30% -30% -15%);transition:clip-path 1s .25s cubic-bezier(.5,0,.2,1),opacity .2s .15s,transform .9s .15s var(--e)}
+.revealed .card[data-lie]{animation:shudder .7s .15s cubic-bezier(.3,0,.2,1)}
+@keyframes shudder{0%{transform:none}18%{transform:translateX(-.45rem) rotate(-.5deg)}38%{transform:translateX(.35rem) rotate(.4deg)}60%{transform:translateX(-.2rem)}100%{transform:none}}
+.s2 .verdict .w{clip-path:inset(-40% 100% -40% -10%);transition:none}
+.revealed .verdict .w{clip-path:inset(-40% -20% -40% -10%);transition:clip-path 1.25s .55s cubic-bezier(.5,0,.2,1);opacity:1}
+.s2 .kf img{display:block;width:100%;filter:sepia(.7) brightness(1.9) contrast(.45) blur(7px);transform:rotate(2.5deg) scale(1.04);transition:none}
+.s2 .kf.in img{filter:none;transform:none;transition:filter 2.6s .2s var(--e),transform 2.2s .2s var(--e)}
+@media (prefers-reduced-motion:reduce){.card .note,.s2 .verdict .w{clip-path:none!important}.revealed .card[data-lie]{animation:none}.s2 .kf img{filter:none;transform:none}}
 /* crop marks around the opening plate */
 .s0 .marks{position:absolute;left:calc(52vw - 26px);top:calc(12vh - 26px);width:calc(42vw + 52px);aspect-ratio:auto;height:calc(42vw*3/4 + 52px);z-index:2;pointer-events:none;opacity:0;transition:opacity 1.2s 1.6s;--k:rgba(28,27,25,.5);background:
 linear-gradient(var(--k),var(--k)) 0 26px/16px 1px no-repeat,linear-gradient(var(--k),var(--k)) 26px 0/1px 16px no-repeat,
@@ -138,14 +154,12 @@ linear-gradient(var(--k),var(--k)) 100% calc(100% - 26px)/16px 1px no-repeat,lin
   <p class="stand fd">Some are useful. Others exist purely because I&nbsp;thought they&rsquo;d be funny.</p>
   <figure class="rv"><img src="assets/img/a/opening.jpg" alt="Peri at the top of a stone path that steps down through the trees towards the sea"></figure>
   <div class="marks" aria-hidden="true"></div>
-  <p class="foot cap mu"><span>Peri</span><span>00</span></p>
 </section>
 
 <section class="spread s1">
   <p class="say fd">I studied biomedical science, then got a job in digital marketing and somehow ended up building software at a startup.</p>
   <figure class="rv"><img src="assets/img/a/road-blur.jpg" alt="Peri on a road at dusk, looking back over her shoulder, the trees blurred behind her"></figure>
   <p class="hi" aria-hidden="true">about</p>
-  <p class="foot cap mu"><span>Peri</span><span>01</span></p>
 </section>
 
 <section class="spread s2">
@@ -154,14 +168,13 @@ linear-gradient(var(--k),var(--k)) 100% calc(100% - 26px)/16px 1px no-repeat,lin
     <h2>Two truths and a lie</h2>
     <p class="ask">Which one is the lie?</p>
     <ol>
-      <li><button class="card" type="button" aria-pressed="false"><span class="no cap mu">01</span><span class="note" aria-hidden="true">true</span><span class="s"><span class="tx">The very first thing I did when I came out of the womb was grab the scissors out of the doctor&rsquo;s hand and refuse to let go.</span></span><svg class="ring" aria-hidden="true"><path/></svg></button></li>
-      <li><button class="card" type="button" aria-pressed="false"><span class="no cap mu">02</span><span class="note" aria-hidden="true">true</span><span class="s"><span class="tx">When I was four, my mom had to tell me Santa wasn&rsquo;t real because I wouldn&rsquo;t accept any explanation for why he could get into our house through the chimney but burglars couldn&rsquo;t.</span><span class="x">I then went to school and accidentally ruined Santa for the other kids.</span></span><svg class="ring" aria-hidden="true"><path/></svg></button></li>
-      <li><button class="card" type="button" aria-pressed="false" data-lie><span class="no cap mu">03</span><span class="note" aria-hidden="true">the lie</span><span class="s"><span class="tx">My brother and I were the only kids in an adult kung fu class, so I convinced the instructor to start a kids&rsquo; class, and by twelve I was helping teach it.</span><span class="x">(I was basically a kung fu master before the age of 12 though)</span></span><svg class="ring" aria-hidden="true"><path/></svg></button></li>
+      <li class="fd" style="--d:.16s"><button class="card" type="button" aria-pressed="false"><span class="no cap mu">01</span><span class="note" aria-hidden="true">true</span><span class="s"><span class="tx">When I was four, my mom had to tell me Santa wasn&rsquo;t real because I wouldn&rsquo;t accept any explanation for why he could get into our house through the chimney but burglars couldn&rsquo;t.</span><span class="x">I then went to school and accidentally ruined Santa for the other kids.</span></span><svg class="ring" aria-hidden="true"><path/></svg></button></li>
+      <li class="fd" style="--d:.34s"><button class="card" type="button" aria-pressed="false"><span class="no cap mu">02</span><span class="note" aria-hidden="true">true</span><span class="s"><span class="tx">The first thing I did after coming out of the womb was grab the scissors out of the doctor&rsquo;s hand and refuse to let go.</span></span><svg class="ring" aria-hidden="true"><path/></svg></button></li>
+      <li class="fd" style="--d:.52s"><button class="card" type="button" aria-pressed="false" data-lie><span class="no cap mu">03</span><span class="note" aria-hidden="true">the lie</span><span class="s"><span class="tx">My brother and I were the only kids in an adult kung fu class, so I convinced the instructor to start a kids&rsquo; class, and by twelve I was helping teach it.</span><span class="x">(I was basically a kung fu master before the age of 12 though)</span></span><svg class="ring" aria-hidden="true"><path/></svg></button></li>
     </ol>
     <figure class="kf rv" hidden><img src="assets/img/a/kungfu.jpg" alt="A boy and a girl in black kung fu uniforms with yellow belts, standing arm in arm"></figure>
     <div class="verdict" aria-live="polite"><span class="w"></span><button class="again cap" type="button">Play again</button></div>
   </div>
-  <p class="foot cap mu"><span>Peri</span><span>02</span></p>
 </section>
 
 <section class="spread s3">
@@ -170,7 +183,6 @@ linear-gradient(var(--k),var(--k)) 100% calc(100% - 26px)/16px 1px no-repeat,lin
     <p class="para">After digital marketing, I moved into recruitment and taught myself to code with AI tools. I started by building internal recruiting tools, then moved into product development, building features and integrations, and designing and developing the company&rsquo;s website.</p>
   </div>
   <figure class="rv"><img src="assets/img/a/hike2.jpg" alt="Peri on the rocks below the mountains"></figure>
-  <p class="foot cap mu"><span>Peri</span><span>03</span></p>
 </section>
 
 <section class="spread s4">
@@ -189,10 +201,10 @@ cs.forEach(function(c){c.addEventListener('click',function(){if(g.classList.cont
 var r=c.getBoundingClientRect(),s=c.querySelector('.tx').getBoundingClientRect(),rg=ringPath(s.width,s.height),svg=c.querySelector('.ring'),p=svg.querySelector('path');
 svg.setAttribute('width',rg.W);svg.setAttribute('height',rg.H);svg.setAttribute('viewBox','0 0 '+rg.W+' '+rg.H);svg.style.left=(s.left-r.left-rg.pad*2)+'px';svg.style.top=(s.top-r.top-rg.pad*2)+'px';p.setAttribute('d',rg.d);p.setAttribute('pathLength','1');
 void svg.getBoundingClientRect();svg.classList.add('on');
-setTimeout(function(){g.classList.add('revealed');vw.textContent=c.hasAttribute('data-lie')?'you got it.':'not quite.';
+setTimeout(function(){g.classList.add('revealed');vw.textContent=c.hasAttribute('data-lie')?'wow, great job':'wrong';
 if(kf){kf.hidden=false;sec2.classList.add('rev');requestAnimationFrame(function(){requestAnimationFrame(function(){kf.classList.add('in')})})}},rm0?0:1150)})});
 g.querySelector('.again').addEventListener('click',function(){g.classList.remove('picked','revealed');sec2.classList.remove('rev');vw.textContent='';cs.forEach(function(x){x.classList.remove('chosen');x.setAttribute('aria-pressed','false');var sv=x.querySelector('.ring');sv.classList.remove('on')});if(kf){kf.classList.remove('in');kf.hidden=true}});
-var sec2=document.querySelector('.s2'),kidEl=document.querySelector('.s2 .kid'),card2=cs[1];
+var sec2=document.querySelector('.s2'),kidEl=document.querySelector('.s2 .kid'),card2=cs[0];
 function alignKid(){if(!kidEl||!card2)return;if(innerWidth<=760){kidEl.style.top='';if(kf){kf.style.top='';kf.style.bottom=''}return}var s2=kidEl.parentNode.getBoundingClientRect(),c=card2.getBoundingClientRect();kidEl.style.top=(c.top-s2.top)+'px';if(kf){var c3=cs[2].getBoundingClientRect();kf.style.top='auto';kf.style.bottom=(s2.bottom-c3.top+10)+'px'}}
 alignKid();addEventListener('resize',alignKid);addEventListener('load',alignKid);if(document.fonts&&document.fonts.ready)document.fonts.ready.then(alignKid);
 (function(){var h=document.querySelector('header'),ly=0;if(!h)return;addEventListener('scroll',function(){var y=scrollY;if(innerWidth>760){if(y>140&&y>ly+4)h.classList.add('away');else if(y<ly-4||y<140)h.classList.remove('away')}ly=y},{passive:true})})();

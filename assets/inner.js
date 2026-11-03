@@ -24,10 +24,12 @@ if(lb){var li=lb.querySelector('img'),lbtn=lb.querySelector('button'),opener=nul
   f.addEventListener('click',open);f.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();open()}})});
  lb.addEventListener('click',close);document.addEventListener('keydown',function(e){if(e.key==='Escape'&&lb.classList.contains('open'))close()})}
 
-/* the scattered film frames drift a little as you scroll */
-var xs=document.querySelector('.csheet'),xf=[].slice.call(document.querySelectorAll('.crow'));
-if(xs&&!rm&&!small){var t=0;function go(){t=0;var b=xs.getBoundingClientRect(),p=b.top+b.height/2-innerHeight/2;xf.forEach(function(e){e.style.setProperty('--py',(p*parseFloat(e.dataset.sp)).toFixed(1)+'px')})}
- addEventListener('scroll',function(){if(!t)t=requestAnimationFrame(go)},{passive:true});go()}
+/* the contact sheet: each strip slides sideways as you scroll past it, in alternating directions */
+var cs=document.querySelector('.csheet');
+if(cs&&!rm){cs.classList.add('live');var rws=[].slice.call(cs.querySelectorAll('.rw')).map(function(w){var r=w.querySelector('.crow');return{w:w,r:r,d:+r.getAttribute('data-dir'),cur:null,tgt:0}}),raf2=0;
+ function stepc(){raf2=0;var busy=false;rws.forEach(function(o){o.cur+=(o.tgt-o.cur)*.11;if(Math.abs(o.tgt-o.cur)<.4)o.cur=o.tgt;else busy=true;o.r.style.setProperty('--tx',o.cur.toFixed(1)+'px')});if(busy)raf2=requestAnimationFrame(stepc)}
+ function calc(){var vh=innerHeight;rws.forEach(function(o){var b=o.w.getBoundingClientRect(),p=Math.min(1,Math.max(0,(vh-b.top)/(vh+b.height))),mx=Math.max(0,o.r.offsetWidth-o.w.offsetWidth);o.tgt=(o.d>0?-p:-(1-p))*mx;if(o.cur===null)o.cur=o.tgt});if(!raf2)raf2=requestAnimationFrame(stepc)}
+ addEventListener('scroll',calc,{passive:true});addEventListener('resize',calc);addEventListener('load',calc);calc()}
 
 /* the portraits: pinned, sliding sideways */
 var rail=document.querySelector('.prail');
