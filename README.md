@@ -1,13 +1,38 @@
 # Peri's personal website
 
-Static site (HTML, CSS, vanilla JS) for GitHub Pages. No build step.
+A static site: plain HTML, CSS and a little vanilla JS. No build step. Live at https://perisadigh.com (deployed on Vercel from the default branch).
 
-Pages: `index.html` (Home), `about.html`, `work.html` (Work & Play), `things-i-love.html`, `ranking.html`.
-Styles in `assets/peri.css`, small interactions and motion in `assets/peri.js`.
+## Pages
 
-Photos live in `assets/img/`:
-- `v/` holds the photos used on the site: `m-` files are warm black and white, `f-` files are colour with a soft film grade, plus a few detail crops (`m-eyes`, `sea-light`). All are re-exported without EXIF or location data.
-- `photo/` holds the AI portraits in full colour.
+| File | What it is |
+| --- | --- |
+| `index.html` | Home: the intro, the "two truths and a lie" game, what I do, say hello. Its styles and scripts are inline. |
+| `work.html` | Things I've made, with the AI portraits rail, the music player and the video. |
+| `things-i-love.html` | The list of things I love, and the pinned contact sheet of the people (and pets) I love. |
+| `ranking.html` | Me at every age, ranked. |
+| `404.html` | The not-found page (Vercel serves it automatically). |
+| `about.html` | A redirect to the home page, kept so old links still work. |
 
-Placeholders to fill: email, LinkedIn and CV links, experience dates and university,
-Recruitcha and Recruitcha GTM screenshots and details, AI music tracks.
+Shared styles for the inner pages are in `assets/inner.css`, their behaviour (reveals, lightbox, contact sheet, music player, video) in `assets/inner.js`.
+
+## Photos (`assets/img/`)
+
+- `a/` the photos on the home page.
+- `n/` the warm black-and-white photos used on the inner pages:
+  - `b/pNN.jpg` the full photos that open in the lightbox.
+  - `pos/pNN.webp` the developed (positive) frames shown on the contact sheet.
+  - `sheet/row-{a,b,c}.webp` the three negative film strips, drawn as one image each.
+  - `pNN.jpg` the colour originals the strips are made from. Keep them if you ever want to regenerate the sheet.
+  - `kid-3.jpg`, `out-*.jpg` the plates on the Rankings and Things I love pages.
+- `photo/` the AI portraits, in full colour.
+- `og.jpg` the link-preview card (1200 x 630).
+
+Everything is re-exported without EXIF or location data. Fonts (EB Garamond, Inter Tight, Kristi) load from Google Fonts.
+
+## Working on it
+
+```
+python3 -m http.server 8765
+```
+
+then open http://localhost:8765. There is nothing to build.
