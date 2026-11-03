@@ -95,7 +95,7 @@ header a[aria-current]{background:none}
 #people{--rw:min(267vw,calc(2.75*(100svh - 6rem)));margin:0 6vw;border-top:1px solid var(--line)}
 .vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .pstage{padding-top:9vh;margin:0 -6vw;position:relative;background:var(--paper)}
-.slabel{position:absolute;right:6vw;top:5vh;display:flex;flex-direction:column;align-items:flex-end;gap:.3rem;color:var(--mu);z-index:1}.slabel .hw{font:400 clamp(1.5rem,2.2vw,2.3rem)/1 'Kristi',cursive;color:var(--ink);letter-spacing:0;text-transform:none;transform:rotate(-3deg)}
+.slabel{position:absolute;left:6vw;top:5vh;display:flex;flex-direction:column;align-items:flex-start;gap:.3rem;color:var(--mu);z-index:1}.slabel .hw{font:400 clamp(1.5rem,2.2vw,2.3rem)/1 'Kristi',cursive;color:var(--ink);letter-spacing:0;text-transform:none;transform:rotate(-3deg)}
 .pstage .sh{margin:0 6vw;border-top:0;padding:5vh 0 3vh}.pstage .sh h2{font-size:clamp(2rem,3.9vw,4.3rem)}
 .csheet{padding:0 0 4vw;display:flex;flex-direction:column;overflow-x:auto;scrollbar-width:none}.csheet::-webkit-scrollbar{display:none}
 .rw{position:relative;flex:none}.rw+.rw{margin-top:calc(var(--rw)*-.0083)}
@@ -152,7 +152,7 @@ header{position:absolute;color:inherit;mix-blend-mode:normal;padding:1.4rem 16px
 .intro{width:auto;margin:0 0 2rem}.pf{height:auto;width:100%;aspect-ratio:var(--ar);margin:0 0 2.4rem}.pf .no{display:none}.pf img{transform:none}.hud,.bar{display:none}.prail{height:auto!important}
 .loves{grid-template-columns:1fr;padding:0 16px 5rem}.plates{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:2.4rem}.plates figure,.plates figure+figure,.plates figure:nth-child(n){width:auto;margin:0}
 .loves-list{columns:1}.sh{margin:0 16px}
-#people{--rw:min(453vw,calc(3.2*(100svh - 6.5rem)));margin:0 16px}.pstage{margin:0 -16px}.slabel{right:16px;top:3rem}.pstage .sh{margin:0 16px;padding:3rem 0 1.4rem}#people.live .pstage .sh{padding:0 0 1rem}
+#people{--rw:min(453vw,calc(3.2*(100svh - 6.5rem)));margin:0 16px}.pstage{margin:0 -16px}.slabel{left:16px;top:3rem}.pstage .sh{margin:0 16px;padding:3rem 0 1.4rem}#people.live .pstage .sh{padding:0 0 1rem}
 .ranks{grid-template-columns:1fr;padding:0 16px 4rem}.ranks .plates{position:static;grid-template-columns:1fr 1fr;max-width:20rem}.ranks .plates figure,.ranks .plates figure+figure{width:auto;margin:0}.ranks .plates figure+figure{align-self:end}.plot{grid-column:1;margin-top:5rem}
 .hello{padding-top:10vh}.hello .hi{font-size:4.8rem}.hello .links{gap:1.4rem}.colophon{padding:4rem 16px 2rem}
 }
