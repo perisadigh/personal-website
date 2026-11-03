@@ -22,7 +22,6 @@ Shared styles for the inner pages are in `assets/inner.css`, their behaviour (re
   - `sheet/row-{a,b,c}.webp` the three film strips of the contact sheet, drawn as one image each (eight or nine frames per strip).
   - `pNN.jpg` the colour originals the strips are made from. Keep them if you ever want to regenerate the sheet.
   - `kid-3.jpg`, `out-*.jpg` the plates on the Rankings and Things I love pages.
-  - `poppies.webp` the watercolour poppies on Rankings, painted from a poppy photo by Anna Meshkov on Unsplash (free to use).
 - `grain.png` (in `assets/`) the film grain laid over every page.
 - `photo/` the AI portraits, in full colour.
 - `og.jpg` the link-preview card (1200 x 630).
