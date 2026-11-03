@@ -36,10 +36,9 @@ header nav{display:flex;gap:2.6rem}header a[aria-current]{text-decoration:underl
 
 
 /* 3: experience: mirrors the game, the photo bleeds off the right and the words sit in the paper */
-.s3{display:grid;grid-template-columns:44% 1fr}
-.s3{min-height:auto}.s3 figure{grid-column:1;grid-row:1;height:84svh}
-.s3 .t{grid-column:2;grid-row:1;align-self:center;padding:8vh 6vw 8vh 6vw;max-width:46rem}
-.s3 .say{width:min(23.5rem,100%);margin:0 0 7vh;font:500 .82rem/2.05 var(--cap);letter-spacing:.17em;text-transform:uppercase;text-align:justify;text-align-last:justify;hyphens:none}
+.s3{display:grid;grid-template-columns:1fr 44%}
+.s3 figure{grid-column:2;grid-row:1;height:100svh}
+.s3 .t{grid-column:1;grid-row:1;align-self:center;padding:8vh 6vw 8vh 6vw;max-width:46rem}
 .s3 .para{font-size:1.5rem;line-height:1.42;margin:1.4rem 0 0;max-width:30rem}
 .s3 .roles{list-style:none;max-width:31rem}
 .s3 .roles li{display:grid;grid-template-columns:1fr auto;column-gap:1.5rem;row-gap:.15rem;padding:.6rem 0}.s3 .roles .w{grid-column:1;color:var(--mu)}.s3 .roles .d{grid-column:2;grid-row:1}
@@ -53,16 +52,16 @@ header nav{display:flex;gap:2.6rem}header a[aria-current]{text-decoration:underl
 
 /* rhythm: each section a different composition, like turning pages */
 /* 1: the road photo runs the full width; the sentence sits under it, to the right */
-.s1{display:flex;flex-direction:column;min-height:auto;padding:15vh 0 10vh}
-.s1 figure{order:1;position:relative;right:auto;top:auto;width:100%;height:80vh;aspect-ratio:auto}
-.s1 figure img{object-position:50% 46%}
-.s1 .hi{position:absolute;left:6vw;top:calc(15vh + 80vh - 13.5vw);font-size:clamp(6rem,11vw,11rem)}
-.s1 .say{order:2;position:static;width:min(23.5rem,30vw);margin:5vh 6vw 0 auto}
+.s1{display:grid;grid-template-columns:54vw 1fr;column-gap:5vw;align-items:end;min-height:auto;padding:17vh 6vw 14vh 0}
+.s1 figure{grid-area:1/1;position:relative;right:auto;top:auto;width:100%;aspect-ratio:4/3;margin:0}
+.s1 figure img{object-position:50% 50%}
+.s1 .hi{grid-area:1/1;position:relative;left:auto;top:auto;z-index:2;align-self:end;justify-self:start;margin:0 0 3vw 6vw;font-size:clamp(5.5rem,9vw,9.5rem)}
+.s1 .say{grid-area:1/2;position:static;align-self:center;width:min(23.5rem,100%);margin:0}
 @media (max-width:760px){
 header{position:absolute;color:inherit;mix-blend-mode:normal;padding:1.2rem 16px;flex-direction:column;gap:.8rem}header.cap{font-size:.66rem}header nav{gap:.95rem;flex-wrap:nowrap}
 .spread{min-height:auto;padding:0 16px}
 .foot{position:static;margin-top:2.5rem}.s1{padding-top:9rem;padding-bottom:4rem}.s1 .say,.s1 figure,.s4 .hi,.s4 .links,.s4 .pgs,.s4 .fine{position:static;width:auto}
-.s3 .say{font-size:.74rem;line-height:2;margin:0 0 2.5rem;width:auto}.s1 figure{width:calc(100% + 16px);margin:3.5rem -16px 0 0}.s1 .hi{position:relative;left:auto;top:auto;z-index:2;margin:-6rem 0 0 6%;font-size:4.8rem;transform:rotate(-6deg)}.s1 .foot{margin-top:4rem}
+.s1 .say{font-size:.74rem;line-height:2}.s1 figure{width:calc(100% + 16px);margin:3.5rem -16px 0 0}.s1 .hi{position:relative;left:auto;top:auto;z-index:2;margin:-6rem 0 0 6%;font-size:4.8rem;transform:rotate(-6deg)}.s1 .foot{margin-top:4rem}
 .s3{display:block;padding:0}.s3 figure{height:auto;aspect-ratio:4/5;width:100%}.s3 .t{padding:3rem 16px 1rem}.s3 .foot{padding:0 16px 4rem}
 .s3 .para{margin:1.2rem 0 2.5rem;font-size:1.25rem}
 .s4{padding:4rem 0 3rem}.s4 .hi{position:relative;left:auto;top:auto;translate:none;width:fit-content;margin:0 auto;font-size:4.6rem}.s4 .links{margin-top:3rem}.s4 .pgs{margin-top:1.6rem}.s4 .fine{margin-top:1.6rem}
@@ -70,7 +69,7 @@ header{position:absolute;color:inherit;mix-blend-mode:normal;padding:1.2rem 16px
 @media (max-width:760px){.s0{min-height:auto;padding:5rem 16px 0}.s0 h1,.s0 .stand,.s0 figure{position:static;width:auto;translate:none}.s0 h1{font-size:10.5vw;mix-blend-mode:normal;color:var(--ink)}.s0 h1 .ln:nth-child(2){padding-left:12vw}.s0 figure{width:100%;margin:2.4rem 0 0}.s0 .stand{margin-top:1.6rem;font-size:1.4rem;max-width:20rem}.s0 .foot{margin-top:2.5rem}
 }
 @media (max-width:760px){
-.s1{padding:8rem 16px 4rem}.s1 figure{height:auto;aspect-ratio:4/3;width:calc(100% + 32px);margin:0 -16px}.s1 .hi{position:relative;left:auto;top:auto;order:2;margin:-6.6rem 0 0 4%;font-size:5rem;z-index:2}.s1 .say{order:3;width:auto;margin:3rem 0 0}.s1 .foot{order:4}
+.s1{display:flex;flex-direction:column;align-items:stretch;padding:8rem 16px 4rem}.s1 .hi{align-self:flex-start;justify-self:auto}.s1 .say{align-self:stretch}.s1 figure{height:auto;aspect-ratio:4/3;width:calc(100% + 32px);margin:0 -16px}.s1 .hi{position:relative;left:auto;top:auto;order:2;margin:-6.6rem 0 0 4%;font-size:5rem;z-index:2}.s1 .say{order:3;width:auto;margin:3rem 0 0}.s1 .foot{order:4}
 }
 
 /* motion: one easing curve, three gestures (lines rise, plates open, nav underline draws) */
@@ -158,11 +157,11 @@ linear-gradient(var(--k),var(--k)) 100% calc(100% - 26px)/16px 1px no-repeat,lin
 <section class="spread s1">
   <figure class="rv"><img src="assets/img/a/road-blur.jpg" alt="Peri on a road at dusk, looking back over her shoulder, the trees blurred behind her"></figure>
   <p class="hi" aria-hidden="true">about</p>
+  <p class="say fd">I studied biomedical science, then got a job in digital marketing and somehow ended up building software at a startup.</p>
 </section>
 
 <section class="spread s3">
   <div class="t fd">
-    <p class="say">I studied biomedical science, then got a job in digital marketing and somehow ended up building software at a startup.</p>
     <p class="cap mu">What I do</p>
     <p class="para">After digital marketing, I moved into recruitment and taught myself to code with AI tools. I started by building internal recruiting tools, then moved into product development, building features and integrations, and designing and developing the company&rsquo;s website.</p>
   </div>
