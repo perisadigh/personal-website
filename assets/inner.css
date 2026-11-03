@@ -161,8 +161,8 @@ header{position:absolute;color:inherit;mix-blend-mode:normal;padding:1.4rem 16px
 /* a sprig of lily of the valley beside the photo, drawn in as the page opens */
 .ranks .plates{position:sticky}
 
-.bloom{position:absolute;left:55%;top:-3.4rem;width:clamp(7rem,9.5vw,9.5rem);height:auto;transform:rotate(5deg);pointer-events:none;filter:drop-shadow(0 1px 1.5px rgba(70,50,30,.15))}
+.bloom{position:absolute;left:60%;top:-3.4rem;width:clamp(9rem,13vw,13rem);height:auto;transform:rotate(5deg);pointer-events:none;filter:drop-shadow(0 1px 1.5px rgba(70,50,30,.15))}
 .js .bloom{opacity:0;transform:rotate(5deg) translateY(.5rem)}
 .js .bloom.in{opacity:.92;transform:rotate(5deg);transition:opacity 1.2s var(--e),transform 1.4s var(--e)}
 @media (prefers-reduced-motion:reduce){.js .bloom{opacity:.92;transform:rotate(5deg)}}
-@media (max-width:760px){.ranks .plates{max-width:11rem;grid-template-columns:1fr}.bloom{left:78%;top:-2.6rem;width:6.4rem}}
+@media (max-width:760px){.ranks .plates{max-width:11rem;grid-template-columns:1fr}.bloom{left:72%;top:-3rem;width:8.4rem}}
