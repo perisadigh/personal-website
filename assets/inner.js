@@ -4,15 +4,20 @@ var d=document.documentElement,rm=matchMedia('(prefers-reduced-motion: reduce)')
 document.querySelectorAll('[data-year]').forEach(function(e){e.textContent=new Date().getFullYear()});
 requestAnimationFrame(function(){requestAnimationFrame(function(){d.classList.add('go')})});
 
-/* things come into view once: plates open, rows settle, script is written */
+/* things come into view once, a little before they are fully on screen, and an image only starts to appear when it has loaded */
 var seen=[].slice.call(document.querySelectorAll('.fd,.stag,.plot')),rv=[].slice.call(document.querySelectorAll('.rv')),hi=[].slice.call(document.querySelectorAll('.hello .hi'));
+[].forEach.call(document.querySelectorAll('img[loading=lazy]'),function(i){i.loading='eager'});
+var ready=function(el,cb){var im=el.querySelector('img');if(!im||(im.complete&&im.naturalWidth)){cb();return}var d=0,f=function(){if(!d){d=1;cb()}};im.addEventListener('load',f,{once:true});im.addEventListener('error',f,{once:true});setTimeout(f,1200)};
 if(rm||!('IntersectionObserver' in window)){seen.concat(rv,hi).forEach(function(e){e.classList.add('in')})}
 else{
- var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.2});
+ var opt={threshold:0,rootMargin:'0px 0px -4% 0px'};
+ var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},opt);
  seen.forEach(function(e){io.observe(e)});
  /* clipped elements can't be observed directly, so watch their parent */
- var io2=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){[].forEach.call(e.target.querySelectorAll(':scope > .rv,:scope > .hi'),function(x){x.classList.add('in')});io2.unobserve(e.target)}})},{threshold:.2});
- rv.concat(hi).forEach(function(e){io2.observe(e.parentElement)});
+ var io2=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){[].forEach.call(e.target.querySelectorAll(':scope > .rv'),function(x){ready(x,function(){x.classList.add('in')})});io2.unobserve(e.target)}})},opt);
+ rv.forEach(function(e){io2.observe(e.parentElement)});
+ /* handwriting is written as soon as it is in view */
+ if(hi.length){var chk=function(){hi=hi.filter(function(h){if(h.getBoundingClientRect().top<innerHeight*.92){h.classList.add('in');return false}return true});if(!hi.length)removeEventListener('scroll',chk)};addEventListener('scroll',chk,{passive:true});chk()}
 }
 
 /* the video gets a plate-style play button until it is first played */
@@ -47,10 +52,10 @@ if(lb){var li=lb.querySelector('img'),lbtn=lb.querySelector('button'),opener=nul
 
 /* the contact sheet is pinned: the page holds while three strips slide through in opposite directions */
 var pin=document.getElementById('people'),cs=document.querySelector('.csheet');
-if(pin&&cs&&!rm){pin.classList.add('live');var rws=[].slice.call(cs.querySelectorAll('.rw')).map(function(w){var r=w.querySelector('.crow');return{w:w,r:r,d:+r.getAttribute('data-dir'),cur:null,tgt:0}}),raf2=0,mxx=0,frs=[].slice.call(cs.querySelectorAll('.fr')).map(function(f){return{f:f,l:+f.getAttribute('data-l'),w:+f.getAttribute('data-w'),row:rws.filter(function(o){return o.r.contains(f)})[0],on:false}});
+if(pin&&cs&&!rm){pin.classList.add('live');var rws=[].slice.call(cs.querySelectorAll('.rw')).map(function(w){var r=w.querySelector('.crow');return{w:w,r:r,d:+r.getAttribute('data-dir'),cur:null,tgt:0}}),raf2=0,mxx=0;
  function sizep(){mxx=0;rws.forEach(function(o){o.mx=Math.max(0,o.r.offsetWidth-o.w.offsetWidth);mxx=Math.max(mxx,o.mx)});pin.style.height=Math.round(innerHeight+mxx*1.15+innerHeight*.25)+'px'}
- function stepc(){raf2=0;var busy=false;rws.forEach(function(o){o.cur+=(o.tgt-o.cur)*.14;if(Math.abs(o.tgt-o.cur)<.3)o.cur=o.tgt;else busy=true;o.r.style.setProperty('--tx',o.cur.toFixed(2)+'px')});develop();if(busy)raf2=requestAnimationFrame(stepc)}
- function develop(){var vw=innerWidth,c=vw/2,band=vw*.14;frs.forEach(function(q){var rw=q.row.r.offsetWidth,x=q.row.cur+(q.l+q.w/2)/100*rw,on=Math.abs(x-c)<band;if(on!==q.on){q.on=on;q.f.classList.toggle('dev',on)}})}
+ var lt=0;
+ function stepc(t){raf2=0;var dt=lt?Math.min(50,t-lt):16.7,k=1-Math.pow(1-.2,dt/16.7);lt=t;var busy=false;rws.forEach(function(o){o.cur+=(o.tgt-o.cur)*k;if(Math.abs(o.tgt-o.cur)<.3)o.cur=o.tgt;else busy=true;o.r.style.setProperty('--tx',o.cur.toFixed(2)+'px')});if(busy)raf2=requestAnimationFrame(stepc);else lt=0}
  function calc(){var b=pin.getBoundingClientRect(),p=Math.min(1,Math.max(0,-b.top/Math.max(1,b.height-innerHeight)));p=Math.min(1,Math.max(0,(p-.05)/.9));rws.forEach(function(o){o.tgt=(o.d>0?-p:-(1-p))*o.mx;if(o.cur===null)o.cur=o.tgt});if(!raf2)raf2=requestAnimationFrame(stepc)}
  function all(){sizep();calc()}
  addEventListener('scroll',calc,{passive:true});addEventListener('resize',all);addEventListener('load',all);all()}
@@ -60,11 +65,12 @@ var rail=document.querySelector('.prail');
 if(rail&&!rm&&!small){var track=rail.querySelector('.track'),figs=[].slice.call(rail.querySelectorAll('.pf')),cnt=rail.querySelector('.count'),bar=rail.querySelector('.bar i'),dist=0,cur=0,tgt=0,raf=0;
  function size(){dist=Math.max(0,track.scrollWidth-innerWidth);rail.style.height=(dist+innerHeight)+'px'}
  function read(){var r=rail.getBoundingClientRect();tgt=Math.min(1,Math.max(0,-r.top/Math.max(1,r.height-innerHeight)));if(!raf)raf=requestAnimationFrame(tick)}
- function tick(){raf=0;cur+=(tgt-cur)*.085;if(Math.abs(tgt-cur)<.0004)cur=tgt;
+ var pt=0;
+ function tick(t){raf=0;var dt=pt?Math.min(50,t-pt):16.7,k=1-Math.pow(1-.17,dt/16.7);pt=t;cur+=(tgt-cur)*k;if(Math.abs(tgt-cur)<.0004)cur=tgt;
   track.style.transform='translate3d('+(-cur*dist).toFixed(1)+'px,0,0)';bar.style.setProperty('--p',cur.toFixed(4));
-  var best=0,bd=1e9,c=innerWidth/2;figs.forEach(function(f,i){var b=f.getBoundingClientRect(),m=b.left+b.width/2;f.querySelector('img').style.setProperty('--px',(((m-c)/innerWidth)*-9).toFixed(2)+'%');if(Math.abs(m-c)<bd){bd=Math.abs(m-c);best=i}});
+  var best=0,bd=1e9,c=innerWidth/2,ms=figs.map(function(f){var b=f.getBoundingClientRect();return b.left+b.width/2});ms.forEach(function(m,i){figs[i].querySelector('img').style.setProperty('--px',(((m-c)/innerWidth)*-9).toFixed(2)+'%');if(Math.abs(m-c)<bd){bd=Math.abs(m-c);best=i}});
   cnt.textContent=('0'+(best+1)).slice(-2)+' / 0'+figs.length;
-  if(cur!==tgt)raf=requestAnimationFrame(tick)}
+  if(cur!==tgt)raf=requestAnimationFrame(tick);else pt=0}
  size();read();addEventListener('scroll',read,{passive:true});addEventListener('resize',function(){size();read()});addEventListener('load',function(){size();read()})}
 })();
 

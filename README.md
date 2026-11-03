@@ -19,11 +19,10 @@ Shared styles for the inner pages are in `assets/inner.css`, their behaviour (re
 
 - `a/` the photos on the home page.
 - `n/` the warm black-and-white photos used on the inner pages:
-  - `b/pNN.jpg` the full photos that open in the lightbox.
-  - `pos/pNN.webp` the developed (positive) frames shown on the contact sheet.
-  - `sheet/row-{a,b,c}.webp` the three negative film strips, drawn as one image each.
+  - `sheet/row-{a,b,c}.webp` the three film strips of the contact sheet, drawn as one image each (nine frames per strip).
   - `pNN.jpg` the colour originals the strips are made from. Keep them if you ever want to regenerate the sheet.
   - `kid-3.jpg`, `out-*.jpg` the plates on the Rankings and Things I love pages.
+- `grain.png` (in `assets/`) the film grain laid over every page.
 - `photo/` the AI portraits, in full colour.
 - `og.jpg` the link-preview card (1200 x 630).
 
