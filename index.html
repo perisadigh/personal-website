@@ -18,7 +18,7 @@ header nav{display:flex;gap:2.6rem}header a[aria-current]{text-decoration:underl
 /* 0: quiet feature page: headline aligned to the top of a photographic plate, the standfirst to its foot */
 .s0 h1{position:absolute;left:6vw;top:15vh;margin:0;z-index:3;color:var(--paper);mix-blend-mode:difference;font:400 clamp(3.2rem,10.4vw,12rem)/.94 var(--serif);letter-spacing:-.028em}
 .s0 h1 .ln:nth-child(2){padding-left:19vw}
-.s0 .stand{position:absolute;left:6vw;bottom:15vh;width:min(22rem,27vw);font:italic 400 clamp(1.1rem,1.3vw,1.3rem)/1.38 var(--serif);text-wrap:pretty;z-index:3}
+.s0 .stand{position:absolute;left:6vw;bottom:15vh;width:min(27rem,31vw);font:italic 400 clamp(1.3rem,1.75vw,1.8rem)/1.34 var(--serif);text-wrap:pretty;z-index:3}
 .s0 figure{position:absolute;left:52vw;top:12vh;width:42vw;aspect-ratio:4/3;z-index:1}
 .s0 figure img{object-position:50% 50%}
 .s0 .foot{bottom:6vh;left:6vw}
@@ -60,7 +60,7 @@ header{padding:1.2rem 16px;flex-direction:column;gap:.8rem}header nav{gap:1.2rem
 .s3 .para{margin:1.2rem 0 2.5rem;font-size:1.25rem}
 .s4{padding:4rem 0 3rem}.s4 .hi{position:relative;left:auto;top:auto;translate:none;width:fit-content;margin:0 auto;font-size:4.6rem}.s4 .links{margin-top:3rem}.s4 .fine{margin-top:1rem}
 }
-@media (max-width:760px){.s0{min-height:auto;padding:8.5rem 16px 0}.s0 h1,.s0 .stand,.s0 figure{position:static;width:auto;translate:none}.s0 h1{font-size:15vw;mix-blend-mode:normal;color:var(--ink)}.s0 h1 .ln:nth-child(2){padding-left:12vw}.s0 figure{width:100%;margin:2.4rem 0 0}.s0 .stand{margin-top:1.6rem;font-size:1.2rem;max-width:17rem}.s0 .foot{margin-top:2.5rem}
+@media (max-width:760px){.s0{min-height:auto;padding:8.5rem 16px 0}.s0 h1,.s0 .stand,.s0 figure{position:static;width:auto;translate:none}.s0 h1{font-size:15vw;mix-blend-mode:normal;color:var(--ink)}.s0 h1 .ln:nth-child(2){padding-left:12vw}.s0 figure{width:100%;margin:2.4rem 0 0}.s0 .stand{margin-top:1.6rem;font-size:1.4rem;max-width:20rem}.s0 .foot{margin-top:2.5rem}
 }
 @media (max-width:760px){
 .s1{padding:8rem 16px 4rem}.s1 figure{height:auto;aspect-ratio:4/3;width:calc(100% + 32px);margin:0 -16px}.s1 .hi{position:relative;left:auto;top:auto;order:2;margin:-6.6rem 0 0 4%;font-size:5rem;z-index:2}.s1 .say{order:3;width:auto;margin:3rem 0 0}.s1 .foot{order:4}
@@ -78,7 +78,7 @@ header nav a{background:linear-gradient(currentColor,currentColor) 0 100%/0 1px 
 
 /* 2: two truths and a lie, marked up in red pen like a proof */
 .s2{display:block;min-height:auto;padding:10vh 6vw 22vh;position:relative}
-.s2 .kid{position:absolute;left:6vw;top:10vh;width:11vw;aspect-ratio:1200/1749}
+.s2 .kid{position:absolute;left:6vw;top:46vh;width:11vw;aspect-ratio:1200/1749}
 .s2 .g{margin-left:22vw}
 .s2 h2{margin-bottom:.5rem}
 .s2 .ask{font-style:italic;color:var(--mu);margin-bottom:8vh}
@@ -97,7 +97,7 @@ header nav a{background:linear-gradient(currentColor,currentColor) 0 100%/0 1px 
 .revealed .card .note{opacity:1;transform:rotate(-7deg)}
 .revealed .card .no{opacity:0}
 .revealed .card[data-lie] .tx{color:var(--mu);background-size:100% 1.5px;transition:background-size .9s .3s cubic-bezier(.6,0,.3,1),color .6s .3s}
-.card .x{display:none;font-style:italic;color:var(--mu);margin-top:.9rem;font-size:clamp(1.1rem,1.3vw,1.4rem);line-height:1.3}
+.card .x{display:none;font-style:italic;font-weight:500;color:var(--red);margin-top:.9rem;font-size:clamp(1.15rem,1.4vw,1.5rem);line-height:1.3}
 .revealed .card .x{display:block}
 .s2 .verdict{margin:9vh 0 0 6.5rem;min-height:5rem;display:flex;align-items:baseline;gap:2.4rem}
 .s2 .verdict .w{font:400 clamp(3rem,4.4vw,4.6rem)/1 "Kristi",cursive;color:var(--red);opacity:0;transform:rotate(-4deg);transition:opacity .7s .5s}
@@ -154,7 +154,7 @@ linear-gradient(var(--k),var(--k)) 100% calc(100% - 26px)/16px 1px no-repeat,lin
     <ol>
       <li><button class="card" type="button" aria-pressed="false"><span class="no cap mu">01</span><span class="note" aria-hidden="true">true</span><span class="s"><span class="tx">The very first thing I did when I came out of the womb was grab the scissors out of the doctor&rsquo;s hand and refuse to let go.</span></span><svg class="ring" aria-hidden="true"><path/></svg></button></li>
       <li><button class="card" type="button" aria-pressed="false"><span class="no cap mu">02</span><span class="note" aria-hidden="true">true</span><span class="s"><span class="tx">When I was four, my mom had to tell me Santa wasn&rsquo;t real because I wouldn&rsquo;t accept any explanation for why he could get into our house through the chimney but burglars couldn&rsquo;t.</span><span class="x">I then went to school and accidentally ruined Santa for the other kids.</span></span><svg class="ring" aria-hidden="true"><path/></svg></button></li>
-      <li><button class="card" type="button" aria-pressed="false" data-lie><span class="no cap mu">03</span><span class="note" aria-hidden="true">the lie</span><span class="s"><span class="tx">My brother and I were the only kids in an adult kung fu class, and by twelve I was helping teach it.</span><span class="x">(I was basically a kung fu master before the age of 12 though)</span></span><svg class="ring" aria-hidden="true"><path/></svg></button>
+      <li><button class="card" type="button" aria-pressed="false" data-lie><span class="no cap mu">03</span><span class="note" aria-hidden="true">the lie</span><span class="s"><span class="tx">My brother and I were the only kids in an adult kung fu class, so I convinced the instructor to start a kids&rsquo; class, and by twelve I was helping teach it.</span><span class="x">(I was basically a kung fu master before the age of 12 though)</span></span><svg class="ring" aria-hidden="true"><path/></svg></button>
         <figure class="kf rv" hidden><img src="assets/img/a/kungfu.jpg" alt="A boy and a girl in black kung fu uniforms with yellow belts, standing arm in arm"></figure></li>
     </ol>
     <div class="verdict" aria-live="polite"><span class="w"></span><button class="again cap" type="button">Play again</button></div>
@@ -164,8 +164,8 @@ linear-gradient(var(--k),var(--k)) 100% calc(100% - 26px)/16px 1px no-repeat,lin
 
 <section class="spread s3">
   <div class="t fd">
-    <p class="cap mu">Experience</p>
-    <p class="para">After digital marketing I moved into recruitment at Recruitcha, the recruitment agency, and taught myself to build software with AI tools. I started building our internal recruiting tools, and later took on product development and technical work on Recruitcha GTM, the software product.</p>
+    <p class="cap mu">What I do</p>
+    <p class="para">After digital marketing, I moved into recruitment and taught myself to code with AI tools. I started by building internal recruiting tools, then moved into product development, building features and integrations, and designing and developing the company&rsquo;s website.</p>
   </div>
   <figure class="rv"><img src="assets/img/a/hike2.jpg" alt="Peri on the rocks below the mountains"></figure>
   <p class="foot cap mu"><span>Peri</span><span>03</span></p>
@@ -189,6 +189,9 @@ void svg.getBoundingClientRect();svg.classList.add('on');
 setTimeout(function(){g.classList.add('revealed');vw.textContent=c.hasAttribute('data-lie')?'you got it.':'not quite.';
 if(kf){kf.hidden=false;requestAnimationFrame(function(){requestAnimationFrame(function(){kf.classList.add('in')})})}},rm0?0:1150)})});
 g.querySelector('.again').addEventListener('click',function(){g.classList.remove('picked','revealed');vw.textContent='';cs.forEach(function(x){x.classList.remove('chosen');x.setAttribute('aria-pressed','false');var sv=x.querySelector('.ring');sv.classList.remove('on')});if(kf){kf.classList.remove('in');kf.hidden=true}});
+var kidEl=document.querySelector('.s2 .kid'),card2=cs[1];
+function alignKid(){if(!kidEl||!card2)return;if(innerWidth<=760){kidEl.style.top='';return}var s2=kidEl.parentNode.getBoundingClientRect(),c=card2.getBoundingClientRect();kidEl.style.top=(c.top-s2.top)+'px'}
+alignKid();addEventListener('resize',alignKid);addEventListener('load',alignKid);if(document.fonts&&document.fonts.ready)document.fonts.ready.then(alignKid);
 document.querySelectorAll('[data-year]').forEach(function(e){e.textContent=new Date().getFullYear()});
 
 (function(){var d=document.documentElement,rm=matchMedia('(prefers-reduced-motion: reduce)').matches;
