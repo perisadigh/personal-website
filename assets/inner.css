@@ -81,7 +81,7 @@ header a[aria-current]{background:none}
 .loves-list a{color:var(--red);text-decoration:underline;text-underline-offset:.22em}
 .sh{padding:6vh 6vw 7vh;border-top:1px solid var(--line);margin:0 6vw;padding-left:0;padding-right:0}
 .sh h2{font:400 clamp(2.4rem,5.6vw,6.4rem)/1 var(--serif);letter-spacing:-.025em}
-.xsheet{position:relative;height:178vw;margin:0;overflow:hidden}
+.xsheet{position:relative;height:186vw;margin:0;overflow:hidden}
 .xf{position:absolute;margin:0;cursor:zoom-in;transform:translateY(var(--py,0)) rotate(var(--r,0deg));transition:transform .5s var(--e),filter .5s;filter:drop-shadow(0 1px 1px rgba(30,18,8,.38)) drop-shadow(.25rem .7rem .8rem rgba(30,18,8,.17))}
 .xf img{height:auto}
 .xf:hover,.xf:focus-visible{z-index:20!important;transform:translateY(var(--py,0)) rotate(0deg) scale(1.07);filter:drop-shadow(0 1px 1px rgba(30,18,8,.3)) drop-shadow(.4rem 1.4rem 1.6rem rgba(30,18,8,.26))}
