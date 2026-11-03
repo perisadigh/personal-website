@@ -53,3 +53,5 @@ document.querySelectorAll('.tracks li[data-src]').forEach(function(li){var b=li.
   au=new Audio(li.dataset.src);cur=li;au.play();b.innerHTML=PAUSE;b.setAttribute('aria-label','Pause');li.classList.add('on');
   au.addEventListener('ended',function(){reset(li);cur=null;au=null})})})
 })();
+
+;(function(){var h=document.querySelector('header'),ly=0;if(!h)return;addEventListener('scroll',function(){var y=scrollY;if(innerWidth>760){if(y>140&&y>ly+4)h.classList.add('away');else if(y<ly-4||y<140)h.classList.remove('away')}ly=y},{passive:true})})();

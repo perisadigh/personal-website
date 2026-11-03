@@ -11,7 +11,7 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opa
 .cap{font:500 .68rem/1.5 var(--cap);letter-spacing:.14em;text-transform:uppercase}
 .mu{color:var(--mu)}
 a{color:inherit;text-decoration:none}
-header{position:absolute;top:0;left:0;right:0;z-index:5;display:flex;justify-content:space-between;padding:1.8rem 6vw}
+header{position:fixed;top:0;left:0;right:0;z-index:40;display:flex;justify-content:space-between;padding:1.8rem 6vw;color:#fff;mix-blend-mode:difference;transition:transform .7s var(--e)}header.away{transform:translateY(-130%)}
 header nav{display:flex;gap:2.6rem}header a[aria-current]{text-decoration:underline;text-underline-offset:.4em}
 .spread{position:relative;min-height:100svh;overflow:hidden}
 
@@ -38,9 +38,10 @@ header nav{display:flex;gap:2.6rem}header a[aria-current]{text-decoration:underl
 .s3 .roles{list-style:none;max-width:31rem}
 .s3 .roles li{display:grid;grid-template-columns:1fr auto;column-gap:1.5rem;row-gap:.15rem;padding:.6rem 0}.s3 .roles .w{grid-column:1;color:var(--mu)}.s3 .roles .d{grid-column:2;grid-row:1}
 /* 4: say hello written across the edge of a photo */
-.s4{min-height:60svh}
+.s4{min-height:68svh}
 .s4 .hi{position:absolute;left:50%;top:14svh;translate:-50% 0;font:400 clamp(5rem,9.5vw,9rem)/.8 "Kristi",cursive;transform:rotate(-5deg);white-space:nowrap}
-.s4 .links{position:absolute;left:0;right:0;bottom:14svh;display:flex;justify-content:center;gap:1.4rem}
+.s4 .links{position:absolute;left:0;right:0;bottom:23svh;display:flex;justify-content:center;gap:1.4rem}
+.s4 .pgs{position:absolute;left:0;right:0;bottom:15svh;display:flex;justify-content:center;flex-wrap:wrap;gap:.6rem 2rem;padding:0 16px}.s4 .pgs a{background:linear-gradient(currentColor,currentColor) 0 100%/0 1px no-repeat;padding-bottom:.35em;transition:background-size .6s var(--e)}.s4 .pgs a:hover,.s4 .pgs a:focus-visible{background-size:100% 1px}
 .s4 .links a{color:var(--ink)}.s4 .links span{color:var(--mu)}
 .s4 .fine{position:absolute;left:0;right:0;bottom:9svh;text-align:center}
 
@@ -52,13 +53,13 @@ header nav{display:flex;gap:2.6rem}header a[aria-current]{text-decoration:underl
 .s1 .hi{position:absolute;left:6vw;top:calc(15vh + 80vh - 13.5vw);font-size:clamp(6rem,11vw,11rem)}
 .s1 .say{order:2;position:static;width:min(23.5rem,30vw);margin:9vh 6vw 0 auto}
 @media (max-width:760px){
-header{padding:1.2rem 16px;flex-direction:column;gap:.8rem}header nav{gap:1.2rem;flex-wrap:wrap}
+header{position:absolute;color:inherit;mix-blend-mode:normal;padding:1.2rem 16px;flex-direction:column;gap:.8rem}header nav{gap:1.2rem;flex-wrap:wrap}
 .spread{min-height:auto;padding:0 16px}
-.foot{position:static;margin-top:2.5rem}.s1{padding-top:9rem;padding-bottom:4rem}.s1 .say,.s1 figure,.s4 .hi,.s4 .links,.s4 .fine{position:static;width:auto}
+.foot{position:static;margin-top:2.5rem}.s1{padding-top:9rem;padding-bottom:4rem}.s1 .say,.s1 figure,.s4 .hi,.s4 .links,.s4 .pgs,.s4 .fine{position:static;width:auto}
 .s1 .say{font-size:.74rem;line-height:2}.s1 figure{width:calc(100% + 16px);margin:3.5rem -16px 0 0}.s1 .hi{position:relative;left:auto;top:auto;z-index:2;margin:-6rem 0 0 6%;font-size:4.8rem;transform:rotate(-6deg)}.s1 .foot{margin-top:4rem}
 .s3{display:block;padding:0}.s3 figure{height:auto;aspect-ratio:4/5;width:100%}.s3 .t{padding:3rem 16px 1rem}.s3 .foot{padding:0 16px 4rem}
 .s3 .para{margin:1.2rem 0 2.5rem;font-size:1.25rem}
-.s4{padding:4rem 0 3rem}.s4 .hi{position:relative;left:auto;top:auto;translate:none;width:fit-content;margin:0 auto;font-size:4.6rem}.s4 .links{margin-top:3rem}.s4 .fine{margin-top:1rem}
+.s4{padding:4rem 0 3rem}.s4 .hi{position:relative;left:auto;top:auto;translate:none;width:fit-content;margin:0 auto;font-size:4.6rem}.s4 .links{margin-top:3rem}.s4 .pgs{margin-top:1.6rem}.s4 .fine{margin-top:1.6rem}
 }
 @media (max-width:760px){.s0{min-height:auto;padding:8.5rem 16px 0}.s0 h1,.s0 .stand,.s0 figure{position:static;width:auto;translate:none}.s0 h1{font-size:15vw;mix-blend-mode:normal;color:var(--ink)}.s0 h1 .ln:nth-child(2){padding-left:12vw}.s0 figure{width:100%;margin:2.4rem 0 0}.s0 .stand{margin-top:1.6rem;font-size:1.4rem;max-width:20rem}.s0 .foot{margin-top:2.5rem}
 }
@@ -80,8 +81,8 @@ header nav a{background:linear-gradient(currentColor,currentColor) 0 100%/0 1px 
 .s2{display:block;min-height:auto;padding:10vh 6vw 22vh;position:relative}
 .s2 .kid{position:absolute;left:6vw;top:46vh;width:11vw;aspect-ratio:1200/1749}
 .s2 .g{margin-left:22vw}
-.s2 h2{margin-bottom:.5rem}
-.s2 .ask{font-style:italic;color:var(--mu);margin-bottom:8vh}
+.s2 h2{font:400 clamp(2.9rem,5.4vw,5.6rem)/1 var(--serif);letter-spacing:-.02em;text-transform:none;margin-bottom:.9rem}
+.s2 .ask{font-style:italic;color:var(--red);font-size:clamp(1.3rem,1.7vw,1.7rem);margin-bottom:9vh}
 .s2 ol{list-style:none}
 .s2 li{position:relative}.s2 li+li{margin-top:9vh}.s2 li:nth-child(2){margin-left:5vw}.s2 li:nth-child(3){margin-left:1.5vw}
 .card{position:relative;display:grid;grid-template-columns:6.5rem 1fr;width:100%;padding:0;border:0;background:none;color:inherit;font:inherit;text-align:left;cursor:pointer}
@@ -116,8 +117,8 @@ linear-gradient(var(--k),var(--k)) 100% calc(100% - 26px)/16px 1px no-repeat,lin
 .go .s0 .marks{opacity:1}
 .s4 .links a{background:linear-gradient(currentColor,currentColor) 0 100%/0 1px no-repeat;padding-bottom:.4em;transition:background-size .6s var(--e)}.s4 .links a:hover,.s4 .links a:focus-visible{background-size:100% 1px}
 /* script words are written across, left to right; the rest of the page fades up */
-.js .hi{clip-path:inset(-12% 100% -12% -6%)}
-.js .hi.in,.js .rv.in~.hi{clip-path:inset(-12% -6% -12% -6%);transition:clip-path 1.9s cubic-bezier(.5,0,.2,1) .7s}
+.js .hi{clip-path:inset(-60% 100% -60% -25%)}
+.js .hi.in,.js .rv.in~.hi{clip-path:inset(-60% -25% -60% -25%);transition:clip-path 1.9s cubic-bezier(.5,0,.2,1) .7s}
 .js .fd{opacity:0;transform:translateY(1.1rem)}.js .fd.in{opacity:1;transform:none;transition:opacity 1.2s var(--e),transform 1.4s var(--e)}
 @media (prefers-reduced-motion:reduce){.js .hi{clip-path:none!important}.js .fd{opacity:1!important;transform:none!important}.card .ring path{transition:none}.s0 .marks{transition:none}}
 @media (max-width:760px){
@@ -149,7 +150,7 @@ linear-gradient(var(--k),var(--k)) 100% calc(100% - 26px)/16px 1px no-repeat,lin
 <section class="spread s2">
   <figure class="rv kid"><img src="assets/img/a/kid-tall.jpg" alt="Peri as a little girl in pigtails"></figure>
   <div class="g">
-    <h2 class="cap">Two truths and a lie</h2>
+    <h2>Two truths and a lie</h2>
     <p class="ask">Which one is the lie?</p>
     <ol>
       <li><button class="card" type="button" aria-pressed="false"><span class="no cap mu">01</span><span class="note" aria-hidden="true">true</span><span class="s"><span class="tx">The very first thing I did when I came out of the womb was grab the scissors out of the doctor&rsquo;s hand and refuse to let go.</span></span><svg class="ring" aria-hidden="true"><path/></svg></button></li>
@@ -174,6 +175,7 @@ linear-gradient(var(--k),var(--k)) 100% calc(100% - 26px)/16px 1px no-repeat,lin
 <section class="spread s4">
   <p class="hi">say hello</p>
   <p class="links cap fd"><a href="mailto:perisadigh21@gmail.com">Email</a><span>|</span><a href="https://www.linkedin.com/in/perisadigh/" target="_blank" rel="noopener">LinkedIn</a></p>
+  <nav class="pgs cap mu" aria-label="Pages"><a href="work.html">Things I&rsquo;ve made</a><a href="things-i-love.html">Things I love</a><a href="ranking.html">Rankings</a></nav>
   <p class="fine cap mu">&copy; <span data-year>2026</span> Peri</p>
 </section>
 <script>
@@ -192,6 +194,7 @@ g.querySelector('.again').addEventListener('click',function(){g.classList.remove
 var kidEl=document.querySelector('.s2 .kid'),card2=cs[1];
 function alignKid(){if(!kidEl||!card2)return;if(innerWidth<=760){kidEl.style.top='';return}var s2=kidEl.parentNode.getBoundingClientRect(),c=card2.getBoundingClientRect();kidEl.style.top=(c.top-s2.top)+'px'}
 alignKid();addEventListener('resize',alignKid);addEventListener('load',alignKid);if(document.fonts&&document.fonts.ready)document.fonts.ready.then(alignKid);
+(function(){var h=document.querySelector('header'),ly=0;if(!h)return;addEventListener('scroll',function(){var y=scrollY;if(innerWidth>760){if(y>140&&y>ly+4)h.classList.add('away');else if(y<ly-4||y<140)h.classList.remove('away')}ly=y},{passive:true})})();
 document.querySelectorAll('[data-year]').forEach(function(e){e.textContent=new Date().getFullYear()});
 
 (function(){var d=document.documentElement,rm=matchMedia('(prefers-reduced-motion: reduce)').matches;
