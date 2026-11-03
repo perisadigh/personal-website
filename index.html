@@ -80,6 +80,7 @@ header nav a{background:linear-gradient(currentColor,currentColor) 0 100%/0 1px 
 /* 2: two truths and a lie, marked up in red pen like a proof */
 .s2{display:block;min-height:100svh;padding:12vh 6vw 9vh;position:relative}
 .s2 .kid{position:absolute;left:6vw;top:46vh;width:11vw;aspect-ratio:1200/1749}
+@media (min-width:761px){.s2 .kid{transition:opacity .9s var(--e)}.s2:not(.rev) .kid{opacity:0}}
 .s2 .g{margin-left:17vw;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:3vw;align-items:start}
 .s2 .g>h2,.s2 .g>.ask{grid-column:1/-1}.s2 ol{display:contents}.s2 li{grid-row:3}.s2 li:nth-child(1){grid-column:1}.s2 li:nth-child(2){grid-column:2;margin-top:7vh}.s2 li:nth-child(3){grid-column:3;margin-top:14vh}
 .s2 h2{font:400 clamp(2.9rem,5.4vw,5.6rem)/1 var(--serif);letter-spacing:-.02em;text-transform:none;margin-bottom:.9rem}
@@ -190,10 +191,10 @@ var r=c.getBoundingClientRect(),s=c.querySelector('.tx').getBoundingClientRect()
 svg.setAttribute('width',rg.W);svg.setAttribute('height',rg.H);svg.setAttribute('viewBox','0 0 '+rg.W+' '+rg.H);svg.style.left=(s.left-r.left-rg.pad*2)+'px';svg.style.top=(s.top-r.top-rg.pad*2)+'px';p.setAttribute('d',rg.d);p.setAttribute('pathLength','1');
 void svg.getBoundingClientRect();svg.classList.add('on');
 setTimeout(function(){g.classList.add('revealed');vw.textContent=c.hasAttribute('data-lie')?'you got it.':'not quite.';
-if(kf){kf.hidden=false;requestAnimationFrame(function(){requestAnimationFrame(function(){kf.classList.add('in')})})}},rm0?0:1150)})});
-g.querySelector('.again').addEventListener('click',function(){g.classList.remove('picked','revealed');vw.textContent='';cs.forEach(function(x){x.classList.remove('chosen');x.setAttribute('aria-pressed','false');var sv=x.querySelector('.ring');sv.classList.remove('on')});if(kf){kf.classList.remove('in');kf.hidden=true}});
-var kidEl=document.querySelector('.s2 .kid'),card2=cs[1];
-function alignKid(){if(!kidEl||!card2)return;if(innerWidth<=760){kidEl.style.top='';return}var s2=kidEl.parentNode.getBoundingClientRect(),c=card2.getBoundingClientRect();kidEl.style.top=(c.top-s2.top)+'px'}
+if(kf){kf.hidden=false;sec2.classList.add('rev');requestAnimationFrame(function(){requestAnimationFrame(function(){kf.classList.add('in')})})}},rm0?0:1150)})});
+g.querySelector('.again').addEventListener('click',function(){g.classList.remove('picked','revealed');sec2.classList.remove('rev');vw.textContent='';cs.forEach(function(x){x.classList.remove('chosen');x.setAttribute('aria-pressed','false');var sv=x.querySelector('.ring');sv.classList.remove('on')});if(kf){kf.classList.remove('in');kf.hidden=true}});
+var sec2=document.querySelector('.s2'),kidEl=document.querySelector('.s2 .kid'),card2=cs[1];
+function alignKid(){if(!kidEl||!card2)return;if(innerWidth<=760){kidEl.style.top='';if(kf){kf.style.top='';kf.style.bottom=''}return}var s2=kidEl.parentNode.getBoundingClientRect(),c=card2.getBoundingClientRect();kidEl.style.top=(c.top-s2.top)+'px';if(kf){var c3=cs[2].getBoundingClientRect();kf.style.top='auto';kf.style.bottom=(s2.bottom-c3.top+10)+'px'}}
 alignKid();addEventListener('resize',alignKid);addEventListener('load',alignKid);if(document.fonts&&document.fonts.ready)document.fonts.ready.then(alignKid);
 (function(){var h=document.querySelector('header'),ly=0;if(!h)return;addEventListener('scroll',function(){var y=scrollY;if(innerWidth>760){if(y>140&&y>ly+4)h.classList.add('away');else if(y<ly-4||y<140)h.classList.remove('away')}ly=y},{passive:true})})();
 document.querySelectorAll('[data-year]').forEach(function(e){e.textContent=new Date().getFullYear()});
