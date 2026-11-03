@@ -19,13 +19,13 @@ else{
 var lb=document.querySelector('.lb');
 if(lb){var li=lb.querySelector('img'),lbtn=lb.querySelector('button'),opener=null;
  var close=function(){lb.classList.remove('open');if(opener)opener.focus()};
- document.querySelectorAll('[data-lightbox]').forEach(function(f){f.tabIndex=0;f.setAttribute('role','button');f.setAttribute('aria-label','Open photo');
-  var open=function(){opener=f;var im=f.querySelector('img');li.alt=im?im.alt:'';li.src=f.getAttribute('data-lightbox');lb.classList.add('open');lbtn.focus()};
+ document.querySelectorAll('[data-lightbox]').forEach(function(f){f.tabIndex=0;f.setAttribute('role','button');f.setAttribute('aria-label',f.getAttribute('data-alt')||'Open photo');
+  var open=function(){opener=f;var im=f.querySelector('img');li.alt=f.getAttribute('data-alt')||(im?im.alt:'');li.src=f.getAttribute('data-lightbox');lb.classList.add('open');lbtn.focus()};
   f.addEventListener('click',open);f.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();open()}})});
  lb.addEventListener('click',close);document.addEventListener('keydown',function(e){if(e.key==='Escape'&&lb.classList.contains('open'))close()})}
 
 /* the scattered film frames drift a little as you scroll */
-var xs=document.querySelector('.xsheet'),xf=[].slice.call(document.querySelectorAll('.xf'));
+var xs=document.querySelector('.csheet'),xf=[].slice.call(document.querySelectorAll('.crow'));
 if(xs&&!rm&&!small){var t=0;function go(){t=0;var b=xs.getBoundingClientRect(),p=b.top+b.height/2-innerHeight/2;xf.forEach(function(e){e.style.setProperty('--py',(p*parseFloat(e.dataset.sp)).toFixed(1)+'px')})}
  addEventListener('scroll',function(){if(!t)t=requestAnimationFrame(go)},{passive:true});go()}
 
