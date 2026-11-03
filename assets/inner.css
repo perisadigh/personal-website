@@ -81,14 +81,19 @@ header a[aria-current]{background:none}
 .loves-list a{color:var(--red);text-decoration:underline;text-underline-offset:.22em}
 .sh{padding:6vh 6vw 7vh;border-top:1px solid var(--line);margin:0 6vw;padding-left:0;padding-right:0}
 .sh h2{font:400 clamp(2.4rem,5.6vw,6.4rem)/1 var(--serif);letter-spacing:-.025em}
-.csheet{margin:0;padding:1vw 0 6vw;display:flex;flex-direction:column;gap:0;overflow-x:auto;scrollbar-width:none}.csheet::-webkit-scrollbar{display:none}
-.csheet.live{overflow:hidden}
-.rw{position:relative;flex:none}.rw+.rw{margin-top:-1.4vw}
-.crow{position:relative;margin:0;width:150vw;transform:translate3d(var(--tx,0px),0,0) rotate(var(--r,0deg));will-change:transform;filter:drop-shadow(0 1px 1px rgba(30,18,8,.45)) drop-shadow(.2rem .8rem .9rem rgba(30,18,8,.22))}
+#people{--rw:min(200vw,calc(2.4*(100svh - 6.5rem)));margin:0 6vw;border-top:1px solid var(--line)}
+.pstage{margin:0 -6vw}
+.pstage .sh{margin:0 6vw;border-top:0;padding:5vh 0 3vh}
+.csheet{padding:0 0 4vw;display:flex;flex-direction:column;overflow-x:auto;scrollbar-width:none}.csheet::-webkit-scrollbar{display:none}
+.rw{position:relative;flex:none}.rw+.rw{margin-top:calc(var(--rw)*-.03)}
+.crow{position:relative;margin:0;width:var(--rw);transform:translate3d(var(--tx,0px),0,0) rotate(var(--r,0deg));will-change:transform;backface-visibility:hidden}
 .rw:nth-child(1) .crow{--r:-.45deg}.rw:nth-child(2) .crow{--r:.5deg}.rw:nth-child(3) .crow{--r:-.3deg}
 .crow img{display:block;width:100%;height:auto}
 .crow .fr{position:absolute;cursor:zoom-in;transition:background .35s,box-shadow .35s}
 .crow .fr:hover,.crow .fr:focus-visible{background:rgba(255,246,226,.12);box-shadow:0 0 0 1px rgba(255,236,200,.5) inset;outline:none}
+#people.live .pstage{position:sticky;top:0;height:100vh;height:100svh;display:flex;flex-direction:column;justify-content:center;overflow:hidden}
+#people.live .csheet{overflow:hidden;padding-bottom:0}
+#people.live .pstage .sh{padding:0 0 2.2vh}
 /* rankings */
 .ranks{display:grid;grid-template-columns:22vw 1fr;gap:0 5vw;padding:0 6vw 10vh}
 .ranks .plates figure{width:68%}.ranks .plates figure+figure{margin-top:2rem;margin-left:34%;width:54%}
@@ -117,7 +122,7 @@ html:not(.js) .chart .ln{stroke-dashoffset:0}html:not(.js) .chart circle{opacity
 .lb.open img{transform:none}
 .lb button{position:absolute;top:1.8rem;right:6vw;border:0;background:none;color:var(--ink);cursor:pointer;padding:0 0 .35em;background:linear-gradient(currentColor,currentColor) 0 100%/100% 1px no-repeat}
 @media (max-width:760px){
-header{position:absolute;color:inherit;mix-blend-mode:normal;padding:1.4rem 16px;flex-direction:column;gap:.6rem}header nav{gap:1.2rem;flex-wrap:wrap}
+header{position:absolute;color:inherit;mix-blend-mode:normal;padding:1.4rem 16px;flex-direction:column;gap:.6rem}header.cap{font-size:.66rem}header nav{gap:.95rem;flex-wrap:nowrap}
 .pt{padding:9rem 16px 3rem}.pt .folio{position:static;margin-bottom:1.4rem}.pt h1{font-size:15vw}.pt h1.long{font-size:12.5vw}
 .toc{margin:0 16px 5rem}.toc a{grid-template-columns:2.4rem 1fr}.toc .k{grid-column:2}
 .proj{margin:0 16px;padding:3.2rem 0 4rem;grid-template-columns:1fr}.proj .pm{margin-bottom:1.4rem;grid-column:1;grid-row:auto}.proj h2{grid-column:1;grid-row:auto;max-width:none}.proj .body{grid-column:1;margin-top:1.4rem}.proj .body+.body{margin-top:1.1rem}.proj .tr{grid-column:1}.proj .vid{grid-column:1;margin-top:2rem}
@@ -125,8 +130,8 @@ header{position:absolute;color:inherit;mix-blend-mode:normal;padding:1.4rem 16px
 .intro{width:auto;margin:0 0 2rem}.pf{height:auto;width:100%;aspect-ratio:var(--ar);margin:0 0 2.4rem}.pf .no{display:none}.pf img{transform:none}.hud,.bar{display:none}.prail{height:auto!important}
 .loves{grid-template-columns:1fr;padding:0 16px 5rem}.plates{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:2.4rem}.plates figure,.plates figure+figure,.plates figure:nth-child(n){width:auto;margin:0}
 .loves-list{columns:1}.sh{margin:0 16px}
-.csheet{padding:.5rem 0 3rem}.crow{width:340vw}.rw+.rw{margin-top:-3vw}
-.ranks{grid-template-columns:1fr;padding:0 16px 4rem}.ranks .plates{position:static;grid-template-columns:1fr 1fr;max-width:20rem}.plot{grid-column:1;margin-top:5rem}
+#people{--rw:min(340vw,calc(2.4*(100svh - 6.5rem)));margin:0 16px}.pstage{margin:0 -16px}.pstage .sh{margin:0 16px;padding:3rem 0 1.4rem}#people.live .pstage .sh{padding:0 0 1rem}
+.ranks{grid-template-columns:1fr;padding:0 16px 4rem}.ranks .plates{position:static;grid-template-columns:1fr 1fr;max-width:20rem}.ranks .plates figure,.ranks .plates figure+figure{width:auto;margin:0}.ranks .plates figure+figure{align-self:end}.plot{grid-column:1;margin-top:5rem}
 .hello{padding-top:10vh}.hello .hi{font-size:4.8rem}.hello .links{gap:1.4rem}.colophon{padding:4rem 16px 2rem}
 }
 
