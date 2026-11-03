@@ -81,13 +81,14 @@ header a[aria-current]{background:none}
 .loves-list a{color:var(--red);text-decoration:underline;text-underline-offset:.22em}
 .sh{padding:6vh 6vw 7vh;border-top:1px solid var(--line);margin:0 6vw;padding-left:0;padding-right:0}
 .sh h2{font:400 clamp(2.4rem,5.6vw,6.4rem)/1 var(--serif);letter-spacing:-.025em}
-.xsheet{position:relative;margin:0 6vw;padding:0 0 4vw}
-.xf{position:absolute;margin:0;cursor:zoom-in;transform:translateY(var(--py,0)) rotate(var(--r,0deg));transition:transform .5s var(--e),filter .5s;filter:drop-shadow(0 1px 1px rgba(30,18,8,.38)) drop-shadow(.25rem .7rem .8rem rgba(30,18,8,.17))}
-.xf img{display:block;width:100%;height:auto}
-.xf:hover,.xf:focus-visible{z-index:20!important;transform:translateY(var(--py,0)) rotate(0deg) scale(1.07);filter:drop-shadow(0 1px 1px rgba(30,18,8,.3)) drop-shadow(.4rem 1.4rem 1.6rem rgba(30,18,8,.26))}
+.csheet{margin:0 2vw;padding:1vw 0 5vw;display:flex;flex-direction:column;gap:.2vw}
+.crow{position:relative;margin:0;transform:translateY(var(--py,0)) rotate(var(--r,0deg));filter:drop-shadow(0 1px 1px rgba(30,18,8,.4)) drop-shadow(.2rem .6rem .7rem rgba(30,18,8,.18))}
+.crow img{display:block;width:100%;height:auto}
+.crow .fr{position:absolute;cursor:zoom-in;transition:background .35s,box-shadow .35s}
+.crow .fr:hover,.crow .fr:focus-visible{background:rgba(255,246,226,.14);box-shadow:0 0 0 1px rgba(255,236,200,.55) inset;outline:none}
 /* rankings */
 .ranks{display:grid;grid-template-columns:22vw 1fr;gap:0 5vw;padding:0 6vw 10vh}
-.ranks .plates figure{width:68%}.ranks .plates figure+figure{margin-top:2rem;margin-left:24%}
+.ranks .plates figure{width:68%}.ranks .plates figure+figure{margin-top:2rem;margin-left:34%;width:54%}
 .rank-list{list-style:none;max-width:36rem}
 .ranks .plates{position:sticky;top:12vh;align-self:start}
 .plot{grid-column:2;margin-top:14vh}
@@ -121,7 +122,7 @@ header{position:absolute;color:inherit;mix-blend-mode:normal;padding:1.4rem 16px
 .intro{width:auto;margin:0 0 2rem}.pf{height:auto;width:100%;aspect-ratio:var(--ar);margin:0 0 2.4rem}.pf .no{display:none}.pf img{transform:none}.hud,.bar{display:none}.prail{height:auto!important}
 .loves{grid-template-columns:1fr;padding:0 16px 5rem}.plates{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:2.4rem}.plates figure,.plates figure+figure,.plates figure:nth-child(n){width:auto;margin:0}
 .loves-list{columns:1}.sh{margin:0 16px}
-.xsheet{margin:0 16px;height:auto!important;padding:1.5rem 0 3rem;display:grid;grid-template-columns:1fr 1fr;gap:5vw 4vw;align-items:start}.xf{position:static;width:auto!important;transform:rotate(var(--r))!important}.xf:nth-child(n){margin-top:0}.xf:nth-child(even){margin-top:8vw}
+.csheet{margin:0;padding:.5rem 0 3rem;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}.csheet::-webkit-scrollbar{display:none}.crow{width:235vw;flex:none;margin-left:0;transform:rotate(var(--r))!important}.crow+.crow{margin-top:-4vw}
 .ranks{grid-template-columns:1fr;padding:0 16px 4rem}.ranks .plates{position:static;grid-template-columns:1fr 1fr;max-width:20rem}.plot{grid-column:1;margin-top:5rem}
 .hello{padding-top:10vh}.hello .hi{font-size:4.8rem}.hello .links{gap:1.4rem}.colophon{padding:4rem 16px 2rem}
 }
