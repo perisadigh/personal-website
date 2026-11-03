@@ -18,6 +18,7 @@ header a[aria-current]{background:none}
 .pt{position:relative;padding:21vh 6vw 9vh}
 .pt .folio{position:absolute;left:6vw;top:13vh}
 .pt h1{font:400 clamp(3.2rem,10vw,11.5rem)/.94 var(--serif);letter-spacing:-.028em}
+.pt h1.sm{font-size:clamp(2.8rem,7vw,8rem)}
 .pt h1.long{font-size:clamp(3rem,7.4vw,8.8rem)}
 .pt .stand{margin-top:5vh;max-width:30rem;font:italic 400 clamp(1.15rem,1.5vw,1.5rem)/1.38 var(--serif)}
 /* motion: lines rise, plates open, rows settle, script is written */
@@ -93,7 +94,7 @@ header a[aria-current]{background:none}
 .sh h2{font:400 clamp(2.4rem,5.6vw,6.4rem)/1 var(--serif);letter-spacing:-.025em}
 #people{--rw:min(267vw,calc(2.75*(100svh - 6rem)));margin:0 6vw;border-top:1px solid var(--line)}
 .vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-.pstage{padding-top:9vh;margin:0 -6vw;position:relative;background:#fbfaf7;box-shadow:inset 0 16px 22px -18px rgba(40,28,12,.22),inset 0 -16px 22px -18px rgba(40,28,12,.18)}
+.pstage{padding-top:9vh;margin:0 -6vw;position:relative;background:var(--paper)}
 .slabel{position:absolute;right:6vw;top:5vh;display:flex;flex-direction:column;align-items:flex-end;gap:.3rem;color:var(--mu);z-index:1}.slabel .hw{font:400 clamp(1.5rem,2.2vw,2.3rem)/1 'Kristi',cursive;color:var(--ink);letter-spacing:0;text-transform:none;transform:rotate(-3deg)}
 .pstage .sh{margin:0 6vw;border-top:0;padding:5vh 0 3vh}.pstage .sh h2{font-size:clamp(2rem,3.9vw,4.3rem)}
 .csheet{padding:0 0 4vw;display:flex;flex-direction:column;overflow-x:auto;scrollbar-width:none}.csheet::-webkit-scrollbar{display:none}
@@ -144,7 +145,7 @@ html:not(.js) .chart .ln{stroke-dashoffset:0}html:not(.js) .chart circle{opacity
 @media (prefers-reduced-motion:reduce){.lb img.sw{animation:none}}
 @media (max-width:760px){
 header{position:absolute;color:inherit;mix-blend-mode:normal;padding:1.4rem 16px;flex-direction:column;gap:.6rem}header.cap{font-size:.66rem}header nav{gap:.95rem;flex-wrap:nowrap}
-.pt{padding:9rem 16px 3rem}.pt .folio{position:static;margin-bottom:1.4rem}.pt h1{font-size:15vw}.pt h1.long{font-size:12.5vw}
+.pt{padding:9rem 16px 3rem}.pt .folio{position:static;margin-bottom:1.4rem}.pt h1{font-size:15vw}.pt h1.long{font-size:12.5vw}.pt h1.sm{font-size:11vw}
 .toc{margin:0 16px 5rem}.toc a{grid-template-columns:2.4rem 1fr}.toc .k{grid-column:2}
 .proj{margin:0 16px;padding:3.2rem 0 4rem;grid-template-columns:1fr}.proj .pm{margin-bottom:1.4rem;grid-column:1;grid-row:auto}.proj h2{grid-column:1;grid-row:auto;max-width:none}.proj .body{grid-column:1;margin-top:1.4rem}.proj .body+.body{margin-top:1.1rem}.proj .tr{grid-column:1}.proj .vid{grid-column:1;margin-top:2rem}
 .prail{margin:0 16px}.stage{position:static;height:auto;overflow:visible;margin:0}.track{position:static;height:auto;display:block;padding:0;transform:none!important}
@@ -160,8 +161,8 @@ header{position:absolute;color:inherit;mix-blend-mode:normal;padding:1.4rem 16px
 /* a sprig of lily of the valley beside the photo, drawn in as the page opens */
 .ranks .plates{position:sticky}
 
-.bloom{position:absolute;left:52%;top:-2.4rem;width:clamp(8.5rem,12.5vw,12.5rem);height:auto;transform:rotate(7deg);pointer-events:none;filter:drop-shadow(0 1px 1.5px rgba(70,50,30,.15))}
-.js .bloom{opacity:0;transform:rotate(7deg) translateY(.5rem)}
-.js .bloom.in{opacity:.92;transform:rotate(7deg);transition:opacity 1.2s var(--e),transform 1.4s var(--e)}
-@media (prefers-reduced-motion:reduce){.js .bloom{opacity:.92;transform:rotate(7deg)}}
-@media (max-width:760px){.ranks .plates{max-width:11rem;grid-template-columns:1fr}.bloom{left:58%;top:-1.8rem;width:7.6rem}}
+.bloom{position:absolute;left:55%;top:-3.4rem;width:clamp(7rem,9.5vw,9.5rem);height:auto;transform:rotate(5deg);pointer-events:none;filter:drop-shadow(0 1px 1.5px rgba(70,50,30,.15))}
+.js .bloom{opacity:0;transform:rotate(5deg) translateY(.5rem)}
+.js .bloom.in{opacity:.92;transform:rotate(5deg);transition:opacity 1.2s var(--e),transform 1.4s var(--e)}
+@media (prefers-reduced-motion:reduce){.js .bloom{opacity:.92;transform:rotate(5deg)}}
+@media (max-width:760px){.ranks .plates{max-width:11rem;grid-template-columns:1fr}.bloom{left:78%;top:-2.6rem;width:6.4rem}}
