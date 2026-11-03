@@ -36,9 +36,10 @@ header nav{display:flex;gap:2.6rem}header a[aria-current]{text-decoration:underl
 
 
 /* 3: experience: mirrors the game, the photo bleeds off the right and the words sit in the paper */
-.s3{display:grid;grid-template-columns:1fr 44%}
-.s3{min-height:auto}.s3 figure{grid-column:2;grid-row:1;height:84svh}
-.s3 .t{grid-column:1;grid-row:1;align-self:center;padding:8vh 6vw 8vh 6vw;max-width:46rem}
+.s3{display:grid;grid-template-columns:44% 1fr}
+.s3{min-height:auto}.s3 figure{grid-column:1;grid-row:1;height:84svh}
+.s3 .t{grid-column:2;grid-row:1;align-self:center;padding:8vh 6vw 8vh 6vw;max-width:46rem}
+.s3 .say{width:min(23.5rem,100%);margin:0 0 7vh;font:500 .82rem/2.05 var(--cap);letter-spacing:.17em;text-transform:uppercase;text-align:justify;text-align-last:justify;hyphens:none}
 .s3 .para{font-size:1.5rem;line-height:1.42;margin:1.4rem 0 0;max-width:30rem}
 .s3 .roles{list-style:none;max-width:31rem}
 .s3 .roles li{display:grid;grid-template-columns:1fr auto;column-gap:1.5rem;row-gap:.15rem;padding:.6rem 0}.s3 .roles .w{grid-column:1;color:var(--mu)}.s3 .roles .d{grid-column:2;grid-row:1}
@@ -52,7 +53,7 @@ header nav{display:flex;gap:2.6rem}header a[aria-current]{text-decoration:underl
 
 /* rhythm: each section a different composition, like turning pages */
 /* 1: the road photo runs the full width; the sentence sits under it, to the right */
-.s1{display:flex;flex-direction:column;min-height:auto;padding:15vh 0 6vh}
+.s1{display:flex;flex-direction:column;min-height:auto;padding:15vh 0 10vh}
 .s1 figure{order:1;position:relative;right:auto;top:auto;width:100%;height:80vh;aspect-ratio:auto}
 .s1 figure img{object-position:50% 46%}
 .s1 .hi{position:absolute;left:6vw;top:calc(15vh + 80vh - 13.5vw);font-size:clamp(6rem,11vw,11rem)}
@@ -61,7 +62,7 @@ header nav{display:flex;gap:2.6rem}header a[aria-current]{text-decoration:underl
 header{position:absolute;color:inherit;mix-blend-mode:normal;padding:1.2rem 16px;flex-direction:column;gap:.8rem}header.cap{font-size:.66rem}header nav{gap:.95rem;flex-wrap:nowrap}
 .spread{min-height:auto;padding:0 16px}
 .foot{position:static;margin-top:2.5rem}.s1{padding-top:9rem;padding-bottom:4rem}.s1 .say,.s1 figure,.s4 .hi,.s4 .links,.s4 .pgs,.s4 .fine{position:static;width:auto}
-.s1 .say{font-size:.74rem;line-height:2}.s1 figure{width:calc(100% + 16px);margin:3.5rem -16px 0 0}.s1 .hi{position:relative;left:auto;top:auto;z-index:2;margin:-6rem 0 0 6%;font-size:4.8rem;transform:rotate(-6deg)}.s1 .foot{margin-top:4rem}
+.s3 .say{font-size:.74rem;line-height:2;margin:0 0 2.5rem;width:auto}.s1 figure{width:calc(100% + 16px);margin:3.5rem -16px 0 0}.s1 .hi{position:relative;left:auto;top:auto;z-index:2;margin:-6rem 0 0 6%;font-size:4.8rem;transform:rotate(-6deg)}.s1 .foot{margin-top:4rem}
 .s3{display:block;padding:0}.s3 figure{height:auto;aspect-ratio:4/5;width:100%}.s3 .t{padding:3rem 16px 1rem}.s3 .foot{padding:0 16px 4rem}
 .s3 .para{margin:1.2rem 0 2.5rem;font-size:1.25rem}
 .s4{padding:4rem 0 3rem}.s4 .hi{position:relative;left:auto;top:auto;translate:none;width:fit-content;margin:0 auto;font-size:4.6rem}.s4 .links{margin-top:3rem}.s4 .pgs{margin-top:1.6rem}.s4 .fine{margin-top:1.6rem}
@@ -155,13 +156,13 @@ linear-gradient(var(--k),var(--k)) 100% calc(100% - 26px)/16px 1px no-repeat,lin
 <header class="cap"><a href="index.html" aria-current="page">Home</a><nav aria-label="Pages"><a href="work.html">Things I&rsquo;ve made</a><a href="things-i-love.html">Things I love</a></nav></header>
 
 <section class="spread s1">
-  <p class="say fd">I studied biomedical science, then got a job in digital marketing and somehow ended up building software at a startup.</p>
   <figure class="rv"><img src="assets/img/a/road-blur.jpg" alt="Peri on a road at dusk, looking back over her shoulder, the trees blurred behind her"></figure>
   <p class="hi" aria-hidden="true">about</p>
 </section>
 
 <section class="spread s3">
   <div class="t fd">
+    <p class="say">I studied biomedical science, then got a job in digital marketing and somehow ended up building software at a startup.</p>
     <p class="cap mu">What I do</p>
     <p class="para">After digital marketing, I moved into recruitment and taught myself to code with AI tools. I started by building internal recruiting tools, then moved into product development, building features and integrations, and designing and developing the company&rsquo;s website.</p>
   </div>
