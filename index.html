@@ -11,46 +11,29 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opa
 .cap{font:500 .68rem/1.5 var(--cap);letter-spacing:.14em;text-transform:uppercase}
 .mu{color:var(--mu)}
 a{color:inherit;text-decoration:none}
-header{position:absolute;top:0;left:0;right:0;z-index:5;display:flex;justify-content:space-between;padding:1.8rem 4vw}
+header{position:absolute;top:0;left:0;right:0;z-index:5;display:flex;justify-content:space-between;padding:1.8rem 6vw}
 header nav{display:flex;gap:2.6rem}header a[aria-current]{text-decoration:underline;text-underline-offset:.4em}
 .spread{position:relative;min-height:100svh;overflow:hidden}
 
-/* 0: the home page introduction, in the page's serif, on its own screen */
-.s0 figure{position:absolute;right:0;top:20vh;width:54vw;aspect-ratio:1161/739}
-.s0 figure img{object-position:30% 50%}
-.s0 .name{position:absolute;left:27vw;top:27vh;z-index:3;margin:0;font:400 clamp(10rem,25vw,26rem)/.8 "Kristi",cursive;color:var(--paper);mix-blend-mode:difference;transform:rotate(-6deg);white-space:nowrap;pointer-events:none}
-.s0 .intro{position:absolute;left:8vw;bottom:13vh;width:min(25rem,32vw);font:400 clamp(1.25rem,1.6vw,1.6rem)/1.3 var(--serif);text-wrap:pretty}
+/* 0: quiet feature page: headline aligned to the top of a photographic plate, the standfirst to its foot */
+.s0 h1{position:absolute;left:6vw;top:15vh;margin:0;z-index:3;color:var(--paper);mix-blend-mode:difference;font:400 clamp(3.2rem,10.4vw,12rem)/.94 var(--serif);letter-spacing:-.028em}
+.s0 h1 .ln:nth-child(2){padding-left:19vw}
+.s0 .stand{position:absolute;left:6vw;bottom:15vh;width:min(22rem,27vw);font:italic 400 clamp(1.1rem,1.3vw,1.3rem)/1.38 var(--serif);text-wrap:pretty;z-index:3}
+.s0 figure{position:absolute;left:52vw;top:12vh;width:42vw;aspect-ratio:4/3;z-index:1}
+.s0 figure img{object-position:50% 50%}
+.s0 .foot{bottom:6vh;left:6vw}
+
 /* 1: the sentence set small and wide; a larger photo with "about" written across its edge */
 .s1 .say{position:absolute;left:8vw;top:24vh;width:min(23.5rem,46vw);font:500 .82rem/2.05 var(--cap);letter-spacing:.17em;text-transform:uppercase;text-align:justify;text-align-last:justify;hyphens:none}
 .s1 figure{position:absolute;right:7vw;top:17vh;width:41vw;aspect-ratio:4/3}
 .s1 .hi{position:absolute;left:53.6vw;top:calc(17vh + 30.75vw - 10.5vw);z-index:2;color:var(--paper);font:400 clamp(5.5rem,9.5vw,9.5rem)/.8 "Kristi",cursive;transform:rotate(-6deg);white-space:nowrap}
-.foot{position:absolute;left:8vw;bottom:6vh;display:flex;gap:3rem}
+.foot{position:absolute;left:6vw;bottom:6vh;display:flex;gap:3rem}
 
-/* 2: the game: a photo bleeds off the left, the questions sit in the paper beside it */
-.s2{display:grid;grid-template-columns:46% 1fr}
-.s2 figure{height:100svh}.s2 .foot{left:calc(46% + 6vw)}
-.s2 .g{align-self:center;padding:8vh 8vw 8vh 6vw;max-width:44rem}
-.s2 h2{margin-bottom:.5rem}
-.s2 .ask{font-style:italic;color:var(--mu);margin-bottom:3rem}
-.s2 ol{list-style:none}
-.s2 li+li{margin-top:1.9rem}
-.card{display:grid;grid-template-columns:2.4rem 1fr;gap:0;width:100%;padding:0;border:0;background:none;color:inherit;font:inherit;text-align:left;cursor:pointer}
-.card .no{padding-top:.42rem}
-.card .s{font:400 1.32rem/1.34 var(--serif);background:linear-gradient(var(--ink),var(--ink)) 0 58%/0 1px no-repeat;-webkit-box-decoration-break:clone;box-decoration-break:clone;transition:color .5s,background-size .9s .7s cubic-bezier(.6,0,.3,1)}
-.g:not(.picked) .card:hover .s{font-style:italic}
-.card .pk{margin-right:1.6rem}.card .v{grid-column:2;display:block;height:1.4rem;margin-top:.5rem;opacity:0;transition:opacity .4s}
-.picked .card.chosen .v,.revealed .card .v{opacity:1}
-.revealed .card:not([data-lie]) .s{color:var(--mu)}
-.revealed .card[data-lie] .s{background-size:100% 1px}
-.card .x{display:none;font-style:italic;color:var(--mu);margin-top:.6rem;font-size:1.15rem}
-.revealed .card .x{display:block}
-.g .again{margin-top:3rem;border:0;background:none;padding:0;color:var(--red);cursor:pointer;visibility:hidden;text-decoration:underline;text-underline-offset:.4em}
-.revealed .again{visibility:visible}
 
 /* 3: experience: mirrors the game, the photo bleeds off the right and the words sit in the paper */
 .s3{display:grid;grid-template-columns:1fr 44%}
 .s3 figure{grid-column:2;grid-row:1;height:100svh}
-.s3 .t{grid-column:1;grid-row:1;align-self:center;padding:8vh 6vw 8vh 8vw;max-width:46rem}
+.s3 .t{grid-column:1;grid-row:1;align-self:center;padding:8vh 6vw 8vh 6vw;max-width:46rem}
 .s3 .para{font-size:1.5rem;line-height:1.42;margin:1.4rem 0 0;max-width:30rem}
 .s3 .roles{list-style:none;max-width:31rem}
 .s3 .roles li{display:grid;grid-template-columns:1fr auto;column-gap:1.5rem;row-gap:.15rem;padding:.6rem 0}.s3 .roles .w{grid-column:1;color:var(--mu)}.s3 .roles .d{grid-column:2;grid-row:1}
@@ -60,65 +43,162 @@ header nav{display:flex;gap:2.6rem}header a[aria-current]{text-decoration:underl
 .s4 .links{position:absolute;left:0;right:0;bottom:14svh;display:flex;justify-content:center;gap:1.4rem}
 .s4 .links a{color:var(--ink)}.s4 .links span{color:var(--mu)}
 .s4 .fine{position:absolute;left:0;right:0;bottom:9svh;text-align:center}
+
+/* rhythm: each section a different composition, like turning pages */
+/* 1: the road photo runs the full width; the sentence sits under it, to the right */
+.s1{display:flex;flex-direction:column;min-height:auto;padding:15vh 0 16vh}
+.s1 figure{order:1;position:relative;right:auto;top:auto;width:100%;height:80vh;aspect-ratio:auto}
+.s1 figure img{object-position:50% 46%}
+.s1 .hi{position:absolute;left:6vw;top:calc(15vh + 80vh - 13.5vw);font-size:clamp(6rem,11vw,11rem)}
+.s1 .say{order:2;position:static;width:min(23.5rem,30vw);margin:9vh 6vw 0 auto}
 @media (max-width:760px){
 header{padding:1.2rem 16px;flex-direction:column;gap:.8rem}header nav{gap:1.2rem;flex-wrap:wrap}
 .spread{min-height:auto;padding:0 16px}
-.foot{position:static;margin-top:2.5rem}.s0{padding:9rem 0 3rem}.s0 figure{position:relative;top:auto;width:88%;margin-left:12%}.s0 .name{left:16px;top:5.5rem;font-size:8.5rem}.s0 .intro{position:static;width:auto;padding:0 16px;margin-top:2.4rem;font-size:1.45rem}.s1{padding-top:9rem;padding-bottom:4rem}.s1 .say,.s1 figure,.s4 .hi,.s4 .links,.s4 .fine{position:static;width:auto}
+.foot{position:static;margin-top:2.5rem}.s1{padding-top:9rem;padding-bottom:4rem}.s1 .say,.s1 figure,.s4 .hi,.s4 .links,.s4 .fine{position:static;width:auto}
 .s1 .say{font-size:.74rem;line-height:2}.s1 figure{width:calc(100% + 16px);margin:3.5rem -16px 0 0}.s1 .hi{position:relative;left:auto;top:auto;z-index:2;margin:-6rem 0 0 6%;font-size:4.8rem;transform:rotate(-6deg)}.s1 .foot{margin-top:4rem}
-.s2,.s3{display:block;padding:0}.s2 figure,.s3 figure{height:auto;aspect-ratio:4/5;width:100%}.s2 .g,.s3 .t{padding:3rem 16px 1rem}.s2 .foot,.s3 .foot{padding:0 16px 4rem}
+.s3{display:block;padding:0}.s3 figure{height:auto;aspect-ratio:4/5;width:100%}.s3 .t{padding:3rem 16px 1rem}.s3 .foot{padding:0 16px 4rem}
 .s3 .para{margin:1.2rem 0 2.5rem;font-size:1.25rem}
 .s4{padding:4rem 0 3rem}.s4 .hi{position:relative;left:auto;top:auto;translate:none;width:fit-content;margin:0 auto;font-size:4.6rem}.s4 .links{margin-top:3rem}.s4 .fine{margin-top:1rem}
 }
+@media (max-width:760px){.s0{min-height:auto;padding:8.5rem 16px 0}.s0 h1,.s0 .stand,.s0 figure{position:static;width:auto;translate:none}.s0 h1{font-size:15vw;mix-blend-mode:normal;color:var(--ink)}.s0 h1 .ln:nth-child(2){padding-left:12vw}.s0 figure{width:100%;margin:2.4rem 0 0}.s0 .stand{margin-top:1.6rem;font-size:1.2rem;max-width:17rem}.s0 .foot{margin-top:2.5rem}
+}
+@media (max-width:760px){
+.s1{padding:8rem 16px 4rem}.s1 figure{height:auto;aspect-ratio:4/3;width:calc(100% + 32px);margin:0 -16px}.s1 .hi{position:relative;left:auto;top:auto;order:2;margin:-6.6rem 0 0 4%;font-size:5rem;z-index:2}.s1 .say{order:3;width:auto;margin:3rem 0 0}.s1 .foot{order:4}
+}
+
+/* motion: one easing curve, three gestures (lines rise, plates open, nav underline draws) */
+:root{--e:cubic-bezier(.2,.7,.2,1)}
+header nav a{background:linear-gradient(currentColor,currentColor) 0 100%/0 1px no-repeat;padding-bottom:.35em;transition:background-size .6s var(--e)}header nav a:hover,header nav a:focus-visible{background-size:100% 1px}
+.js .ln{display:block;overflow:hidden;padding-bottom:.24em;margin-bottom:-.24em}.js .ln>span{display:block;transform:translateY(108%)}
+.js.go .ln>span{transform:none;transition:transform 1.25s var(--e)}.js.go .ln:nth-child(2)>span{transition-delay:.12s}
+.js .rv{clip-path:inset(0 0 100% 0)}.js .rv img{transform:scale(1.14);transform-origin:50% 100%}
+.js .rv.in{clip-path:inset(0 0 0 0);transition:clip-path 1.4s var(--e)}.js .rv.in img{transform:scale(1.04) translateY(var(--py,0px));transition:transform 1.8s var(--e)}
+.js .rv.in.settled img{transition:none}
+@media (prefers-reduced-motion:reduce){.js .ln>span{transform:none!important;transition:none!important}.js .rv{clip-path:none!important}.js .rv img{transform:none!important}}
+
+/* 2: two truths and a lie, marked up in red pen like a proof */
+.s2{display:block;min-height:auto;padding:10vh 6vw 22vh;position:relative}
+.s2 .kid{position:absolute;left:6vw;top:10vh;width:11vw;aspect-ratio:1200/1749}
+.s2 .g{margin-left:22vw}
+.s2 h2{margin-bottom:.5rem}
+.s2 .ask{font-style:italic;color:var(--mu);margin-bottom:8vh}
+.s2 ol{list-style:none}
+.s2 li{position:relative}.s2 li+li{margin-top:9vh}.s2 li:nth-child(2){margin-left:5vw}.s2 li:nth-child(3){margin-left:1.5vw}
+.card{position:relative;display:grid;grid-template-columns:6.5rem 1fr;width:100%;padding:0;border:0;background:none;color:inherit;font:inherit;text-align:left;cursor:pointer}
+.card .no{padding-top:.9rem;transition:opacity .5s}
+.card .s{display:block;max-width:min(36rem,40vw);text-wrap:balance;font:400 clamp(1.5rem,2.3vw,2.7rem)/1.2 var(--serif);letter-spacing:-.012em}
+.card .tx{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.2em;text-decoration-color:transparent;transition:text-decoration-color .5s,color .6s;background:linear-gradient(var(--red),var(--red)) 0 57%/0 1.5px no-repeat;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.g:not(.picked) .card:hover .tx,.g:not(.picked) .card:focus-visible .tx{text-decoration-color:rgba(28,27,25,.45)}
+.card .ring{position:absolute;left:0;top:0;overflow:visible;pointer-events:none}
+.card .ring path{fill:none;stroke:var(--red);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 1.05s cubic-bezier(.55,0,.25,1)}
+.card .ring.on path{stroke-dashoffset:0}
+.card .note{position:absolute;left:0;top:.2rem;font:400 2.9rem/1 "Kristi",cursive;color:var(--mu);opacity:0;transform:rotate(-7deg) translateY(.5rem);transform-origin:0 100%;transition:opacity .6s .15s,transform .9s .15s var(--e)}
+.card[data-lie] .note{color:var(--red)}
+.revealed .card .note{opacity:1;transform:rotate(-7deg)}
+.revealed .card .no{opacity:0}
+.revealed .card[data-lie] .tx{color:var(--mu);background-size:100% 1.5px;transition:background-size .9s .3s cubic-bezier(.6,0,.3,1),color .6s .3s}
+.card .x{display:none;font-style:italic;color:var(--mu);margin-top:.9rem;font-size:clamp(1.1rem,1.3vw,1.4rem);line-height:1.3}
+.revealed .card .x{display:block}
+.s2 .verdict{margin:9vh 0 0 6.5rem;min-height:5rem;display:flex;align-items:baseline;gap:2.4rem}
+.s2 .verdict .w{font:400 clamp(3rem,4.4vw,4.6rem)/1 "Kristi",cursive;color:var(--red);opacity:0;transform:rotate(-4deg);transition:opacity .7s .5s}
+.revealed .verdict .w{opacity:1}
+.s2 .again{border:0;background:none;padding:0;color:var(--red);cursor:pointer;visibility:hidden;text-decoration:underline;text-underline-offset:.4em}
+.revealed .again{visibility:visible}
+.s2 .kf{position:absolute;right:0;top:50%;translate:0 -50%;width:15vw;aspect-ratio:900/1293}
+.s2 .kf[hidden]{display:none}
+.s2 .foot{left:6vw}
+/* crop marks around the opening plate */
+.s0 .marks{position:absolute;left:calc(52vw - 26px);top:calc(12vh - 26px);width:calc(42vw + 52px);aspect-ratio:auto;height:calc(42vw*3/4 + 52px);z-index:2;pointer-events:none;opacity:0;transition:opacity 1.2s 1.6s;--k:rgba(28,27,25,.5);background:
+linear-gradient(var(--k),var(--k)) 0 26px/16px 1px no-repeat,linear-gradient(var(--k),var(--k)) 26px 0/1px 16px no-repeat,
+linear-gradient(var(--k),var(--k)) 100% 26px/16px 1px no-repeat,linear-gradient(var(--k),var(--k)) calc(100% - 26px) 0/1px 16px no-repeat,
+linear-gradient(var(--k),var(--k)) 0 calc(100% - 26px)/16px 1px no-repeat,linear-gradient(var(--k),var(--k)) 26px 100%/1px 16px no-repeat,
+linear-gradient(var(--k),var(--k)) 100% calc(100% - 26px)/16px 1px no-repeat,linear-gradient(var(--k),var(--k)) calc(100% - 26px) 100%/1px 16px no-repeat}
+.go .s0 .marks{opacity:1}
+.s4 .links a{background:linear-gradient(currentColor,currentColor) 0 100%/0 1px no-repeat;padding-bottom:.4em;transition:background-size .6s var(--e)}.s4 .links a:hover,.s4 .links a:focus-visible{background-size:100% 1px}
+/* script words are written across, left to right; the rest of the page fades up */
+.js .hi{clip-path:inset(-12% 100% -12% -6%)}
+.js .hi.in,.js .rv.in~.hi{clip-path:inset(-12% -6% -12% -6%);transition:clip-path 1.9s cubic-bezier(.5,0,.2,1) .7s}
+.js .fd{opacity:0;transform:translateY(1.1rem)}.js .fd.in{opacity:1;transform:none;transition:opacity 1.2s var(--e),transform 1.4s var(--e)}
+@media (prefers-reduced-motion:reduce){.js .hi{clip-path:none!important}.js .fd{opacity:1!important;transform:none!important}.card .ring path{transition:none}.s0 .marks{transition:none}}
+@media (max-width:760px){
+.s2{padding:4rem 16px 6rem}.s2 .kid{position:static;width:38%;margin:0}.s2 .g{margin:3rem 0 0}.s2 .ask{margin-bottom:3rem}
+.s2 li:nth-child(n){margin-left:0}.s2 li+li{margin-top:3.2rem}.card{grid-template-columns:1fr}
+.card .s{max-width:none;font-size:1.65rem}.card .no{padding:0 0 .5rem}.card .note{position:static;display:none;font-size:2.6rem;margin-bottom:.3rem}
+.revealed .card .note{display:block}.revealed .card .no{display:none}
+.s2 .verdict{margin:3rem 0 0}.s2 .kf{position:static;translate:none;width:62%;margin:1.6rem 0 0}.s0 .marks{display:none}
+}
 </style></head><body>
+<script>document.documentElement.classList.add("js")</script>
 <header class="cap"><a href="index.html" aria-current="page">Peri</a><nav aria-label="Pages"><a href="work.html">Things I&rsquo;ve made</a><a href="things-i-love.html">Things I love</a><a href="ranking.html">Rankings</a></nav></header>
 
 <section class="spread s0">
-  <figure><img src="assets/img/h/lens.jpg" alt="A hand holding a magnifying glass up to Peri&rsquo;s lips"></figure>
-  <p class="name" aria-hidden="true">peri</p>
-  <h1 class="intro">I like making things. Some are useful. Others exist purely because I thought they&rsquo;d be funny.</h1>
+  <h1 aria-label="I like making things."><span class="ln" aria-hidden="true"><span>I like making</span></span><span class="ln" aria-hidden="true"><span>things.</span></span></h1>
+  <p class="stand fd">Some are useful. Others exist purely because I&nbsp;thought they&rsquo;d be funny.</p>
+  <figure class="rv"><img src="assets/img/a/opening.jpg" alt="Peri at the top of a stone path that steps down through the trees towards the sea"></figure>
+  <div class="marks" aria-hidden="true"></div>
+  <p class="foot cap mu"><span>Peri</span><span>00</span></p>
 </section>
 
 <section class="spread s1">
-  <p class="say">I studied biomedical science, then got a job in digital marketing and somehow ended up building software at a startup.</p>
-  <figure><img src="assets/img/a/road-blur.jpg" alt="Peri on a road at dusk, looking back over her shoulder, the trees blurred behind her"></figure>
+  <p class="say fd">I studied biomedical science, then got a job in digital marketing and somehow ended up building software at a startup.</p>
+  <figure class="rv"><img src="assets/img/a/road-blur.jpg" alt="Peri on a road at dusk, looking back over her shoulder, the trees blurred behind her"></figure>
   <p class="hi" aria-hidden="true">about</p>
   <p class="foot cap mu"><span>Peri</span><span>01</span></p>
 </section>
 
 <section class="spread s2">
-  <figure><img src="assets/img/a/kid-tall.jpg" alt="Peri as a little girl in pigtails"></figure>
+  <figure class="rv kid"><img src="assets/img/a/kid-tall.jpg" alt="Peri as a little girl in pigtails"></figure>
   <div class="g">
     <h2 class="cap">Two truths and a lie</h2>
     <p class="ask">Which one is the lie?</p>
     <ol>
-      <li><button class="card" type="button"><span class="no cap mu">01</span><span class="s">The very first thing I did when I came out of the womb was grab the scissors out of the doctor&rsquo;s hand and refuse to let go.</span><span class="v cap mu"><span class="pk">Your pick</span> <span class="vd">True</span></span></button></li>
-      <li><button class="card" type="button"><span class="no cap mu">02</span><span class="s">When I was four, my mom had to tell me Santa wasn&rsquo;t real because I wouldn&rsquo;t accept any explanation for why he could get into our house through the chimney but burglars couldn&rsquo;t.<span class="x">I then went to school and accidentally ruined Santa for the other kids.</span></span><span class="v cap mu"><span class="pk">Your pick</span> <span class="vd">True</span></span></button></li>
-      <li><button class="card" type="button" data-lie><span class="no cap mu">03</span><span class="s">My brother and I were the only kids in an adult kung fu class, and by twelve I was helping teach it.</span><span class="v cap"><span class="pk mu">Your pick</span> <span class="vd" style="color:var(--red)">The lie</span></span></button></li>
+      <li><button class="card" type="button" aria-pressed="false"><span class="no cap mu">01</span><span class="note" aria-hidden="true">true</span><span class="s"><span class="tx">The very first thing I did when I came out of the womb was grab the scissors out of the doctor&rsquo;s hand and refuse to let go.</span></span><svg class="ring" aria-hidden="true"><path/></svg></button></li>
+      <li><button class="card" type="button" aria-pressed="false"><span class="no cap mu">02</span><span class="note" aria-hidden="true">true</span><span class="s"><span class="tx">When I was four, my mom had to tell me Santa wasn&rsquo;t real because I wouldn&rsquo;t accept any explanation for why he could get into our house through the chimney but burglars couldn&rsquo;t.</span><span class="x">I then went to school and accidentally ruined Santa for the other kids.</span></span><svg class="ring" aria-hidden="true"><path/></svg></button></li>
+      <li><button class="card" type="button" aria-pressed="false" data-lie><span class="no cap mu">03</span><span class="note" aria-hidden="true">the lie</span><span class="s"><span class="tx">My brother and I were the only kids in an adult kung fu class, and by twelve I was helping teach it.</span><span class="x">(I was basically a kung fu master before the age of 12 though)</span></span><svg class="ring" aria-hidden="true"><path/></svg></button>
+        <figure class="kf rv" hidden><img src="assets/img/a/kungfu.jpg" alt="A boy and a girl in black kung fu uniforms with yellow belts, standing arm in arm"></figure></li>
     </ol>
-    <button class="again cap" type="button">Play again</button>
+    <div class="verdict" aria-live="polite"><span class="w"></span><button class="again cap" type="button">Play again</button></div>
   </div>
   <p class="foot cap mu"><span>Peri</span><span>02</span></p>
 </section>
 
 <section class="spread s3">
-  <div class="t">
+  <div class="t fd">
     <p class="cap mu">Experience</p>
     <p class="para">After digital marketing I moved into recruitment at Recruitcha, the recruitment agency, and taught myself to build software with AI tools. I started building our internal recruiting tools, and later took on product development and technical work on Recruitcha GTM, the software product.</p>
   </div>
-  <figure><img src="assets/img/a/hike2.jpg" alt="Peri on the rocks below the mountains"></figure>
+  <figure class="rv"><img src="assets/img/a/hike2.jpg" alt="Peri on the rocks below the mountains"></figure>
   <p class="foot cap mu"><span>Peri</span><span>03</span></p>
 </section>
 
 <section class="spread s4">
   <p class="hi">say hello</p>
-  <p class="links cap"><a href="mailto:you@example.com">Email</a><span>|</span><a href="https://www.linkedin.com/">LinkedIn</a><span>|</span><a href="#">CV</a></p>
+  <p class="links cap fd"><a href="mailto:you@example.com">Email</a><span>|</span><a href="https://www.linkedin.com/">LinkedIn</a><span>|</span><a href="#">CV</a></p>
   <p class="fine cap mu">&copy; <span data-year>2026</span> Peri</p>
 </section>
 <script>
-var g=document.querySelector('.g'),cs=g.querySelectorAll('.card');
-cs.forEach(function(c){c.addEventListener('click',function(){if(g.classList.contains('picked'))return;c.classList.add('chosen');g.classList.add('picked');
-cs.forEach(function(x){x.querySelector('.pk').style.display=x===c?'':'none'});setTimeout(function(){g.classList.add('revealed')},400)})});
-g.querySelector('.again').addEventListener('click',function(){g.classList.remove('picked','revealed');cs.forEach(function(x){x.classList.remove('chosen')})});
+var g=document.querySelector('.g'),cs=[].slice.call(g.querySelectorAll('.card')),kf=g.querySelector('.kf'),vw=g.querySelector('.verdict .w'),rm0=matchMedia('(prefers-reduced-motion: reduce)').matches;
+function ringPath(w,h){var pad=innerWidth<760?7:16,W=w+pad*4,H=h+pad*4,cx=W/2,cy=H/2,rx=w/2+pad*1.25,ry=h/2+pad*.85,N=40,turns=1.08,st=-2.5+Math.random()*.5,rot=(Math.random()-.5)*.1,P=[];
+for(var i=0;i<=N*turns;i++){var t=st+i/N*Math.PI*2,k=1+.07*(i/(N*turns))+.025*Math.sin(i*.8+1),x=rx*k*Math.cos(t),y=ry*k*Math.sin(t);P.push([cx+x*Math.cos(rot)-y*Math.sin(rot),cy+x*Math.sin(rot)+y*Math.cos(rot)])}
+var d='M'+P[0][0].toFixed(1)+' '+P[0][1].toFixed(1);for(var j=0;j<P.length-1;j++){var p0=P[Math.max(0,j-1)],p1=P[j],p2=P[j+1],p3=P[Math.min(P.length-1,j+2)];d+='C'+(p1[0]+(p2[0]-p0[0])/6).toFixed(1)+' '+(p1[1]+(p2[1]-p0[1])/6).toFixed(1)+' '+(p2[0]-(p3[0]-p1[0])/6).toFixed(1)+' '+(p2[1]-(p3[1]-p1[1])/6).toFixed(1)+' '+p2[0].toFixed(1)+' '+p2[1].toFixed(1)}
+return {d:d,W:W,H:H,pad:pad}}
+cs.forEach(function(c){c.addEventListener('click',function(){if(g.classList.contains('picked'))return;g.classList.add('picked');c.classList.add('chosen');c.setAttribute('aria-pressed','true');
+var r=c.getBoundingClientRect(),s=c.querySelector('.tx').getBoundingClientRect(),rg=ringPath(s.width,s.height),svg=c.querySelector('.ring'),p=svg.querySelector('path');
+svg.setAttribute('width',rg.W);svg.setAttribute('height',rg.H);svg.setAttribute('viewBox','0 0 '+rg.W+' '+rg.H);svg.style.left=(s.left-r.left-rg.pad*2)+'px';svg.style.top=(s.top-r.top-rg.pad*2)+'px';p.setAttribute('d',rg.d);p.setAttribute('pathLength','1');
+void svg.getBoundingClientRect();svg.classList.add('on');
+setTimeout(function(){g.classList.add('revealed');vw.textContent=c.hasAttribute('data-lie')?'you got it.':'not quite.';
+if(kf){kf.hidden=false;requestAnimationFrame(function(){requestAnimationFrame(function(){kf.classList.add('in')})})}},rm0?0:1150)})});
+g.querySelector('.again').addEventListener('click',function(){g.classList.remove('picked','revealed');vw.textContent='';cs.forEach(function(x){x.classList.remove('chosen');x.setAttribute('aria-pressed','false');var sv=x.querySelector('.ring');sv.classList.remove('on')});if(kf){kf.classList.remove('in');kf.hidden=true}});
 document.querySelectorAll('[data-year]').forEach(function(e){e.textContent=new Date().getFullYear()});
+
+(function(){var d=document.documentElement,rm=matchMedia('(prefers-reduced-motion: reduce)').matches;
+requestAnimationFrame(function(){requestAnimationFrame(function(){d.classList.add('go')})});
+var rv=[].slice.call(document.querySelectorAll('.rv:not(.kf)')),fd=[].slice.call(document.querySelectorAll('.fd')),hi=document.querySelector('.s4 .hi');
+if(rm||!('IntersectionObserver' in window)){rv.concat(fd).forEach(function(e){e.classList.add('in')});if(hi)hi.classList.add('in');return}
+var io2=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io2.unobserve(e.target)}})},{threshold:.3});fd.forEach(function(e){io2.observe(e)});if(hi){new IntersectionObserver(function(es,o){if(es[0].isIntersecting){hi.classList.add('in');o.disconnect()}},{threshold:.4}).observe(hi.parentElement)}
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var f=e.target.querySelector('.rv');f.classList.add('in');setTimeout(function(){f.classList.add('settled')},1900);io.unobserve(e.target)}})},{threshold:.25});
+rv.forEach(function(e,i){if(i===0)setTimeout(function(){e.classList.add('in')},350);else io.observe(e.parentElement)});
+var big=document.querySelector('.s1 figure');if(big&&!matchMedia('(max-width:760px)').matches){var t=0;addEventListener('scroll',function(){if(t)return;t=requestAnimationFrame(function(){t=0;var r=big.getBoundingClientRect();big.style.setProperty('--py',((r.top+r.height/2-innerHeight/2)*-.06).toFixed(1)+'px')})},{passive:true})}
+})();
 </script>
 </body></html>

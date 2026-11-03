@@ -5,116 +5,83 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Things I&rsquo;ve made · Peri</title>
 <meta name="description" content="Some things I&rsquo;ve worked on, some things I&rsquo;ve made for fun.">
-<meta name="theme-color" content="#F0ECE4">
+<meta name="theme-color" content="#f2eee7">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter+Tight:wght@400;500&family=Kristi&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/peri.css">
-<script>try{if(!matchMedia("(prefers-reduced-motion: reduce)").matches)document.documentElement.classList.add("m")}catch(e){}</script>
+<link rel="stylesheet" href="assets/inner.css">
+<script>document.documentElement.classList.add("js")</script>
 </head>
 <body>
-<header class="top">
-  <a class="home-link type" href="index.html">Peri</a>
-  <nav class="pnav type" aria-label="Pages"><a href="work.html" aria-current="page">Things I&rsquo;ve made</a><a href="things-i-love.html">Things I love</a><a href="ranking.html">Rankings</a></nav>
-</header>
-<main id="top" class="page made">
-  <section class="phead grid">
-    <p class="pno type">02</p>
-    <h1 class="ptitle" data-in><span class="lab"><span>Things I&rsquo;ve made</span></span></h1>
-    <p class="typed sub" data-in><span>Some things I&rsquo;ve worked on, some things I&rsquo;ve made for fun.</span></p>
+<header class="cap"><a href="index.html">Peri</a><nav aria-label="Pages"><a href="work.html" aria-current="page">Things I&rsquo;ve made</a><a href="things-i-love.html">Things I love</a><a href="ranking.html">Rankings</a></nav></header>
+<main id="top">
+  <section class="pt">
+  <p class="folio cap mu">02</p>
+  <h1 aria-label="Things I&rsquo;ve made"><span class="ln" aria-hidden="true"><span>Things I&rsquo;ve made</span></span></h1>
+  <p class="stand fd">Some things I&rsquo;ve worked on, some things I&rsquo;ve made for fun.</p>
   </section>
-  <section class="grid index-sec">
-    <ol class="index type">
-      <li><a href="#strength"><span class="n">1</span><span class="nm">Strength training app</span><span class="k">Made for someone</span></a></li>
-      <li><a href="#jobs"><span class="n">2</span><span class="nm">Job search tool</span><span class="k">Made for me</span></a></li>
-      <li><a href="#portraits"><span class="n">3</span><span class="nm">AI portraits of my friends</span><span class="k">Made for fun</span></a></li>
-      <li><a href="#music"><span class="n">4</span><span class="nm">AI music</span><span class="k">Made for fun</span></a></li>
-      <li><a href="#work"><span class="n">5</span><span class="nm">At work</span><span class="k">Recruitcha</span></a></li>
-    </ol>
+  <ol class="toc stag">
+    <li><a href="#strength"><span class="n cap">1</span><span class="nm">Strength training app</span><span class="k cap">Made for someone</span></a></li>
+    <li><a href="#jobs"><span class="n cap">2</span><span class="nm">Job search tool</span><span class="k cap">Made for me</span></a></li>
+    <li><a href="#portraits"><span class="n cap">3</span><span class="nm">AI portraits of my friends</span><span class="k cap">Made for fun</span></a></li>
+    <li><a href="#music"><span class="n cap">4</span><span class="nm">AI music</span><span class="k cap">Made for fun</span></a></li>
+    <li><a href="#work"><span class="n cap">5</span><span class="nm">At work</span><span class="k cap">Recruitcha</span></a></li>
+  </ol>
+  <section class="proj" id="strength">
+    <p class="pm cap mu"><span>1</span><span>Made for someone</span></p>
+    <div><h2 class="fd">Strength training app</h2>
+      <p class="body">I built a strength training app for my dad after spending far too much time researching how to put together a good workout programme.</p>
+      <p class="body">It creates weekly training plans, selects exercises based on how different muscles are trained, and sets progressive overload targets. It has a database of 127 exercises, each with its own rating.</p>
+      <p class="body">Built with Claude Code and Supabase.</p></div>
   </section>
-  <section class="proj grid" id="strength">
-    <div class="p-side">
-      <p class="pmeta type"><span>1</span><span>Made for someone</span></p>
-      <h2 class="h2">Strength training app</h2>
-    </div>
-    <div class="p-main">
-      <div class="copy">
-        <p class="body">I built a strength training app for my dad after spending far too much time researching how to put together a good workout programme.</p>
-        <p class="body">It creates weekly training plans, selects exercises based on how different muscles are trained, and sets progressive overload targets. It has a database of 127 exercises, each with its own rating.</p>
-        <p class="body">Built with Claude Code and Supabase.</p>
-      </div>
-    </div>
+  <section class="proj" id="jobs">
+    <p class="pm cap mu"><span>2</span><span>Made for me</span></p>
+    <div><h2 class="fd">Job search tool</h2>
+      <p class="body">I got tired of looking through job postings that weren&rsquo;t relevant to me, so I built something to do it for me.</p>
+      <p class="body">It scans job listings and filters them against my background, what I&rsquo;m looking for, and requirements like location and visa sponsorship.</p>
+      <p class="body">So far, it&rsquo;s scanned over 80,000 jobs.</p></div>
   </section>
-  <section class="proj grid" id="jobs">
-    <div class="p-side">
-      <p class="pmeta type"><span>2</span><span>Made for me</span></p>
-      <h2 class="h2">Job search tool</h2>
+  <section class="prail" id="portraits" aria-label="AI portraits of my friends">
+   <div class="stage">
+    <div class="track">
+     <div class="intro"><p class="pm cap mu"><span>3</span><span>Made for fun</span></p><h2>AI portraits of my friends</h2><p class="d">I&rsquo;ve spent an unreasonable amount of time creating increasingly elaborate AI portraits of my friends.</p></div>
+      <figure class="pf" data-lightbox="assets/img/photo/ai-generals.jpg" style="--h:62vh;--t:10vh;--ar:1024/1536"><div class="pw"><img src="assets/img/photo/ai-generals.jpg" alt="AI portrait"></div><span class="no cap">01</span></figure>
+      <figure class="pf" data-lightbox="assets/img/photo/ai-pool.jpg" style="--h:46vh;--t:34vh;--ar:1400/933"><div class="pw"><img src="assets/img/photo/ai-pool.jpg" alt="AI portrait"></div><span class="no cap">02</span></figure>
+      <figure class="pf" data-lightbox="assets/img/photo/ai-splits.jpg" style="--h:70vh;--t:6vh;--ar:933/1400"><div class="pw"><img src="assets/img/photo/ai-splits.jpg" alt="AI portrait"></div><span class="no cap">03</span></figure>
+      <figure class="pf" data-lightbox="assets/img/photo/ai-family.jpg" style="--h:56vh;--t:26vh;--ar:1024/1536"><div class="pw"><img src="assets/img/photo/ai-family.jpg" alt="AI portrait" loading="lazy"></div><span class="no cap">04</span></figure>
+      <figure class="pf" data-lightbox="assets/img/photo/ai-rugby.jpg" style="--h:44vh;--t:40vh;--ar:1400/933"><div class="pw"><img src="assets/img/photo/ai-rugby.jpg" alt="AI portrait" loading="lazy"></div><span class="no cap">05</span></figure>
+      <figure class="pf" data-lightbox="assets/img/photo/ai-toast.jpg" style="--h:66vh;--t:12vh;--ar:993/1400"><div class="pw"><img src="assets/img/photo/ai-toast.jpg" alt="AI portrait" loading="lazy"></div><span class="no cap">06</span></figure>
+      <figure class="pf" data-lightbox="assets/img/photo/ai-generals-2.jpg" style="--h:58vh;--t:30vh;--ar:1024/1536"><div class="pw"><img src="assets/img/photo/ai-generals-2.jpg" alt="AI portrait" loading="lazy"></div><span class="no cap">07</span></figure>
+      <figure class="pf" data-lightbox="assets/img/photo/ai-splits-2.jpg" style="--h:72vh;--t:5vh;--ar:933/1400"><div class="pw"><img src="assets/img/photo/ai-splits-2.jpg" alt="AI portrait" loading="lazy"></div><span class="no cap">08</span></figure>
+      <figure class="pf" data-lightbox="assets/img/photo/ai-family-2.jpg" style="--h:52vh;--t:22vh;--ar:1061/1600"><div class="pw"><img src="assets/img/photo/ai-family-2.jpg" alt="AI portrait" loading="lazy"></div><span class="no cap">09</span></figure>
     </div>
-    <div class="p-main">
-      <div class="copy">
-        <p class="body">I got tired of looking through job postings that weren&rsquo;t relevant to me, so I built something to do it for me.</p>
-        <p class="body">It scans job listings and filters them against my background, what I&rsquo;m looking for, and requirements like location and visa sponsorship.</p>
-        <p class="body">So far, it&rsquo;s scanned over 80,000 jobs.</p>
-      </div>
-    </div>
+    <p class="hud cap"><span class="count">01 / 09</span><span>Scroll</span></p>
+    <div class="bar"><i></i></div>
+   </div>
   </section>
-  <section class="proj grid" id="portraits">
-    <div class="p-side">
-      <p class="pmeta type"><span>3</span><span>Made for fun</span></p>
-      <h2 class="h2">AI portraits of my friends</h2>
-      <p class="body">I&rsquo;ve spent an unreasonable amount of time creating increasingly elaborate AI portraits of my friends.</p>
-    </div>
-    <div class="p-main">
-      <div class="viewer" data-in aria-label="AI portraits of my friends" role="group">
-        <figure class="v-main" data-lightbox="assets/img/photo/ai-generals.jpg"><img src="assets/img/photo/ai-generals.jpg" alt="AI portrait"></figure>
-        <div class="v-bar type"><span class="v-count">01 / 09</span><span class="v-nav"><button type="button" class="v-prev">Prev</button><button type="button" class="v-next">Next</button></span></div>
-        <ol class="v-thumbs">
-          <li><button type="button" data-src="assets/img/photo/ai-generals.jpg" data-alt="AI portrait" aria-label="Photo 1 of 9" aria-pressed="true"><img src="assets/img/n/t/ai-generals.jpg" alt="" loading="lazy"></button></li>
-          <li><button type="button" data-src="assets/img/photo/ai-pool.jpg" data-alt="AI portrait" aria-label="Photo 2 of 9"><img src="assets/img/n/t/ai-pool.jpg" alt="" loading="lazy"></button></li>
-          <li><button type="button" data-src="assets/img/photo/ai-splits.jpg" data-alt="AI portrait" aria-label="Photo 3 of 9"><img src="assets/img/n/t/ai-splits.jpg" alt="" loading="lazy"></button></li>
-          <li><button type="button" data-src="assets/img/photo/ai-family.jpg" data-alt="AI portrait" aria-label="Photo 4 of 9"><img src="assets/img/n/t/ai-family.jpg" alt="" loading="lazy"></button></li>
-          <li><button type="button" data-src="assets/img/photo/ai-rugby.jpg" data-alt="AI portrait" aria-label="Photo 5 of 9"><img src="assets/img/n/t/ai-rugby.jpg" alt="" loading="lazy"></button></li>
-          <li><button type="button" data-src="assets/img/photo/ai-toast.jpg" data-alt="AI portrait" aria-label="Photo 6 of 9"><img src="assets/img/n/t/ai-toast.jpg" alt="" loading="lazy"></button></li>
-          <li><button type="button" data-src="assets/img/photo/ai-generals-2.jpg" data-alt="AI portrait" aria-label="Photo 7 of 9"><img src="assets/img/n/t/ai-generals-2.jpg" alt="" loading="lazy"></button></li>
-          <li><button type="button" data-src="assets/img/photo/ai-splits-2.jpg" data-alt="AI portrait" aria-label="Photo 8 of 9"><img src="assets/img/n/t/ai-splits-2.jpg" alt="" loading="lazy"></button></li>
-          <li><button type="button" data-src="assets/img/photo/ai-family-2.jpg" data-alt="AI portrait" aria-label="Photo 9 of 9"><img src="assets/img/n/t/ai-family-2.jpg" alt="" loading="lazy"></button></li>
-        </ol>
-      </div>
-    </div>
-  </section>
-  <section class="proj grid" id="music">
-    <div class="p-side">
-      <p class="pmeta type"><span>4</span><span>Made for fun</span></p>
-      <h2 class="h2">AI music</h2>
-      <p class="body">I also make music with AI. Some tracks are actual attempts at making music I like. Others exist purely because I thought they&rsquo;d be funny.</p>
-    </div>
-    <div class="p-main">
-      <ol class="tracks type">
+  <div class="after"></div>
+  <section class="proj" id="music">
+    <p class="pm cap mu"><span>4</span><span>Made for fun</span></p>
+    <div><h2 class="fd">AI music</h2>
+      <p class="body">I also make music with AI. Some tracks are actual attempts at making music I like. Others exist purely because I thought they&rsquo;d be funny.</p></div>
+    <ol class="tracks tr">
           <li data-src="assets/audio/track-1.mp3"><button class="play" type="button" aria-label="Play"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 1l9 5-9 5z" fill="currentColor"/></svg></button><span class="tt">Track 1</span><span class="len">1:56</span></li>
           <li data-src="assets/audio/track-2.mp3"><button class="play" type="button" aria-label="Play"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 1l9 5-9 5z" fill="currentColor"/></svg></button><span class="tt">Track 2</span><span class="len">3:09</span></li>
           <li hidden><button class="play" type="button" aria-label="Play"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 1l9 5-9 5z" fill="currentColor"/></svg></button><span class="tt">Track title to come</span><span class="len">0:00</span></li>
       </ol>
-    </div>
   </section>
-  <section class="proj grid" id="work">
-    <div class="p-side">
-      <p class="pmeta type"><span>5</span><span>Recruitcha</span></p>
-      <h2 class="h2">At work</h2>
-    </div>
-    <div class="p-main">
-      <p class="body">I built the <a href="https://recruitcha.ai/">Recruitcha GTM website</a> and contribute to the product itself, working on features, integrations and improvements alongside the founders.</p>
-    </div>
+  <section class="proj" id="work">
+    <p class="pm cap mu"><span>5</span><span>Recruitcha</span></p>
+    <div><h2 class="fd">At work</h2>
+      <p class="body">I built the <a href="https://recruitcha.ai/">Recruitcha GTM website</a> and contribute to the product itself, working on features, integrations and improvements alongside the founders.</p></div>
   </section>
-
   <section class="hello">
-    <div class="col">
-      <p class="script ink say" data-in data-write>say hello</p>
-      <p class="links type upper"><a href="mailto:you@example.com">Email</a><a href="https://www.linkedin.com/">LinkedIn</a><a href="#">CV</a></p>
-    </div>
+    <p class="hi" aria-hidden="true">say hello</p>
+    <p class="links cap fd"><a href="mailto:you@example.com">Email</a><a href="https://www.linkedin.com/">LinkedIn</a><a href="#">CV</a></p>
   </section>
-  <p class="colophon caption type"><span>&copy; <span data-year>2026</span> Peri</span><a href="#top">back to top</a></p>
+  <p class="colophon cap"><span>&copy; <span data-year>2026</span> Peri</span><a href="#top">Back to top</a></p>
 </main>
-<div class="lb" role="dialog" aria-label="Photo" aria-modal="true"><button type="button" class="type upper">Close</button><img alt=""></div>
-<script src="assets/peri.js"></script>
+<div class="lb" role="dialog" aria-label="Photo" aria-modal="true"><button type="button" class="cap">Close</button><img alt=""></div>
+<script src="assets/inner.js"></script>
 </body>
 </html>
