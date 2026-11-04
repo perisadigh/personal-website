@@ -162,3 +162,14 @@ header{position:absolute;color:inherit;mix-blend-mode:normal;padding:1.4rem 16px
 .ranks .plates{position:sticky}
 
 @media (max-width:760px){.ranks .plates{position:static;max-width:11rem;grid-template-columns:1fr}}
+
+/* things I've made: oversized numerals that drift, a hairline that draws, a figure that counts up */
+.proj{position:relative;border-top:0}
+.proj::before{content:"";position:absolute;left:0;right:0;top:0;height:1px;background:var(--line);transform-origin:0 50%}
+.js .proj::before{transform:scaleX(0)}.js .proj.in::before{transform:none;transition:transform 1.4s var(--e)}
+.gn{position:absolute;right:-.02em;top:4vh;font:400 clamp(9rem,22vw,26rem)/.8 var(--serif);letter-spacing:-.05em;color:transparent;-webkit-text-stroke:1px rgba(28,27,25,.13);pointer-events:none;user-select:none;will-change:transform;z-index:0}
+.proj>*:not(.gn){position:relative;z-index:1}
+.proj>div{display:contents}
+.proj .stat .cnt{font-style:italic;color:var(--red);font-variant-numeric:tabular-nums}
+@media (max-width:760px){.gn{font-size:34vw;top:2rem;opacity:.9}}
+@media (prefers-reduced-motion:reduce){.js .proj::before{transform:none}}

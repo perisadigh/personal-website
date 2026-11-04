@@ -87,3 +87,15 @@ document.querySelectorAll('.tracks li[data-src]').forEach(function(li){var b=li.
 })();
 
 ;(function(){var h=document.querySelector('header'),ly=0;if(!h)return;addEventListener('scroll',function(){var y=scrollY;if(innerWidth>760){if(y>140&&y>ly+4)h.classList.add('away');else if(y<ly-4||y<140)h.classList.remove('away')}ly=y},{passive:true})})();
+
+/* things I've made: big numerals, a hairline that draws, counting figure */
+(function(){var rm=matchMedia('(prefers-reduced-motion: reduce)').matches,small=matchMedia('(max-width:760px)').matches,ps=[].slice.call(document.querySelectorAll('.proj'));if(!ps.length)return;
+ ps.forEach(function(p){var n=p.querySelector('.pm span');if(!n)return;var g=document.createElement('span');g.className='gn';g.setAttribute('aria-hidden','true');g.textContent=n.textContent;p.insertBefore(g,p.firstChild);p._g=g});
+ var cn=[].slice.call(document.querySelectorAll('.cnt'));
+ var run=function(e){var to=+e.getAttribute('data-to'),t0=null;var f=function(t){if(t0===null)t0=t;var k=Math.min(1,(t-t0)/1800),v=Math.round(to*(1-Math.pow(1-k,3)));e.textContent=v.toLocaleString('en-US');if(k<1)requestAnimationFrame(f)};requestAnimationFrame(f)};
+ if(rm||!('IntersectionObserver' in window)){ps.forEach(function(p){p.classList.add('in')});return}
+ var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');[].forEach.call(e.target.querySelectorAll('.cnt'),run);io.unobserve(e.target)}})},{threshold:.15});
+ cn.forEach(function(e){e.textContent='0'});ps.forEach(function(p){io.observe(p)});
+ if(small)return;
+ var tick=function(){ps.forEach(function(p){var r=p.getBoundingClientRect();if(r.bottom<0||r.top>innerHeight)return;p._g.style.transform='translate3d(0,'+((r.top+r.height/2-innerHeight/2)*-.18).toFixed(1)+'px,0)'})};
+ addEventListener('scroll',tick,{passive:true});tick()})();
