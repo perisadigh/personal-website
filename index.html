@@ -153,7 +153,7 @@ linear-gradient(var(--k),var(--k)) 100% calc(100% - 26px)/16px 1px no-repeat,lin
 .s2 .verdict{margin:3rem 0 0}.s2 .kf{position:static;translate:none;width:62%;margin:1.6rem 0 0}.s0 .marks{display:none}
 }
 
-/* intro: one film frame sits on the paper; scrolling grows it to full-bleed, then it settles into the page */
+/* intro: blank paper; scrolling develops the photograph out of it, then it settles into the page */
 .js .intro:not(.live):not(.static){visibility:hidden}
 .s1.live{padding:0;height:420vh;min-height:0;overflow:visible}
 .s1.live .stage{position:sticky;top:0;height:100svh;width:100%;overflow:hidden;overflow:clip;padding:0 6vw 0 0;align-content:center;background:var(--paper)}
@@ -161,17 +161,8 @@ linear-gradient(var(--k),var(--k)) 100% calc(100% - 26px)/16px 1px no-repeat,lin
 .s1.live .ph{position:absolute;grid-area:auto;margin:0;z-index:1;left:0;top:0;width:100%;height:100%;aspect-ratio:auto;overflow:visible}
 .s1.live .hi{z-index:2;clip-path:inset(-60% 100% -60% -25%)}
 .s1.live .say{opacity:0;will-change:transform,opacity}
-.fb{position:absolute;left:0;right:0;height:var(--b,30px);background:#151412;z-index:2;will-change:transform}.s1.live:not(.in) .fb{opacity:0}
-.fb.t{top:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Crect x='24' y='13' width='52' height='36' rx='9' fill='%23f2eee7'/%3E%3C/svg%3E");background-size:calc(var(--b,30px)*.95) 100%;background-repeat:repeat-x}
-.fb.b{bottom:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Crect x='24' y='51' width='52' height='36' rx='9' fill='%23f2eee7'/%3E%3C/svg%3E");background-size:calc(var(--b,30px)*.95) 100%;background-repeat:repeat-x}
-.fb span{position:absolute;font:500 calc(var(--b,30px)*.2)/1 var(--cap);letter-spacing:.22em;color:#cfa65a;opacity:.85;white-space:nowrap}
-.fb.t span{left:5%;bottom:11%}.fb.b span{left:5%;top:11%}.fb.b span+span{left:auto;right:5%}
-.s1.live .ph img{opacity:0}
-.s1.live.in .ph img{animation:frameIn 1.5s var(--e) both}.s1.live.in .fb{animation:fbIn 1.2s .3s var(--e) backwards}
-@keyframes frameIn{from{opacity:0;filter:blur(10px);transform:scale(1.05)}to{opacity:1;filter:blur(0);transform:none}}
-@keyframes fbIn{from{opacity:0}to{opacity:1}}
-.hello{position:absolute;left:0;top:0;z-index:6;font:400 clamp(2.2rem,3.6vw,3.8rem)/1 "Kristi",cursive;color:#fff;mix-blend-mode:difference;white-space:nowrap;transform-origin:0 50%;will-change:transform,opacity;pointer-events:none;clip-path:inset(-60% 100% -60% -10%)}
-.hello.go{animation:write 1.4s cubic-bezier(.5,0,.2,1) both}
+.hello{position:absolute;left:6vw;top:38vh;z-index:6;font:400 clamp(3.4rem,8.4vw,9.5rem)/1 "Kristi",cursive;color:#fff;mix-blend-mode:difference;white-space:nowrap;transform-origin:0 50%;will-change:transform,opacity;pointer-events:none;clip-path:inset(-60% 100% -60% -10%)}
+.hello.go{animation:write 1.8s cubic-bezier(.5,0,.2,1) both}
 @keyframes write{from{clip-path:inset(-60% 100% -60% -10%)}to{clip-path:inset(-60% -10% -60% -10%)}}
 .cue{position:absolute;left:50%;bottom:5vh;translate:-50% 0;z-index:6;color:#fff;mix-blend-mode:difference;display:flex;flex-direction:column;align-items:center;gap:.7rem;opacity:0;pointer-events:none}.cue.go{animation:cue .9s .1s backwards;opacity:1}
 .cue::after{content:"";width:1px;height:2.6rem;background:currentColor;transform-origin:50% 0;animation:drip 1.8s .3s var(--e) infinite}
@@ -181,6 +172,7 @@ linear-gradient(var(--k),var(--k)) 100% calc(100% - 26px)/16px 1px no-repeat,lin
 .s1.live .ghost,.s1.live .hi,.s1.live .say{grid-area:auto}.s1.live .ghost{display:block;width:calc(100% + 32px);margin:0 -16px}
 .s1.live .hi{margin:-6.6rem 0 0 4%;justify-self:start;align-self:start}
 .s1.live .say{margin:2.4rem 0 0}
+.hello{font-size:15vw;top:36vh}
 }
 </style></head><body>
 <script>document.documentElement.classList.add("js")</script>
@@ -190,7 +182,7 @@ linear-gradient(var(--k),var(--k)) 100% calc(100% - 26px)/16px 1px no-repeat,lin
 <section class="spread s1 intro" id="intro">
   <div class="stage">
     <div class="ghost" aria-hidden="true"></div>
-    <figure class="ph"><img src="assets/img/a/road-blur.jpg" alt="Peri on a road at dusk, looking back over her shoulder, the trees blurred behind her"><i class="fb t" aria-hidden="true"><span>&#9656; 11</span></i><i class="fb b" aria-hidden="true"><span>12 &nbsp;&#9656;&nbsp; 12A</span><span>400</span></i></figure>
+    <figure class="ph dev"><img src="assets/img/a/road-blur.jpg" alt="Peri on a road at dusk, looking back over her shoulder, the trees blurred behind her"></figure>
     <p class="hi" aria-hidden="true">about</p>
     <p class="say fd">I studied biomedical science, then got a job in digital marketing and somehow ended up building software at a startup.</p>
     <p class="hello" aria-hidden="true">hello, I&rsquo;m Peri</p>
@@ -200,40 +192,40 @@ linear-gradient(var(--k),var(--k)) 100% calc(100% - 26px)/16px 1px no-repeat,lin
 <script>
 (function(){
 var sec=document.getElementById('intro');if(!sec)return;
-if(matchMedia('(prefers-reduced-motion: reduce)').matches){sec.classList.add('static');return}
+if(matchMedia('(prefers-reduced-motion: reduce)').matches||!window.Develop){sec.classList.add('static');return}
 try{
 var L=window.__lenis,intro=scrollY<5,dd=document.documentElement;if(intro){if(L)L.stop();else dd.style.overflow='hidden'}
-var stage=sec.querySelector('.stage'),ph=sec.querySelector('.ph'),ghost=sec.querySelector('.ghost'),hi=sec.querySelector('.hi'),say=sec.querySelector('.say'),hello=sec.querySelector('.hello'),cue=sec.querySelector('.cue'),fbt=ph.querySelector('.fb.t'),fbb=ph.querySelector('.fb.b');
+var stage=sec.querySelector('.stage'),ph=sec.querySelector('.ph'),ghost=sec.querySelector('.ghost'),hi=sec.querySelector('.hi'),say=sec.querySelector('.say'),hello=sec.querySelector('.hello'),cue=sec.querySelector('.cue');
 say.classList.remove('fd');
-var vw,vh,R,H,S,B,HS,tgt=0,cur=0,last=0,run=false;
+var dv=Develop.make(ph,ph.querySelector('img'),5,'01');
+var vw,vh,R,H,HL,HS,tgt=0,cur=0,last=0,run=false,auto=0;
 function measure(){var sr=stage.getBoundingClientRect(),g=ghost.getBoundingClientRect(),h=hi.getBoundingClientRect();vw=sr.width;vh=sr.height;
  R={l:g.left-sr.left,t:g.top-sr.top,w:g.width,h:g.height};H={x:h.left-sr.left,y:h.top+h.height/2-sr.top,fs:parseFloat(getComputedStyle(hi).fontSize)};
- var w0=vw<760?vw*.7:Math.min(vw*.34,560);B=w0*.085;var h0=w0/1.5+2*B;S={l:(vw-w0)/2,t:(vh-h0)/2-vh*.02,w:w0,h:h0};
- ph.style.setProperty('--b',B.toFixed(1)+'px');
- HS=parseFloat(getComputedStyle(hello).fontSize);hello.style.left=S.l+'px';hello.style.top=(S.t-HS*1.35)+'px'}
+ HS=parseFloat(getComputedStyle(hello).fontSize);HL={x:hello.offsetLeft,y:hello.offsetTop+hello.offsetHeight/2}}
 function ez(t){t=t<0?0:t>1?1:t;return t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2}
 function seg(p,a,b){return p<=a?0:p>=b?1:(p-a)/(b-a)}
 function lerp(a,b,t){return a+(b-a)*t}
 function draw(p){
- var g=ez(seg(p,.06,.42)),m=ez(seg(p,.5,.76)),l,t,w,h;
- if(p<.5){l=lerp(S.l,0,g);t=lerp(S.t,0,g);w=lerp(S.w,vw,g);h=lerp(S.h,vh,g)}else{l=lerp(0,R.l,m);t=lerp(0,R.t,m);w=lerp(vw,R.w,m);h=lerp(vh,R.h,m)}
- ph.style.left=l+'px';ph.style.top=t+'px';ph.style.width=w+'px';ph.style.height=h+'px';
- var bd=ez(seg(p,.08,.36)),bo=p>.5?0:1-seg(p,.36,.46);fbt.style.opacity=fbb.style.opacity=bo;fbt.style.transform='translate3d(0,'+(-bd*100)+'%,0)';fbb.style.transform='translate3d(0,'+(bd*100)+'%,0)';
- var tr=ez(seg(p,.2,.62));hello.style.transform='translate3d('+((H.x-S.l)*tr).toFixed(1)+'px,'+((H.y-(S.t-HS*1.35)-HS*.5)*tr).toFixed(1)+'px,0) scale('+lerp(1,H.fs/HS*.9,tr).toFixed(3)+') rotate('+lerp(-4,-6,tr).toFixed(1)+'deg)';
- hello.style.opacity=1-ez(seg(p,.56,.7));
+ var m=ez(seg(p,.5,.76));
+ ph.style.left=lerp(0,R.l,m)+'px';ph.style.top=lerp(0,R.t,m)+'px';ph.style.width=lerp(vw,R.w,m)+'px';ph.style.height=lerp(vh,R.h,m)+'px';
+ dv.set(Math.max(auto,seg(p,.03,.38)));
+ var tr=ez(seg(p,.3,.66));hello.style.transform='translate3d('+((H.x-HL.x)*tr).toFixed(1)+'px,'+((H.y-HL.y)*tr).toFixed(1)+'px,0) scale('+lerp(1,H.fs/HS*.9,tr).toFixed(3)+') rotate('+lerp(0,-6,tr).toFixed(1)+'deg)';
+ hello.style.opacity=1-ez(seg(p,.58,.72));
  cue.style.opacity=p>.005?(1-seg(p,.01,.07)):'';
  var w2=ez(seg(p,.66,.84));hi.style.clipPath='inset(-60% '+lerp(100,-25,w2).toFixed(1)+'% -60% -25%)';
  var q=ez(seg(p,.76,.92));say.style.opacity=q;say.style.transform='translate3d(0,'+((1-q)*18).toFixed(1)+'px,0)';
- sec.style.setProperty('--p',p.toFixed(4));
 }
 function read(){var r=sec.getBoundingClientRect(),span=sec.offsetHeight-innerHeight;tgt=span>0?Math.min(1,Math.max(0,-r.top/span)):0}
 function tick(now){var dt=Math.min(.05,(now-last)/1000||.016);last=now;cur+=(tgt-cur)*(1-Math.exp(-dt*9));if(Math.abs(tgt-cur)<.0004)cur=tgt;draw(cur);if(cur!==tgt)requestAnimationFrame(tick);else run=false}
 function kick(){read();if(!run){run=true;last=performance.now();requestAnimationFrame(tick)}}
 sec.classList.add('live');measure();read();cur=tgt;draw(cur);
 function release(){if(L)L.start();else dd.style.overflow=''}
-if(intro){var go=false,start=function(){if(go)return;go=true;measure();draw(cur);sec.classList.add('in');setTimeout(function(){hello.classList.add('go')},900);setTimeout(function(){cue.classList.add('go')},1900);setTimeout(release,2100)};
+if(intro){var go=false,start=function(){if(go)return;go=true;measure();draw(cur);
+  setTimeout(function(){hello.classList.add('go')},500);
+  var t0=performance.now();(function lat(now){var t=Math.min(1,(now-t0)/2600);auto=.07*ez(t);draw(cur);if(t<1)requestAnimationFrame(lat)})(t0);
+  setTimeout(function(){cue.classList.add('go')},2300);setTimeout(release,2500)};
  if(document.fonts&&document.fonts.ready){document.fonts.ready.then(start);setTimeout(start,1400)}else start()}
-else{sec.classList.add('in');hello.classList.add('go');cue.classList.add('go')}
+else{hello.classList.add('go');cue.classList.add('go')}
 addEventListener('scroll',kick,{passive:true});
 addEventListener('resize',function(){measure();kick();draw(cur)});
 addEventListener('load',function(){measure();draw(cur)});
@@ -247,11 +239,11 @@ if(document.fonts&&document.fonts.ready)document.fonts.ready.then(function(){mea
     <p class="cap mu">What I do</p>
     <p class="para" data-fill>After digital marketing, I moved into recruitment and taught myself to code with AI tools. I started by building internal recruiting tools, then moved into product development, building features and integrations, and designing and developing the company&rsquo;s website.</p>
   </div>
-  <figure class="rv"><img src="assets/img/a/hike2.jpg" alt="Peri on the rocks below the mountains"></figure>
+  <figure class="dev" data-fn="02"><img src="assets/img/a/hike2.jpg" alt="Peri on the rocks below the mountains"></figure>
 </section>
 
 <section class="spread s2">
-  <figure class="rv kid"><img src="assets/img/a/kid-tall.jpg" alt="Peri as a little girl in pigtails"></figure>
+  <figure class="dev kid" data-fn="03"><img src="assets/img/a/kid-tall.jpg" alt="Peri as a little girl in pigtails"></figure>
   <div class="g">
     <h2>Two truths and a lie</h2>
     <p class="ask">Which one is the lie?</p>
@@ -268,7 +260,7 @@ if(document.fonts&&document.fonts.ready)document.fonts.ready.then(function(){mea
 <section class="spread s0">
   <h1 aria-label="I like making things."><span class="ln" aria-hidden="true"><span>I like making</span></span><span class="ln" aria-hidden="true"><span>things.</span></span></h1>
   <p class="stand fd">Some are useful. Others exist purely because I&nbsp;thought they&rsquo;d be funny.</p>
-  <figure class="rv"><img src="assets/img/a/opening.jpg" alt="Peri at the top of a stone path that steps down through the trees towards the sea"></figure>
+  <figure class="dev" data-fn="04"><img src="assets/img/a/opening.jpg" alt="Peri at the top of a stone path that steps down through the trees towards the sea"></figure>
   <div class="marks" aria-hidden="true"></div>
 </section>
 
