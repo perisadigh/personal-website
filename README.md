@@ -35,3 +35,8 @@ python3 -m http.server 8765
 ```
 
 then open http://localhost:8765. There is nothing to build.
+
+## Motion
+
+- `assets/lenis.min.js` is Lenis (MIT) for smooth scrolling; `assets/motion.js` starts it, adds the trailing cursor dot and the word-by-word `data-fill` paragraphs. Both are skipped for `prefers-reduced-motion`.
+- The home page intro (`#intro` in `index.html`) is scroll-locked for about 3.7s while letters in a blurred grid sharpen into PERI, then released. Scrolling tears the red paper strips away and the photo settles into the about layout.

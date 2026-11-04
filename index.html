@@ -165,20 +165,27 @@ linear-gradient(var(--k),var(--k)) 100% calc(100% - 26px)/16px 1px no-repeat,lin
 .strips,.sh{position:absolute;inset:0}.sh{will-change:transform;backface-visibility:hidden}.sh i{position:absolute;inset:0;display:block}
 .sh .e{background:#e9e1d3;transform:translate(-3px,-3px)}
 .sh .f{background:url(assets/img/a/road-red.webp) 50% 50%/cover}
-.hello{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);white-space:nowrap;font:400 clamp(4.2rem,11.5vw,11.5rem)/1 "Kristi",cursive;color:#f6efe6;text-shadow:0 0 28px rgba(60,4,8,.35);will-change:transform,opacity;animation:write 1.9s .35s cubic-bezier(.5,0,.2,1) both}
+.hello{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:flex;flex-direction:column;align-items:flex-start;color:#f6efe6;text-shadow:0 0 30px rgba(60,4,8,.35);will-change:transform,opacity}
+.hello .hi0{font:400 clamp(2.4rem,5.4vw,5.6rem)/1 "Kristi",cursive;transform:rotate(-4deg);margin:0 0 -.5em .06em;white-space:nowrap;clip-path:inset(-60% 100% -60% -10%)}
+.hello .word{display:flex;font:400 clamp(6.5rem,25vw,24rem)/.84 var(--serif);letter-spacing:.015em;text-transform:uppercase;white-space:nowrap}
+.hello .word span{display:inline-block;will-change:transform,filter,opacity}
+.noise{position:absolute;inset:0;display:grid;pointer-events:none}
+.noise i{display:grid;place-items:center;font:400 clamp(1.8rem,3vw,3rem)/1 var(--serif);color:#f6efe6;font-style:normal;opacity:0;filter:blur(5px)}
+.hello.go .hi0{animation:write 1.3s cubic-bezier(.5,0,.2,1) both}
 @keyframes write{from{clip-path:inset(-60% 100% -60% -10%)}to{clip-path:inset(-60% -10% -60% -10%)}}
-.cue{position:absolute;left:50%;bottom:5vh;translate:-50% 0;color:#f6efe6;display:flex;flex-direction:column;align-items:center;gap:.7rem;animation:cue .8s 2.2s backwards}
-.cue::after{content:"";width:1px;height:2.6rem;background:currentColor;transform-origin:50% 0;animation:drip 1.8s 2.4s var(--e) infinite}
+.cue{position:absolute;left:50%;bottom:5vh;translate:-50% 0;color:#f6efe6;display:flex;flex-direction:column;align-items:center;gap:.7rem;opacity:0}.cue.go{animation:cue .8s .1s backwards;opacity:1}
+.cue::after{content:"";width:1px;height:2.6rem;background:currentColor;transform-origin:50% 0;animation:drip 1.8s .3s var(--e) infinite}
 @keyframes cue{from{opacity:0}}@keyframes drip{0%{transform:scaleY(0)}55%{transform:scaleY(1)}100%{transform:scaleY(1);opacity:0}}
 @media (max-width:760px){
 .s1.live{padding:0}.s1.live .stage{padding:0 16px;align-content:center;justify-content:stretch;display:grid}.cover-on header{color:#f6efe6}.s1.live .stage{grid-template-columns:1fr}.s1.live .ghost,.s1.live .hi,.s1.live .say{grid-area:auto}.s1.live .hi{justify-self:start;align-self:start}
 .s1.live .ghost{display:block;width:calc(100% + 32px);margin:0 -16px}
 .s1.live .hi{margin:-6.6rem 0 0 4%}
 .s1.live .say{margin:2.4rem 0 0}
-.hello{font-size:19vw}
+.hello .word{font-size:30vw}
 }
 </style></head><body>
 <script>document.documentElement.classList.add("js")</script>
+<script src="assets/lenis.min.js"></script><script src="assets/motion.js"></script>
 <header class="cap"><a href="index.html" aria-current="page">Home</a><nav aria-label="Pages"><a href="work.html">Things I&rsquo;ve made</a><a href="things-i-love.html">Things I love</a></nav></header>
 
 <section class="spread s1 intro" id="intro">
@@ -187,7 +194,7 @@ linear-gradient(var(--k),var(--k)) 100% calc(100% - 26px)/16px 1px no-repeat,lin
     <figure class="rv ph"><img src="assets/img/a/road-blur.jpg" alt="Peri on a road at dusk, looking back over her shoulder, the trees blurred behind her"></figure>
     <p class="hi" aria-hidden="true">about</p>
     <p class="say fd">I studied biomedical science, then got a job in digital marketing and somehow ended up building software at a startup.</p>
-    <div class="cover" aria-hidden="true"><div class="strips"></div><p class="hello">hello, I&rsquo;m Peri</p><p class="cue cap">Scroll</p></div>
+    <div class="cover" aria-hidden="true"><div class="strips"></div><div class="hello"><p class="hi0">hello, I&rsquo;m</p><p class="word" aria-label="Peri"><span>P</span><span>E</span><span>R</span><span>I</span></p></div><p class="cue cap">Scroll</p></div>
   </div>
 </section>
 <script>
@@ -195,6 +202,7 @@ linear-gradient(var(--k),var(--k)) 100% calc(100% - 26px)/16px 1px no-repeat,lin
 var sec=document.getElementById('intro');if(!sec)return;
 if(matchMedia('(prefers-reduced-motion: reduce)').matches){sec.classList.add('static');return}
 try{
+var L=window.__lenis,intro=scrollY<5,dd=document.documentElement;if(intro){if(L)L.stop();else dd.style.overflow='hidden'}
 var stage=sec.querySelector('.stage'),ph=sec.querySelector('.ph'),ghost=sec.querySelector('.ghost'),hi=sec.querySelector('.hi'),say=sec.querySelector('.say'),hello=sec.querySelector('.hello'),cue=sec.querySelector('.cue'),box=sec.querySelector('.strips');
 ph.classList.remove('rv');say.classList.remove('fd');
 /* torn paper: every strip is a polygon cut along a ragged, tilted line; neighbours share the same torn edge */
@@ -223,7 +231,7 @@ function draw(p){
  var tr=ez(seg(p,.48,.74));
  hello.style.transform='translate(-50%,-50%) translate3d('+((H.x-vw/2)*tr).toFixed(1)+'px,'+((H.y-vh/2)*tr).toFixed(1)+'px,0) scale('+lerp(1,.34,tr).toFixed(3)+')';
  hello.style.opacity=1-ez(seg(p,.62,.76));
- cue.style.opacity=1-seg(p,.01,.07);
+ cue.style.opacity=p>.005?(1-seg(p,.01,.07)):'';
  var w=ez(seg(p,.70,.87));hi.style.clipPath='inset(-60% '+lerp(100,-25,w).toFixed(1)+'% -60% -25%)';
  var q=ez(seg(p,.80,.94));say.style.opacity=q;say.style.transform='translate3d(0,'+((1-q)*18).toFixed(1)+'px,0)';
  sec.style.setProperty('--p',p.toFixed(4));document.documentElement.classList.toggle('cover-on',p<.5&&p>=0);
@@ -233,6 +241,25 @@ function tick(now){var dt=Math.min(.05,(now-last)/1000||.016);last=now;cur+=(tgt
 function kick(){read();if(!run){run=true;last=performance.now();requestAnimationFrame(tick)}}
 function init(){measure();read();cur=tgt;draw(cur)}
 sec.classList.add('live');init();
+function release(){if(L)L.start();else dd.style.overflow=''}
+function runIntro(){
+ var cover=sec.querySelector('.cover'),ls=[].slice.call(hello.querySelector('.word').children);
+ var cols=Math.max(6,Math.round(vw/(vw<760?56:78))),rows=Math.max(5,Math.round(vh/84)),abc='ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+ var noise=document.createElement('div');noise.className='noise';noise.style.gridTemplateColumns='repeat('+cols+',1fr)';noise.style.gridTemplateRows='repeat('+rows+',1fr)';
+ var tg=[[.16,.3],[.6,.14],[.34,.74],[.84,.6]].map(function(f){return Math.min(rows-1,Math.round(f[1]*rows))*cols+Math.min(cols-1,Math.round(f[0]*cols))});
+ for(var i=0;i<cols*rows;i++){var c=document.createElement('i');if(tg.indexOf(i)<0)c.textContent=abc.charAt(Math.floor(rnd()*26));noise.appendChild(c)}
+ cover.insertBefore(noise,hello);
+ var sr=stage.getBoundingClientRect(),cfs=parseFloat(getComputedStyle(noise.children[0]).fontSize),ffs=parseFloat(getComputedStyle(ls[0]).fontSize);
+ [].forEach.call(noise.children,function(c){if(!c.textContent)return;c.animate([{opacity:0,filter:'blur(8px)'},{opacity:.5,filter:'blur(4px)',offset:.28},{opacity:.5,filter:'blur(4px)',offset:.5},{opacity:0,filter:'blur(9px)'}],{duration:2300,delay:150+rnd()*500,fill:'both',easing:'ease-in-out'})});
+ ls.forEach(function(l,k){var a=l.getBoundingClientRect(),b=noise.children[tg[k]].getBoundingClientRect();
+  var T='translate('+(b.left+b.width/2-a.left-a.width/2).toFixed(1)+'px,'+(b.top+b.height/2-a.top-a.height/2).toFixed(1)+'px) scale('+(cfs/ffs*1.15).toFixed(3)+')';
+  l.animate([{transform:T,filter:'blur(9px)',opacity:0},{transform:T,filter:'blur(0px)',opacity:1,offset:.24,easing:'cubic-bezier(.9,0,.05,1)'},{transform:'none',filter:'blur(0px)',opacity:1}],{duration:2500,delay:600+k*60,fill:'both'})});
+ setTimeout(function(){hello.classList.add('go')},2700);
+ setTimeout(function(){cue.classList.add('go')},3500);
+ setTimeout(function(){noise.remove();release()},3700);
+}
+if(intro){var go=false,start=function(){if(go)return;go=true;measure();runIntro()};if(document.fonts&&document.fonts.ready){document.fonts.ready.then(start);setTimeout(start,1400)}else start()}
+else{hello.classList.add('go');cue.classList.add('go')}
 addEventListener('scroll',kick,{passive:true});
 addEventListener('resize',function(){measure();kick();draw(cur)});
 addEventListener('load',function(){measure();draw(cur)});
@@ -244,7 +271,7 @@ if(document.fonts&&document.fonts.ready)document.fonts.ready.then(function(){mea
 <section class="spread s3">
   <div class="t fd">
     <p class="cap mu">What I do</p>
-    <p class="para">After digital marketing, I moved into recruitment and taught myself to code with AI tools. I started by building internal recruiting tools, then moved into product development, building features and integrations, and designing and developing the company&rsquo;s website.</p>
+    <p class="para" data-fill>After digital marketing, I moved into recruitment and taught myself to code with AI tools. I started by building internal recruiting tools, then moved into product development, building features and integrations, and designing and developing the company&rsquo;s website.</p>
   </div>
   <figure class="rv"><img src="assets/img/a/hike2.jpg" alt="Peri on the rocks below the mountains"></figure>
 </section>
