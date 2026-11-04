@@ -4,7 +4,7 @@
 <meta name="theme-color" content="#f2eee7">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <meta property="og:type" content="website"><meta property="og:site_name" content="Peri"><meta property="og:title" content="Peri"><meta property="og:description" content="I like making things. Some are useful. Others exist purely because I thought they’d be funny."><meta property="og:url" content="https://perisadigh.com/"><meta property="og:image" content="https://perisadigh.com/assets/img/og.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image">
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter+Tight:wght@400;500&family=Kristi&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/img/a/road-red.webp"><link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter+Tight:wght@400;500&family=Kristi&display=swap" rel="stylesheet">
 <style>
 :root{--paper:#f2eee7;--ink:#1c1b19;--mu:#6f695f;--red:#8f2a20;--serif:"EB Garamond",Garamond,serif;--cap:"Inter Tight","Helvetica Neue",sans-serif}
 *{box-sizing:border-box}html{background:var(--paper)}body{margin:0;color:var(--ink);font:400 1.2rem/1.5 var(--serif);-webkit-font-smoothing:antialiased}
@@ -52,7 +52,9 @@ header nav{display:flex;gap:2.6rem}header a[aria-current]{text-decoration:underl
 
 /* rhythm: each section a different composition, like turning pages */
 /* 1: the road photo runs the full width; the sentence sits under it, to the right */
-.s1{display:grid;grid-template-columns:54vw 1fr;column-gap:5vw;align-items:end;min-height:auto;padding:17vh 6vw 14vh 0}
+.s1{min-height:auto;padding:17vh 6vw 14vh 0}
+.s1 .stage{display:grid;grid-template-columns:54vw 1fr;column-gap:5vw;align-items:end}
+.s1 .ghost,.s1 .cover{display:none}
 .s1 figure{grid-area:1/1;position:relative;right:auto;top:auto;width:100%;aspect-ratio:4/3;margin:0}
 .s1 figure img{object-position:50% 50%}
 .s1 .hi{grid-area:1/1;position:relative;left:auto;top:auto;z-index:2;align-self:end;justify-self:start;margin:0 0 3vw 6vw;font-size:clamp(5.5rem,9vw,9.5rem)}
@@ -69,7 +71,7 @@ header{position:absolute;color:inherit;mix-blend-mode:normal;padding:1.2rem 16px
 @media (max-width:760px){.s0{min-height:auto;padding:5rem 16px 0}.s0 h1,.s0 .stand,.s0 figure{position:static;width:auto;translate:none}.s0 h1{font-size:10.5vw;mix-blend-mode:normal;color:var(--ink)}.s0 h1 .ln:nth-child(2){padding-left:12vw}.s0 figure{width:100%;margin:2.4rem 0 0}.s0 .stand{margin-top:1.6rem;font-size:1.4rem;max-width:20rem}.s0 .foot{margin-top:2.5rem}
 }
 @media (max-width:760px){
-.s1{display:flex;flex-direction:column;align-items:stretch;padding:8rem 16px 4rem}.s1 .hi{align-self:flex-start;justify-self:auto}.s1 .say{align-self:stretch}.s1 figure{height:auto;aspect-ratio:4/3;width:calc(100% + 32px);margin:0 -16px}.s1 .hi{position:relative;left:auto;top:auto;order:2;margin:-6.6rem 0 0 4%;font-size:5rem;z-index:2}.s1 .say{order:3;width:auto;margin:3rem 0 0}.s1 .foot{order:4}
+.s1{padding:8rem 16px 4rem}.s1 .stage{display:flex;flex-direction:column;align-items:stretch}.s1 .ghost{aspect-ratio:4/3;width:calc(100% + 32px);margin:0 -16px;order:1}.s1 .hi{align-self:flex-start;justify-self:auto}.s1 .say{align-self:stretch}.s1 figure{height:auto;aspect-ratio:4/3;width:calc(100% + 32px);margin:0 -16px}.s1 .hi{position:relative;left:auto;top:auto;order:2;margin:-6.6rem 0 0 4%;font-size:5rem;z-index:2}.s1 .say{order:3;width:auto;margin:3rem 0 0}.s1 .foot{order:4}
 }
 
 /* motion: one easing curve, three gestures (lines rise, plates open, nav underline draws) */
@@ -150,15 +152,94 @@ linear-gradient(var(--k),var(--k)) 100% calc(100% - 26px)/16px 1px no-repeat,lin
 .revealed .card .note{display:block}.revealed .card .no{display:none}
 .s2 .verdict{margin:3rem 0 0}.s2 .kf{position:static;translate:none;width:62%;margin:1.6rem 0 0}.s0 .marks{display:none}
 }
+
+/* intro: a torn red cover that rips away as you scroll, then the photo settles into the page */
+.js .intro:not(.live):not(.static){visibility:hidden}
+.s1.live{padding:0;height:470vh;min-height:0;overflow:visible}
+.s1.live .stage{position:sticky;top:0;height:100svh;width:100%;overflow:hidden;overflow:clip;padding:0 6vw 0 0;align-content:center;background:var(--paper)}
+.s1.live .ghost{display:block;grid-area:1/1;aspect-ratio:4/3;width:100%;visibility:hidden}
+.s1.live .ph{position:absolute;grid-area:auto;margin:0;z-index:1;left:0;top:0;width:100%;height:100%;aspect-ratio:auto}
+.s1.live .hi{z-index:2;clip-path:inset(-60% 100% -60% -25%)}
+.s1.live .say{opacity:0;will-change:transform,opacity}
+.s1.live .cover{display:block;position:absolute;inset:0;z-index:5;pointer-events:none}
+.strips,.sh{position:absolute;inset:0}.sh{will-change:transform;backface-visibility:hidden}.sh i{position:absolute;inset:0;display:block}
+.sh .e{background:#e9e1d3;transform:translate(-3px,-3px)}
+.sh .f{background:url(assets/img/a/road-red.webp) 50% 50%/cover}
+.hello{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);white-space:nowrap;font:400 clamp(4.2rem,11.5vw,11.5rem)/1 "Kristi",cursive;color:#f6efe6;text-shadow:0 0 28px rgba(60,4,8,.35);will-change:transform,opacity;animation:write 1.9s .35s cubic-bezier(.5,0,.2,1) both}
+@keyframes write{from{clip-path:inset(-60% 100% -60% -10%)}to{clip-path:inset(-60% -10% -60% -10%)}}
+.cue{position:absolute;left:50%;bottom:5vh;translate:-50% 0;color:#f6efe6;display:flex;flex-direction:column;align-items:center;gap:.7rem;animation:cue .8s 2.2s backwards}
+.cue::after{content:"";width:1px;height:2.6rem;background:currentColor;transform-origin:50% 0;animation:drip 1.8s 2.4s var(--e) infinite}
+@keyframes cue{from{opacity:0}}@keyframes drip{0%{transform:scaleY(0)}55%{transform:scaleY(1)}100%{transform:scaleY(1);opacity:0}}
+@media (max-width:760px){
+.s1.live{padding:0}.s1.live .stage{padding:0 16px;align-content:center;justify-content:stretch;display:grid}.cover-on header{color:#f6efe6}.s1.live .stage{grid-template-columns:1fr}.s1.live .ghost,.s1.live .hi,.s1.live .say{grid-area:auto}.s1.live .hi{justify-self:start;align-self:start}
+.s1.live .ghost{display:block;width:calc(100% + 32px);margin:0 -16px}
+.s1.live .hi{margin:-6.6rem 0 0 4%}
+.s1.live .say{margin:2.4rem 0 0}
+.hello{font-size:19vw}
+}
 </style></head><body>
 <script>document.documentElement.classList.add("js")</script>
 <header class="cap"><a href="index.html" aria-current="page">Home</a><nav aria-label="Pages"><a href="work.html">Things I&rsquo;ve made</a><a href="things-i-love.html">Things I love</a></nav></header>
 
-<section class="spread s1">
-  <figure class="rv"><img src="assets/img/a/road-blur.jpg" alt="Peri on a road at dusk, looking back over her shoulder, the trees blurred behind her"></figure>
-  <p class="hi" aria-hidden="true">about</p>
-  <p class="say fd">I studied biomedical science, then got a job in digital marketing and somehow ended up building software at a startup.</p>
+<section class="spread s1 intro" id="intro">
+  <div class="stage">
+    <div class="ghost" aria-hidden="true"></div>
+    <figure class="rv ph"><img src="assets/img/a/road-blur.jpg" alt="Peri on a road at dusk, looking back over her shoulder, the trees blurred behind her"></figure>
+    <p class="hi" aria-hidden="true">about</p>
+    <p class="say fd">I studied biomedical science, then got a job in digital marketing and somehow ended up building software at a startup.</p>
+    <div class="cover" aria-hidden="true"><div class="strips"></div><p class="hello">hello, I&rsquo;m Peri</p><p class="cue cap">Scroll</p></div>
+  </div>
 </section>
+<script>
+(function(){
+var sec=document.getElementById('intro');if(!sec)return;
+if(matchMedia('(prefers-reduced-motion: reduce)').matches){sec.classList.add('static');return}
+try{
+var stage=sec.querySelector('.stage'),ph=sec.querySelector('.ph'),ghost=sec.querySelector('.ghost'),hi=sec.querySelector('.hi'),say=sec.querySelector('.say'),hello=sec.querySelector('.hello'),cue=sec.querySelector('.cue'),box=sec.querySelector('.strips');
+ph.classList.remove('rv');say.classList.remove('fd');
+/* torn paper: every strip is a polygon cut along a ragged, tilted line; neighbours share the same torn edge */
+var seed=11;function rnd(){seed|=0;seed=seed+0x6D2B79F5|0;var t=Math.imul(seed^seed>>>15,1|seed);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}
+var T=-17,ys=[],y=-52;while(y<175){ys.push(y);y+=19+rnd()*13}
+var bounds=ys.map(function(y0,k){var p1=rnd()*6,p2=rnd()*6,pts=[];for(var x=-6;x<=106;x+=1.6){var n=.9*Math.sin(x*.19+p1)+.5*Math.sin(x*.57+p2)+(rnd()-.5)*.9;pts.push([x,y0+T*x/100+n*(k?1:0)])}return pts});
+function poly(a,b){var q=a.map(function(p){return p[0].toFixed(2)+'% '+p[1].toFixed(2)+'%'});for(var i=b.length-1;i>=0;i--)q.push(b[i][0].toFixed(2)+'% '+b[i][1].toFixed(2)+'%');return'polygon('+q.join(',')+')'}
+var sh=[];
+for(var k=0;k<bounds.length-1;k++){var a=bounds[k],b=bounds[k+1],lo=1e9,hiY=-1e9;a.concat(b).forEach(function(p){lo=Math.min(lo,p[1]);hiY=Math.max(hiY,p[1])});
+ if(hiY<-2||lo>102)continue;
+ var el=document.createElement('div');el.className='sh';var c=poly(a,b);
+ el.innerHTML='<i class="e"></i><i class="f"></i>';el.children[0].style.clipPath=c;el.children[1].style.clipPath=c;box.appendChild(el);
+ sh.push({el:el,dir:sh.length%2?1:-1,rot:(2+rnd()*3.5),k:k})}
+var mid=(sh.length-1)/2;sh.forEach(function(s,i){s.o=Math.abs(i-mid)+(i%2?.25:0)});
+var ord=sh.slice().sort(function(a,b){return a.o-b.o});ord.forEach(function(s,i){s.st=.10+i*(.17/Math.max(1,sh.length-1))});
+var vw,vh,R,H,tgt=0,cur=0,last=0,run=false;
+function measure(){var sr=stage.getBoundingClientRect(),g=ghost.getBoundingClientRect(),h=hi.getBoundingClientRect();vw=sr.width;vh=sr.height;R={l:g.left-sr.left,t:g.top-sr.top,w:g.width,h:g.height};H={x:h.left+h.width/2-sr.left,y:h.top+h.height/2-sr.top}}
+function ez(t){t=t<0?0:t>1?1:t;return t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2}
+function seg(p,a,b){return p<=a?0:p>=b?1:(p-a)/(b-a)}
+function lerp(a,b,t){return a+(b-a)*t}
+function draw(p){
+ var ang=Math.atan2(T/100*vh,vw),cx=Math.cos(ang),cy=Math.sin(ang),dist=(vw+vh)*1.2;
+ sh.forEach(function(s){var t=ez(seg(p,s.st,s.st+.26));s.el.style.transform=t?'translate3d('+(s.dir*cx*dist*t).toFixed(1)+'px,'+(s.dir*cy*dist*t).toFixed(1)+'px,0) rotate('+(s.dir*s.rot*t).toFixed(2)+'deg)':'';s.el.style.visibility=t>=1?'hidden':''});
+ var m=ez(seg(p,.57,.83));
+ ph.style.left=lerp(0,R.l,m)+'px';ph.style.top=lerp(0,R.t,m)+'px';ph.style.width=lerp(vw,R.w,m)+'px';ph.style.height=lerp(vh,R.h,m)+'px';
+ var tr=ez(seg(p,.48,.74));
+ hello.style.transform='translate(-50%,-50%) translate3d('+((H.x-vw/2)*tr).toFixed(1)+'px,'+((H.y-vh/2)*tr).toFixed(1)+'px,0) scale('+lerp(1,.34,tr).toFixed(3)+')';
+ hello.style.opacity=1-ez(seg(p,.62,.76));
+ cue.style.opacity=1-seg(p,.01,.07);
+ var w=ez(seg(p,.70,.87));hi.style.clipPath='inset(-60% '+lerp(100,-25,w).toFixed(1)+'% -60% -25%)';
+ var q=ez(seg(p,.80,.94));say.style.opacity=q;say.style.transform='translate3d(0,'+((1-q)*18).toFixed(1)+'px,0)';
+ sec.style.setProperty('--p',p.toFixed(4));document.documentElement.classList.toggle('cover-on',p<.5&&p>=0);
+}
+function read(){var r=sec.getBoundingClientRect(),span=sec.offsetHeight-innerHeight;tgt=span>0?Math.min(1,Math.max(0,-r.top/span)):0}
+function tick(now){var dt=Math.min(.05,(now-last)/1000||.016);last=now;cur+=(tgt-cur)*(1-Math.exp(-dt*9));if(Math.abs(tgt-cur)<.0004)cur=tgt;draw(cur);if(cur!==tgt)requestAnimationFrame(tick);else run=false}
+function kick(){read();if(!run){run=true;last=performance.now();requestAnimationFrame(tick)}}
+function init(){measure();read();cur=tgt;draw(cur)}
+sec.classList.add('live');init();
+addEventListener('scroll',kick,{passive:true});
+addEventListener('resize',function(){measure();kick();draw(cur)});
+addEventListener('load',function(){measure();draw(cur)});
+if(document.fonts&&document.fonts.ready)document.fonts.ready.then(function(){measure();draw(cur)});
+}catch(e){sec.classList.remove('live');sec.classList.add('static');if(window.console)console.error(e)}
+})();
+</script>
 
 <section class="spread s3">
   <div class="t fd">
