@@ -99,3 +99,10 @@ document.querySelectorAll('.tracks li[data-src]').forEach(function(li){var b=li.
  if(small)return;
  var tick=function(){ps.forEach(function(p){var r=p.getBoundingClientRect();if(r.bottom<0||r.top>innerHeight)return;p._g.style.transform='translate3d(0,'+((r.top+r.height/2-innerHeight/2)*-.18).toFixed(1)+'px,0)'})};
  addEventListener('scroll',tick,{passive:true});tick()})();
+
+/* things I love: light the rows around the middle of the screen */
+(function(){var ul=document.querySelector('.loves-list');if(!ul||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+ var li=[].slice.call(ul.children),raf=0;
+ function t(){raf=0;var r=ul.getBoundingClientRect(),mid=innerHeight*.55;if(r.bottom<0||r.top>innerHeight){ul.classList.remove('lit');return}
+  ul.classList.add('lit');li.forEach(function(e){var b=e.getBoundingClientRect(),d=Math.abs(b.top+b.height/2-mid);e.classList.toggle('on',d<innerHeight*.08)})}
+ addEventListener('scroll',function(){if(!raf)raf=requestAnimationFrame(t)},{passive:true});addEventListener('resize',t);t()})();

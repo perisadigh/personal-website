@@ -173,3 +173,10 @@ header{position:absolute;color:inherit;mix-blend-mode:normal;padding:1.4rem 16px
 .proj .stat .cnt{font-style:italic;color:var(--red);font-variant-numeric:tabular-nums}
 @media (max-width:760px){.gn{font-size:34vw;top:2rem;opacity:.9}}
 @media (prefers-reduced-motion:reduce){.js .proj::before{transform:none}}
+
+/* things I love: photos stay with you while the list passes; the row at the middle of the screen is lit */
+@media (min-width:761px){.loves>.plates{position:sticky;top:12vh;align-self:start}}
+.loves-list li{transition:padding .6s var(--e),opacity .5s var(--e)}
+.loves-list li:hover{padding-left:.7rem}
+.js .loves-list.lit li{opacity:.3;transition:opacity .5s var(--e),padding .6s var(--e)}.js .loves-list.lit li.on{opacity:1}.loves-list.lit li.on span:last-child{font-style:italic}
+@media (prefers-reduced-motion:reduce){.loves-list.lit li{opacity:1}}
