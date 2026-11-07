@@ -177,3 +177,11 @@ header{position:absolute;color:inherit;mix-blend-mode:normal;padding:1.4rem 16px
 /* things I love: hovering a row nudges it along and sets it in italic */
 .loves-list li{transition:padding .6s var(--e)}
 .loves-list li:hover{padding-left:.7rem}
+
+/* less template: no folios, no list numbers, no ruled rows, no cursor dot, no back-to-top */
+.cur{display:none!important}
+.pt .folio,.loves-list .n,.rank-list .pos,.toc .n,.colophon a[href="#top"],.proj .pm span:first-child{display:none}
+.loves-list li,.rank-list li{border-top:0;grid-template-columns:1fr;padding:.5rem 0}
+.toc a{border-top:0!important;grid-template-columns:1fr auto;padding:.9rem 0}.toc li:last-child a{border-bottom:0}
+.proj::before{display:none}.proj{border-top:0}
+.colophon{justify-content:center}
