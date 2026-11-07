@@ -4,7 +4,7 @@
 <meta name="theme-color" content="#f2eee7">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <meta property="og:type" content="website"><meta property="og:site_name" content="Peri Sadigh"><meta property="og:title" content="Peri Sadigh"><meta property="og:description" content="I like making things. Some are useful. Others exist purely because I thought they’d be funny."><meta property="og:url" content="https://perisadigh.com/"><meta property="og:image" content="https://perisadigh.com/assets/img/og.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image">
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter+Tight:wght@400;500&family=Kristi&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter+Tight:wght@400;500&family=Kristi&family=Anybody:wdth,wght@50..150,400..900&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400&display=swap" rel="stylesheet">
 <style>
 :root{--paper:#f2eee7;--ink:#1c1b19;--mu:#6f695f;--red:#8f2a20;--serif:"EB Garamond",Garamond,serif;--cap:"Inter Tight","Helvetica Neue",sans-serif}
 *{box-sizing:border-box}html{background:var(--paper)}body{margin:0;color:var(--ink);font:400 1.2rem/1.5 var(--serif);-webkit-font-smoothing:antialiased}
@@ -187,58 +187,49 @@ linear-gradient(var(--k),var(--k)) 100% calc(100% - 26px)/16px 1px no-repeat,lin
 <script src="assets/lenis.min.js"></script><script src="assets/motion.js"></script>
 <header class="cap"><a href="index.html" aria-current="page">Home</a><nav aria-label="Pages"><a href="work.html">Things I&rsquo;ve made</a><a href="things-i-love.html">Things I love</a></nav></header>
 
-<section class="spread s1 intro" id="intro">
-  <div class="stage">
-    <div class="ghost" aria-hidden="true"></div>
-    <figure class="ph"><img src="assets/img/a/road-blur.jpg" alt="Peri on a road at dusk, looking back over her shoulder, the trees blurred behind her"><i class="fb t" aria-hidden="true"><span>&#9656; 11</span></i><i class="fb b" aria-hidden="true"><span>12 &nbsp;&#9656;&nbsp; 12A</span><span>400</span></i></figure>
-    <p class="hi" aria-hidden="true">about</p>
-    <p class="say fd">I studied biomedical science, then got a job in digital marketing and somehow ended up building software at a startup.</p>
-    <p class="hello" aria-hidden="true">hello, I&rsquo;m Peri</p>
-    <p class="cue cap" aria-hidden="true">Scroll</p>
+<section class="open" id="intro">
+  <h1 class="nm" aria-label="Peri Sadigh">
+    <span class="l1" aria-hidden="true"><span class="pe">Peri</span><span class="sw"><img src="assets/img/a/road-blur.jpg" alt=""><img src="assets/img/a/opening.jpg" alt=""><img src="assets/img/a/hike2.jpg" alt=""><img src="assets/img/a/kungfu.jpg" alt=""></span></span>
+    <span class="l2" aria-hidden="true"><span class="sa">Sadigh</span></span>
+  </h1>
+  <div class="strip" aria-hidden="true">
+    <img src="assets/img/n/out-2.jpg" alt=""><img src="assets/img/n/out-4.jpg" alt=""><img src="assets/img/a/kid-tall.jpg" alt=""><img src="assets/img/n/out-5.jpg" alt=""><img src="assets/img/n/out-6.jpg" alt=""><img src="assets/img/n/kid-3.jpg" alt="">
   </div>
 </section>
+<section class="big">
+  <p class="para" data-fill>I studied biomedical science, then got a job in digital marketing and somehow ended up building software at a startup.</p>
+</section>
+<div class="bar" role="contentinfo"><span>Peri Sadigh</span><span>Building software, making things</span><a href="#hello">Say hello</a></div>
+<style>
+.open{position:relative;min-height:100svh;padding:13vh 3vw 6vh;display:flex;flex-direction:column;justify-content:center;gap:5vh;overflow:hidden}
+.nm{margin:0;font-family:"Anybody","Arial Narrow",sans-serif;font-weight:700;line-height:.8;letter-spacing:-.02em;color:var(--ink)}
+.l1{display:flex;align-items:flex-end;gap:2.4vw}
+.pe{font-stretch:50%;font-size:23vw;display:inline-block;line-height:.8}
+.sw{position:relative;display:inline-block;width:16vw;height:20vw;margin-bottom:.5vw;flex:none;overflow:hidden}
+.sw img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .9s var(--e)}
+.sw img.on{opacity:1}
+.l2{display:block;white-space:nowrap}
+.sa{font-stretch:150%;font-size:19vw;display:inline-block;line-height:.8;margin-top:1.2vw}
+.strip{display:flex;gap:1.2vw;height:11vw;max-height:16rem}
+.strip img{height:100%;aspect-ratio:4/5;object-fit:cover;will-change:transform;transition:none}
+.big{padding:22vh 4vw;min-height:80svh;display:flex;align-items:center}
+.big .para{font-family:"Bodoni Moda",serif;font-weight:400;font-size:clamp(2.2rem,6.4vw,7.4rem);line-height:1.04;letter-spacing:-.025em;margin:0;max-width:19em}
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:30;display:flex;justify-content:space-between;gap:1rem;padding:.9rem 3vw;font:500 .8rem/1 "Anybody",sans-serif;font-stretch:100%;color:#fff;mix-blend-mode:difference;pointer-events:none}
+.bar a{pointer-events:auto;text-decoration:underline;text-underline-offset:.3em}
+@media (max-width:760px){.open{padding:9rem 16px 5rem;gap:3rem}.pe{font-size:34vw}.sw{width:24vw;height:30vw}.sa{font-size:27vw}.strip{height:24vw;gap:2.5vw}.big{padding:8rem 16px}.big .para{font-size:2.5rem}.bar span:nth-child(2){display:none}}
+@media (prefers-reduced-motion:reduce){.sw img{transition:none}}
+</style>
 <script>
-(function(){
-var sec=document.getElementById('intro');if(!sec)return;
-if(matchMedia('(prefers-reduced-motion: reduce)').matches){sec.classList.add('static');return}
-try{
-var L=window.__lenis,intro=scrollY<5,dd=document.documentElement;if(intro){if(L)L.stop();else dd.style.overflow='hidden'}
-var stage=sec.querySelector('.stage'),ph=sec.querySelector('.ph'),ghost=sec.querySelector('.ghost'),hi=sec.querySelector('.hi'),say=sec.querySelector('.say'),hello=sec.querySelector('.hello'),cue=sec.querySelector('.cue'),fbt=ph.querySelector('.fb.t'),fbb=ph.querySelector('.fb.b');
-say.classList.remove('fd');
-var vw,vh,R,H,S,B,HS,tgt=0,cur=0,last=0,run=false;
-function measure(){var sr=stage.getBoundingClientRect(),g=ghost.getBoundingClientRect(),h=hi.getBoundingClientRect();vw=sr.width;vh=sr.height;
- R={l:g.left-sr.left,t:g.top-sr.top,w:g.width,h:g.height};H={x:h.left-sr.left,y:h.top+h.height/2-sr.top,fs:parseFloat(getComputedStyle(hi).fontSize)};
- var w0=vw<760?vw*.7:Math.min(vw*.34,560);B=w0*.085;var h0=w0/1.5+2*B;S={l:(vw-w0)/2,t:(vh-h0)/2-vh*.02,w:w0,h:h0};
- ph.style.setProperty('--b',B.toFixed(1)+'px');
- HS=parseFloat(getComputedStyle(hello).fontSize);hello.style.left=S.l+'px';hello.style.top=(S.t-HS*1.35)+'px'}
-function ez(t){t=t<0?0:t>1?1:t;return t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2}
-function seg(p,a,b){return p<=a?0:p>=b?1:(p-a)/(b-a)}
-function lerp(a,b,t){return a+(b-a)*t}
-function draw(p){
- var g=ez(seg(p,.06,.42)),m=ez(seg(p,.5,.76)),l,t,w,h;
- if(p<.5){l=lerp(S.l,0,g);t=lerp(S.t,0,g);w=lerp(S.w,vw,g);h=lerp(S.h,vh,g)}else{l=lerp(0,R.l,m);t=lerp(0,R.t,m);w=lerp(vw,R.w,m);h=lerp(vh,R.h,m)}
- ph.style.left=l+'px';ph.style.top=t+'px';ph.style.width=w+'px';ph.style.height=h+'px';
- var bd=ez(seg(p,.08,.36)),bo=p>.5?0:1-seg(p,.36,.46);fbt.style.opacity=fbb.style.opacity=bo;fbt.style.transform='translate3d(0,'+(-bd*100)+'%,0)';fbb.style.transform='translate3d(0,'+(bd*100)+'%,0)';
- var tr=ez(seg(p,.2,.62));hello.style.transform='translate3d('+((H.x-S.l)*tr).toFixed(1)+'px,'+((H.y-(S.t-HS*1.35)-HS*.5)*tr).toFixed(1)+'px,0) scale('+lerp(1,H.fs/HS*.9,tr).toFixed(3)+') rotate('+lerp(-4,-6,tr).toFixed(1)+'deg)';
- hello.style.opacity=1-ez(seg(p,.56,.7));
- cue.style.opacity=p>.005?(1-seg(p,.01,.07)):'';
- var w2=ez(seg(p,.66,.84));hi.style.clipPath='inset(-60% '+lerp(100,-25,w2).toFixed(1)+'% -60% -25%)';
- var q=ez(seg(p,.76,.92));say.style.opacity=q;say.style.transform='translate3d(0,'+((1-q)*18).toFixed(1)+'px,0)';
- sec.style.setProperty('--p',p.toFixed(4));
-}
-function read(){var r=sec.getBoundingClientRect(),span=sec.offsetHeight-innerHeight;tgt=span>0?Math.min(1,Math.max(0,-r.top/span)):0}
-function tick(now){var dt=Math.min(.05,(now-last)/1000||.016);last=now;cur+=(tgt-cur)*(1-Math.exp(-dt*9));if(Math.abs(tgt-cur)<.0004)cur=tgt;draw(cur);if(cur!==tgt)requestAnimationFrame(tick);else run=false}
-function kick(){read();if(!run){run=true;last=performance.now();requestAnimationFrame(tick)}}
-sec.classList.add('live');measure();read();cur=tgt;draw(cur);
-function release(){if(L)L.start();else dd.style.overflow=''}
-if(intro){var go=false,start=function(){if(go)return;go=true;measure();draw(cur);sec.classList.add('in');setTimeout(function(){hello.classList.add('go')},900);setTimeout(function(){cue.classList.add('go')},1900);setTimeout(release,2100)};
- if(document.fonts&&document.fonts.ready){document.fonts.ready.then(start);setTimeout(start,1400)}else start()}
-else{sec.classList.add('in');hello.classList.add('go');cue.classList.add('go')}
-addEventListener('scroll',kick,{passive:true});
-addEventListener('resize',function(){measure();kick();draw(cur)});
-addEventListener('load',function(){measure();draw(cur)});
-if(document.fonts&&document.fonts.ready)document.fonts.ready.then(function(){measure();draw(cur)});
-}catch(e){sec.classList.remove('live');sec.classList.add('static');if(window.console)console.error(e)}
+(function(){var sec=document.getElementById('intro'),sa=sec.querySelector('.sa'),l2=sec.querySelector('.l2'),imgs=[].slice.call(sec.querySelectorAll('.sw img')),st=[].slice.call(sec.querySelectorAll('.strip img')),strip=sec.querySelector('.strip');
+function fit(){sa.style.fontSize='';var w=sec.clientWidth-parseFloat(getComputedStyle(sec).paddingLeft)*2,cur=parseFloat(getComputedStyle(sa).fontSize);var r=sa.getBoundingClientRect().width;if(r)sa.style.fontSize=(cur*w/r)+'px'}
+function fitPe(){}
+document.fonts&&document.fonts.ready.then(fit);addEventListener('resize',fit);fit();
+var i=0;imgs[0].classList.add('on');setInterval(function(){imgs[i].classList.remove('on');i=(i+1)%imgs.length;imgs[i].classList.add('on')},2600);
+var rm=matchMedia('(prefers-reduced-motion: reduce)').matches;
+function upd(){var b=sec.getBoundingClientRect(),p=Math.min(1,Math.max(0,-b.top/(innerHeight*.45)));p=p*p*(3-2*p);
+ var r=strip.getBoundingClientRect(),cx=r.left+r.width/2;
+ st.forEach(function(e,k){var n=st.length,mid=(n-1)/2;e.style.transform='none';var er=e.getBoundingClientRect();var ecx=er.left+er.width/2;var tx=(cx+(k-mid)*er.width*.12)-ecx;e._tx=tx*p;e.style.transform='translateX('+(tx*p).toFixed(1)+'px) rotate('+((k-mid)*3.2*p).toFixed(2)+'deg)';e.style.zIndex=k})}
+if(!rm){addEventListener('scroll',upd,{passive:true});addEventListener('resize',upd);upd()}
 })();
 </script>
 
@@ -272,7 +263,7 @@ if(document.fonts&&document.fonts.ready)document.fonts.ready.then(function(){mea
   <div class="marks" aria-hidden="true"></div>
 </section>
 
-<section class="spread s4">
+<section class="spread s4" id="hello">
   <p class="hi">say hello</p>
   <p class="links cap fd"><a href="mailto:perisadigh21@gmail.com">Email</a><span>|</span><a href="https://www.linkedin.com/in/perisadigh/" target="_blank" rel="noopener">LinkedIn</a></p>
   <nav class="pgs cap mu" aria-label="Pages"><a href="work.html">Things I&rsquo;ve made</a><a href="things-i-love.html">Things I love</a></nav>
