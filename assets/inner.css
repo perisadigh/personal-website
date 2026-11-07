@@ -1,5 +1,5 @@
 /* Peri: shared styles for the inner pages (same system as the homepage) */
-:root{--paper:#f2eee7;--ink:#1c1b19;--mu:#6f695f;--red:#8f2a20;--line:rgba(28,27,25,.16);--serif:"EB Garamond",Garamond,serif;--cap:"Inter Tight","Helvetica Neue",sans-serif;--e:cubic-bezier(.2,.7,.2,1)}
+:root{--paper:#f2eee7;--ink:#1c1b19;--mu:#6f695f;--red:#8f2a20;--line:rgba(28,27,25,.16);--serif:"Libre Caslon Text","Libre Caslon Display",Georgia,serif;--cap:"Familjen Grotesk","Helvetica Neue",sans-serif;--e:cubic-bezier(.2,.7,.2,1)}
 *{box-sizing:border-box}html{background:var(--paper)}body{margin:0;color:var(--ink);font:400 1.2rem/1.5 var(--serif);-webkit-font-smoothing:antialiased}
 p,h1,h2,ol,ul,figure{margin:0;padding:0}img{display:block;width:100%;height:100%;object-fit:cover}
 body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;background:url(grain.png) 0 0/220px 220px}
