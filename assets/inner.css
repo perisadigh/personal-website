@@ -177,3 +177,18 @@ header{position:absolute;color:inherit;mix-blend-mode:normal;padding:1.4rem 16px
 /* things I love: hovering a row nudges it along and sets it in italic */
 .loves-list li{transition:padding .6s var(--e)}
 .loves-list li:hover{padding-left:.7rem}
+
+/* things I've made: the projects stack like index tabs. Each card slides up over the last and parks as a thin strip with its number and name */
+@media (min-width:681px){
+.stack{position:relative}
+.stack>.card{margin:0;padding-left:6vw;padding-right:6vw;position:sticky;top:calc(var(--k,0)*2.7rem);background:var(--paper);min-height:78vh;box-sizing:border-box;padding-top:0;border-top:1px solid var(--ink);z-index:calc(var(--k,0) + 1)}
+.stack>.card:nth-child(1){--k:0}.stack>.card:nth-child(2){--k:1}.stack>.card:nth-child(3){--k:2}
+.card{align-content:start}
+.card .pm{grid-column:1 / -1;grid-row:1;display:flex;align-items:center;gap:1.6rem;height:2.7rem;padding:0;margin:0 0 7vh;color:var(--ink)}
+.card .pm span:first-child{display:inline;min-width:3.4rem}
+.card .pm .tn{margin-left:auto;text-align:right}
+.card .pm span:nth-child(2){color:var(--mu)}
+.card h2{grid-row:2 / span 4}.card .gn,.card::before{display:none}
+}
+.card .pm .tn{margin-left:auto}
+@media (max-width:680px){.card .pm .tn{display:none}}
