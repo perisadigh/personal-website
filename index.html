@@ -188,32 +188,49 @@ linear-gradient(var(--k),var(--k)) 100% calc(100% - 26px)/16px 1px no-repeat,lin
 <header class="cap"><a href="index.html" aria-current="page">Home</a><nav aria-label="Pages"><a href="work.html">Things I&rsquo;ve made</a><a href="things-i-love.html">Things I love</a></nav></header>
 
 <section class="open" id="intro">
-  <figure class="plate">
-    <img class="on" src="assets/img/a/road-blur.jpg" alt="Peri on a road at dusk, looking back over her shoulder">
-    <img src="assets/img/a/opening.jpg" alt="">
-    <img src="assets/img/a/hike2.jpg" alt="">
-  </figure>
-  <p class="cap2"><span class="nm2">Peri Sadigh</span><span>Software, marketing, things I make</span></p>
+  <div class="stage2">
+    <figure class="plate">
+      <img class="on" src="assets/img/a/road-blur.jpg" alt="Peri on a road at dusk, looking back over her shoulder">
+      <img src="assets/img/a/opening.jpg" alt="">
+      <img src="assets/img/a/hike2.jpg" alt="">
+    </figure>
+    <p class="cap2"><span class="nm2">Peri Sadigh</span><span>Software, marketing, things I make</span></p>
+    <p class="para" aria-label="I studied biomedical science, then got a job in digital marketing and somehow ended up building software at a startup.">I studied biomedical science, then got a job in digital marketing and somehow ended up building software at a startup.</p>
+  </div>
 </section>
-<section class="big">
-  <p class="para" data-fill>I studied biomedical science, then got a job in digital marketing and somehow ended up building software at a startup.</p>
-</section>
-<div class="bar" role="contentinfo"><span>Peri Sadigh</span><a href="#hello">Say hello</a></div>
 <style>
-.open{min-height:100svh;padding:5.5rem 6vw 2.4rem;display:grid;grid-template-rows:1fr auto;gap:1.1rem}
-.plate{position:relative;margin:0;min-height:60svh;overflow:hidden;background:#e4dfd5}
-.plate img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.04);transition:opacity 2.4s ease,transform 9s ease-out}
-.plate img.on{opacity:1;transform:scale(1)}
-.cap2{display:flex;justify-content:space-between;font:400 1.05rem/1.3 var(--serif);color:var(--ink)}
+.open{position:relative;height:300svh}
+.stage2{position:sticky;top:0;height:100svh;overflow:clip}
+.plate{position:absolute;inset:0;margin:0;background:#e4dfd5;clip-path:inset(5.5rem 6vw 4.2rem 6vw);will-change:clip-path}
+.plate img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 2.4s ease}
+.plate img.on{opacity:1}
+.plate .z{position:absolute;inset:0;transform-origin:50% 50%;will-change:transform}
+.cap2{position:absolute;left:6vw;right:6vw;bottom:1.6rem;display:flex;justify-content:space-between;margin:0;font:400 1.05rem/1.3 var(--serif);color:var(--ink);will-change:opacity}
 .cap2 .nm2{font-style:italic}.cap2 span:last-child{color:var(--mu)}
-.big{padding:24vh 6vw 26vh;min-height:70svh;display:flex;align-items:center}
-.big .para{font:400 clamp(1.7rem,3.1vw,3.3rem)/1.28 var(--serif);letter-spacing:-.01em;margin:0 0 0 12vw;max-width:21em}
+.para{position:absolute;left:6vw;top:50%;width:min(40vw,34em);margin:0;transform:translateY(-50%);font:400 clamp(1.7rem,3vw,3.2rem)/1.22 var(--serif);letter-spacing:-.01em;color:var(--ink)}
+.para .w{opacity:.14;transition:opacity .35s linear}.para .w.on{opacity:1}
 .bar{display:none}
-@media (max-width:760px){.open{padding:5.5rem 16px 1.6rem}.plate{min-height:62svh}.cap2{font-size:.95rem;flex-direction:column;gap:.2rem}.big{padding:7rem 16px}.big .para{margin:0;font-size:1.7rem}}
-@media (prefers-reduced-motion:reduce){.plate img{transition:none;transform:none}}
+@media (max-width:760px){.plate{clip-path:inset(5.5rem 16px 4.2rem 16px)}.cap2{left:16px;right:16px;flex-direction:column;gap:.2rem;font-size:.95rem}.para{left:16px;right:16px;top:20%;width:auto;transform:none;font-size:1.65rem}}
+@media (prefers-reduced-motion:reduce){.plate img{transition:none}.para .w{opacity:1}.open{height:auto}.stage2{position:relative;height:auto;min-height:100svh}}
 </style>
 <script>
-(function(){var im=[].slice.call(document.querySelectorAll('#intro .plate img')),i=0;setInterval(function(){im[i].classList.remove('on');i=(i+1)%im.length;im[i].classList.add('on')},6500)})();
+(function(){var sec=document.getElementById('intro'),plate=sec.querySelector('.plate'),imgs=[].slice.call(plate.querySelectorAll('img')),cap=sec.querySelector('.cap2'),para=sec.querySelector('.para'),rm=matchMedia('(prefers-reduced-motion: reduce)').matches,small=function(){return innerWidth<761};
+var t=para.textContent.trim().split(/\s+/);para.innerHTML=t.map(function(w){return'<span class="w">'+w+'</span>'}).join(' ');var ws=[].slice.call(para.querySelectorAll('.w'));
+var i=0;setInterval(function(){imgs[i].classList.remove('on');i=(i+1)%imgs.length;imgs[i].classList.add('on')},6500);
+if(rm)return;
+var cur=0,tgt=0,last=0,raf=0;
+function ease(x){return x<.5?2*x*x:1-Math.pow(-2*x+2,2)/2}
+function seg(p,a,b){return Math.min(1,Math.max(0,(p-a)/(b-a)))}
+function draw(p){var e=ease(seg(p,.04,.6)),vw=innerWidth,vh=innerHeight,rem=parseFloat(getComputedStyle(document.documentElement).fontSize),sm=small();
+ var t0=5.5*rem,r0=vw*.06,b0=4.2*rem,l0=vw*.06,t1,r1,b1,l1;
+ if(sm){t1=vh*.5;r1=16;b1=vh*.08;l1=16}else{t1=vh*.12;r1=vw*.06;b1=vh*.12;l1=vw*.54}
+ var L=function(a,b){return a+(b-a)*e};
+ plate.style.clipPath='inset('+L(t0,t1).toFixed(1)+'px '+L(r0,r1).toFixed(1)+'px '+L(b0,b1).toFixed(1)+'px '+L(l0,l1).toFixed(1)+'px)';
+ cap.style.opacity=1-seg(p,.02,.2);para.style.opacity=seg(p,.3,.5);
+ var wp=seg(p,.35,.92);ws.forEach(function(w,k){w.classList.toggle('on',wp*ws.length>k)})}
+function tick(ts){raf=0;var dt=last?Math.min(.05,(ts-last)/1000):.016;last=ts;cur+=(tgt-cur)*(1-Math.exp(-dt*7));if(Math.abs(tgt-cur)<.0005)cur=tgt;draw(cur);if(cur!==tgt)raf=requestAnimationFrame(tick);else last=0}
+function on(){var b=sec.getBoundingClientRect();tgt=Math.min(1,Math.max(0,-b.top/Math.max(1,b.height-innerHeight)));if(!raf)raf=requestAnimationFrame(tick)}
+addEventListener('scroll',on,{passive:true});addEventListener('resize',on);cur=tgt=0;on();draw(cur)})();
 </script>
 
 <section class="spread s3">
