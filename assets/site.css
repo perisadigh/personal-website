@@ -44,7 +44,7 @@ header.site nav a[aria-current]{text-decoration:none}
 .pt .folio{display:none}
 .pt h1,.pt h1.sm,.pt h1.long{position:relative;z-index:1;font:300 clamp(3rem,7.4vw,8.2rem)/.96 var(--serif);letter-spacing:-.03em}
 .pt h1 em{font-style:italic}
-.pt .stand{position:relative;z-index:1;margin-top:3.4rem;max-width:26rem;font:italic 400 clamp(1.2rem,1.55vw,1.55rem)/1.38 var(--serif)}
+.pt .stand{position:relative;z-index:1;margin-top:3.4rem;max-width:26rem;font:italic 500 clamp(1.2rem,1.55vw,1.55rem)/1.38 var(--serif)}
 .pt .aura{inset:-20% -10% 0}
 @media (max-width:760px){.pt{padding:10.5rem 16px 3.5rem}.pt h1,.pt h1.sm,.pt h1.long{font-size:15vw}}
 
@@ -53,9 +53,9 @@ header.site nav a[aria-current]{text-decoration:none}
 
 /* say hello: a poppy-red band with a cream note on it */
 .end{position:relative;background:var(--red);color:var(--paper);padding:18vh max(16px,5vw) 3.2rem;overflow:hidden;--hc:var(--paper)}
-.end .note{position:relative;margin:0 auto;width:min(34rem,100%);aspect-ratio:5/3.4;background:#f5efe6 url(grain.png) 0 0/220px 220px;color:var(--ink);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2.2rem;padding:2.4rem 2rem;transform:rotate(-2.2deg);box-shadow:0 1px 1px rgba(60,10,6,.25),0 1.6rem 2.6rem -1rem rgba(60,10,6,.45)}
+.end .note{position:relative;margin:0 auto;width:min(30rem,100%);aspect-ratio:5/3.3;background:#f5efe6 url(grain.png) 0 0/220px 220px;color:var(--ink);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2.2rem;padding:2.4rem 2rem;transform:rotate(-2.2deg);box-shadow:0 1px 1px rgba(60,10,6,.25),0 1.6rem 2.6rem -1rem rgba(60,10,6,.45)}
 .end .note::before{content:"";position:absolute;left:50%;top:-.9rem;width:5.2rem;height:1.7rem;translate:-50% 0;rotate:3deg;background:rgba(238,215,208,.78);box-shadow:0 1px 2px rgba(60,10,6,.12)}
-.end .hi{font:400 clamp(4.2rem,8vw,7.4rem)/.8 var(--hand);color:var(--red);transform:rotate(-4deg);white-space:nowrap;margin:0}
+.end .hi{font:400 clamp(5rem,9vw,8.4rem)/.8 var(--hand);color:var(--red);transform:rotate(-4deg);white-space:nowrap;margin:0}
 .end .links{display:flex;gap:2.6rem;margin:0}
 .end .links a{position:relative;padding-bottom:.45em}
 .end .links a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:currentColor;transform:scaleX(.25);transform-origin:0 50%;transition:transform .6s var(--e)}

@@ -9,7 +9,7 @@
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <meta property="og:type" content="website"><meta property="og:site_name" content="Peri Sadigh"><meta property="og:title" content="Things I love · Peri"><meta property="og:description" content="Piano, yoga, Tuvan throat singing, and a contact sheet of the people (and pets) I love."><meta property="og:url" content="https://perisadigh.com/things-i-love.html"><meta property="og:image" content="https://perisadigh.com/assets/img/og.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://api.fontshare.com"><link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
-<link href="https://api.fontshare.com/v2/css?f[]=boska@300,400,301,401&f[]=switzer@400,500&display=swap" rel="stylesheet">
+<link href="https://api.fontshare.com/v2/css?f[]=boska@300,400,500,301,401,501&f[]=switzer@400,500&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Kristi&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/inner.css">
 <link rel="stylesheet" href="assets/site.css">
@@ -20,9 +20,9 @@
 /* things I love: the list is set as one long line of type, like a column in a magazine, with photos drifting in the margins */
 .lv-wrap{position:relative;padding:4vh 5vw 22vh}
 .lv{position:relative;z-index:2;list-style:none;margin:0 auto;max-width:min(64rem,62vw);text-align:center;text-wrap:balance;font:300 clamp(1.9rem,3.5vw,3.9rem)/1.2 var(--serif);letter-spacing:-.025em}
-.lv li{display:inline}
+.lv li{display:inline}.lv li+li::before{content:" "}
 .lv li span{display:inline-block;transition:transform .7s var(--e),color .5s}
-.lv li:not(:last-child)::after{content:"";display:inline-block;width:.15em;height:.15em;margin:0 .42em;border-radius:50%;background:var(--red);vertical-align:.24em}
+.lv li:not(:last-child) span::after{content:"";display:inline-block;width:.15em;height:.15em;margin:0 0 0 .42em;border-radius:50%;background:var(--red);vertical-align:.24em}.lv li+li{margin-left:.42em}
 .lv li span:hover{font-style:italic;transform:translateX(.18em)}
 .lv li:nth-child(4n+2) span{font-style:italic}
 .lv li:nth-child(4n+2) span:hover{font-style:normal}
