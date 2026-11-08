@@ -14,11 +14,10 @@ ready(function(){
 
  /* fog between pages */
  var fog=document.createElement('div');fog.className='fog';fog.setAttribute('aria-hidden','true');document.body.appendChild(fog);
- requestAnimationFrame(function(){requestAnimationFrame(function(){fog.classList.add('off')})});
- addEventListener('pageshow',function(e){if(e.persisted){fog.classList.remove('on');fog.classList.add('off')}});
+ addEventListener('pageshow',function(e){if(e.persisted)fog.classList.remove('on')});
  if(!rm)document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href]');if(!a||e.defaultPrevented||e.metaKey||e.ctrlKey||e.shiftKey||a.target==='_blank')return;
   var u=new URL(a.href,location.href);if(u.origin!==location.origin||u.pathname===location.pathname||/^mailto:/.test(a.href))return;
-  e.preventDefault();fog.classList.remove('off');fog.classList.add('on');setTimeout(function(){location.href=a.href},480)});
+  e.preventDefault();fog.style.opacity=0;fog.classList.add('on');void fog.offsetWidth;fog.style.opacity='';setTimeout(function(){location.href=a.href},480)});
 
  /* the note in the footer */
  var notes=[].slice.call(document.querySelectorAll('.end .note'));

@@ -34,9 +34,9 @@ header.site nav a[aria-current]{text-decoration:none}
 @media (prefers-reduced-motion:reduce){.aura{animation:none}}
 
 /* page change: a blush fog closes over the page and lifts on the next */
-.fog{position:fixed;inset:0;z-index:90;pointer-events:none;background:radial-gradient(80% 70% at 60% 40%,#f1ddd6,var(--paper) 70%);opacity:1;transition:opacity .9s var(--e)}
-.fog.off{opacity:0}
-.fog.on{opacity:1;transition:opacity .45s var(--e2)}
+.fog{position:fixed;inset:0;z-index:90;pointer-events:none;background:radial-gradient(80% 70% at 60% 40%,#f1ddd6,var(--paper) 70%);opacity:0;animation:lift .9s var(--e) both}
+@keyframes lift{from{opacity:1}to{opacity:0}}
+.fog.on{animation:none;opacity:1;transition:opacity .45s var(--e2)}
 @media (prefers-reduced-motion:reduce){.fog{display:none}}
 
 /* inner page titles */
