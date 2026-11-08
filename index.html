@@ -189,49 +189,55 @@ linear-gradient(var(--k),var(--k)) 100% calc(100% - 26px)/16px 1px no-repeat,lin
 
 <section class="open" id="intro">
   <div class="stage2">
-    <figure class="plate">
-      <img class="on" src="assets/img/a/road-blur.jpg" alt="Peri on a road at dusk, looking back over her shoulder">
-      <img src="assets/img/a/opening.jpg" alt="">
-      <img src="assets/img/a/hike2.jpg" alt="">
-    </figure>
-    <p class="cap2"><span class="nm2">Peri Sadigh</span><span>Software, marketing, things I make</span></p>
-    <p class="para" aria-label="I studied biomedical science, then got a job in digital marketing and somehow ended up building software at a startup.">I studied biomedical science, then got a job in digital marketing and somehow ended up building software at a startup.</p>
+    <h1 class="name" aria-label="Peri Sadigh"><span>Peri</span><span>Sadigh</span></h1>
+    <img class="pp" src="assets/img/a/road-blur.jpg" alt=""><img class="pp" src="assets/img/n/out-2.jpg" alt=""><img class="pp" src="assets/img/a/hike2.jpg" alt=""><img class="pp" src="assets/img/n/out-4.jpg" alt=""><img class="pp" src="assets/img/a/kid-tall.jpg" alt=""><img class="pp" src="assets/img/n/out-6.jpg" alt="">
+    <div class="hl a"><p class="h2"><em>Building</em> software</p><p class="d">I studied biomedical science, then got a job in digital marketing and somehow ended up building software at a startup.</p></div>
+    <div class="hl b"><p class="h2"><em>Making</em> things</p><p class="d">Some are useful. Others exist purely because I thought they&rsquo;d be funny.</p></div>
   </div>
 </section>
 <style>
-.open{position:relative;height:300svh}
+.open{position:relative;height:640svh}
 .stage2{position:sticky;top:0;height:100svh;overflow:clip}
-.plate{position:absolute;inset:0;margin:0;background:#e4dfd5;clip-path:inset(5.5rem 6vw 4.2rem 6vw);will-change:clip-path}
-.plate img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 2.4s ease}
-.plate img.on{opacity:1}
-.plate .z{position:absolute;inset:0;transform-origin:50% 50%;will-change:transform}
-.cap2{position:absolute;left:6vw;right:6vw;bottom:1.6rem;display:flex;justify-content:space-between;margin:0;font:400 1.05rem/1.3 var(--serif);color:var(--ink);will-change:opacity}
-.cap2 .nm2{font-style:italic}.cap2 span:last-child{color:var(--mu)}
-.para{position:absolute;left:6vw;top:50%;width:min(40vw,34em);margin:0;transform:translateY(-50%);font:400 clamp(1.7rem,3vw,3.2rem)/1.22 var(--serif);letter-spacing:-.01em;color:var(--ink)}
-.para .w{opacity:.14;transition:opacity .35s linear}.para .w.on{opacity:1}
+.name{position:absolute;left:0;top:0;margin:0;transform-origin:0 0;font:400 2rem/.9 var(--serif);letter-spacing:-.02em;color:var(--ink);will-change:transform;z-index:6;white-space:nowrap}
+.name span{display:block}
+.pp{position:absolute;left:0;top:0;width:12vw;height:15vw;max-width:none;max-height:none;object-fit:cover;transform-origin:50% 50%;will-change:transform;z-index:2;background:#e4dfd5}
+.hl{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);text-align:center;padding:0 6vw;opacity:0;z-index:4;pointer-events:none}
+.hl .h2{margin:0;font:400 clamp(2.6rem,8.4vw,9.6rem)/.95 var(--serif);letter-spacing:-.025em;color:var(--ink)}
+.hl .h2 em{font-style:italic}
+.hl .d{max-width:30rem;margin:1.4rem auto 0;font:400 1.1rem/1.45 var(--serif);color:var(--ink)}
 .bar{display:none}
-@media (max-width:760px){.plate{clip-path:inset(5.5rem 16px 4.2rem 16px)}.cap2{left:16px;right:16px;flex-direction:column;gap:.2rem;font-size:.95rem}.para{left:16px;right:16px;top:20%;width:auto;transform:none;font-size:1.65rem}}
-@media (prefers-reduced-motion:reduce){.plate img{transition:none}.para .w{opacity:1}.open{height:auto}.stage2{position:relative;height:auto;min-height:100svh}}
+@media (max-width:760px){.hl .h2{font-size:15vw}.hl .d{font-size:1rem;max-width:20rem}.pp{width:22vw}}
+@media (prefers-reduced-motion:reduce){.open{height:auto}.stage2{position:relative;height:auto;min-height:100svh}.hl{position:relative;opacity:1;top:auto;transform:none;padding:6rem 6vw}.name{position:relative}.pp{position:relative;display:inline-block}}
 </style>
 <script>
-(function(){var sec=document.getElementById('intro'),plate=sec.querySelector('.plate'),imgs=[].slice.call(plate.querySelectorAll('img')),cap=sec.querySelector('.cap2'),para=sec.querySelector('.para'),rm=matchMedia('(prefers-reduced-motion: reduce)').matches,small=function(){return innerWidth<761};
-var t=para.textContent.trim().split(/\s+/);para.innerHTML=t.map(function(w){return'<span class="w">'+w+'</span>'}).join(' ');var ws=[].slice.call(para.querySelectorAll('.w'));
-var i=0;setInterval(function(){imgs[i].classList.remove('on');i=(i+1)%imgs.length;imgs[i].classList.add('on')},6500);
-if(rm)return;
-var cur=0,tgt=0,last=0,raf=0;
-function ease(x){return x<.5?2*x*x:1-Math.pow(-2*x+2,2)/2}
+(function(){var sec=document.getElementById('intro'),nm=sec.querySelector('.name'),pp=[].slice.call(sec.querySelectorAll('.pp')),ha=sec.querySelector('.hl.a'),hb=sec.querySelector('.hl.b');
+if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+var N=pp.length,cur=0,tgt=0,last=0,raf=0,W,H,sm,nmw,PP;
 function seg(p,a,b){return Math.min(1,Math.max(0,(p-a)/(b-a)))}
-function draw(p){var e=ease(seg(p,.04,.6)),vw=innerWidth,vh=innerHeight,rem=parseFloat(getComputedStyle(document.documentElement).fontSize),sm=small();
- var t0=5.5*rem,r0=vw*.06,b0=4.2*rem,l0=vw*.06,t1,r1,b1,l1;
- if(sm){t1=vh*.5;r1=16;b1=vh*.08;l1=16}else{t1=vh*.12;r1=vw*.06;b1=vh*.12;l1=vw*.54}
- var L=function(a,b){return a+(b-a)*e};
- plate.style.clipPath='inset('+L(t0,t1).toFixed(1)+'px '+L(r0,r1).toFixed(1)+'px '+L(b0,b1).toFixed(1)+'px '+L(l0,l1).toFixed(1)+'px)';
- cap.style.opacity=1-seg(p,.02,.2);para.style.opacity=seg(p,.3,.5);
- var wp=seg(p,.35,.92);ws.forEach(function(w,k){w.classList.toggle('on',wp*ws.length>k)})}
-function tick(ts){raf=0;var dt=last?Math.min(.05,(ts-last)/1000):.016;last=ts;cur+=(tgt-cur)*(1-Math.exp(-dt*7));if(Math.abs(tgt-cur)<.0005)cur=tgt;draw(cur);if(cur!==tgt)raf=requestAnimationFrame(tick);else last=0}
+function ease(x){return x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2}
+function L(a,b,t){return a+(b-a)*t}
+function meas(){W=innerWidth;H=innerHeight;sm=W<761;nm.style.transform='none';nmw=nm.getBoundingClientRect().width}
+function pos(){var n=sm?4:N,h0=sm?H*.18:H*.26,w0=h0*.8,gap=W*.012,tot=n*w0+(n-1)*gap,x0=(W-tot)/2,P0=[],P1=[],P2=[];
+ for(var k=0;k<N;k++){var kk=Math.min(k,n-1);P0.push({x:x0+kk*(w0+gap),y:H*.66,w:w0,r:0});P1.push({x:W/2-w0*.55,y:H*.5-h0*.55,w:w0*1.1,r:(k-2.5)*3.4})}
+ var sc=sm?[[.04,.62,.26],[.7,.1,.24],[.38,.1,.24],[.06,.2,.18],[.7,.64,.26],[.38,.78,.2]]:[[.05,.6,.13],[.8,.1,.12],[.43,.07,.13],[.2,.16,.09],[.78,.56,.14],[.56,.7,.1]];
+ for(var j=0;j<N;j++)P2.push({x:W*sc[j][0],y:H*sc[j][1],w:W*sc[j][2],r:(j%2?1:-1)*(1+j%3)});
+ return[P0,P1,P2]}
+function draw(p){
+ var t1=ease(seg(p,.02,.2)),bigS=(W*(sm?.46:.3))/nmw,s=L(bigS,1,t1),x0=sm?16:W*.06,y0=sm?H*.1:H*.1,x1=sm?16:W*.03,y1=sm?66:22;
+ nm.style.transform='translate('+L(x0,x1,t1).toFixed(1)+'px,'+L(y0,y1,t1).toFixed(1)+'px) scale('+s.toFixed(3)+')';
+ for(var k=0;k<N;k++){var a=PP[0][k],b=PP[1][k],c=PP[2][k],e=pp[k];
+  var d=ease(seg(p,.1+k*.008,.34+k*.008)),f=ease(seg(p,.28+(k%3)*.015,.48+(k%3)*.015));
+  var x=L(L(a.x,b.x,d),c.x,f),y=L(L(a.y,b.y,d),c.y,f),w=L(L(a.w,b.w,d),c.w,f),r=L(L(a.r,b.r,d),c.r,f);
+  var dr=p>.5?(p-.5)*(k%2?-1:1)*H*(.15+.06*k):0;
+  e.style.width=w.toFixed(1)+'px';e.style.height=(w*1.25).toFixed(1)+'px';e.style.transform='translate('+x.toFixed(1)+'px,'+(y+dr).toFixed(1)+'px) rotate('+r.toFixed(2)+'deg)'}
+ var ia=seg(p,.5,.58)*(1-seg(p,.66,.72)),ib=seg(p,.74,.82)*(1-seg(p,.94,1));
+ ha.style.opacity=ia;ha.style.filter='blur('+((1-ia)*14).toFixed(1)+'px)';hb.style.opacity=ib;hb.style.filter='blur('+((1-ib)*14).toFixed(1)+'px)'}
+function tick(ts){raf=0;var dt=last?Math.min(.05,(ts-last)/1000):.016;last=ts;cur+=(tgt-cur)*(1-Math.exp(-dt*6));if(Math.abs(tgt-cur)<.0004)cur=tgt;draw(cur);if(cur!==tgt)raf=requestAnimationFrame(tick);else last=0}
 function on(){var b=sec.getBoundingClientRect();tgt=Math.min(1,Math.max(0,-b.top/Math.max(1,b.height-innerHeight)));if(!raf)raf=requestAnimationFrame(tick)}
-addEventListener('scroll',on,{passive:true});addEventListener('resize',on);cur=tgt=0;on();draw(cur)})();
+function init(){meas();PP=pos();cur=tgt=0;on();draw(cur)}
+nm.style.fontSize='2rem';document.fonts&&document.fonts.ready.then(init);init();addEventListener('resize',init);addEventListener('scroll',on,{passive:true})})();
 </script>
+
 
 <section class="spread s3">
   <div class="t fd">
