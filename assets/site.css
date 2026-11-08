@@ -1,0 +1,82 @@
+/* Peri Sadigh: shared look. Boska + Switzer, paper with poppy red ink, blush and dusty blue. Loaded after inner.css so it wins. */
+:root{
+ --paper:#f3eee7;--paper2:#e9e2d7;--ink:#1b1917;--mu:#7a726a;--line:rgba(27,25,23,.14);
+ --red:#b0302a;--blush:#eed7d0;--rose:#d9aaa1;--blue:#aab6d1;--blue-d:#62729b;--cocoa:#221c19;
+ --serif:"Boska","Iowan Old Style","Palatino Linotype",Georgia,serif;
+ --cap:"Switzer","Helvetica Neue",Arial,sans-serif;--hand:"Kristi",cursive;
+ --e:cubic-bezier(.2,.7,.2,1);--e2:cubic-bezier(.65,0,.15,1);
+ --hc:var(--ink)
+}
+html{background:var(--paper)}
+body{color:var(--ink);font:400 1.18rem/1.5 var(--serif);font-feature-settings:"kern","liga"}
+::selection{background:var(--red);color:var(--paper)}
+.cap,.type{font:500 .66rem/1.5 var(--cap);letter-spacing:.16em;text-transform:uppercase}
+:focus-visible{outline:1px solid var(--red);outline-offset:4px}
+
+/* header: a wordmark and three quiet links; its colour follows the section underneath */
+header.site{position:fixed;top:0;left:0;right:0;z-index:40;display:flex;justify-content:space-between;align-items:baseline;padding:1.6rem max(16px,5vw);color:var(--hc);mix-blend-mode:normal;transition:transform .8s var(--e),color .5s var(--e)}
+header.site.away{transform:translateY(-140%)}
+header.site .logo{font:400 1.2rem/1 var(--serif);letter-spacing:-.01em;text-transform:none;transition:opacity .4s}
+header.site .logo i{font-style:italic}
+header.site nav{display:flex;gap:2.4rem;font:500 .66rem/1 var(--cap);letter-spacing:.16em;text-transform:uppercase}
+header.site nav a{position:relative;padding-bottom:.45em;background:none}
+header.site nav a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:currentColor;transform:scaleX(0);transform-origin:100% 50%;transition:transform .6s var(--e)}
+header.site nav a:hover::after,header.site nav a:focus-visible::after,header.site nav a[aria-current]::after{transform:scaleX(1);transform-origin:0 50%}
+header.site nav a[aria-current]{text-decoration:none}
+@media (max-width:760px){header.site{position:absolute;padding:1.3rem 16px;flex-direction:column;align-items:flex-start;gap:.9rem}header.site nav{gap:1.1rem;font-size:.6rem}}
+
+/* soft colour in the air: blush and dusty blue, drifting very slowly */
+.aura{position:absolute;inset:-12%;z-index:0;pointer-events:none;background:
+ radial-gradient(38% 34% at 74% 26%,rgba(222,170,160,.42),transparent 72%),
+ radial-gradient(36% 32% at 16% 80%,rgba(150,166,204,.36),transparent 72%),
+ radial-gradient(30% 26% at 46% 52%,rgba(238,215,208,.35),transparent 70%);filter:blur(24px);animation:drift 26s ease-in-out infinite alternate}
+@keyframes drift{0%{transform:translate3d(0,0,0) scale(1)}50%{transform:translate3d(-3%,2%,0) scale(1.06)}100%{transform:translate3d(2%,-2%,0) scale(1.02)}}
+@media (prefers-reduced-motion:reduce){.aura{animation:none}}
+
+/* page change: a blush fog closes over the page and lifts on the next */
+.fog{position:fixed;inset:0;z-index:90;pointer-events:none;background:radial-gradient(80% 70% at 60% 40%,#f1ddd6,var(--paper) 70%);opacity:1;transition:opacity .9s var(--e)}
+.fog.off{opacity:0}
+.fog.on{opacity:1;transition:opacity .45s var(--e2)}
+@media (prefers-reduced-motion:reduce){.fog{display:none}}
+
+/* inner page titles */
+.pt{position:relative;padding:26vh 5vw 12vh;overflow:hidden}
+.pt .folio{display:none}
+.pt h1,.pt h1.sm,.pt h1.long{position:relative;z-index:1;font:300 clamp(3rem,7.4vw,8.2rem)/.96 var(--serif);letter-spacing:-.03em}
+.pt h1 em{font-style:italic}
+.pt .stand{position:relative;z-index:1;margin-top:3.4rem;max-width:26rem;font:italic 400 clamp(1.2rem,1.55vw,1.55rem)/1.38 var(--serif)}
+.pt .aura{inset:-20% -10% 0}
+@media (max-width:760px){.pt{padding:10.5rem 16px 3.5rem}.pt h1,.pt h1.sm,.pt h1.long{font-size:15vw}}
+
+/* red ink: handwriting set in the poppy colour */
+.ink{color:var(--red)}
+
+/* say hello: a poppy-red band with a cream note on it */
+.end{position:relative;background:var(--red);color:var(--paper);padding:18vh max(16px,5vw) 3.2rem;overflow:hidden;--hc:var(--paper)}
+.end .note{position:relative;margin:0 auto;width:min(34rem,100%);aspect-ratio:5/3.4;background:#f5efe6 url(grain.png) 0 0/220px 220px;color:var(--ink);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2.2rem;padding:2.4rem 2rem;transform:rotate(-2.2deg);box-shadow:0 1px 1px rgba(60,10,6,.25),0 1.6rem 2.6rem -1rem rgba(60,10,6,.45)}
+.end .note::before{content:"";position:absolute;left:50%;top:-.9rem;width:5.2rem;height:1.7rem;translate:-50% 0;rotate:3deg;background:rgba(238,215,208,.78);box-shadow:0 1px 2px rgba(60,10,6,.12)}
+.end .hi{font:400 clamp(4.2rem,8vw,7.4rem)/.8 var(--hand);color:var(--red);transform:rotate(-4deg);white-space:nowrap;margin:0}
+.end .links{display:flex;gap:2.6rem;margin:0}
+.end .links a{position:relative;padding-bottom:.45em}
+.end .links a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:currentColor;transform:scaleX(.25);transform-origin:0 50%;transition:transform .6s var(--e)}
+.end .links a:hover::after,.end .links a:focus-visible::after{transform:scaleX(1)}
+.end .pgs{display:flex;justify-content:center;flex-wrap:wrap;gap:.6rem 2.2rem;margin-top:16vh}
+.end .pgs a{opacity:.8;transition:opacity .4s}.end .pgs a:hover{opacity:1}
+.end .fine{display:flex;justify-content:space-between;margin-top:2.6rem;opacity:.72}
+.end .fine a{opacity:1}
+@media (max-width:760px){.end{padding:7rem 16px 2rem}.end .note{aspect-ratio:auto;padding:3.4rem 1.4rem 2.8rem}.end .hi{font-size:4.4rem}.end .pgs{margin-top:5rem}}
+.js .end .note{opacity:0;transform:translateY(3rem) rotate(2deg)}
+.js .end .note.in{opacity:1;transform:rotate(-2.2deg);transition:opacity .8s var(--e),transform 1.4s var(--e)}
+.js .end .hi{clip-path:inset(-60% 100% -60% -25%)}
+.js .end .note.in .hi{clip-path:inset(-60% -25% -60% -25%);transition:clip-path 1.2s cubic-bezier(.5,0,.2,1) .45s}
+@media (prefers-reduced-motion:reduce){.js .end .note{opacity:1;transform:rotate(-2.2deg)}.js .end .hi{clip-path:none}}
+
+/* photos open from the bottom edge and settle */
+.js .rv{overflow:hidden}
+.js .rv img{opacity:1;transform:scale(1.12);clip-path:inset(100% 0 0 0);transition:none}
+.js .rv.in img{clip-path:inset(0 0 0 0);transform:scale(1.02);transition:clip-path 1.3s var(--e2),transform 1.8s var(--e)}
+@media (prefers-reduced-motion:reduce){.js .rv img{clip-path:none!important;transform:none!important}}
+
+/* the cursor dot is poppy red and grows a little over links */
+.cur{background:var(--red)!important;mix-blend-mode:normal!important;width:8px!important;height:8px!important;margin:-4px 0 0 -4px!important}
+.cur.big{width:46px!important;height:46px!important;margin:-23px 0 0 -23px!important;background:rgba(176,48,42,.14)!important;box-shadow:inset 0 0 0 1px var(--red)}

@@ -5,59 +5,82 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Things I love · Peri Sadigh</title>
 <meta name="description" content="Piano, yoga, Tuvan throat singing, and a contact sheet of the people (and pets) I love.">
-<meta name="theme-color" content="#f2eee7">
+<meta name="theme-color" content="#f3eee7">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <meta property="og:type" content="website"><meta property="og:site_name" content="Peri Sadigh"><meta property="og:title" content="Things I love · Peri"><meta property="og:description" content="Piano, yoga, Tuvan throat singing, and a contact sheet of the people (and pets) I love."><meta property="og:url" content="https://perisadigh.com/things-i-love.html"><meta property="og:image" content="https://perisadigh.com/assets/img/og.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter+Tight:wght@400;500&family=Kristi&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://api.fontshare.com"><link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
+<link href="https://api.fontshare.com/v2/css?f[]=boska@300,400,301,401&f[]=switzer@400,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Kristi&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/inner.css">
+<link rel="stylesheet" href="assets/site.css">
 <script>document.documentElement.classList.add("js")</script>
-<script src="assets/lenis.min.js"></script><script src="assets/motion.js"></script>
+<script src="assets/lenis.min.js"></script>
+<script src="assets/motion.js"></script>
+<style>
+/* things I love: the list is set as one long line of type, like a column in a magazine, with photos drifting in the margins */
+.lv-wrap{position:relative;padding:4vh 5vw 22vh}
+.lv{position:relative;z-index:2;list-style:none;margin:0 auto;max-width:min(64rem,62vw);text-align:center;text-wrap:balance;font:300 clamp(1.9rem,3.5vw,3.9rem)/1.2 var(--serif);letter-spacing:-.025em}
+.lv li{display:inline}
+.lv li span{display:inline-block;transition:transform .7s var(--e),color .5s}
+.lv li:not(:last-child)::after{content:"";display:inline-block;width:.15em;height:.15em;margin:0 .42em;border-radius:50%;background:var(--red);vertical-align:.24em}
+.lv li span:hover{font-style:italic;transform:translateX(.18em)}
+.lv li:nth-child(4n+2) span{font-style:italic}
+.lv li:nth-child(4n+2) span:hover{font-style:normal}
+.drift{position:absolute;z-index:1;margin:0;will-change:transform}
+.drift img{height:auto}
+.drift.a{left:3vw;top:0;width:12vw}.drift.b{right:3vw;top:30%;width:12.5vw}.drift.c{left:5vw;bottom:6vh;width:10vw}
+.js .lv li span{opacity:0;transform:translateY(.4em)}
+.js .lv.in li span{opacity:1;transform:none;transition:opacity .8s var(--e) calc(var(--i)*35ms),transform 1s var(--e) calc(var(--i)*35ms)}
+.js .lv.in li span:hover{transform:translateX(.18em);transition:transform .7s var(--e)}
+@media (max-width:760px){.lv-wrap{padding:1rem 16px 6rem}.lv{font-size:1.85rem;text-align:left;max-width:none}.drift{position:static;display:inline-block;width:31%!important;margin:0 1% 2.4rem 0;vertical-align:top}}
+@media (prefers-reduced-motion:reduce){.js .lv li span{opacity:1;transform:none}}
+#people{border-top:0}
+</style>
 </head>
 <body>
-<header class="cap"><a href="index.html">Home</a><nav aria-label="Pages"><a href="work.html">Things I&rsquo;ve made</a><a href="things-i-love.html" aria-current="page">Things I love</a></nav></header>
+<header class="site"><a class="logo" href="index.html">Peri <i>Sadigh</i></a><nav aria-label="Pages"><a href="work.html">Things I&rsquo;ve made</a><a href="things-i-love.html" aria-current="page">Things I love</a></nav></header>
 <main id="top">
   <section class="pt">
-  <p class="folio cap mu">03</p>
-  <h1 class="sm" aria-label="Things I love"><span class="ln" aria-hidden="true"><span>Things I love</span></span></h1>
+   <div class="aura" aria-hidden="true"></div>
+   <h1>Things I love</h1>
   </section>
-  <section class="loves">
-    <div class="plates" aria-hidden="true"><figure class="rv"><img src="assets/img/n/out-6.jpg" alt="" loading="lazy"></figure><figure class="rv"><img src="assets/img/n/out-2.jpg" alt="" loading="lazy"></figure><figure class="rv"><img src="assets/img/n/out-5.jpg" alt="" loading="lazy"></figure></div>
-    <ol class="loves-list stag">
-      <li style="--i:0"><span class="n type">01</span><span>Piano</span></li>
-      <li style="--i:1"><span class="n type">02</span><span>Yoga</span></li>
-      <li style="--i:2"><span class="n type">03</span><span>Building random things with AI</span></li>
-      <li style="--i:3"><span class="n type">04</span><span>Creating AI portraits of my friends</span></li>
-      <li style="--i:4"><span class="n type">05</span><span>Quality time with the people I love</span></li>
-      <li style="--i:5"><span class="n type">06</span><span>Learning new things</span></li>
-      <li style="--i:6"><span class="n type">07</span><span>Spending time outdoors</span></li>
-      <li style="--i:7"><span class="n type">08</span><span>Hiking</span></li>
-      <li style="--i:8"><span class="n type">09</span><span>Floating in calm water</span></li>
-      <li style="--i:9"><span class="n type">10</span><span>Shells</span></li>
-      <li style="--i:10"><span class="n type">11</span><span>Rock climbing</span></li>
-      <li style="--i:11"><span class="n type">12</span><span>Pranks</span></li>
-      <li style="--i:12"><span class="n type">13</span><span>Crossword puzzles</span></li>
-      <li style="--i:13"><span class="n type">14</span><span>Board games (especially trivia ones)</span></li>
-      <li style="--i:14"><span class="n type">15</span><span>History</span></li>
-      <li style="--i:15"><span class="n type">16</span><span>Water parks</span></li>
-      <li style="--i:16"><span class="n type">17</span><span>Being described</span></li>
-      <li style="--i:17"><span class="n type">18</span><span>Handwritten cards/notes</span></li>
-      <li style="--i:18"><span class="n type">19</span><span>Interpretive dance (watching, not doing)</span></li>
-      <li style="--i:19"><span class="n type">20</span><span>Tuvan throat singing</span></li>
-      <li style="--i:20"><span class="n type">21</span><span>Karaoke</span></li>
-      <li style="--i:21"><span class="n type">22</span><span>Blind karaoke</span></li>
-      <!-- TO CONFIRM: not in Peri's approved list of 29 -->
-      <li style="--i:22"><span class="n type">23</span><span>Anything vintage</span></li>
-      <li style="--i:23"><span class="n type">24</span><span>Running</span></li>
-      <li style="--i:24"><span class="n type">25</span><span>Strength training</span></li>
-      <li style="--i:25"><span class="n type">26</span><span>Crafts</span></li>
-      <li style="--i:26"><span class="n type">27</span><span>Photography</span></li>
-      <li style="--i:27"><span class="n type">28</span><span>Architecture &amp; interior design</span></li>
-      <li style="--i:28"><span class="n type">29</span><span>Baking</span></li>
-      <li style="--i:29"><span class="n type">30</span><span>Fashion</span></li>
-      <li style="--i:30"><span class="n type">31</span><span>&ldquo;Believe&rdquo; by Cher</span></li>
-</ol>
+  <section class="lv-wrap" aria-label="Things I love">
+    <figure class="drift a rv" data-s=".1" aria-hidden="true"><img src="assets/img/n/out-6.jpg" alt=""></figure>
+    <figure class="drift b rv" data-s="-.12" aria-hidden="true"><img src="assets/img/n/out-2.jpg" alt=""></figure>
+    <figure class="drift c rv" data-s=".18" aria-hidden="true"><img src="assets/img/n/out-5.jpg" alt=""></figure>
+    <ul class="lv">
+      <li><span>Piano</span></li>
+      <li><span>Yoga</span></li>
+      <li><span>Building random things with AI</span></li>
+      <li><span>Creating AI portraits of my friends</span></li>
+      <li><span>Quality time with the people I love</span></li>
+      <li><span>Learning new things</span></li>
+      <li><span>Spending time outdoors</span></li>
+      <li><span>Hiking</span></li>
+      <li><span>Floating in calm water</span></li>
+      <li><span>Shells</span></li>
+      <li><span>Rock climbing</span></li>
+      <li><span>Pranks</span></li>
+      <li><span>Crossword puzzles</span></li>
+      <li><span>Board games (especially trivia ones)</span></li>
+      <li><span>History</span></li>
+      <li><span>Water parks</span></li>
+      <li><span>Being described</span></li>
+      <li><span>Handwritten cards/notes</span></li>
+      <li><span>Interpretive dance (watching, not doing)</span></li>
+      <li><span>Tuvan throat singing</span></li>
+      <li><span>Karaoke</span></li>
+      <li><span>Blind karaoke</span></li>
+      <li><span>Anything vintage</span></li>
+      <li><span>Running</span></li>
+      <li><span>Strength training</span></li>
+      <li><span>Crafts</span></li>
+      <li><span>Photography</span></li>
+      <li><span>Architecture &amp; interior design</span></li>
+      <li><span>Baking</span></li>
+      <li><span>Fashion</span></li>
+      <li><span>&ldquo;Believe&rdquo; by Cher</span></li>
+    </ul>
   </section>
   <section id="people" aria-label="People (and pets) I love">
     <div class="pstage">
@@ -99,13 +122,25 @@
     </div>
     </div>
   </section>
-  <section class="hello">
-    <p class="hi" aria-hidden="true">say hello</p>
-    <p class="links cap fd"><a href="mailto:perisadigh21@gmail.com">Email</a><a href="https://www.linkedin.com/in/perisadigh/" target="_blank" rel="noopener">LinkedIn</a></p>
-    <nav class="pgs cap mu" aria-label="Pages"><a href="index.html">Home</a><a href="work.html">Things I&rsquo;ve made</a><a href="things-i-love.html">Things I love</a></nav>
-  </section>
-  <p class="colophon cap"><span>&copy; <span data-year>2026</span> Peri Sadigh</span><a href="#top">Back to top</a></p>
 </main>
+<footer class="end" id="hello" data-tone="red">
+  <div class="note">
+   <p class="hi">say hello</p>
+   <p class="links cap"><a href="mailto:perisadigh21@gmail.com">Email</a><a href="https://www.linkedin.com/in/perisadigh/" target="_blank" rel="noopener">LinkedIn</a></p>
+  </div>
+  <nav class="pgs cap" aria-label="Pages"><a href="index.html">Home</a><a href="work.html">Things I&rsquo;ve made</a></nav>
+  <p class="fine cap"><span>&copy; <span data-year>2026</span> Peri Sadigh</span><a href="#top">Back to top</a></p>
+</footer>
+
 <script src="assets/inner.js"></script>
+<script src="assets/site.js"></script>
+<script>
+(function(){var rm=matchMedia('(prefers-reduced-motion: reduce)').matches,lv=document.querySelector('.lv');
+ [].forEach.call(lv.children,function(li,i){li.firstChild.style.setProperty('--i',i)});
+ if(rm||!('IntersectionObserver' in window))lv.classList.add('in');else{var io=new IntersectionObserver(function(es){if(es[0].isIntersecting){lv.classList.add('in');io.disconnect()}},{threshold:.08});io.observe(lv)}
+ if(rm||innerWidth<761)return;var ds=[].slice.call(document.querySelectorAll('.drift')),t=0;
+ function m(){t=0;ds.forEach(function(d){var r=d.parentNode.getBoundingClientRect();d.style.transform='translate3d(0,'+((r.top+d.offsetTop+d.offsetHeight/2-innerHeight/2)*+d.getAttribute('data-s')).toFixed(1)+'px,0)'})}
+ addEventListener('scroll',function(){if(!t)t=requestAnimationFrame(m)},{passive:true});m()})();
+</script>
 </body>
 </html>

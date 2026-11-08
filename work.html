@@ -5,94 +5,132 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Things I&rsquo;ve made · Peri Sadigh</title>
 <meta name="description" content="Some things I’ve worked on, some things I’ve made for fun.">
-<meta name="theme-color" content="#f2eee7">
+<meta name="theme-color" content="#f3eee7">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <meta property="og:type" content="website"><meta property="og:site_name" content="Peri Sadigh"><meta property="og:title" content="Things I’ve made · Peri Sadigh"><meta property="og:description" content="Some things I’ve worked on, some things I’ve made for fun."><meta property="og:url" content="https://perisadigh.com/work.html"><meta property="og:image" content="https://perisadigh.com/assets/img/og.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter+Tight:wght@400;500&family=Kristi&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://api.fontshare.com"><link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
+<link href="https://api.fontshare.com/v2/css?f[]=boska@300,400,301,401&f[]=switzer@400,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Kristi&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/inner.css">
+<link rel="stylesheet" href="assets/site.css">
 <script>document.documentElement.classList.add("js")</script>
-<script src="assets/lenis.min.js"></script><script src="assets/motion.js"></script>
+<script src="assets/lenis.min.js"></script>
+<script src="assets/motion.js"></script>
+<style>
+/* things I've made: each project is a coloured card; as you scroll, the next slides up over the last and the last parks as a tab */
+.wstack{position:relative;padding:0 2vw}
+.ws{position:relative;background:var(--bg);color:var(--fg,var(--ink));border-radius:16px 16px 0 0;padding:0 3.6vw 12vh;--hc:var(--fg,var(--ink))}
+.ws .tab{display:flex;align-items:center;justify-content:space-between;height:3.8rem;font:400 1.15rem/1 var(--serif);letter-spacing:-.005em}
+.ws .tab .cap{opacity:.66}
+.ws .wb{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:6vw;padding-top:11vh}
+.ws h2{font:300 clamp(2.8rem,5.6vw,6.2rem)/.96 var(--serif);letter-spacing:-.032em;text-wrap:balance;max-width:9ch}
+.ws .tx{padding-top:.6rem;max-width:31rem}
+.ws .lead{font:400 clamp(1.35rem,1.85vw,1.95rem)/1.3 var(--serif);letter-spacing:-.01em}
+.ws .tx p+p{margin-top:1.3rem;font-size:clamp(1.08rem,1.2vw,1.22rem);line-height:1.5}
+.ws .stat{font-style:italic}.ws .stat b{font-weight:400;color:var(--red);font-variant-numeric:tabular-nums}
+.ws a.u{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.22em;text-decoration-color:var(--blush)}
+.ws .full{grid-column:1/-1;margin-top:9vh}
+.ws .tracks{list-style:none;display:flex;flex-wrap:wrap;gap:1.6rem 5vw}
+.ws .tracks li{display:flex;align-items:center;gap:1.1rem;padding:0;border:0;font:300 clamp(1.6rem,2.6vw,2.6rem)/1 var(--serif);letter-spacing:-.02em}
+.ws .tracks li:last-child{border:0}.ws .tracks li[hidden]{display:none}
+.ws .tracks .play{width:3.4rem;height:3.4rem;border-color:currentColor;color:inherit}
+.ws .tracks .play:hover,.ws .tracks li.on .play{background:var(--ink);color:var(--paper)}
+.ws .tracks .len{margin-left:.2rem;opacity:.7}
+.ws .vid{max-width:60rem}
+.ws .vid video{border:0;background:#2a1412}
+.ws .vid figcaption{color:inherit;opacity:.72}
+.ws .vid .big{background:var(--paper);border-color:var(--paper)}
+@media (min-width:761px){.ws{position:sticky;top:calc(var(--k,0)*3.8rem + .6rem);min-height:88svh;box-shadow:0 -1px 0 rgba(27,25,23,.05),0 -1.6rem 2.6rem -1.8rem rgba(40,20,10,.28)}}
+@media (max-width:760px){.wstack{padding:0 8px}.ws{border-radius:14px;margin-bottom:8px;padding:0 16px 3.4rem}.ws .wb{display:block;padding-top:2.4rem}.ws h2{font-size:12vw;margin-bottom:1.8rem}.ws .full{margin-top:2.6rem}.ws .tracks{flex-direction:column}}
+.prail{border-top:0;margin-top:14vh}
+.prail .intro h2{font:300 clamp(2.4rem,4vw,4.4rem)/1 var(--serif);letter-spacing:-.03em}
+.prail .hud .count{display:none}
+.prail .bar{background:rgba(27,25,23,.12)}.prail .bar i{background:var(--red)}
+@media (max-width:760px){.prail{margin:5rem 16px 3rem}}
+</style>
 </head>
 <body>
-<header class="cap"><a href="index.html">Home</a><nav aria-label="Pages"><a href="work.html" aria-current="page">Things I&rsquo;ve made</a><a href="things-i-love.html">Things I love</a></nav></header>
+<header class="site"><a class="logo" href="index.html">Peri <i>Sadigh</i></a><nav aria-label="Pages"><a href="work.html" aria-current="page">Things I&rsquo;ve made</a><a href="things-i-love.html">Things I love</a></nav></header>
 <main id="top">
   <section class="pt">
-  <p class="folio cap mu">02</p>
-  <h1 class="sm" aria-label="Things I&rsquo;ve made"><span class="ln" aria-hidden="true"><span>Things I&rsquo;ve made</span></span></h1>
-  <p class="stand fd">Some things I&rsquo;ve worked on, some things I&rsquo;ve made for fun.</p>
+   <div class="aura" aria-hidden="true"></div>
+   <h1>Things I&rsquo;ve made</h1>
+   <p class="stand">Some things I&rsquo;ve worked on, some things I&rsquo;ve made for fun.</p>
   </section>
-  <ol class="toc stag">
-    <li><a href="#strength"><span class="n cap">1</span><span class="nm">Strength training app</span><span class="k cap">Made for someone</span></a></li>
-    <li><a href="#jobs"><span class="n cap">2</span><span class="nm">Job search tool</span><span class="k cap">Made for me</span></a></li>
-    <li><a href="#portraits"><span class="n cap">3</span><span class="nm">AI portraits of my friends</span><span class="k cap">Made for fun</span></a></li>
-    <li><a href="#music"><span class="n cap">4</span><span class="nm">AI music</span><span class="k cap">Made for fun</span></a></li>
-    <li><a href="#video"><span class="n cap">5</span><span class="nm">An unserious product video</span><span class="k cap">Made for fun</span></a></li>
-    <li><a href="#work"><span class="n cap">6</span><span class="nm">At work</span><span class="k cap">Recruitcha</span></a></li>
-  </ol>
-  <section class="proj" id="strength">
-    <p class="pm cap mu"><span>1</span><span>Made for someone</span></p>
-    <div><h2 class="fd">Strength training app</h2>
-      <p class="body" data-fill>I&rsquo;d spent a lot of time learning about strength training, so when my dad wanted to start, I built him an app to help him get going without having to figure it all out from scratch.</p>
-      <p class="body">It creates weekly training plans, selects exercises to cover different muscle groups, and sets targets for progressive overload. It draws from a database of exercises, each with its own rating.</p>
-      <p class="body">Built with Claude Code and Supabase.</p></div>
-  </section>
-  <section class="proj" id="jobs">
-    <p class="pm cap mu"><span>2</span><span>Made for me</span></p>
-    <div><h2 class="fd">Job search tool</h2>
-      <p class="body" data-fill>I got tired of looking through job postings that weren&rsquo;t relevant to me, so I built something to do it for me.</p>
-      <p class="body">It scans job listings and filters them against my background, what I&rsquo;m looking for, and requirements like location and visa sponsorship.</p>
-      <p class="body stat">So far, it&rsquo;s scanned over <b class="cnt" data-to="80000">80,000</b> jobs.</p></div>
-  </section>
+
+  <div class="wstack">
+   <article class="ws" id="strength" style="--bg:var(--blue);--k:0">
+    <div class="tab"><span aria-hidden="true">Strength training app</span><span class="cap">Made for someone</span></div>
+    <div class="wb"><h2>Strength training app</h2>
+     <div class="tx"><p class="lead" data-fill>I&rsquo;d spent a lot of time learning about strength training, so when my dad wanted to start, I built him an app to help him get going without having to figure it all out from scratch.</p>
+      <p>It creates weekly training plans, selects exercises to cover different muscle groups, and sets targets for progressive overload. It draws from a database of exercises, each with its own rating.</p>
+      <p>Built with Claude Code and Supabase.</p></div></div>
+   </article>
+   <article class="ws" id="jobs" style="--bg:var(--blush);--k:1">
+    <div class="tab"><span aria-hidden="true">Job search tool</span><span class="cap">Made for me</span></div>
+    <div class="wb"><h2>Job search tool</h2>
+     <div class="tx"><p class="lead" data-fill>I got tired of looking through job postings that weren&rsquo;t relevant to me, so I built something to do it for me.</p>
+      <p>It scans job listings and filters them against my background, what I&rsquo;m looking for, and requirements like location and visa sponsorship.</p>
+      <p class="stat">So far, it&rsquo;s scanned over <b class="cnt" data-to="80000">80,000</b> jobs.</p></div></div>
+   </article>
+  </div>
+
   <section class="prail" id="portraits" aria-label="AI portraits of my friends">
    <div class="stage">
     <div class="track">
-     <div class="intro"><p class="pm cap mu"><span>3</span><span>Made for fun</span></p><h2>AI portraits of my friends</h2><p class="d">I&rsquo;ve spent an unreasonable amount of time creating increasingly elaborate AI portraits of my friends.</p></div>
-      <figure class="pf" data-lightbox="assets/img/photo/ai-pool.jpg" style="--h:46vh;--t:0vh;--ar:1400/933"><div class="pw"><img src="assets/img/photo/ai-pool.jpg" alt="AI portrait"></div><span class="no cap">01</span></figure>
-      <figure class="pf" data-lightbox="assets/img/photo/ai-family.jpg" style="--h:66vh;--t:0vh;--ar:1024/1536"><div class="pw"><img src="assets/img/photo/ai-family.jpg" alt="AI portrait"></div><span class="no cap">02</span></figure>
-      <figure class="pf" data-lightbox="assets/img/photo/ai-generals.jpg" style="--h:66vh;--t:0vh;--ar:1024/1536"><div class="pw"><img src="assets/img/photo/ai-generals.jpg" alt="AI portrait"></div><span class="no cap">03</span></figure>
-      <figure class="pf" data-lightbox="assets/img/photo/ai-rugby.jpg" style="--h:46vh;--t:0vh;--ar:1400/933"><div class="pw"><img src="assets/img/photo/ai-rugby.jpg" alt="AI portrait" loading="lazy"></div><span class="no cap">04</span></figure>
-      <figure class="pf" data-lightbox="assets/img/photo/ai-toast.jpg" style="--h:66vh;--t:0vh;--ar:993/1400"><div class="pw"><img src="assets/img/photo/ai-toast.jpg" alt="AI portrait" loading="lazy"></div><span class="no cap">05</span></figure>
-      <figure class="pf" data-lightbox="assets/img/photo/ai-generals-2.jpg" style="--h:66vh;--t:0vh;--ar:1024/1536"><div class="pw"><img src="assets/img/photo/ai-generals-2.jpg" alt="AI portrait" loading="lazy"></div><span class="no cap">06</span></figure>
-      <figure class="pf" data-lightbox="assets/img/photo/ai-splits-2.jpg" style="--h:66vh;--t:0vh;--ar:933/1400"><div class="pw"><img src="assets/img/photo/ai-splits-2.jpg" alt="AI portrait" loading="lazy"></div><span class="no cap">07</span></figure>
-      <figure class="pf" data-lightbox="assets/img/photo/ai-family-2.jpg" style="--h:66vh;--t:0vh;--ar:1061/1600"><div class="pw"><img src="assets/img/photo/ai-family-2.jpg" alt="AI portrait" loading="lazy"></div><span class="no cap">08</span></figure>
+     <div class="intro"><p class="pm cap mu">Made for fun</p><h2>AI portraits of my friends</h2><p class="d">I&rsquo;ve spent an unreasonable amount of time creating increasingly elaborate AI portraits of my friends.</p></div>
+      <figure class="pf" data-lightbox="assets/img/photo/ai-pool.jpg" style="--h:46vh;--t:0vh;--ar:1400/933"><div class="pw"><img src="assets/img/photo/ai-pool.jpg" alt="AI portrait"></div></figure>
+      <figure class="pf" data-lightbox="assets/img/photo/ai-family.jpg" style="--h:66vh;--t:0vh;--ar:1024/1536"><div class="pw"><img src="assets/img/photo/ai-family.jpg" alt="AI portrait"></div></figure>
+      <figure class="pf" data-lightbox="assets/img/photo/ai-generals.jpg" style="--h:66vh;--t:0vh;--ar:1024/1536"><div class="pw"><img src="assets/img/photo/ai-generals.jpg" alt="AI portrait"></div></figure>
+      <figure class="pf" data-lightbox="assets/img/photo/ai-rugby.jpg" style="--h:46vh;--t:0vh;--ar:1400/933"><div class="pw"><img src="assets/img/photo/ai-rugby.jpg" alt="AI portrait" loading="lazy"></div></figure>
+      <figure class="pf" data-lightbox="assets/img/photo/ai-toast.jpg" style="--h:66vh;--t:0vh;--ar:993/1400"><div class="pw"><img src="assets/img/photo/ai-toast.jpg" alt="AI portrait" loading="lazy"></div></figure>
+      <figure class="pf" data-lightbox="assets/img/photo/ai-generals-2.jpg" style="--h:66vh;--t:0vh;--ar:1024/1536"><div class="pw"><img src="assets/img/photo/ai-generals-2.jpg" alt="AI portrait" loading="lazy"></div></figure>
+      <figure class="pf" data-lightbox="assets/img/photo/ai-splits-2.jpg" style="--h:66vh;--t:0vh;--ar:933/1400"><div class="pw"><img src="assets/img/photo/ai-splits-2.jpg" alt="AI portrait" loading="lazy"></div></figure>
+      <figure class="pf" data-lightbox="assets/img/photo/ai-family-2.jpg" style="--h:66vh;--t:0vh;--ar:1061/1600"><div class="pw"><img src="assets/img/photo/ai-family-2.jpg" alt="AI portrait" loading="lazy"></div></figure>
     </div>
     <p class="hud cap"><span class="count">01 / 08</span><span>Scroll</span></p>
     <div class="bar"><i></i></div>
    </div>
   </section>
-  <div class="after"></div>
-  <section class="proj" id="music">
-    <p class="pm cap mu"><span>4</span><span>Made for fun</span></p>
-    <div><h2 class="fd">AI music</h2></div>
-    <ol class="tracks tr">
+
+  <div class="wstack">
+   <article class="ws" id="music" style="--bg:var(--paper2);--k:0">
+    <div class="tab"><span aria-hidden="true">AI music</span><span class="cap">Made for fun</span></div>
+    <div class="wb"><h2>AI music</h2>
+     <div class="full"><ol class="tracks">
           <li data-src="assets/audio/track-1.mp3"><button class="play" type="button" aria-label="Play"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 1l9 5-9 5z" fill="currentColor"/></svg></button><span class="tt">Track 1</span><span class="len">1:56</span></li>
           <li data-src="assets/audio/track-2.mp3"><button class="play" type="button" aria-label="Play"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 1l9 5-9 5z" fill="currentColor"/></svg></button><span class="tt">Track 2</span><span class="len">3:09</span></li>
           <li hidden><button class="play" type="button" aria-label="Play"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 1l9 5-9 5z" fill="currentColor"/></svg></button><span class="tt">Track title to come</span><span class="len">0:00</span></li>
-      </ol>
-  </section>
-  <section class="proj" id="video">
-    <p class="pm cap mu"><span>5</span><span>Made for fun</span></p>
-    <div><h2 class="fd">An unserious product video</h2>
-      <p class="body" data-fill>A deliberately silly version of a product video I made for work. This cut never made it into the real thing, which is probably for the best.</p></div>
-    <figure class="vid"><div class="vp"><video controls preload="metadata" playsinline poster="assets/video/recruitcha-gtm.jpg"><source src="assets/video/recruitcha-gtm.mp4" type="video/mp4"></video></div><figcaption class="cap mu">An unserious cut of a product video</figcaption></figure>
-  </section>
-  <div class="after"></div>
-  <section class="proj" id="work">
-    <p class="pm cap mu"><span>6</span><span>Recruitcha</span></p>
-    <div><h2 class="fd">At work</h2>
-      <p class="body">I built the <a href="https://recruitcha.ai/">Recruitcha GTM website</a> and contribute to the product itself, working on features, integrations and improvements alongside the founders.</p></div>
-
-  </section>
-  <section class="hello">
-    <p class="hi" aria-hidden="true">say hello</p>
-    <p class="links cap fd"><a href="mailto:perisadigh21@gmail.com">Email</a><a href="https://www.linkedin.com/in/perisadigh/" target="_blank" rel="noopener">LinkedIn</a></p>
-    <nav class="pgs cap mu" aria-label="Pages"><a href="index.html">Home</a><a href="work.html">Things I&rsquo;ve made</a><a href="things-i-love.html">Things I love</a></nav>
-  </section>
-  <p class="colophon cap"><span>&copy; <span data-year>2026</span> Peri Sadigh</span><a href="#top">Back to top</a></p>
+      </ol></div></div>
+   </article>
+   <article class="ws" id="video" style="--bg:var(--red);--fg:var(--paper);--k:1" data-tone="red">
+    <div class="tab"><span aria-hidden="true">An unserious product video</span><span class="cap">Made for fun</span></div>
+    <div class="wb"><h2>An unserious product video</h2>
+     <div class="tx"><p class="lead">A deliberately silly version of a product video I made for work. This cut never made it into the real thing, which is probably for the best.</p></div>
+     <div class="full"><figure class="vid"><div class="vp"><video controls preload="metadata" playsinline poster="assets/video/recruitcha-gtm.jpg"><source src="assets/video/recruitcha-gtm.mp4" type="video/mp4"></video></div><figcaption class="cap mu">An unserious cut of a product video</figcaption></figure></div></div>
+   </article>
+   <article class="ws" id="work" style="--bg:var(--cocoa);--fg:var(--paper);--k:2" data-tone="dark">
+    <div class="tab"><span aria-hidden="true">At work</span><span class="cap">Recruitcha</span></div>
+    <div class="wb"><h2>At work</h2>
+     <div class="tx"><p class="lead">I built the <a class="u" href="https://recruitcha.ai/">Recruitcha GTM website</a> and contribute to the product itself, working on features, integrations and improvements alongside the founders.</p></div></div>
+   </article>
+  </div>
 </main>
+<footer class="end" id="hello" data-tone="red">
+  <div class="note">
+   <p class="hi">say hello</p>
+   <p class="links cap"><a href="mailto:perisadigh21@gmail.com">Email</a><a href="https://www.linkedin.com/in/perisadigh/" target="_blank" rel="noopener">LinkedIn</a></p>
+  </div>
+  <nav class="pgs cap" aria-label="Pages"><a href="index.html">Home</a><a href="things-i-love.html">Things I love</a></nav>
+  <p class="fine cap"><span>&copy; <span data-year>2026</span> Peri Sadigh</span><a href="#top">Back to top</a></p>
+</footer>
 <div class="lb" role="dialog" aria-label="Photo" aria-modal="true"><button type="button" class="cap">Close</button><img alt=""></div>
 <script src="assets/inner.js"></script>
+<script src="assets/site.js"></script>
+<script>
+/* the 80,000 counts up the first time it is seen */
+(function(){var c=document.querySelector('.cnt');if(!c||matchMedia('(prefers-reduced-motion: reduce)').matches||!('IntersectionObserver' in window))return;var to=+c.getAttribute('data-to');c.textContent='0';
+ var io=new IntersectionObserver(function(es){if(!es[0].isIntersecting)return;io.disconnect();var t0=null;(function f(t){if(t0===null)t0=t;var k=Math.min(1,(t-t0)/1800);c.textContent=Math.round(to*(1-Math.pow(1-k,3))).toLocaleString('en-US');if(k<1)requestAnimationFrame(f)})(performance.now())},{threshold:.6});io.observe(c)})();
+</script>
 </body>
 </html>
