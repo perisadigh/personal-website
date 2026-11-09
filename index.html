@@ -15,17 +15,23 @@ a{color:inherit;text-decoration:none}p,li{text-wrap:pretty}
 body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;background:url(assets/grain.png) 0 0/220px 220px}
 .vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 
-/* 1. the opening: one photo. Your figure repeats on sheer red sheets that recede like hanging fabric; scrolling folds them into one, the red lifts and the whole photo opens up */
-.open{position:relative;height:560svh}
+/* 1. the opening: sheer panels hang in a row, each holding a red square with your figure. The first figure is a dark silhouette; panel by panel it fills in with detail. Scrolling walks you through the row until the last square opens out into the whole photo. */
+.open{position:relative;height:620svh}
 .stage{position:sticky;top:0;height:100svh;overflow:clip}
 .stage .aura{z-index:0}
 .name{position:absolute;left:5vw;top:50%;margin:-.55em 0 0;z-index:8;font:300 clamp(3.2rem,7.4vw,8rem)/1 var(--serif);letter-spacing:-.03em;white-space:nowrap;transform-origin:0 0;will-change:transform}
 .name i{font-style:italic}
-.world{position:absolute;inset:0;z-index:2;perspective:1300px;perspective-origin:55% 50%}
-.ly{position:absolute;left:0;top:0;will-change:transform,opacity;transform-origin:50% 50%}
-.ly img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.ly .full{opacity:0;object-position:54.3% 50%}
-.ly .dim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,14,12,.25),rgba(20,14,12,.55));opacity:0}
+.world{position:absolute;inset:0;z-index:2;perspective:1100px;perspective-origin:88% 46%}
+.pn,.hero{position:absolute;left:0;top:0;transform-origin:50% 50%;will-change:transform,opacity}
+.pn .fab{position:absolute;inset:0;background:repeating-linear-gradient(90deg,rgba(80,82,90,.035) 0 1px,transparent 1px 5px),repeating-linear-gradient(90deg,rgba(255,255,255,.07) 0 9px,rgba(120,122,130,.035) 9px 23px,transparent 23px 41px),linear-gradient(180deg,rgba(243,240,236,0),rgba(243,240,236,.3) 30%,rgba(236,233,230,.34)),linear-gradient(180deg,rgba(160,162,170,0),rgba(150,152,160,.1) 55%,rgba(150,152,160,.14));border-left:1px solid rgba(105,110,118,.3);-webkit-mask-image:linear-gradient(180deg,transparent 2%,#000 30%);mask-image:linear-gradient(180deg,transparent 2%,#000 30%)}
+.pn .fab::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:rgba(110,114,118,.22)}
+.pn .card,.hero{box-shadow:0 0 5rem 2.4rem rgba(214,86,104,.2)}
+.pn .card{position:absolute;left:25%;width:50%;top:24%;aspect-ratio:4/5}
+.pn .card img,.hero .tint{position:absolute;inset:0;width:100%;height:100%;display:block}
+.hero{overflow:hidden;background:#c43440}
+.hero .ph{position:absolute;left:0;top:0;max-width:none}
+.hero .tint{box-shadow:0 .6rem 1.2rem rgba(60,10,14,.28)}
+.hero .dim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,14,12,.28),rgba(20,14,12,.58));opacity:0}
 .say{position:absolute;left:50%;top:50%;z-index:9;width:min(46rem,84vw);margin:0;transform:translate(-50%,-50%);text-align:center;font:300 clamp(1.75rem,3.1vw,3.3rem)/1.18 var(--serif);letter-spacing:-.015em;color:var(--paper);opacity:0}
 .say .sw{position:relative;white-space:nowrap}
 .say svg{position:absolute;overflow:visible;pointer-events:none}
@@ -35,7 +41,7 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;bac
 @keyframes drip{0%{transform:scaleY(0)}55%{transform:scaleY(1);opacity:1}100%{transform:scaleY(1);opacity:0}}
 header.site .logo{opacity:0}
 header.site.shown .logo{opacity:1}
-@media (max-width:760px){.open{height:460svh}.name{top:20%;left:16px;font-size:15.5vw;margin:0}.say{width:calc(100% - 32px);font-size:1.75rem}.world{perspective-origin:50% 60%}}
+@media (max-width:760px){.world{perspective-origin:95% 60%}.open{height:520svh}.name{top:17%;left:16px;font-size:15.5vw;margin:0}.say{width:calc(100% - 32px);font-size:1.75rem}.pn .card,.hero{box-shadow:0 0 3rem 1.4rem rgba(214,86,104,.2)}}
 
 /* 2. what I do: a dusty blue page with the photo breaking out of its foot */
 .wid{position:relative;background:var(--blue);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.78fr);column-gap:7vw;padding:24vh 5vw 0 9vw;min-height:100svh}
@@ -102,13 +108,14 @@ header.site.shown .logo{opacity:1}
   <div class="aura" aria-hidden="true"></div>
   <h1 class="name">Peri <i>Sadigh</i></h1>
   <div class="world" aria-hidden="true">
-   <div class="ly"><img class="sh" src="assets/img/a/road-sheet.jpg" alt=""></div>
-   <div class="ly"><img class="sh" src="assets/img/a/road-sheet.jpg" alt=""></div>
-   <div class="ly"><img class="sh" src="assets/img/a/road-sheet.jpg" alt=""></div>
-   <div class="ly"><img class="sh" src="assets/img/a/road-sheet.jpg" alt=""></div>
-   <div class="ly"><img class="sh" src="assets/img/a/road-sheet.jpg" alt=""></div>
-   <div class="ly"><img class="sh" src="assets/img/a/road-sheet.jpg" alt=""></div>
-   <div class="ly f"><img class="full" src="assets/img/a/road-blur.jpg" alt=""><img class="sh" src="assets/img/a/road-sheet.jpg" alt=""><i class="dim"></i></div>
+   <div class="pn"><i class="fab"></i><div class="card"><img src="assets/img/a/fig-0.jpg" alt=""></div></div>
+   <div class="pn"><i class="fab"></i><div class="card"><img src="assets/img/a/fig-1.jpg" alt=""></div></div>
+   <div class="pn"><i class="fab"></i><div class="card"><img src="assets/img/a/fig-2.jpg" alt=""></div></div>
+   <div class="pn"><i class="fab"></i><div class="card"><img src="assets/img/a/fig-3.jpg" alt=""></div></div>
+   <div class="pn"><i class="fab"></i><div class="card"><img src="assets/img/a/fig-4.jpg" alt=""></div></div>
+   <div class="pn"><i class="fab"></i><div class="card"><img src="assets/img/a/fig-5.jpg" alt=""></div></div>
+   <div class="pn last"><i class="fab"></i></div>
+   <div class="hero"><img class="ph" src="assets/img/a/road-blur.jpg" alt=""><img class="tint" src="assets/img/a/fig-6.jpg" alt=""><i class="dim"></i></div>
   </div>
   <p class="say">I studied biomedical science, then got a job in digital marketing and <span class="sw">somehow ended up</span> building software at a startup.</p>
   <div class="cue" aria-hidden="true"></div>
@@ -171,32 +178,45 @@ function spline(P){var d='M'+P[0][0].toFixed(1)+' '+P[0][1].toFixed(1);for(var j
 window.spline=spline;
 
 /* ---------- the opening ---------- */
-var sec=document.getElementById('open'),nm=sec.querySelector('.name'),ly=[].slice.call(sec.querySelectorAll('.ly')).reverse(),fr=ly[0],say=sec.querySelector('.say'),sw=say.querySelector('.sw'),cue=sec.querySelector('.cue'),
- logo=document.querySelector('header.site .logo'),hd=document.querySelector('header.site'),N=ly.length,W,H,sm,lw,lh,cx,cy,n0,l0,ring=null,cur=0,tgt=0,raf=0,last=0,
- full=fr.querySelector('.full'),dim=fr.querySelector('.dim');
-function meas(){W=innerWidth;H=innerHeight;sm=W<761;lh=sm?H*.46:H*.64;lw=lh*.75;cx=sm?W*.5:W*.6;cy=sm?H*.62:H*.52;
- ly.forEach(function(e){e.style.width=lw+'px';e.style.height=lh+'px'});
+var sec=document.getElementById('open'),nm=sec.querySelector('.name'),pn=[].slice.call(sec.querySelectorAll('.pn')),hero=sec.querySelector('.hero'),ph=hero.querySelector('.ph'),tint=hero.querySelector('.tint'),dim=hero.querySelector('.dim'),
+ say=sec.querySelector('.say'),sw=say.querySelector('.sw'),cue=sec.querySelector('.cue'),logo=document.querySelector('header.site .logo'),hd=document.querySelector('header.site'),
+ N=pn.length,W,H,sm,pw,phh,cw,ch,ax,ay,sx,sz,ry0,n0,l0,ring=null,cur=0,tgt=0,raf=0,last=0;
+/* the photo is 1600x1200; the red squares show the part from x486 y340, 688 wide and 860 tall */
+var IW=1600,IH=1200,CX=486,CY=340,CWp=688,CHp=860;
+function meas(){W=innerWidth;H=innerHeight;sm=W<761;
+ phh=sm?H*.62:H*.9;pw=phh*(sm?.66:.6);cw=pw*.5;ch=cw*1.25;
+ ax=sm?W*.4:W*.5;ay=sm?H*.62:H*.5;sx=sm?W*.22:W*.15;sz=sm?200:230;ry0=sm?-28:-30;
+ pn.forEach(function(e){e.style.width=pw+'px';e.style.height=phh+'px'});
  nm.style.transform='none';n0=nm.getBoundingClientRect();l0=logo.getBoundingClientRect();
  if(!ring){ring=document.createElementNS('http://www.w3.org/2000/svg','svg');ring.appendChild(document.createElementNS('http://www.w3.org/2000/svg','path'));say.appendChild(ring)}
  var pad=sm?6:12,sr=sw.getBoundingClientRect(),pr=say.getBoundingClientRect(),g=ringPath(sr.width,sr.height*.5,pad);
  ring.setAttribute('width',g.W);ring.setAttribute('height',g.H);ring.setAttribute('viewBox','0 0 '+g.W+' '+g.H);ring.style.left=(sr.left-pr.left-pad*2)+'px';ring.style.top=(sr.top-pr.top+sr.height*.25-pad*2)+'px';
  var rp=ring.firstChild;rp.setAttribute('d',g.d);rp.setAttribute('pathLength','1')}
+function tf(x,y,z,r,w,h){return 'translate3d('+(x-w/2).toFixed(1)+'px,'+(y-h/2).toFixed(1)+'px,'+z.toFixed(1)+'px) rotateY('+r.toFixed(2)+'deg)'}
 function draw(p){
  /* the name glides up into the corner and becomes the header */
- var t1=ease(seg(p,0,.13));nm.style.transform='translate('+L(0,l0.left-n0.left,t1).toFixed(1)+'px,'+L(0,l0.top-n0.top,t1).toFixed(1)+'px) scale('+L(1,l0.width/n0.width,t1).toFixed(4)+')';
- nm.style.opacity=t1>=.999?0:1;hd.classList.toggle('shown',t1>=.999||p>.13);cue.style.opacity=Math.max(0,1-p*30);
- /* the sheets fold together, the red lifts, the photo opens to the edges */
- var t2=ease(seg(p,.06,.44)),t3=ease(seg(p,.44,.6)),t4=ease(seg(p,.6,.78)),t5=seg(p,.8,.9);
- var fx=L(cx,W*.5,sm?1:t2),fy=L(cy,H*.5,t4),fw=L(lw,W,t4),fh=L(lh,H,t4);
- fr.style.width=fw.toFixed(1)+'px';fr.style.height=fh.toFixed(1)+'px';
- ly.forEach(function(e,i){var d=i*(1-t2),x=fx+d*W*(sm?.085:.06),y=fy-d*H*.012,z=-d*(sm?240:300),ry=-38*(1-t2),o=i?(.86-i*.08)*(1-t2):1,w=i?lw:fw,h=i?lh:fh;
-  e.style.transform='translate3d('+(x-w/2).toFixed(1)+'px,'+(y-h/2).toFixed(1)+'px,'+z.toFixed(1)+'px) rotateY('+ry.toFixed(2)+'deg)';
-  e.style.opacity=Math.max(0,o).toFixed(3);e.style.zIndex=100-i;
-  e.querySelector('.sh').style.opacity=(i?.6-i*.04:.8*(1-t3)).toFixed(3)});
- full.style.opacity=t3.toFixed(3);dim.style.opacity=t5.toFixed(3);
- sec.setAttribute('data-tone',t4>.55?'dark':'');
+ var t1=ease(seg(p,0,.12));nm.style.transform='translate('+L(0,l0.left-n0.left,t1).toFixed(1)+'px,'+L(0,l0.top-n0.top,t1).toFixed(1)+'px) scale('+L(1,l0.width/n0.width,t1).toFixed(4)+')';
+ nm.style.opacity=t1>=.999?0:1;hd.classList.toggle('shown',t1>=.999||p>.12);cue.style.opacity=Math.max(0,1-p*30);
+ /* walk along the row of panels */
+ var c=L(-.35,N-1,ease(seg(p,.03,.6))),f=ease(seg(p,.58,.7)),t3=ease(seg(p,.64,.74)),e=ease(seg(p,.72,.86)),t5=seg(p,.86,.93);
+ var cyo=-phh*.5+phh*.24+ch*.5;/* where a square sits inside its panel */
+ pn.forEach(function(el,k){var d=k-c,x=ax+d*sx,z=-d*sz,o=d<0?Math.max(0,1+d/.85):1,r=ry0;
+  if(k===N-1){x=L(x,W/2,f);r=L(ry0,0,f);o=1-f}
+  el.style.transform=tf(x,ay,z,r,pw,phh);el.style.opacity=o.toFixed(3);el.style.zIndex=200-k*2;
+  if(k===N-1){/* the last square is the photo itself */
+   var hw=L(cw,sm?W*.72:H*.62*.8,f),hh=hw*1.25,hx=x,hy=L(ay+cyo,H/2,f),
+    bw=L(hw,W,e),bh=L(hh,H,e),bx=L(hx,W/2,e),by=L(hy,H/2,e);
+   hero.style.width=bw.toFixed(1)+'px';hero.style.height=bh.toFixed(1)+'px';hero.style.zIndex=200-k*2+1;
+   hero.style.transform=tf(bx,by,L(z,0,f),r,bw,bh);
+   /* the picture inside: from the crop around you to the whole scene */
+   var s0=hw/CWp,cs=Math.max(W/IW,H/IH),iw=L(IW*s0,IW*cs,e),ih=L(IH*s0,IH*cs,e),il=L(-CX*s0,(W-IW*cs)/2,e),it=L(-CY*s0,(H-IH*cs)/2,e);
+   ph.style.width=iw.toFixed(1)+'px';ph.style.height=ih.toFixed(1)+'px';ph.style.transform='translate('+il.toFixed(1)+'px,'+it.toFixed(1)+'px)';
+   ph.style.opacity=1;tint.style.clipPath='inset(0 0 '+(t3*100).toFixed(2)+'% 0)';tint.style.opacity=1;
+   hero.style.boxShadow=e>0?'none':'';}});
+ dim.style.opacity=t5.toFixed(3);
+ sec.setAttribute('data-tone',e>.55?'dark':'');
  say.style.opacity=t5;say.style.filter=t5<1?'blur('+((1-t5)*10).toFixed(1)+'px)':'none';
- if(ring)ring.firstChild.style.strokeDashoffset=(1-ease(seg(p,.91,.99))).toFixed(3);
+ if(ring)ring.firstChild.style.strokeDashoffset=(1-ease(seg(p,.93,.99))).toFixed(3);
  dispatchEvent(new Event('scroll'))}
 function tick(ts){raf=1;var dt=last?Math.min(.05,(ts-last)/1000):.016;last=ts;cur+=(tgt-cur)*(1-Math.exp(-dt*7));if(Math.abs(tgt-cur)<.0003)cur=tgt;draw(cur);raf=0;if(cur!==tgt)raf=requestAnimationFrame(tick);else last=0}
 function on(){var b=sec.getBoundingClientRect();tgt=Math.min(1,Math.max(0,-b.top/Math.max(1,b.height-innerHeight)));if(!raf&&Math.abs(tgt-cur)>.0003)raf=requestAnimationFrame(tick)}
