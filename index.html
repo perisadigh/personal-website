@@ -15,35 +15,30 @@ a{color:inherit;text-decoration:none}p,li{text-wrap:pretty}
 body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;background:url(assets/grain.png) 0 0/220px 220px}
 .vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 
-/* 1. the opening: one photo, seen through sheer fabric. Ghost copies of your figure stand on red dye stains; scrolling slides them into one, the haze clears and the silhouette resolves into you in the photo. Then your name. */
-.open{position:relative;height:700svh}
-.stage{position:sticky;top:0;height:100svh;overflow:clip;background:radial-gradient(70% 60% at 50% 52%,#f6efea,var(--paper) 70%)}
-.stage .aura{z-index:0;opacity:.7}
-.name{position:absolute;left:50%;top:50%;translate:-50% -50%;margin:0;z-index:9;color:var(--paper);opacity:0;font:300 clamp(3.2rem,7.4vw,8rem)/1 var(--serif);letter-spacing:-.03em;white-space:nowrap;transform-origin:0 0;will-change:transform,opacity}
-.name i{font-style:italic}
-.world{position:absolute;inset:0;z-index:2}
-.gh,.hw{position:absolute;left:0;top:0;will-change:transform,opacity}
-.gh img,.hw .st,.hw .si{position:absolute;display:block;max-width:none}
-.gh .st,.hw .st{left:-14%;top:-11%;width:128%;height:122%}
-.gh .si,.hw .si{left:0;top:0;width:100%;height:100%}
-.hw .bx{position:absolute;overflow:hidden;opacity:0}
-.hw .ph{position:absolute;left:0;top:0;max-width:none}
-.hw .dim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,14,12,.25),rgba(20,14,12,.55));opacity:0}
-.mist{position:absolute;left:10%;right:0;top:22%;height:60%;z-index:1;background:radial-gradient(50% 50% at 50% 50%,rgba(222,120,136,.34),rgba(232,170,176,.14) 55%,transparent 75%);filter:blur(30px);pointer-events:none}
-.vl{position:absolute;left:0;top:0;pointer-events:none;will-change:transform,opacity;
- background:repeating-linear-gradient(90deg,rgba(255,255,255,.12) 0,rgba(210,206,210,.07) 22px,rgba(255,255,255,.1) 47px,rgba(225,220,224,.04) 73px,rgba(255,255,255,.12) 101px),linear-gradient(180deg,rgba(246,242,239,.1),rgba(244,240,237,.42) 30%,rgba(242,238,235,.5));
- border-left:1px solid rgba(150,146,150,.2);transform-origin:0 50%;
- -webkit-mask-image:linear-gradient(180deg,transparent,#000 30%);mask-image:linear-gradient(180deg,transparent,#000 30%);box-shadow:inset 0 -2px 0 rgba(140,136,140,.25)}
+/* 1. the opening: your photo sits on cream paper, so blurred it is only a soft grey shape. A field of out-of-focus letters drifts over it; the letters of your name sharpen where they stand, the rest dissolve, and they glide into place. Scrolling pulls the photo into focus around you and your name settles into the corner. */
+.open{position:relative;height:400svh}
+.stage{position:sticky;top:0;height:100svh;overflow:clip;background:#efebe5}
+.pf{position:absolute;left:0;top:0;z-index:1;will-change:transform,width,height}
+.pf img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:54% 50%;will-change:filter}
+.pf .dim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,14,12,.2),rgba(20,14,12,.55));opacity:0}
+.field{position:absolute;inset:0;z-index:2;display:grid;align-content:center;justify-content:center;pointer-events:none;font:400 var(--fs)/1 var(--serif);letter-spacing:0;color:rgba(40,34,32,.42);filter:blur(1.7px);opacity:0;user-select:none}
+.field span{display:grid;place-items:center;width:var(--cw);height:var(--rh)}
+.nl{position:absolute;left:0;top:0;z-index:4;font:400 var(--fs)/1 var(--serif);color:var(--ink);opacity:0;will-change:transform,opacity,filter}
+.name{position:absolute;left:50%;top:50%;z-index:5;margin:0;transform-origin:0 0;white-space:nowrap;font:400 clamp(.95rem,1.25vw,1.3rem)/1 var(--serif);letter-spacing:.62em;text-transform:uppercase;color:var(--ink);will-change:transform}
+.name i{font-style:normal}
+.name .lt{opacity:0}
+.name.set .lt{opacity:1}
 .say{position:absolute;left:50%;top:50%;z-index:9;width:min(46rem,84vw);margin:0;transform:translate(-50%,-50%);text-align:center;font:300 clamp(1.75rem,3.1vw,3.3rem)/1.18 var(--serif);letter-spacing:-.015em;color:var(--paper);opacity:0}
 .say .sw{position:relative;white-space:nowrap}
 .say svg{position:absolute;overflow:visible;pointer-events:none}
 .say svg path{fill:none;stroke:var(--blush);stroke-width:1.8;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1}
-.cue{position:absolute;left:50%;bottom:4.5vh;z-index:9;width:1px;height:3.2rem;overflow:hidden}
+.cue{position:absolute;left:50%;bottom:4.5vh;z-index:9;width:1px;height:3.2rem;overflow:hidden;opacity:0;transition:opacity 1s}
+.cue.on{opacity:1}
 .cue::after{content:"";position:absolute;inset:0;background:var(--ink);transform-origin:50% 0;animation:drip 2.2s var(--e) infinite}
 @keyframes drip{0%{transform:scaleY(0)}55%{transform:scaleY(1);opacity:1}100%{transform:scaleY(1);opacity:0}}
 header.site .logo{opacity:0}
 header.site.shown .logo{opacity:1}
-@media (max-width:760px){.open{height:600svh}.name{font-size:15.5vw}.say{width:calc(100% - 32px);font-size:1.75rem}}
+@media (max-width:760px){.open{height:340svh}.name{font-size:.9rem;letter-spacing:.5em}.say{width:calc(100% - 32px);font-size:1.75rem}}
 
 /* 2. what I do: a dusty blue page with the photo breaking out of its foot */
 .wid{position:relative;background:var(--blue);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.78fr);column-gap:7vw;padding:24vh 5vw 0 9vw;min-height:100svh}
@@ -107,21 +102,8 @@ header.site.shown .logo{opacity:1}
 
 <section class="open" id="open" aria-label="Peri Sadigh" data-tone="">
  <div class="stage">
-  <div class="aura" aria-hidden="true"></div>
-  <i class="mist" aria-hidden="true"></i>
-  <div class="world" aria-hidden="true">
-   <div class="gh"><img class="st" src="assets/img/a/stain.webp" alt=""><img class="si" src="assets/img/a/sil.webp" alt=""></div>
-   <div class="gh"><img class="st" src="assets/img/a/stain.webp" alt=""><img class="si" src="assets/img/a/sil.webp" alt=""></div>
-   <div class="gh"><img class="st" src="assets/img/a/stain.webp" alt=""><img class="si" src="assets/img/a/sil.webp" alt=""></div>
-   <div class="gh"><img class="st" src="assets/img/a/stain.webp" alt=""><img class="si" src="assets/img/a/sil.webp" alt=""></div>
-   <div class="gh"><img class="st" src="assets/img/a/stain.webp" alt=""><img class="si" src="assets/img/a/sil.webp" alt=""></div>
-   <i class="vl"></i>
-   <i class="vl"></i>
-   <i class="vl"></i>
-   <i class="vl"></i>
-   <i class="vl"></i>
-   <div class="hw"><img class="st" src="assets/img/a/stain.webp" alt=""><div class="bx"><img class="ph" src="assets/img/a/road-blur.jpg" alt=""><i class="dim"></i></div><img class="si" src="assets/img/a/sil.webp" alt=""></div>
-  </div>
+  <div class="pf" aria-hidden="true"><img src="assets/img/a/road-blur.jpg" alt=""><i class="dim"></i></div>
+  <div class="field" aria-hidden="true"></div>
   <h1 class="name">Peri <i>Sadigh</i></h1>
   <p class="say">I studied biomedical science, then got a job in digital marketing and <span class="sw">somehow ended up</span> building software at a startup.</p>
   <div class="cue" aria-hidden="true"></div>
@@ -184,52 +166,60 @@ function spline(P){var d='M'+P[0][0].toFixed(1)+' '+P[0][1].toFixed(1);for(var j
 window.spline=spline;
 
 /* ---------- the opening ---------- */
-var sec=document.getElementById('open'),nm=sec.querySelector('.name'),gh=[].slice.call(sec.querySelectorAll('.gh')),vl=[].slice.call(sec.querySelectorAll('.vl')),mist=sec.querySelector('.mist'),
- hw=sec.querySelector('.hw'),bx=hw.querySelector('.bx'),ph=hw.querySelector('.ph'),hst=hw.querySelector('.st'),hsi=hw.querySelector('.si'),dim=hw.querySelector('.dim'),
+var sec=document.getElementById('open'),st=sec.querySelector('.stage'),pf=sec.querySelector('.pf'),pim=pf.querySelector('img'),dim=pf.querySelector('.dim'),fld=sec.querySelector('.field'),nm=sec.querySelector('.name'),
  say=sec.querySelector('.say'),sw=say.querySelector('.sw'),cue=sec.querySelector('.cue'),logo=document.querySelector('header.site .logo'),hd=document.querySelector('header.site'),
- W,H,sm,cw,ch,cy,fx,gap,n0,l0,ring=null,cur=0,tgt=0,raf=0,last=0;
-var IW=1600,IH=1200,CX=486,CY=340,CWp=688,CHp=860;
-function meas(){W=innerWidth;H=innerHeight;sm=W<761;ch=sm?H*.27:H*.38;cw=ch*.8;cy=H*.53;fx=sm?W*.3:W*.27;gap=sm?W*.14:W*.125;
- gh.concat([hw]).forEach(function(e){e.style.width=cw+'px';e.style.height=ch+'px'});
- vl.forEach(function(e){e.style.width=(gap*1.05)+'px';e.style.height=(ch*2.3)+'px'});
- nm.style.transform='none';n0=nm.getBoundingClientRect();l0=logo.getBoundingClientRect();
+ W,H,sm,n0,l0,ring=null,cur=0,tgt=0,raf=0,last=0,intro=rm?1:0,lts=[],nls=[];
+/* split the name into letters so each one can be found in the field and travel home */
+(function(){var t=nm.textContent;nm.setAttribute('aria-label',t);nm.innerHTML='';t.split('').forEach(function(ch){var s=document.createElement('span');s.setAttribute('aria-hidden','true');if(ch===' '){s.innerHTML='&nbsp;';s.className='gap'}else{s.className='lt';s.textContent=ch.toUpperCase();lts.push(s)}nm.appendChild(s)})})();
+function meas(){W=innerWidth;H=innerHeight;sm=W<761;
+ var fs=sm?14:17,cw=sm?24:34,rh=sm?30:36,cols=Math.floor((W-(sm?24:60))/cw),rows=Math.floor((H-(sm?60:80))/rh);
+ st.style.setProperty('--fs',fs+'px');st.style.setProperty('--cw',cw+'px');st.style.setProperty('--rh',rh+'px');
+ fld.style.gridTemplateColumns='repeat('+cols+','+cw+'px)';
+ /* the name's letters sit in the field in reading order, loosely scattered */
+ var r0=Math.floor(rows*.2),r1=Math.floor(rows*.8),picks=[],seed=7;function rnd(){seed=(seed*16807)%2147483647;return seed/2147483647}
+ lts.forEach(function(l,i){var r=Math.round(r0+(r1-r0)*i/(lts.length-1)),c=Math.floor(cols*.12+rnd()*cols*.76);picks.push(r*cols+c)});
+ var A='ABCDEFGHIJKLMNOPQRSTUVWXYZ',html='';for(var k=0;k<cols*rows;k++){html+='<span>'+(picks.indexOf(k)>-1?'':A[Math.floor(rnd()*26)])+'</span>'}fld.innerHTML=html;
+ var fr=fld.getBoundingClientRect(),gx=(W-cols*cw)/2,gy=(H-rows*rh)/2;
+ nm.style.transform='none';nm.style.left='50%';nm.style.top='50%';var nr=nm.getBoundingClientRect();nm.style.left=(W/2-nr.width/2+ (sm?4:8))+'px';nm.style.top=(H/2-nr.height/2)+'px';
+ n0=nm.getBoundingClientRect();l0=logo.getBoundingClientRect();
+ nls.forEach(function(e){e.remove()});nls=lts.map(function(l,i){var e=document.createElement('i');e.className='nl';e.textContent=l.textContent;st.appendChild(e);
+  var r=Math.floor(picks[i]/cols),c=picks[i]%cols,lr=l.getBoundingClientRect(),ex=gx+c*cw+cw/2,ey=gy+r*rh+rh/2;
+  e._from=[ex,ey];e._to=[lr.left+lr.width/2,lr.top+lr.height/2];e._fs=parseFloat(getComputedStyle(nm).fontSize)/fs;return e});
  if(!ring){ring=document.createElementNS('http://www.w3.org/2000/svg','svg');ring.appendChild(document.createElementNS('http://www.w3.org/2000/svg','path'));say.appendChild(ring)}
  var pad=sm?6:12,sr=sw.getBoundingClientRect(),pr=say.getBoundingClientRect(),g=ringPath(sr.width,sr.height*.5,pad);
  ring.setAttribute('width',g.W);ring.setAttribute('height',g.H);ring.setAttribute('viewBox','0 0 '+g.W+' '+g.H);ring.style.left=(sr.left-pr.left-pad*2)+'px';ring.style.top=(sr.top-pr.top+sr.height*.25-pad*2)+'px';
  var rp=ring.firstChild;rp.setAttribute('d',g.d);rp.setAttribute('pathLength','1')}
+var E=function(x){return x<.5?16*x*x*x*x*x:1-Math.pow(-2*x+2,5)/2};/* a strong ease for travel */
+function drawIntro(t){/* t: 0..1 over the intro */
+ var fIn=seg(t,.05,.28),found=ease(seg(t,.3,.48)),fade=seg(t,.42,.62),fly=E(seg(t,.58,.92));
+ fld.style.opacity=(fIn*(1-fade)).toFixed(3);
+ nls.forEach(function(e,i){var d=i*.012,fl=E(seg(t,.58+d,.9+d)),x=L(e._from[0],e._to[0],fl),y=L(e._from[1],e._to[1],fl),sc=L(1,e._fs,fl);
+  e.style.transform='translate('+x.toFixed(1)+'px,'+y.toFixed(1)+'px) translate(-50%,-50%) scale('+sc.toFixed(3)+')';
+  e.style.opacity=Math.max(fIn*.42,found).toFixed(3);e.style.filter=found<1?'blur('+((1-found)*1.7).toFixed(2)+'px)':'none';e.style.color=found>.5?'var(--ink)':''});
+ if(t>=1){nm.classList.add('set');nls.forEach(function(e){e.style.visibility='hidden'})}else{nm.classList.remove('set');nls.forEach(function(e){e.style.visibility=''})}}
 function draw(p){
- var sp=sm?1.5:1,m=ease(seg(p,.04,.38)),v=ease(seg(p,.18,.36)),h=ease(seg(p,.36,.56)),e=ease(seg(p,.56,.72)),tn=seg(p,.73,.79),t1=ease(seg(p,.82,.88)),t5=seg(p,.86,.92);
- cue.style.opacity=Math.max(0,1-p*30);
- /* a row of layers recedes to the right, each copy softer and paler; scrolling collapses them into the front one */
- var X=L(fx,W/2,m);
- gh.forEach(function(el,i){var j=i+1,q=1-m,x=X+j*gap*q,sc=1-j*.07*q,y=cy-j*H*.014*q,b=j*.85*q,o=1-Math.pow(m,1.4);
-  el.style.transform='translate3d('+(x-cw/2).toFixed(1)+'px,'+(y-ch/2).toFixed(1)+'px,0) scale('+sc.toFixed(4)+')';el.style.opacity=o.toFixed(3);el.style.zIndex=20-2*j;
-  el.style.filter=b>.05?'blur('+b.toFixed(2)+'px)':'none';el.querySelector('.si').style.opacity=(.95-j*.13).toFixed(3);el.querySelector('.st').style.opacity=(.8-j*.1).toFixed(3)});
- vl.forEach(function(el,i){var j=i+1,q=1-m,x=X+(j-.55)*gap*q+v*W*.35,sc=1-j*.07*q;
-  el.style.transform='translate3d('+x.toFixed(1)+'px,'+(cy-ch*1.2*sc-j*H*.014*q).toFixed(1)+'px,0) skewY(-5deg) scale('+sc.toFixed(3)+')';el.style.opacity=(1-v).toFixed(3);el.style.zIndex=21-2*j});
- mist.style.opacity=(1-h).toFixed(3);mist.style.transform='translate3d('+(-m*W*.12).toFixed(1)+'px,0,0)';
- /* the stain lifts, the silhouette clears and the photo focuses around you, then opens to the edges */
- var bw=L(cw,W,e),bh=L(ch,H,e),bxp=L(X,W/2,e),byp=L(cy,H/2,e);
- hw.style.width=bw.toFixed(1)+'px';hw.style.height=bh.toFixed(1)+'px';hw.style.transform='translate3d('+(bxp-bw/2).toFixed(1)+'px,'+(byp-bh/2).toFixed(1)+'px,0)';hw.style.zIndex=20;
- bx.style.width=bw.toFixed(1)+'px';bx.style.height=bh.toFixed(1)+'px';var R=L(-30,135,h),mk=h>=1?'none':'radial-gradient(60% 58% at 50% 58%,#000 '+R.toFixed(1)+'%,transparent '+(R+30).toFixed(1)+'%)';bx.style.opacity=h>0?1:0;bx.style.webkitMaskImage=bx.style.maskImage=mk;
- hst.style.opacity=(.88*(1-ease(seg(p,.44,.6)))).toFixed(3);hsi.style.opacity=(1-ease(seg(p,.37,.5))).toFixed(3);
- var s0=cw/CWp,cs=Math.max(W/IW,H/IH),iw=L(IW*s0,IW*cs,e),ih=L(IH*s0,IH*cs,e),il=L(-CX*s0,(W-IW*cs)/2,e),it=L(-CY*s0,(H-IH*cs)/2,e);
- ph.style.width=iw.toFixed(1)+'px';ph.style.height=ih.toFixed(1)+'px';ph.style.transform='translate('+il.toFixed(1)+'px,'+it.toFixed(1)+'px)';
- dim.style.opacity=Math.max(seg(p,.73,.8)*.6,t5).toFixed(3);
- sec.setAttribute('data-tone',e>.55?'dark':'');
- /* your name comes into focus over the photo, then settles into the corner */
- if(sm){nm.style.opacity=(tn*(1-t1)).toFixed(3);nm.style.transform='translate(0,'+(-t1*H*.08).toFixed(1)+'px)'}
- else{nm.style.opacity=t1>=.999?0:tn;nm.style.transform='translate('+L(0,l0.left-n0.left,t1).toFixed(1)+'px,'+L(0,l0.top-n0.top,t1).toFixed(1)+'px) scale('+L(1,l0.width/n0.width,t1).toFixed(4)+')'}
- nm.style.filter=tn<1?'blur('+((1-tn)*12).toFixed(1)+'px)':'none';
- hd.classList.toggle('shown',t1>=.999);
+ drawIntro(intro);
+ /* the blur pulls into focus around you and the photo opens to the edges */
+ var f=ease(seg(p,0,.42)),ex=ease(seg(p,.08,.45)),t1=ease(seg(p,.46,.58)),t5=seg(p,.6,.72);
+ var w0=sm?W*.86:Math.min(W*.58,H*1.0),h0=w0*(sm?1.15:.66),w=L(w0,W,ex),h=L(h0,H,ex);
+ pf.style.width=w.toFixed(1)+'px';pf.style.height=h.toFixed(1)+'px';pf.style.transform='translate('+((W-w)/2).toFixed(1)+'px,'+((H-h)/2).toFixed(1)+'px)';
+ var b=L(sm?16:24,0,f),br=L(1.28,1,f),co=L(.6,1,f);pim.style.filter=b>.1?'blur('+b.toFixed(1)+'px) brightness('+br.toFixed(3)+') contrast('+co.toFixed(3)+')':'none';pim.style.opacity=L(.62,1,f).toFixed(3);
+ dim.style.opacity=Math.max(seg(p,.25,.45)*.55,t5).toFixed(3);
+ var dark=f>.55;sec.setAttribute('data-tone',dark?'dark':'');nm.style.color=dark?'var(--paper)':'var(--ink)';nm.style.transition='color .6s';
+ /* your name settles into the corner and becomes the header */
+ if(sm){nm.style.opacity=(1-t1).toFixed(3);nm.style.transform='translate(0,'+(-t1*H*.06).toFixed(1)+'px)'}
+ else{nm.style.opacity=t1>=.999?0:1;nm.style.transform='translate('+L(0,l0.left-n0.left,t1).toFixed(1)+'px,'+L(0,l0.top-n0.top,t1).toFixed(1)+'px) scale('+L(1,l0.width/n0.width,t1).toFixed(4)+')'}
+ hd.classList.toggle('shown',t1>=.999);cue.classList.toggle('on',intro>=1&&p<.02);
  say.style.opacity=t5;say.style.filter=t5<1?'blur('+((1-t5)*10).toFixed(1)+'px)':'none';
- if(ring)ring.firstChild.style.strokeDashoffset=(1-ease(seg(p,.92,.98))).toFixed(3);
+ if(ring)ring.firstChild.style.strokeDashoffset=(1-ease(seg(p,.74,.82))).toFixed(3);
  dispatchEvent(new Event('scroll'))}
 function tick(ts){raf=1;var dt=last?Math.min(.05,(ts-last)/1000):.016;last=ts;cur+=(tgt-cur)*(1-Math.exp(-dt*7));if(Math.abs(tgt-cur)<.0003)cur=tgt;draw(cur);raf=0;if(cur!==tgt)raf=requestAnimationFrame(tick);else last=0}
-function on(){var b=sec.getBoundingClientRect();tgt=Math.min(1,Math.max(0,-b.top/Math.max(1,b.height-innerHeight)));if(!raf&&Math.abs(tgt-cur)>.0003)raf=requestAnimationFrame(tick)}
+function on(){var b=sec.getBoundingClientRect();tgt=Math.min(1,Math.max(0,-b.top/Math.max(1,b.height-innerHeight)));if(tgt>0&&intro<1)intro=1;if(!raf&&Math.abs(tgt-cur)>.0003)raf=requestAnimationFrame(tick)}
 function init(){meas();on();cur=tgt;draw(cur)}
-if(rm){meas();draw(1)}
-else{init();if(document.fonts)document.fonts.ready.then(init);addEventListener('load',init);addEventListener('resize',init);addEventListener('scroll',on,{passive:true})}
+/* the intro plays once on arrival, about three seconds; scrolling skips to the end of it */
+function play(){var t0=0;function k(ts){if(!t0)t0=ts;if(intro<1){intro=Math.min(1,(ts-t0)/3400);draw(cur);requestAnimationFrame(k)}else draw(cur)}requestAnimationFrame(k)}
+if(rm){init()}
+else{init();play();if(document.fonts)document.fonts.ready.then(init);addEventListener('load',init);addEventListener('resize',init);addEventListener('scroll',on,{passive:true})}
 
 /* ---------- reveals ---------- */
 var rv=[].slice.call(document.querySelectorAll('.rv:not(.kf)'));
