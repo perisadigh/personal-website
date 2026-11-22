@@ -1,0 +1,23 @@
+/* Page transitions (cross-document View Transitions). Browsers without support just load the page as before.
+   The old page settles away, the new one lifts in on the same easing as the rest of the site.
+   When you follow a link to a page with a title, the link you clicked grows into that page's headline. */
+@media (prefers-reduced-motion:no-preference){
+@view-transition{navigation:auto}
+::view-transition-old(root){animation:vt-out .32s cubic-bezier(.4,0,1,1) both}
+::view-transition-new(root){animation:vt-in .8s cubic-bezier(.2,.7,.2,1) .14s both}
+@keyframes vt-out{to{opacity:0;transform:translate3d(0,-.6rem,0)}}
+@keyframes vt-in{from{opacity:0;transform:translate3d(0,1.1rem,0)}}
+
+/* the header stays put between pages (desktop, where it is fixed) */
+@media (min-width:761px){header{view-transition-name:site-header}}
+html.vt header{mix-blend-mode:normal;color:var(--ink)}
+::view-transition-group(site-header){animation-duration:.7s;animation-timing-function:cubic-bezier(.2,.7,.2,1)}
+
+/* the clicked link becomes the headline */
+::view-transition-group(title){animation-duration:.85s;animation-timing-function:cubic-bezier(.6,0,.15,1)}
+::view-transition-old(title){animation:vt-tout .4s ease-in both;mix-blend-mode:normal}
+::view-transition-new(title){animation:vt-tin .6s cubic-bezier(.2,.7,.2,1) .2s both;mix-blend-mode:normal}
+@keyframes vt-tout{to{opacity:0}}
+@keyframes vt-tin{from{opacity:0}}
+html.vt-morph .ln>span{transform:none!important;transition:none!important}
+}
