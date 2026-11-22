@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter+Tight:wght@400;500&family=Kristi&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/inner.css">
+<link rel="stylesheet" href="assets/inner.css"><link rel="stylesheet" href="assets/vt.css"><link rel="expect" href="#title" blocking="render">
 <script>document.documentElement.classList.add("js")</script>
 <script src="assets/lenis.min.js"></script><script src="assets/motion.js"></script>
 </head>
@@ -20,7 +20,7 @@
 <main id="top">
   <section class="pt">
   <p class="folio cap mu">02</p>
-  <h1 class="sm" aria-label="Things I&rsquo;ve made"><span class="ln" aria-hidden="true"><span>Things I&rsquo;ve made</span></span></h1>
+  <h1 id="title" class="sm" data-recede aria-label="Things I&rsquo;ve made"><span class="ln" aria-hidden="true"><span>Things I&rsquo;ve made</span></span></h1>
   <p class="stand fd">Some things I&rsquo;ve worked on, some things I&rsquo;ve made for fun.</p>
   </section>
   <ol class="toc stag">
@@ -76,7 +76,7 @@
     <p class="pm cap mu"><span>5</span><span>Made for fun</span></p>
     <div><h2 class="fd">An unserious product video</h2>
       <p class="body" data-fill>A deliberately silly version of a product video I made for work. This cut never made it into the real thing, which is probably for the best.</p></div>
-    <figure class="vid"><div class="vp"><video controls preload="metadata" playsinline poster="assets/video/recruitcha-gtm.jpg"><source src="assets/video/recruitcha-gtm.mp4" type="video/mp4"></video></div><figcaption class="cap mu">An unserious cut of a product video</figcaption></figure>
+    <figure class="vid"><div class="vp" data-grow><video controls preload="metadata" playsinline poster="assets/video/recruitcha-gtm.jpg"><source src="assets/video/recruitcha-gtm.mp4" type="video/mp4"></video></div><figcaption class="cap mu">An unserious cut of a product video</figcaption></figure>
   </section>
   <div class="after"></div>
   <section class="proj" id="work">
